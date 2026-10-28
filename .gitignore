@@ -1,0 +1,21 @@
+*.jks
+*.keystore
+# Node
+node_modules/
+# Secrets : ne jamais committer
+.env
+.env.*
+!.env.example
+# Divers
+*.log
+.DS_Store
+# Capacitor / Android
+app/node_modules/
+app/android/.gradle/
+app/android/build/
+app/android/app/build/
+app/android/local.properties
+app/android/capacitor-cordova-android-plugins/
+app/android/app/src/main/assets/public/
+app/android/app/src/main/assets/capacitor.config.json
+app/android/app/src/main/assets/capacitor.plugins.json

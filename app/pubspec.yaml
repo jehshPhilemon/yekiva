@@ -1,0 +1,30 @@
+name: yekiva
+description: Apprendre à lire et à écrire sans savoir lire, hors-ligne.
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # À ajouter plus tard, un par un, en testant sur le A02s :
+  #   audio (lecture), record (micro), flutter_tts (synthèse), sqflite/drift (progression),
+  #   http (client du serveur), connectivity_plus (signal « pas d'internet »)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  # Flutter ne descend pas dans les sous-dossiers : lister chaque dossier de paquet.
+  # (Ajouter une langue = ajouter 2 lignes ici, rien d'autre côté code.)
+  assets:
+    - assets/packs/
+    - assets/packs/fr/
+    - assets/packs/fr/lessons/
+    - assets/packs/sw/
+    - assets/packs/sw/lessons/

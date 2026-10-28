@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "id": "fr",
+  "language": "fr",
+  "version": 1,
+  "name": "Français",
+  "ui": {
+    "color": "#1565C0"
+  },
+  "prompts": {
+    "language_pick": {
+      "text": "Pour le français, appuie ici",
+      "audio": null
+    },
+    "audience_adult": {
+      "text": "Je suis un adulte",
+      "audio": null
+    },
+    "audience_child": {
+      "text": "Je suis un enfant",
+      "audio": null
+    }
+  },
+  "glyphs": "glyphs.json",
+  "matching": {
+    "stripAccents": true,
+    "ignoreCase": true,
+    "maxEdits": 1
+  },
+  "tracks": {
+    "adult": [
+      "i-l",
+      "syllables-li"
+    ],
+    "child": [
+      "i-l"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "id": "sw-famille",
+  "language": "sw",
+  "role": "addon",
+  "version": 1,
+  "name": "Kiswahili: family",
+  "order": 100,
+  "tracks": {
+    "adult": ["mama-baba"],
+    "child": []
+  },
+  "after": { "adult": "syllables-ma" }
+}

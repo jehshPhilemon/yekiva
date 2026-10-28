@@ -1,0 +1,19 @@
+{
+  "name": "yekiva-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Yekiva: offline literacy app (Capacitor, plain JS, no build step).",
+  "scripts": {
+    "dev": "node ../tools/serve.mjs",
+    "test": "node --test",
+    "sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "mama-baba",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "say": {
+          "text": "mama"
+        },
+        "choices": [
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "baba",
+            "text": "baba"
+          }
+        ],
+        "answer": "mama"
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "baba"
+      ],
+      "params": {
+        "say": {
+          "text": "baba"
+        },
+        "choices": [
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "baba",
+            "text": "baba"
+          }
+        ],
+        "answer": "baba"
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "mama"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "yekiva-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Small server that holds the Meta API key. Zero dependencies.",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" }
+}

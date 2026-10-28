@@ -1,0 +1,52 @@
+name: ci
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate lesson packs
+        run: node tools/validate-packs.mjs
+      - name: Server tests
+        run: npm test --prefix server
+      - name: App tests (logic, no DOM)
+        run: npm test --prefix app
+
+  apk:
+    needs: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"   # Capacitor 6; if moving to Capacitor 7, use Java 21
+      - name: Capacitor dependencies
+        working-directory: app
+        run: npm install
+      - name: Create the Android project if missing (first build)
+        working-directory: app
+        run: |
+          if [ ! -d android ]; then npx cap add android; fi
+      - name: Permissions (microphone)
+        run: node tools/patch-android.mjs
+      - name: Copy the web app into the Android project
+        working-directory: app
+        run: npx cap sync android
+      - name: Build the APK (debug, signed with the debug key: installable)
+        working-directory: app/android
+        run: ./gradlew assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yekiva-apk
+          path: app/android/app/build/outputs/apk/debug/app-debug.apk

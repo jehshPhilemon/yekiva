@@ -1,0 +1,18 @@
+{
+  "id": "syllables-li",
+  "steps": [
+    { "type": "listen_tap", "items": ["li"],
+      "params": {
+        "say": { "text": "li" },
+        "choices": [ { "id": "li", "text": "li" }, { "id": "la", "text": "la" }, { "id": "lo", "text": "lo" } ],
+        "answer": "li"
+      } },
+    { "type": "listen_tap", "items": ["la"],
+      "params": {
+        "say": { "text": "la" },
+        "choices": [ { "id": "li", "text": "li" }, { "id": "la", "text": "la" }, { "id": "lo", "text": "lo" } ],
+        "answer": "la"
+      } },
+    { "type": "future_step_example", "params": { "note": "unknown type: the app must skip it without crashing" } }
+  ]
+}

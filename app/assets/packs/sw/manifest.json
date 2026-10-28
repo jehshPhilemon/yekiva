@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "id": "sw",
+  "language": "sw",
+  "version": 1,
+  "name": "Kiswahili",
+  "ui": {
+    "color": "#2E7D32"
+  },
+  "prompts": {
+    "language_pick": {
+      "text": "Kwa Kiswahili, gusa hapa",
+      "audio": null
+    },
+    "audience_adult": {
+      "text": "Mimi ni mtu mzima",
+      "audio": null
+    },
+    "audience_child": {
+      "text": "Mimi ni mtoto",
+      "audio": null
+    }
+  },
+  "glyphs": "glyphs.json",
+  "matching": {
+    "stripAccents": true,
+    "ignoreCase": true,
+    "maxEdits": 1
+  },
+  "tracks": {
+    "adult": [
+      "i-l",
+      "syllables-ma"
+    ],
+    "child": [
+      "i-l"
+    ]
+  }
+}
