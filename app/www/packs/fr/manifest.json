@@ -19,6 +19,38 @@
     "audience_child": {
       "text": "Je suis un enfant",
       "audio": null
+    },
+    "lesson_intro": {
+      "text": "Écoute bien, puis fais comme moi",
+      "audio": null
+    },
+    "lesson_done": {
+      "text": "Bravo, tu as fini",
+      "audio": null
+    },
+    "path_hint": {
+      "text": "Choisis une leçon",
+      "audio": null
+    },
+    "photo_hint": {
+      "text": "Photographie un mot pour en faire une leçon",
+      "audio": null
+    },
+    "server_hint": {
+      "text": "La voix arrive quand le serveur répond",
+      "audio": null
+    },
+    "trace_hint": {
+      "text": "Encore une fois, suis les pointillés",
+      "audio": null
+    },
+    "listen_hint": {
+      "text": "Écoute encore, puis touche",
+      "audio": null
+    },
+    "say_hint": {
+      "text": "Répète encore une fois",
+      "audio": null
     }
   },
   "glyphs": "glyphs.json",

@@ -1,6 +1,9 @@
 // "Say the word": the app shows/says a word, the learner repeats it while HOLDING the microphone.
-// The recording goes to the server, is transcribed, then compared with tolerance (rules from the pack).
-// Without network or server: show an icon and skip the step without counting it (plan B: "listen and tap").
+// Voice comes from the PACK (params.say, audio or TTS); on a miss the pack-level
+// encouragement (prompts.say_hint) plays, falling back to the word itself.
+// The recording goes to the Yekiva server, is transcribed (Muse), then compared with
+// tolerance (rules from the pack). Without network or server: icon + skip without
+// counting (plan B: "listen and tap").
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
@@ -12,6 +15,7 @@ export function sayWord(ctx) {
   const { word, say, image } = ctx.step.params;
   const { recorder, transcriber } = ctx.services;
   const hear = () => ctx.speak(say ?? { text: word });
+  const encourage = () => (ctx.hint ? ctx.hint("say_hint") : hear());
 
   const status = h("div", { class: "status" });
   const show = (name) => status.replaceChildren(name ? icon(name, 64) : "");
@@ -57,7 +61,7 @@ export function sayWord(ctx) {
     mic.classList.add("shake");
     setTimeout(() => mic.classList.remove("shake"), 400);
     busy = false;
-    hear(); // "once more": replay the prompt, no punishment
+    encourage(); // "once more": pack encouragement, no punishment
   }
 
   mic.addEventListener("pointerdown", async (e) => {

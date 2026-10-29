@@ -7,6 +7,7 @@
 //   node tools/probe-meta.mjs asr word.wav '{"model":"muse-voice-transcribe-1.0","language":"sw"}'
 //                                                                  # 2nd argument = the JSON "request" part, verbatim
 //   node tools/probe-meta.mjs spark photo.jpg                      # photo -> word + syllables
+//   node tools/probe-meta.mjs speak "Kwa Kiswahili, gusa hapa" sw  # natural voice (Yekiva server, Piper)
 //
 // The key is read from server/.env (or ./.env) when not already in the environment.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -31,6 +32,7 @@ const envFile = loadEnv();
 
 const [cmd, file, extra] = process.argv.slice(2);
 const BASE = process.env.META_BASE_URL ?? "https://api.meta.ai/v1";
+const YEKIVA = process.env.YEKIVA_SERVER_URL ?? "http://127.0.0.1:8787";
 const key = process.env.META_API_KEY;
 
 async function show(res) {
@@ -82,7 +84,26 @@ async function main() {
       })
     );
   } else {
-    console.error("usage: asr <file.wav> [request-json] | spark <photo> | make-wav <out.wav>");
+    if (cmd === "speak") {
+      // Natural voice via the YEKIVA server (no key needed): speak <text> [lang] [out.wav]
+      const text = file ?? "ma";
+      const lang = extra ?? "sw";
+      const out = process.argv[5] ?? `speak-${lang}.wav`;
+      const res = await fetch(`${YEKIVA}/v1/speak`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ text, lang }),
+      });
+      console.log("HTTP", res.status, res.headers.get("content-type"));
+      if (!res.ok) {
+        console.log((await res.text()).slice(0, 500));
+        process.exit(1);
+      }
+      writeFileSync(out, Buffer.from(await res.arrayBuffer()));
+      console.log("written", out);
+      return;
+    }
+    console.error("usage: asr <file.wav> [request-json] | spark <photo> | make-wav <out.wav> | speak <text> [lang] [out.wav]");
     process.exit(1);
   }
 }

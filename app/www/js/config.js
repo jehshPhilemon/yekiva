@@ -1,15 +1,9 @@
-// Settings. To try things in the browser without rebuilding, in the console:
-//   localStorage.setItem("yekiva.serverUrl", "https://serveur.exemple")
-// The token is NOT a secret (it is readable in the app): it limits abuse, it does not replace authentication.
-const ls = (k) => {
-  try {
-    return localStorage.getItem(k) ?? "";
-  } catch {
-    return "";
-  }
-};
-
+// Build-time settings. The learner NEVER types a server URL: it is baked in here.
+//   - Dev (browser/Termux): npm run dev writes the local server URL (see tools/serve.mjs --api).
+//   - Prod (APK): the hackathon server URL, replaced at build time (see tools/build-config.mjs).
+//   - Fallback: same-origin (when the app and the server share one host).
+// The APP_TOKEN is NOT a secret (readable in the app): it limits abuse, not authentication.
 export const config = {
-  serverUrl: ls("yekiva.serverUrl"), // empty = no server: everything that needs the AI stays disabled
-  appToken: ls("yekiva.appToken"),
+  serverUrl: "__YEKIVA_SERVER_URL__",
+  appToken: "__YEKIVA_APP_TOKEN__",
 };

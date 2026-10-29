@@ -19,6 +19,38 @@
     "audience_child": {
       "text": "Mimi ni mtoto",
       "audio": null
+    },
+    "lesson_intro": {
+      "text": "Sikiliza vizuri, kisha fanya kama mimi",
+      "audio": null
+    },
+    "lesson_done": {
+      "text": "Hongera, umemaliza",
+      "audio": null
+    },
+    "path_hint": {
+      "text": "Chagua somo",
+      "audio": null
+    },
+    "photo_hint": {
+      "text": "Piga picha ya neno ili uwe somo",
+      "audio": null
+    },
+    "server_hint": {
+      "text": "Sauti itakuja seva inapojibu",
+      "audio": null
+    },
+    "trace_hint": {
+      "text": "Tena, fuata vitone",
+      "audio": null
+    },
+    "listen_hint": {
+      "text": "Sikiliza tena, kisha gusa",
+      "audio": null
+    },
+    "say_hint": {
+      "text": "Rudia tena",
+      "audio": null
     }
   },
   "glyphs": "glyphs.json",

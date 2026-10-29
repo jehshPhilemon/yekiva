@@ -65,7 +65,7 @@ test("packs: the loader reads the real files and merges Swahili", async () => {
 });
 
 test("all screen and step modules import (correct paths and exports)", async () => {
-  for (const f of ["core/registry.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js"]) {
+  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js"]) {
     await import(`../www/js/${f}`);
   }
   const { registry } = await import("../www/js/core/registry.js");
@@ -96,4 +96,15 @@ test("every relative import in app/www/js points to an existing file (main.js in
     }
   }
   assert.deepEqual(missing, []);
+});
+
+test("server-url: Meta URLs are refused, Yekiva URLs accepted and normalized", async () => {
+  const { checkServerUrl, normalizeServerUrl, isMetaUrl } = await import("../www/js/core/server-url.js");
+  assert.equal(isMetaUrl("https://api.meta.ai/v1"), true);
+  assert.equal(isMetaUrl("https://api.mata.ai/v1/v1/lesson-from-photo?lang=fr"), true);
+  assert.equal(isMetaUrl("http://192.168.1.10:8787"), false);
+  assert.equal(normalizeServerUrl("http://192.168.1.10:8787/v1/transcribe?lang=fr"), "http://192.168.1.10:8787");
+  assert.equal(checkServerUrl("https://api.meta.ai/v1").ok, false);
+  assert.equal(checkServerUrl("https://api.mata.ai/v1/v1/lesson-from-photo?lang=fr").ok, false);
+  assert.equal(checkServerUrl("http://192.168.1.10:8787").ok, true);
 });

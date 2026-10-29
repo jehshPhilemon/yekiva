@@ -3,7 +3,7 @@
 // Zero dependencies: works anywhere Node 20+ is installed, and in CI.
 // Usage: node tools/validate-packs.mjs [folder]   |   --show: print the merged paths
 import { readFileSync, existsSync } from "node:fs";
-import { join, resolve, dirname } from "node:path";
+import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergeLanguage, groupByLanguage } from "../app/www/js/core/merge.js";
 
@@ -49,11 +49,14 @@ function main() {
     }
     if (role === "base") {
       const pick = manifest.prompts?.language_pick;
-      if (!pick || (!pick.text && !pick.audio)) {
+      // Text-only packs: the natural voice is generated at runtime (POST /v1/speak).
+      // Any `audio` reference is a leftover from the pre-generated era: reject it.
+      if (!pick || !pick.text) {
         err(at("prompts.language_pick missing: each language must say 'for <language>, tap here' itself"));
       }
       for (const [name, pr] of Object.entries(manifest.prompts ?? {})) {
-        if (pr.audio && !existsSync(join(dir, pr.audio))) err(at(`prompt '${name}': audio not found ${pr.audio}`));
+        if (!pr.text) err(at(`prompt '${name}': text is required (text-only packs)`));
+        if (pr.audio) err(at(`prompt '${name}': 'audio' is forbidden — voice is generated at runtime via POST /v1/speak`));
       }
     }
     const glyphs = manifest.glyphs ? readJson(join(dir, manifest.glyphs)) ?? {} : {};
@@ -110,7 +113,7 @@ function main() {
           if (!ids.includes(p.answer)) err(S(`answer='${p.answer}' is not in choices`));
         }
         for (const a of [p.say?.audio, ...(p.choices ?? []).map((c) => c.audio)].filter(Boolean)) {
-          if (!existsSync(join(pack.dir, a))) err(S(`audio not found: ${a}`));
+          err(S(`'audio' is forbidden (${a}) — voice is generated at runtime via POST /v1/speak`));
         }
       });
     }

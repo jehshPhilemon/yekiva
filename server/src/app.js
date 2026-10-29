@@ -1,8 +1,10 @@
 import { createServer } from "node:http";
 import * as meta from "./providers/meta.js";
+import * as voice from "./voice.js";
 import { checkWav } from "./wav.js";
 
 const MAX_BYTES = 5 * 1024 * 1024; // a word or a photo, not a film
+const MAX_SPEAK_TEXT = 64 * 1024; // JSON prompt, not a film either
 
 /** Simple in-memory limiter: at most `limit` requests per minute per IP. */
 function makeLimiter(limit) {
@@ -16,13 +18,13 @@ function makeLimiter(limit) {
   };
 }
 
-function readBody(req) {
+function readBody(req, max = MAX_BYTES) {
   return new Promise((resolve, reject) => {
     const chunks = [];
     let size = 0;
     req.on("data", (c) => {
       size += c.length;
-      if (size > MAX_BYTES) {
+      if (size > max) {
         reject(Object.assign(new Error("payload too large"), { status: 413 }));
         req.destroy();
       } else chunks.push(c);
@@ -40,6 +42,15 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
       res.writeHead(status, { "content-type": "application/json", "access-control-allow-origin": allowOrigin });
       res.end(JSON.stringify(body));
     };
+    const sendAudio = (wav) => {
+      res.writeHead(200, {
+        "content-type": "audio/wav",
+        "content-length": wav.length,
+        "access-control-allow-origin": allowOrigin,
+        "cache-control": "no-store",
+      });
+      res.end(wav);
+    };
     try {
       const url = new URL(req.url, "http://local");
       if (req.method === "OPTIONS") {
@@ -53,12 +64,27 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
         return res.end();
       }
       if (req.method === "GET" && url.pathname === "/health") return send(200, { ok: true });
+      // Capability probe (no synthesis): the app shows "natural voice" vs "phone voice".
+      if (req.method === "GET" && url.pathname === "/v1/voice") return send(200, { ok: true, engine: "piper", voices: ["fr", "sw"] });
 
       if (appToken && req.headers["x-app-token"] !== appToken) return send(401, { error: "unauthorized" });
       if (!allow(req.socket.remoteAddress ?? "?")) return send(429, { error: "too many requests" });
 
       const lang = url.searchParams.get("lang") ?? undefined;
       const contentType = req.headers["content-type"] ?? "";
+
+      if (req.method === "POST" && url.pathname === "/v1/speak") {
+        // Natural voice at request time: { text, lang? } -> audio/wav (Piper, on this server).
+        if (!contentType.includes("application/json")) return send(415, { error: "application/json expected: { text, lang? }" });
+        let body;
+        try {
+          body = JSON.parse(String(await readBody(req, MAX_SPEAK_TEXT)));
+        } catch {
+          return send(400, { error: "invalid JSON" });
+        }
+        if (typeof body.text !== "string" || !body.text.trim()) return send(400, { error: "field 'text' is required" });
+        return sendAudio(voice.speak(body.text, { lang: body.lang ?? lang }));
+      }
 
       if (req.method === "POST" && url.pathname === "/v1/transcribe") {
         if (!/^audio\/(x-)?wav(e)?\b/.test(contentType)) return send(415, { error: "audio/wav expected (16-bit mono PCM, 16 or 24 kHz)" });

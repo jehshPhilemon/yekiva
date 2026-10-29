@@ -47,15 +47,31 @@ Example: `sw-famille` (addon) adds `mama-baba` right after `syllables-ma` of the
 
 ```json
 "prompts": {
-  "language_pick":  { "text": "Pour le français, appuie ici", "audio": null },
-  "audience_adult": { "text": "Je suis un adulte", "audio": null },
-  "audience_child": { "text": "Je suis un enfant", "audio": null }
+  "language_pick":  { "text": "Pour le français, appuie ici" },
+  "audience_adult": { "text": "Je suis un adulte" },
+  "audience_child": { "text": "Je suis un enfant" },
+  "lesson_intro":   { "text": "Écoute bien, puis fais comme moi" },
+  "lesson_done":    { "text": "Bravo, tu as fini" },
+  "path_hint":      { "text": "Choisis une leçon" },
+  "photo_hint":     { "text": "Photographie un mot" },
+  "server_hint":    { "text": "La voix arrive quand le serveur répond" },
+  "trace_hint":     { "text": "Encore une fois, suis les pointillés" },
+  "listen_hint":    { "text": "Écoute encore, puis touche" },
+  "say_hint":       { "text": "Répète encore une fois" }
 }
 ```
 
 - `language_pick`: what **this language says about itself** on the choice screen. The app makes every installed language speak in turn (its tile blinks); the learner taps when they recognise their own. Each pack therefore carries its own prompt: adding a language needs no change in the app.
-- Each prompt: `audio` (path inside the pack) if present, otherwise speech synthesis of `text`. If the phone has no voice for the language, recorded audio is the only reliable option.
+- Each prompt is TEXT ONLY. The natural voice is generated at RUNTIME inside the app:
+  the app sends the text to the Yekiva server (`POST /v1/speak`), the server synthesizes
+  it (neural TTS, per language) and returns audio; the app caches it on-device (IndexedDB)
+  for offline replay. The phone's speech synthesis is only the offline last resort.
+  (Meta's Model API has no TTS endpoint — verified 2026-10-28 — so no Meta URL is involved.)
 - `audience_*` and other prompts (congratulations, "once more"...) follow the same model and can be added without changing the format.
+- Narration rule: EVERY screen and step speaks through these prompts (`core/narrate.js`).
+  `lesson_intro`/`lesson_done` frame each lesson, `path_hint`/`photo_hint`/`server_hint`
+  announce the screens, `trace_hint`/`listen_hint`/`say_hint` encourage after a miss
+  (fallback: the step's own `say`). Missing key = silence, never hardcoded text.
 - The Swahili sample texts are provisional: have a native speaker review them.
 
 ## lessons/<id>.json
@@ -102,7 +118,11 @@ Key = `letter:form` (planned forms: `lower_script`, `upper_script`, `lower_cursi
 
 ## Audio
 
-If `say.audio` is absent, the app uses the phone's speech synthesis with `say.text`. Audio paths are relative to the pack folder and checked by the validator.
+Voice is generated at runtime, never shipped in packs. `say` = `{ text }`; any legacy
+`audio` path in old packs is ignored by the app and rejected by the validator.
+Flow: `say.text` -> `POST {yekiva}/v1/speak` -> neural voice per language ->
+played + cached on-device (IndexedDB) -> replayed offline. Phone speech synthesis
+is the last resort only (offline, robotic).
 
 ## Adding a new step type
 

@@ -102,3 +102,22 @@ test("buildAsrRequest: model by default, language only when the field name is co
   assert.deepEqual(buildAsrRequest("sw", { META_ASR_LANG_FIELD: "language" }), { model: "muse-voice-transcribe-1.0", language: "sw" });
   assert.equal(buildAsrRequest(undefined, { META_ASR_REQUEST: '{"x":1}' }).x, 1);
 });
+
+test("speak: missing text -> 400", () =>
+  withServer({}, async (base) => {
+    const r = await fetch(`${base}/v1/speak`, { method: "POST", headers: { "content-type": "application/json" }, body: "{}" });
+    assert.equal(r.status, 400);
+  }));
+
+test("speak: wrong content-type -> 415", () =>
+  withServer({}, async (base) => {
+    const r = await fetch(`${base}/v1/speak`, { method: "POST", headers: { "content-type": "text/plain" }, body: "ma" });
+    assert.equal(r.status, 415);
+  }));
+
+test("voice probe: advertises the engine without synthesizing", () =>
+  withServer({}, async (base) => {
+    const r = await fetch(`${base}/v1/voice`);
+    assert.equal(r.status, 200);
+    assert.deepEqual(await r.json(), { ok: true, engine: "piper", voices: ["fr", "sw"] });
+  }));

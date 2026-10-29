@@ -1,5 +1,5 @@
 {
-  "appId": "org.yekiva.app",
+  "appId": "com.jehshphilemon.yekiva",
   "appName": "Yekiva",
   "webDir": "www",
   "server": { "androidScheme": "https" }

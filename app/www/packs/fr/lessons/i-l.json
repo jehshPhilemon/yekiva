@@ -1,13 +1,55 @@
 {
   "id": "i-l",
   "steps": [
-    { "type": "watch_write", "items": ["l"],
-      "params": { "glyph": "l:lower_script", "say": { "text": "l" }, "durationMs": 2500 } },
-    { "type": "trace_letter", "items": ["l"],
-      "params": { "glyph": "l:lower_script", "say": { "text": "l" } } },
-    { "type": "watch_write", "items": ["i"],
-      "params": { "glyph": "i:lower_script", "say": { "text": "i" }, "durationMs": 3000 } },
-    { "type": "trace_letter", "items": ["i"],
-      "params": { "glyph": "i:lower_script", "say": { "text": "i" } } }
+    {
+      "type": "watch_write",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "glyph": "l:lower_script",
+        "say": {
+          "text": "l"
+        },
+        "durationMs": 2500
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "glyph": "l:lower_script",
+        "say": {
+          "text": "l"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "glyph": "i:lower_script",
+        "say": {
+          "text": "i"
+        },
+        "durationMs": 3000
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "glyph": "i:lower_script",
+        "say": {
+          "text": "i"
+        }
+      }
+    }
   ]
 }

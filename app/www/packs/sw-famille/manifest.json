@@ -7,8 +7,12 @@
   "name": "Kiswahili: family",
   "order": 100,
   "tracks": {
-    "adult": ["mama-baba"],
+    "adult": [
+      "mama-baba"
+    ],
     "child": []
   },
-  "after": { "adult": "syllables-ma" }
+  "after": {
+    "adult": "syllables-ma"
+  }
 }

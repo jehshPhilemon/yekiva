@@ -1,17 +1,57 @@
 {
   "id": "syllables-ma",
   "steps": [
-    { "type": "listen_tap", "items": ["ma"],
+    {
+      "type": "listen_tap",
+      "items": [
+        "ma"
+      ],
       "params": {
-        "say": { "text": "ma" },
-        "choices": [ { "id": "ma", "text": "ma" }, { "id": "ba", "text": "ba" }, { "id": "ji", "text": "ji" } ],
+        "say": {
+          "text": "ma"
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          }
+        ],
         "answer": "ma"
-      } },
-    { "type": "listen_tap", "items": ["ji"],
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ji"
+      ],
       "params": {
-        "say": { "text": "ji" },
-        "choices": [ { "id": "ma", "text": "ma" }, { "id": "ba", "text": "ba" }, { "id": "ji", "text": "ji" } ],
+        "say": {
+          "text": "ji"
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          }
+        ],
         "answer": "ji"
-      } }
+      }
+    }
   ]
 }

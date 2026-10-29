@@ -52,7 +52,19 @@ The raw answers make it possible to adjust `meta.js` accordingly.
 
 | API | Called by | Role |
 |---|---|---|
-| **Yekiva API** (`server/`): `POST /v1/transcribe`, `POST /v1/lesson-from-photo` | the app | the only door to Meta; holds the key |
-| **Meta Model API** | the server only | transcription, vision |
+| **Yekiva API** (`server/`): `POST /v1/speak`, `POST /v1/transcribe`, `POST /v1/lesson-from-photo` | the app | voice + the only door to Meta; holds the key |
+| **Meta Model API** | the server only | transcription, vision (NO text-to-speech endpoint exists) |
+
+## Natural voice (runtime, in-app generation)
+
+- Meta's Model API has **no TTS endpoint** (verified 2026-10-28 on dev.meta.ai/docs/models:
+  Muse Voice Transcribe = speech-to-text only, "does not synthesize speech").
+- So `POST /v1/speak { text, lang? } -> audio/wav` is served by a neural TTS engine
+  (Piper, open-source) running ON the Yekiva server, per request, per language
+  (`fr_FR-upmc-medium`, `sw_CD-lanfrica-medium`; override with `YEKIVA_VOICES`).
+- Nothing is pre-generated at build time: packs carry text only. The app caches each
+  utterance on-device (IndexedDB) after the first play, for offline replay.
+- Server setup: `pip install piper-tts` once; voices download automatically on first use.
+- Without the engine: the server answers `501` and the app falls back to the phone voice.
 
 Later, to distribute packs: a plain `index.json` file published (GitHub Pages / Releases) listing packs, versions and hashes; the app downloads what changed when there is a connection. No application server needed for that.
