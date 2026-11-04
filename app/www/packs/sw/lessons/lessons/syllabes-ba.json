@@ -1,0 +1,234 @@
+{
+  "id": "syllabes-ba",
+  "title": "Silabi ba, be, bo",
+  "symbol": "ba · be · bo",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza ba, kama mwanzoni mwa baba. Gusa ba."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "be"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza be, kama katika bega. Gusa be."
+        },
+        "choices": [
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "be",
+        "context": {
+          "letter": "be",
+          "word": "bega",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bo"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza bo, kama katika boma. Gusa bo."
+        },
+        "choices": [
+          {
+            "id": "bo",
+            "text": "bo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "bo",
+        "context": {
+          "letter": "bo",
+          "word": "boma",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa ba."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:be"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa be."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "be",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:bo"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa bo."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "bo",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

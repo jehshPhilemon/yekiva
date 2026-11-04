@@ -1,9 +1,8 @@
 // Écran "Son et voix" : diagnostic 100 % tactile, sans URL ni console.
-// Pensé pour un testeur sans clavier : 3 gros boutons = 3 tests, chacun
+// Pensé pour un testeur sans clavier : 2 gros boutons = 2 tests, chacun
 // affiche son résultat en toutes lettres + parle quand il le peut.
 //   1. "bip" : le haut-parleur sort-il un son ? (hors voix)
-//   2. "voix téléphone" : la synthèse vocale de secours parle-t-elle ?
-//   3. "voix API" : la voix naturelle (API Yekiva directe) répond-elle ?
+//   2. "voix API" : la voix naturelle (API Yekiva directe) répond-elle ?
 // + un bouton "erreurs" qui affiche le bandeau de debug (5-tapes sinon).
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
@@ -17,7 +16,6 @@ export function diagScreen({ services, go }) {
   const speaker = services.speaker;
   const line1 = resultLine("Appuyez sur un bouton pour tester le son.");
   const line2 = resultLine("");
-  const line3 = resultLine("");
 
   const busy = (el, msg) => el.replaceChildren(msg);
   const say = (el, ok, detail) => {
@@ -35,20 +33,8 @@ export function diagScreen({ services, go }) {
       say(line1, r.ok, r.detail);
     },
   });
-  const btnPhone = tile("mic", {
-    size: 56, label: "test de la voix téléphone", caption: "2 · voix téléphone",
-    className: "diag-btn",
-    onClick: async () => {
-      busy(line2, "…");
-      const lang = services.transcriber ? undefined : undefined;
-      void lang;
-      const code = "fr";
-      const r = await speaker.testPhoneVoice(code);
-      say(line2, r.ok, r.detail);
-    },
-  });
   const btnServer = tile("cloudoff", {
-    size: 56, label: "test de la voix API", caption: "3 · voix API",
+    size: 56, label: "test de la voix API", caption: "2 · voix API",
     className: "diag-btn",
     onClick: async () => {
       busy(line3, "…");
@@ -75,7 +61,7 @@ export function diagScreen({ services, go }) {
     }
   })();
   const summaryText = !base
-    ? "API NON configurée : cet APK a été construit sans --api (cache + voix téléphone uniquement)."
+    ? "API NON configurée : cet APK a été construit sans --api. La voix API est indisponible."
     : hasKey === false
       ? `API ${base} : clé manquante (build sans --key) → l'API répondra 401.`
       : `API configurée : ${base}`;
@@ -103,8 +89,7 @@ export function diagScreen({ services, go }) {
     h("h1", { class: "diag-title" }, "Son et voix"),
     h("div", { class: "diag-sub" }, "3 tests, dans l'ordre. Si le 1 échoue : montez le volume / quittez le mode silencieux."),
     btnBeep, line1,
-    btnPhone, line2,
-    btnServer, line3,
+    btnServer, line2,
     h("div", { class: "diag-sep" }),
     summary,
     h("div", { class: "path-actions" }, btnErrors, btnBack),

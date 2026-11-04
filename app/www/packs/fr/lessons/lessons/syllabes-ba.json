@@ -1,0 +1,234 @@
+{
+  "id": "syllabes-ba",
+  "title": "Les syllabes ba, bo, bi",
+  "symbol": "ba · bo · bi",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute ba, comme le début de ballon. Touche ba."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "ballon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bo"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute bo, comme dans bonbon. Touche bo."
+        },
+        "choices": [
+          {
+            "id": "bo",
+            "text": "bo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "bo",
+        "context": {
+          "letter": "bo",
+          "word": "bonbon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bi"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute bi, comme dans biscuit. Touche bi."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "bi",
+        "context": {
+          "letter": "bi",
+          "word": "biscuit",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ballon"
+      ],
+      "params": {
+        "word": "ballon",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "ba",
+          "word": "ballon",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ba."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "ballon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:bo"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche bo."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "bo",
+        "context": {
+          "letter": "ba",
+          "word": "ballon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:bi"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche bi."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "bi",
+        "context": {
+          "letter": "ba",
+          "word": "ballon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ballon"
+      ],
+      "params": {
+        "word": "ballon",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ba",
+          "word": "ballon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

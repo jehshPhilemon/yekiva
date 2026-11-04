@@ -1,0 +1,203 @@
+{
+  "id": "mots-simples",
+  "title": "Maloba na ngai ya liboso",
+  "symbol": "mama  tata  lala",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba mama. Simba liloba mama."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "mama",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "tata"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba tata. Simba liloba tata."
+        },
+        "choices": [
+          {
+            "id": "tata",
+            "text": "tata"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "tata",
+        "context": {
+          "letter": "ta",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba mama."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "mama",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:tata"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba tata."
+        },
+        "choices": [
+          {
+            "id": "tata",
+            "text": "tata"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "tata",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

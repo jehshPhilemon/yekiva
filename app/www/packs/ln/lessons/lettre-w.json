@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : wagon. Touche la lettre du son w."
+          "text": "Yoka : wagon. Simba letre ya mongongo w."
         },
         "choices": [
           {
-            "id": "m",
-            "text": "m"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "w",
             "text": "w"
-          },
-          {
-            "id": "v",
-            "text": "v"
           }
         ],
         "answer": "w",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "w",
             "text": "w"
-          },
-          {
-            "id": "v",
-            "text": "v"
-          },
-          {
-            "id": "m",
-            "text": "m"
           }
         ],
         "answer": "w",
@@ -92,7 +92,7 @@
       "params": {
         "word": "wagon",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "W  w",
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche w."
+          "text": "Motuna 1 na 3 : simba w."
         },
         "choices": [
           {
@@ -117,12 +117,12 @@
             "text": "a"
           },
           {
-            "id": "w",
-            "text": "w"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "w",
+            "text": "w"
           }
         ],
         "answer": "w",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "w",
-            "text": "w"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -173,12 +173,12 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
           {
-            "id": "w",
-            "text": "w"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "wagon",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

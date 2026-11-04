@@ -1,0 +1,221 @@
+{
+  "id": "consonne-m",
+  "title": "Konsonanti M",
+  "symbol": "M · m",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "glyph": "m:lower_script",
+        "say": {
+          "text": "Herufi M inatoa sauti mmm, kama katika neno mama. Sikiliza : mmm."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : mama. Gusa herufi ya sauti m."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "m",
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : mama. Gusa herufi ya sauti mmm."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "m",
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:m"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa m."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "m",
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

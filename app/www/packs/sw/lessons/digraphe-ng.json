@@ -19,12 +19,12 @@
             "text": "ng"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "g",
-            "text": "g"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ng",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
-            "id": "unga",
-            "text": "unga"
-          },
-          {
-            "id": "anga",
-            "text": "anga"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "unga",
             "text": "unga"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "unga",
@@ -74,7 +74,7 @@
       "params": {
         "word": "unga",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "ng",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ng."
+          "text": "Swali 1 kati ya 3 : gusa ng."
         },
         "choices": [
-          {
-            "id": "a",
-            "text": "a"
-          },
           {
             "id": "ng",
             "text": "ng"
           },
           {
-            "id": "unga",
-            "text": "unga"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ng",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche unga."
+          "text": "Swali 2 kati ya 3 : gusa unga."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "unga",
             "text": "unga"
           },
           {
-            "id": "ng",
-            "text": "ng"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "unga",
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
@@ -163,12 +163,12 @@
             "text": "a"
           },
           {
-            "id": "ng",
-            "text": "ng"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "unga",
-            "text": "unga"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "unga",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

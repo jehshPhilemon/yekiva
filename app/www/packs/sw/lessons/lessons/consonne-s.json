@@ -1,0 +1,221 @@
+{
+  "id": "consonne-s",
+  "title": "Konsonanti S",
+  "symbol": "S · s",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "Herufi S inatoa sauti sss, kama katika neno sisi. Sikiliza : sss."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : sisi. Gusa herufi ya sauti s."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : sisi. Gusa herufi ya sauti sss."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "word": "sisi",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:s"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa s."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:sisi"
+      ],
+      "params": {
+        "word": "sisi",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

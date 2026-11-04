@@ -1,0 +1,190 @@
+{
+  "id": "lecture-1",
+  "title": "Ninasoma hadithi",
+  "symbol": "Mtoto analala.",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "say_word",
+      "items": [
+        "Mama analala."
+      ],
+      "params": {
+        "word": "Mama analala.",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Mtoto analala."
+      ],
+      "params": {
+        "word": "Mtoto analala.",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "Mtoto",
+          "word": "Mtoto analala.",
+          "icon": "moon"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "Mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza swali : nani analala ? Gusa jibu."
+        },
+        "choices": [
+          {
+            "id": "Mama",
+            "text": "Mama"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "Mama",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama analala."
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa Mama analala.."
+        },
+        "choices": [
+          {
+            "id": "Mama analala.",
+            "text": "Mama analala."
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "Mama analala.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mtoto analala."
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa Mtoto analala.."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mtoto analala.",
+            "text": "Mtoto analala."
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "Mtoto analala.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa Mama."
+        },
+        "choices": [
+          {
+            "id": "Mama",
+            "text": "Mama"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "Mama",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Mtoto analala."
+      ],
+      "params": {
+        "word": "Mtoto analala.",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

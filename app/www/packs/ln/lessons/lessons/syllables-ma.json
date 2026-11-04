@@ -1,0 +1,161 @@
+{
+  "id": "syllables-ma",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ma"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka silabi ma na liloba mama. Simba ma."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ma",
+            "text": "ma"
+          }
+        ],
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ji"
+      ],
+      "params": {
+        "say": {
+          "text": "ji"
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          }
+        ],
+        "answer": "ji"
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ma"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba ma."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ma",
+            "text": "ma"
+          }
+        ],
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ji"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba ji."
+        },
+        "choices": [
+          {
+            "id": "ji",
+            "text": "ji"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ji",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ],
+  "title": "Silabi ma",
+  "symbol": "ma",
+  "icon": "family"
+}

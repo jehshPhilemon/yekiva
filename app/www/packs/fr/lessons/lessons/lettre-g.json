@@ -1,0 +1,221 @@
+{
+  "id": "lettre-g",
+  "title": "La lettre G",
+  "symbol": "G · g",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "glyph": "g:lower_script",
+        "say": {
+          "text": "La lettre G fait le son ggg, comme dans gâteau. Écoute bien : ggg."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : gâteau. Touche la lettre du son g."
+        },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : gâteau. Touche la lettre du son ggg."
+        },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "word": "gâteau",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:g"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche g."
+        },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:gâteau"
+      ],
+      "params": {
+        "word": "gâteau",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

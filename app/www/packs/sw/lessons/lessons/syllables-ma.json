@@ -1,0 +1,161 @@
+{
+  "id": "syllables-ma",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ma"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza silabi ma katika neno mama. Gusa ma."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ma",
+            "text": "ma"
+          }
+        ],
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ji"
+      ],
+      "params": {
+        "say": {
+          "text": "ji"
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ji"
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ma"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa ma."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ma",
+            "text": "ma"
+          }
+        ],
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ji"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa ji."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ji",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ],
+  "title": "Silabi ma",
+  "symbol": "ma",
+  "icon": "family"
+}

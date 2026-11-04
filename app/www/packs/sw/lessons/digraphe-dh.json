@@ -19,12 +19,12 @@
             "text": "dh"
           },
           {
-            "id": "d",
-            "text": "d"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "th",
-            "text": "th"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "dh",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "dhahabu",
             "text": "dhahabu"
-          },
-          {
-            "id": "dada",
-            "text": "dada"
-          },
-          {
-            "id": "fedha",
-            "text": "fedha"
           }
         ],
         "answer": "dhahabu",
@@ -74,7 +74,7 @@
       "params": {
         "word": "dhahabu",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "dh",
@@ -91,13 +91,9 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche dh."
+          "text": "Swali 1 kati ya 3 : gusa dh."
         },
         "choices": [
-          {
-            "id": "dhahabu",
-            "text": "dhahabu"
-          },
           {
             "id": "dh",
             "text": "dh"
@@ -105,6 +101,10 @@
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "dh",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche dhahabu."
+          "text": "Swali 2 kati ya 3 : gusa dhahabu."
         },
         "choices": [
+          {
+            "id": "dhahabu",
+            "text": "dhahabu"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "dh",
-            "text": "dh"
-          },
-          {
-            "id": "dhahabu",
-            "text": "dhahabu"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "dhahabu",
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
@@ -163,12 +163,12 @@
             "text": "a"
           },
           {
-            "id": "dh",
-            "text": "dh"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "dhahabu",
-            "text": "dhahabu"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "dhahabu",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

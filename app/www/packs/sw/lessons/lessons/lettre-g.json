@@ -1,0 +1,221 @@
+{
+  "id": "lettre-g",
+  "title": "Herufi G",
+  "symbol": "G · g",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "glyph": "g:lower_script",
+        "say": {
+          "text": "Herufi G inatoa sauti ggg, kama katika neno gari. Sikiliza : ggg."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : gari. Gusa herufi ya sauti g."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : gari. Gusa herufi ya sauti ggg."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "word": "gari",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:g"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa g."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:gari"
+      ],
+      "params": {
+        "word": "gari",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-nj",
+  "title": "Mongongo NJ",
+  "symbol": "nj",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nj"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na J elongo ebimisaka mongongo moko : nj, lokola na njela. Simba nj."
+        },
+        "choices": [
+          {
+            "id": "nj",
+            "text": "nj"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "nj",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "njela"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba njela. Simba liloba njela."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "njela",
+            "text": "njela"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "njela",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "njela"
+      ],
+      "params": {
+        "word": "njela",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nj"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba nj."
+        },
+        "choices": [
+          {
+            "id": "nj",
+            "text": "nj"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "nj",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:njela"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba njela."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "njela",
+            "text": "njela"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "njela",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:njela"
+      ],
+      "params": {
+        "word": "njela",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

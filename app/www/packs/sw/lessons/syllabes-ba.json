@@ -19,12 +19,12 @@
             "text": "ba"
           },
           {
-            "id": "be",
-            "text": "be"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "bo",
-            "text": "bo"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ba",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
             "id": "be",
             "text": "be"
           },
           {
-            "id": "bo",
-            "text": "bo"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "be",
@@ -77,16 +77,16 @@
         },
         "choices": [
           {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
-            "id": "be",
-            "text": "be"
-          },
-          {
             "id": "bo",
             "text": "bo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "bo",
@@ -105,7 +105,7 @@
       "params": {
         "word": "baba",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "ba",
@@ -122,20 +122,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ba."
+          "text": "Swali 1 kati ya 3 : gusa ba."
         },
         "choices": [
-          {
-            "id": "be",
-            "text": "be"
-          },
           {
             "id": "ba",
             "text": "ba"
           },
           {
-            "id": "bo",
-            "text": "bo"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ba",
@@ -154,20 +154,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche be."
+          "text": "Swali 2 kati ya 3 : gusa be."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "be",
             "text": "be"
           },
           {
-            "id": "bo",
-            "text": "bo"
-          },
-          {
-            "id": "ba",
-            "text": "ba"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "be",
@@ -186,20 +186,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche bo."
+          "text": "Swali 3 kati ya 3 : gusa bo."
         },
         "choices": [
           {
-            "id": "be",
-            "text": "be"
-          },
-          {
-            "id": "ba",
-            "text": "ba"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "bo",
             "text": "bo"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "bo",
@@ -219,7 +219,7 @@
       "params": {
         "word": "baba",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

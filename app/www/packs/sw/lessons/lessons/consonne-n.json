@@ -1,0 +1,221 @@
+{
+  "id": "consonne-n",
+  "title": "Konsonanti N",
+  "symbol": "N · n",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "glyph": "n:lower_script",
+        "say": {
+          "text": "Herufi N inatoa sauti nnn, kama katika neno nani. Sikiliza : nnn."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : nani. Gusa herufi ya sauti n."
+        },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : nani. Gusa herufi ya sauti nnn."
+        },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "word": "nani",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:n"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa n."
+        },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nani"
+      ],
+      "params": {
+        "word": "nani",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

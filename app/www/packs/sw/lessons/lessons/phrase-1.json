@@ -1,0 +1,172 @@
+{
+  "id": "phrase-1",
+  "title": "Sentensi yangu ya kwanza",
+  "symbol": "Mama na baba.",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "Mama na baba."
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza sentensi. Gusa sentensi unayosikia."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama na baba.",
+            "text": "Mama na baba."
+          }
+        ],
+        "answer": "Mama na baba.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na baba.",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Mama na baba."
+      ],
+      "params": {
+        "word": "Mama na baba.",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na baba.",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama na baba."
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa Mama na baba.."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama na baba.",
+            "text": "Mama na baba."
+          }
+        ],
+        "answer": "Mama na baba.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na baba.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na baba.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na baba.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Mama na baba."
+      ],
+      "params": {
+        "word": "Mama na baba.",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na baba.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

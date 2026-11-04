@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "nj",
             "text": "nj"
           },
           {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "j",
-            "text": "j"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "nj",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "njia",
             "text": "njia"
           },
           {
-            "id": "njugu",
-            "text": "njugu"
-          },
-          {
-            "id": "nyumba",
-            "text": "nyumba"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "njia",
@@ -74,7 +74,7 @@
       "params": {
         "word": "njia",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "nj",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche nj."
+          "text": "Swali 1 kati ya 3 : gusa nj."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
-          },
-          {
-            "id": "njia",
-            "text": "njia"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "nj",
             "text": "nj"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "nj",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche njia."
+          "text": "Swali 2 kati ya 3 : gusa njia."
         },
         "choices": [
-          {
-            "id": "a",
-            "text": "a"
-          },
           {
             "id": "njia",
             "text": "njia"
           },
           {
-            "id": "nj",
-            "text": "nj"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "njia",
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
@@ -163,12 +163,12 @@
             "text": "a"
           },
           {
-            "id": "nj",
-            "text": "nj"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "njia",
-            "text": "njia"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "njia",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

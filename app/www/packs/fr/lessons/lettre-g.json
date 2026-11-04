@@ -37,12 +37,12 @@
             "text": "g"
           },
           {
-            "id": "j",
-            "text": "j"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "q",
-            "text": "q"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "g",
@@ -68,12 +68,12 @@
             "text": "g"
           },
           {
-            "id": "k",
-            "text": "k"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "j",
-            "text": "j"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "g",
@@ -113,16 +113,16 @@
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "g",
             "text": "g"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "g",
@@ -145,16 +145,16 @@
         },
         "choices": [
           {
-            "id": "g",
-            "text": "g"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -177,16 +177,16 @@
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
             "text": "e"
           },
           {
-            "id": "g",
-            "text": "g"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "e",

@@ -1,0 +1,190 @@
+{
+  "id": "lecture-1",
+  "title": "Nazali kotanga lisolo",
+  "symbol": "Bana balali.",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "say_word",
+      "items": [
+        "Mama alali."
+      ],
+      "params": {
+        "word": "Mama alali.",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Bana balali."
+      ],
+      "params": {
+        "word": "Bana balali.",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "Bana",
+          "word": "Bana balali.",
+          "icon": "moon"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "Mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka motuna : nani alali ? Simba eyano."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama",
+            "text": "Mama"
+          }
+        ],
+        "answer": "Mama",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama alali."
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba Mama alali.."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama alali.",
+            "text": "Mama alali."
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "Mama alali.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Bana balali."
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba Bana balali.."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Bana balali.",
+            "text": "Bana balali."
+          }
+        ],
+        "answer": "Bana balali.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba Mama."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama",
+            "text": "Mama"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "Mama",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Bana balali."
+      ],
+      "params": {
+        "word": "Bana balali.",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

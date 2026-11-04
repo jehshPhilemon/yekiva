@@ -1,0 +1,221 @@
+{
+  "id": "consonne-m",
+  "title": "Konsoni M",
+  "symbol": "M  m",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "glyph": "m:lower_script",
+        "say": {
+          "text": "Letre M ezali na mongongo mmm, lokola na liloba mama. Yoka : mmm."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "M  m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mama. Simba letre ya mongongo m."
+        },
+        "choices": [
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "m",
+        "context": {
+          "letter": "M  m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mama. Simba letre ya mongongo mmm."
+        },
+        "choices": [
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "m",
+        "context": {
+          "letter": "M  m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "M  m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:m"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba m."
+        },
+        "choices": [
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "m",
+        "context": {
+          "letter": "M  m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "M  m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "M  m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "M  m",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

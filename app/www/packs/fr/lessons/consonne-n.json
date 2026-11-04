@@ -33,16 +33,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "n",
             "text": "n"
-          },
-          {
-            "id": "u",
-            "text": "u"
-          },
-          {
-            "id": "m",
-            "text": "m"
           }
         ],
         "answer": "n",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "n",
             "text": "n"
-          },
-          {
-            "id": "m",
-            "text": "m"
-          },
-          {
-            "id": "t",
-            "text": "t"
           }
         ],
         "answer": "n",
@@ -113,16 +113,16 @@
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "n",
             "text": "n"
-          },
-          {
-            "id": "a",
-            "text": "a"
           }
         ],
         "answer": "n",
@@ -145,16 +145,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "e",
-            "text": "e"
           }
         ],
         "answer": "a",
@@ -177,16 +177,16 @@
         },
         "choices": [
           {
+            "id": "e",
+            "text": "e"
+          },
+          {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "e",

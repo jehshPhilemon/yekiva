@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : dada. Touche la lettre du son d."
+          "text": "Sikiliza : dada. Gusa herufi ya sauti d."
         },
         "choices": [
           {
-            "id": "p",
-            "text": "p"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "d",
             "text": "d"
-          },
-          {
-            "id": "b",
-            "text": "b"
           }
         ],
         "answer": "d",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "d",
             "text": "d"
-          },
-          {
-            "id": "b",
-            "text": "b"
-          },
-          {
-            "id": "t",
-            "text": "t"
           }
         ],
         "answer": "d",
@@ -92,7 +92,7 @@
       "params": {
         "word": "dada",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "D · d",
@@ -109,20 +109,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche d."
+          "text": "Swali 1 kati ya 3 : gusa d."
         },
         "choices": [
-          {
-            "id": "d",
-            "text": "d"
-          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "d",
+            "text": "d"
           }
         ],
         "answer": "d",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "d",
-            "text": "d"
-          },
-          {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -173,16 +173,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
           {
-            "id": "d",
-            "text": "d"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "dada",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

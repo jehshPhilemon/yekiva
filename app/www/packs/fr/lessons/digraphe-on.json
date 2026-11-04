@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "on",
             "text": "on"
-          },
-          {
-            "id": "o",
-            "text": "o"
-          },
-          {
-            "id": "an",
-            "text": "an"
           }
         ],
         "answer": "on",
@@ -50,12 +50,12 @@
             "text": "bonbon"
           },
           {
-            "id": "ballon",
-            "text": "ballon"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "bébé",
-            "text": "bébé"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "bonbon",
@@ -95,16 +95,16 @@
         },
         "choices": [
           {
-            "id": "bonbon",
-            "text": "bonbon"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "on",
             "text": "on"
-          },
-          {
-            "id": "a",
-            "text": "a"
           }
         ],
         "answer": "on",
@@ -127,16 +127,16 @@
         },
         "choices": [
           {
-            "id": "on",
-            "text": "on"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "bonbon",
             "text": "bonbon"
-          },
-          {
-            "id": "a",
-            "text": "a"
           }
         ],
         "answer": "bonbon",
@@ -159,16 +159,16 @@
         },
         "choices": [
           {
-            "id": "bonbon",
-            "text": "bonbon"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "on",
-            "text": "on"
           }
         ],
         "answer": "a",

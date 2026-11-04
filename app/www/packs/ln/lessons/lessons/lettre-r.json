@@ -1,0 +1,221 @@
+{
+  "id": "lettre-r",
+  "title": "Letre R",
+  "symbol": "R  r",
+  "icon": "music",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "Letre R ezali na mongongo rrr, lokola na liloba radio. Yoka : rrr."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : radio. Simba letre ya mongongo r."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : radio. Simba letre ya mongongo rrr."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "word": "radio",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:r"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba r."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:radio"
+      ],
+      "params": {
+        "word": "radio",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

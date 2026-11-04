@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : tata. Touche la lettre du son t."
+          "text": "Sikiliza : tata. Gusa herufi ya sauti t."
         },
         "choices": [
           {
@@ -37,12 +37,12 @@
             "text": "t"
           },
           {
-            "id": "f",
-            "text": "f"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "w",
-            "text": "w"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "t",
@@ -68,12 +68,12 @@
             "text": "t"
           },
           {
-            "id": "s",
-            "text": "s"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "t",
@@ -92,7 +92,7 @@
       "params": {
         "word": "tata",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "T · t",
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche t."
+          "text": "Swali 1 kati ya 3 : gusa t."
         },
         "choices": [
           {
@@ -117,12 +117,12 @@
             "text": "t"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "t",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "t",
-            "text": "t"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
             "text": "e"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "tata",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

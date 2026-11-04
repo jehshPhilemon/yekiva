@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-gh",
+  "title": "Sauti GH",
+  "symbol": "gh",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "gh"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : G na H pamoja hutoa sauti moja : gh, kama katika ghali. Gusa gh."
+        },
+        "choices": [
+          {
+            "id": "gh",
+            "text": "gh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "gh",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ghali"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno ghali. Gusa neno ghali."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ghali",
+            "text": "ghali"
+          }
+        ],
+        "answer": "ghali",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ghali"
+      ],
+      "params": {
+        "word": "ghali",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:gh"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa gh."
+        },
+        "choices": [
+          {
+            "id": "gh",
+            "text": "gh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "gh",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ghali"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa ghali."
+        },
+        "choices": [
+          {
+            "id": "ghali",
+            "text": "ghali"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ghali",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ghali"
+      ],
+      "params": {
+        "word": "ghali",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

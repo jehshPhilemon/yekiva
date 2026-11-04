@@ -1,6 +1,6 @@
 {
   "id": "letter-a",
-  "title": "A comme avion",
+  "title": "A, a : les 4 formes",
   "symbol": "A · a",
   "icon": "plane",
   "steps": [
@@ -10,11 +10,65 @@
         "a"
       ],
       "params": {
+        "glyph": "A:upper_print",
+        "say": {
+          "text": "La lettre A. A comme avion. Voici le A majuscule. Ecoute bien, puis regarde comment il s'ecrit."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
         "glyph": "a:lower_script",
         "say": {
-          "text": "A comme avion. Écoute le son a, puis regarde comment la lettre a s’écrit."
+          "text": "Voici le a minuscule manuscrit. Regarde bien chaque trait."
         },
-        "durationMs": 2600,
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_print",
+        "say": {
+          "text": "Voici le a minuscule imprime, comme dans les livres."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "A:upper_script",
+        "say": {
+          "text": "Voici le A majuscule manuscrit. Regarde bien."
+        },
+        "durationMs": 3200,
         "context": {
           "letter": "A · a",
           "word": "avion",
@@ -25,32 +79,39 @@
     {
       "type": "listen_tap",
       "items": [
-        "a"
+        "A"
       ],
       "params": {
         "say": {
-          "text": "Écoute : avion. Touche la lettre du son a."
+          "text": "Ecoute bien : avion. Touche le A majuscule."
         },
         "choices": [
           {
-            "id": "o",
-            "text": "o"
+            "id": "A",
+            "text": "A",
+            "font": "print"
           },
           {
             "id": "a",
-            "text": "a"
+            "text": "a",
+            "font": "print"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
           }
         ],
-        "answer": "a",
+        "answer": "A",
         "context": {
           "letter": "A · a",
           "word": "avion",
           "icon": "plane"
-        }
+        },
+        "answers": [
+          "A",
+          "A-script"
+        ]
       }
     },
     {
@@ -60,20 +121,23 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : avion. Touche la lettre du son a."
+          "text": "Ecoute bien : avion. Touche le a minuscule."
         },
         "choices": [
           {
             "id": "a",
-            "text": "a"
+            "text": "a",
+            "font": "print"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "A",
+            "text": "A",
+            "font": "print"
           },
           {
-            "id": "o",
-            "text": "o"
+            "id": "a-script",
+            "text": "a",
+            "font": "script"
           }
         ],
         "answer": "a",
@@ -81,7 +145,49 @@
           "letter": "A · a",
           "word": "avion",
           "icon": "plane"
-        }
+        },
+        "answers": [
+          "a",
+          "a-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "A"
+      ],
+      "params": {
+        "say": {
+          "text": "Touche le grand A, celui qui est écrit à la main."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        },
+        "answers": [
+          "A",
+          "A-script"
+        ]
       }
     },
     {
@@ -92,14 +198,53 @@
       "params": {
         "word": "avion",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
+        "hideWord": true,
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:A"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche le A majuscule."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
         "context": {
           "letter": "A · a",
           "word": "avion",
           "icon": "plane"
         },
-        "hideWord": true
+        "isQuiz": true,
+        "answers": [
+          "A",
+          "A-script"
+        ]
       }
     },
     {
@@ -109,20 +254,23 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche a."
+          "text": "Question 2 sur 3 : touche le a minuscule."
         },
         "choices": [
           {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
             "id": "a",
-            "text": "a"
+            "text": "a",
+            "font": "print"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "i",
-            "text": "i"
+            "id": "a-script",
+            "text": "a",
+            "font": "script"
           }
         ],
         "answer": "a",
@@ -131,71 +279,50 @@
           "word": "avion",
           "icon": "plane"
         },
-        "isQuiz": true
+        "isQuiz": true,
+        "answers": [
+          "a",
+          "a-script"
+        ]
       }
     },
     {
       "type": "listen_tap",
       "items": [
-        "quiz:a"
+        "quiz:A"
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Question 3 sur 3 : touche le grand A."
         },
         "choices": [
           {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
             "id": "a",
-            "text": "a"
+            "text": "a",
+            "font": "print"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "i",
-            "text": "i"
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
           }
         ],
-        "answer": "a",
+        "answer": "A",
         "context": {
           "letter": "A · a",
           "word": "avion",
           "icon": "plane"
         },
-        "isQuiz": true
-      }
-    },
-    {
-      "type": "listen_tap",
-      "items": [
-        "quiz:e"
-      ],
-      "params": {
-        "say": {
-          "text": "Question 3 sur 3 : touche e."
-        },
-        "choices": [
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "a",
-            "text": "a"
-          },
-          {
-            "id": "i",
-            "text": "i"
-          }
-        ],
-        "answer": "e",
-        "context": {
-          "letter": "A · a",
-          "word": "avion",
-          "icon": "plane"
-        },
-        "isQuiz": true
+        "isQuiz": true,
+        "answers": [
+          "A",
+          "A-script"
+        ]
       }
     },
     {
@@ -206,7 +333,7 @@
       "params": {
         "word": "avion",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Derniere question : ecoute le mot, puis dis-le."
         },
         "hideWord": true,
         "context": {

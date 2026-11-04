@@ -1,6 +1,6 @@
 {
   "id": "letter-a",
-  "title": "Sauti a katika mama",
+  "title": "A, a : maumbo manne",
   "symbol": "A · a",
   "icon": "family",
   "steps": [
@@ -10,11 +10,65 @@
         "a"
       ],
       "params": {
+        "glyph": "A:upper_print",
+        "say": {
+          "text": "Herufi A. A kama mama. Hii ni A kubwa. Sikiliza, tazama jinsi inavyoandikwa."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
         "glyph": "a:lower_script",
         "say": {
-          "text": "Sikiliza sauti a katika neno mama. Tazama herufi a ikiandikwa."
+          "text": "Hii ni a ndogo ya mwandiko. Tazama kila mstari."
         },
-        "durationMs": 2600,
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_print",
+        "say": {
+          "text": "Hii ni a ndogo ya kuchapa, kama vitabuni."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "A:upper_script",
+        "say": {
+          "text": "Hii ni A kubwa ya mwandiko. Tazama vizuri."
+        },
+        "durationMs": 3200,
         "context": {
           "letter": "A · a",
           "word": "mama",
@@ -25,32 +79,39 @@
     {
       "type": "listen_tap",
       "items": [
-        "a"
+        "A"
       ],
       "params": {
         "say": {
-          "text": "Écoute : mama. Touche la lettre du son a."
+          "text": "Sikiliza : mama. Gusa A kubwa."
         },
         "choices": [
           {
-            "id": "o",
-            "text": "o"
+            "id": "A",
+            "text": "A",
+            "font": "print"
           },
           {
             "id": "a",
-            "text": "a"
+            "text": "a",
+            "font": "print"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
           }
         ],
-        "answer": "a",
+        "answer": "A",
         "context": {
           "letter": "A · a",
           "word": "mama",
           "icon": "family"
-        }
+        },
+        "answers": [
+          "A",
+          "A-script"
+        ]
       }
     },
     {
@@ -60,20 +121,23 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza : mama. Gusa herufi ya sauti a."
+          "text": "Sikiliza : mama. Gusa a ndogo."
         },
         "choices": [
           {
             "id": "a",
-            "text": "a"
+            "text": "a",
+            "font": "print"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "A",
+            "text": "A",
+            "font": "print"
           },
           {
-            "id": "i",
-            "text": "i"
+            "id": "a-script",
+            "text": "a",
+            "font": "script"
           }
         ],
         "answer": "a",
@@ -81,7 +145,49 @@
           "letter": "A · a",
           "word": "mama",
           "icon": "family"
-        }
+        },
+        "answers": [
+          "a",
+          "a-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "A"
+      ],
+      "params": {
+        "say": {
+          "text": "Gusa A kubwa ya mwandiko."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "answers": [
+          "A",
+          "A-script"
+        ]
       }
     },
     {
@@ -92,14 +198,53 @@
       "params": {
         "word": "mama",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
+        "hideWord": true,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:A"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa A kubwa."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
         "context": {
           "letter": "A · a",
           "word": "mama",
           "icon": "family"
         },
-        "hideWord": true
+        "isQuiz": true,
+        "answers": [
+          "A",
+          "A-script"
+        ]
       }
     },
     {
@@ -109,20 +254,23 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a ndogo."
         },
         "choices": [
           {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
             "id": "a",
-            "text": "a"
+            "text": "a",
+            "font": "print"
           },
           {
-            "id": "i",
-            "text": "i"
-          },
-          {
-            "id": "e",
-            "text": "e"
+            "id": "a-script",
+            "text": "a",
+            "font": "script"
           }
         ],
         "answer": "a",
@@ -131,71 +279,50 @@
           "word": "mama",
           "icon": "family"
         },
-        "isQuiz": true
+        "isQuiz": true,
+        "answers": [
+          "a",
+          "a-script"
+        ]
       }
     },
     {
       "type": "listen_tap",
       "items": [
-        "quiz:a"
+        "quiz:A"
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa A kubwa ya mwandiko."
         },
         "choices": [
           {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
             "id": "a",
-            "text": "a"
+            "text": "a",
+            "font": "print"
           },
           {
-            "id": "i",
-            "text": "i"
-          },
-          {
-            "id": "e",
-            "text": "e"
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
           }
         ],
-        "answer": "a",
+        "answer": "A",
         "context": {
           "letter": "A · a",
           "word": "mama",
           "icon": "family"
         },
-        "isQuiz": true
-      }
-    },
-    {
-      "type": "listen_tap",
-      "items": [
-        "quiz:e"
-      ],
-      "params": {
-        "say": {
-          "text": "Question 3 sur 3 : touche e."
-        },
-        "choices": [
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "i",
-            "text": "i"
-          },
-          {
-            "id": "a",
-            "text": "a"
-          }
-        ],
-        "answer": "e",
-        "context": {
-          "letter": "A · a",
-          "word": "mama",
-          "icon": "family"
-        },
-        "isQuiz": true
+        "isQuiz": true,
+        "answers": [
+          "A",
+          "A-script"
+        ]
       }
     },
     {
@@ -206,7 +333,7 @@
       "params": {
         "word": "mama",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

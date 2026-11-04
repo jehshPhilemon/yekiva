@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "nd",
             "text": "nd"
           },
           {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "d",
-            "text": "d"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "nd",
@@ -50,12 +50,12 @@
             "text": "ndizi"
           },
           {
-            "id": "ndege",
-            "text": "ndege"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "nazi",
-            "text": "nazi"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ndizi",
@@ -74,7 +74,7 @@
       "params": {
         "word": "ndizi",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "nd",
@@ -91,12 +91,12 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche nd."
+          "text": "Swali 1 kati ya 3 : gusa nd."
         },
         "choices": [
           {
-            "id": "ndizi",
-            "text": "ndizi"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "nd",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche ndizi."
+          "text": "Swali 2 kati ya 3 : gusa ndizi."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ndizi",
             "text": "ndizi"
           },
           {
-            "id": "nd",
-            "text": "nd"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ndizi",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "ndizi",
-            "text": "ndizi"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "nd",
-            "text": "nd"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "ndizi",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

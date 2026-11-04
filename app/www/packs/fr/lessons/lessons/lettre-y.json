@@ -1,0 +1,221 @@
+{
+  "id": "lettre-y",
+  "title": "La lettre Y",
+  "symbol": "Y · y",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "La lettre Y fait le son i, comme dans yaourt. Écoute bien : i."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : yaourt. Touche la lettre du son y."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : yaourt. Touche la lettre du son i."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "word": "yaourt",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:y"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche y."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:yaourt"
+      ],
+      "params": {
+        "word": "yaourt",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

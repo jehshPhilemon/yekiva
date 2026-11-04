@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-nj",
+  "title": "Sauti NJ",
+  "symbol": "nj",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nj"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na J pamoja hutoa sauti moja : nj, kama katika njia. Gusa nj."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nj",
+            "text": "nj"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nj",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "njia"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno njia. Gusa neno njia."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "njia",
+            "text": "njia"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "njia",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "njia"
+      ],
+      "params": {
+        "word": "njia",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nj"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa nj."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nj",
+            "text": "nj"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nj",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:njia"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa njia."
+        },
+        "choices": [
+          {
+            "id": "njia",
+            "text": "njia"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "njia",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:njia"
+      ],
+      "params": {
+        "word": "njia",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

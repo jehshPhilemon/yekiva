@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "mb",
             "text": "mb"
           },
           {
-            "id": "m",
-            "text": "m"
-          },
-          {
-            "id": "b",
-            "text": "b"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "mb",
@@ -50,12 +50,12 @@
             "text": "mboka"
           },
           {
-            "id": "mbwa",
-            "text": "mbwa"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "mbu",
-            "text": "mbu"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "mboka",
@@ -74,7 +74,7 @@
       "params": {
         "word": "mboka",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "mb",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche mb."
+          "text": "Motuna 1 na 3 : simba mb."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "mb",
             "text": "mb"
           },
           {
-            "id": "mboka",
-            "text": "mboka"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "mb",
@@ -123,13 +123,9 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche mboka."
+          "text": "Motuna 2 na 3 : simba mboka."
         },
         "choices": [
-          {
-            "id": "mb",
-            "text": "mb"
-          },
           {
             "id": "mboka",
             "text": "mboka"
@@ -137,6 +133,10 @@
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "mboka",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "mb",
-            "text": "mb"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "mboka",
-            "text": "mboka"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "mboka",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

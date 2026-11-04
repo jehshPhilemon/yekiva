@@ -1,0 +1,221 @@
+{
+  "id": "lettre-d",
+  "title": "Herufi D",
+  "symbol": "D · d",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "glyph": "d:lower_script",
+        "say": {
+          "text": "Herufi D inatoa sauti ddd, kama katika neno dada. Sikiliza : ddd."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : dada. Gusa herufi ya sauti d."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : dada. Gusa herufi ya sauti ddd."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "word": "dada",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:d"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa d."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:dada"
+      ],
+      "params": {
+        "word": "dada",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

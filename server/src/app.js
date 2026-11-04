@@ -59,7 +59,7 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
         res.writeHead(204, {
           "access-control-allow-origin": allowOrigin,
           "access-control-allow-methods": "POST, GET, OPTIONS",
-          "access-control-allow-headers": "content-type, x-app-token",
+          "access-control-allow-headers": "content-type, x-app-token, x-api-key",
           "access-control-max-age": "86400",
         });
         return res.end();
@@ -139,6 +139,20 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
         }
         if (typeof body.word !== "string" || !body.word.trim()) return send(400, { error: "field 'word' is required" });
         return send(200, await provider.generateLesson(body.word, { lang: body.lang ?? lang }));
+      }
+
+      if (req.method === "POST" && url.pathname === "/v1/chat") {
+        // Voice chat: the app sends the transcription, Spark answers in the same language.
+        // The app then reads the answer aloud with TTS (in the user's language).
+        if (!contentType.includes("application/json")) return send(415, { error: "application/json expected: { text, lang? }" });
+        let body;
+        try {
+          body = JSON.parse(String(await readBody(req, MAX_SPEAK_TEXT)));
+        } catch {
+          return send(400, { error: "invalid JSON" });
+        }
+        if (typeof body.text !== "string" || !body.text.trim()) return send(400, { error: "field 'text' is required" });
+        return send(200, await provider.chat(body.text, { lang: body.lang ?? lang }));
       }
 
       return send(404, { error: "unknown route" });

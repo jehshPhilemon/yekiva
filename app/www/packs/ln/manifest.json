@@ -169,5 +169,25 @@
   "conversation_offline": {
     "text": "Nasili koyeba nsango te. Tala internet mpe meka lisusu.",
     "audio": null
+  },
+  "photo_analyzing": {
+    "text": "Nazali kotala elilingi na yo…",
+    "audio": null
+  },
+  "photo_failed": {
+    "text": "Nasili kotanga elilingi oyo te. Meka na liloba emonanaka malamu.",
+    "audio": null
+  },
+  "conversation_thinking": {
+    "text": "Nazali kokanisa…",
+    "audio": null
+  },
+  "conversation_mic_error": {
+    "text": "Mongongo esalaka te. Tika mongongo mpe meka lisusu.",
+    "audio": null
+  },
+  "conversation_empty": {
+    "text": "Nayoki eloko te. Loba makasi pene na telefone, sima sima lisusu.",
+    "audio": null
   }
 }

@@ -1,0 +1,221 @@
+{
+  "id": "lettre-p",
+  "title": "La lettre P",
+  "symbol": "P · p",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "La lettre P fait le son ppp, comme dans papa. Écoute bien : ppp."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : papa. Touche la lettre du son p."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : papa. Touche la lettre du son ppp."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "word": "papa",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:p"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche p."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:papa"
+      ],
+      "params": {
+        "word": "papa",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

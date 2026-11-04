@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-ny",
+  "title": "Sauti NY",
+  "symbol": "ny",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ny"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na Y pamoja hutoa sauti moja : ny, kama katika nyumba. Gusa ny."
+        },
+        "choices": [
+          {
+            "id": "ny",
+            "text": "ny"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ny",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "nyumba"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno nyumba. Gusa neno nyumba."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nyumba",
+            "text": "nyumba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nyumba",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "nyumba"
+      ],
+      "params": {
+        "word": "nyumba",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ny"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa ny."
+        },
+        "choices": [
+          {
+            "id": "ny",
+            "text": "ny"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ny",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nyumba"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa nyumba."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nyumba",
+            "text": "nyumba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nyumba",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nyumba"
+      ],
+      "params": {
+        "word": "nyumba",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 // Codes langue API : fra / eng / swh / ln. Codes app : fr / sw / ln / en.
 // L'app appelle l'API directement, pareil dans Termux (navigateur) et dans l'APK
 // (Capacitor https://localhost) : même code, même comportement, en ligne comme hors-ligne.
-// Hors-ligne : speak() renvoie null -> le speaker rejoue le cache puis la voix téléphone.
+// Hors-ligne : speak() renvoie null -> le speaker rejoue le cache puis aucun fallback téléphone.
 export const API_LANG = { fr: "fra", sw: "swh", ln: "ln", en: "eng" };
 export const APP_LANG = { fra: "fr", swh: "sw", ln: "ln", eng: "en" };
 
@@ -120,7 +120,7 @@ export function createVoiceApi({ apiUrl, apiKey }) {
     /**
      * Voix naturelle : POST /tts/v1/speak { language, text, format } -> Blob audio.
      * Renvoie null si offline / non configuré / erreur (le speaker bascule sur
-     * cache puis voix téléphone). `format` demandé : mp3 (léger, lu partout).
+     * cache uniquement). `format` demandé : mp3 (léger, lu partout).
      */
     async speak(text, lang, { format = "mp3" } = {}) {
       const d = await this.diagnoseSpeak(text, lang, { format });
@@ -166,6 +166,30 @@ export function createVoiceApi({ apiUrl, apiKey }) {
         });
         if (!res.ok) return null;
         return await res.json().catch(() => null);
+      } catch {
+        return null;
+      } finally {
+        t.done();
+      }
+    },
+    /**
+     * Chat vocal : envoie la transcription à Spark, reçoit une réponse simple
+     * dans la langue de l'utilisateur. L'écran la lit ensuite avec le TTS.
+     * Renvoie null si indisponible (l'écran affiche le plan B offline).
+     */
+    async chat(text, lang = "fr") {
+      if (!configured() || !String(text ?? "").trim()) return null;
+      const t = withTimeout(60000);
+      try {
+        const res = await fetch(`${base()}/v1/chat?lang=${encodeURIComponent(toApiLang(lang))}`, {
+          method: "POST",
+          headers: { "content-type": "application/json", "x-api-key": key(), "x-app-token": key() },
+          body: JSON.stringify({ text: String(text).slice(0, 500), lang }),
+          signal: t.signal,
+        });
+        if (!res.ok) return null;
+        const data = await res.json().catch(() => null);
+        return typeof data?.text === "string" ? { text: data.text } : null;
       } catch {
         return null;
       } finally {

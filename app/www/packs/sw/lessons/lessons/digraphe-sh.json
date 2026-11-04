@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-sh",
+  "title": "Sauti SH",
+  "symbol": "sh",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "sh"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : S na H pamoja hutoa sauti moja : sh, kama katika shule. Gusa sh."
+        },
+        "choices": [
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "sh",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "shule"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno shule. Gusa neno shule."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "shule",
+            "text": "shule"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "shule",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "shule"
+      ],
+      "params": {
+        "word": "shule",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:sh"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa sh."
+        },
+        "choices": [
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "sh",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:shule"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa shule."
+        },
+        "choices": [
+          {
+            "id": "shule",
+            "text": "shule"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "shule",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:shule"
+      ],
+      "params": {
+        "word": "shule",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

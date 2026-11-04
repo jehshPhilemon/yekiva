@@ -26,20 +26,20 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : liso. Touche la lettre du son l."
+          "text": "Yoka : liso. Simba letre ya mongongo l."
         },
         "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
           {
             "id": "l",
             "text": "l"
           },
           {
-            "id": "t",
-            "text": "t"
-          },
-          {
-            "id": "j",
-            "text": "j"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "l",
@@ -75,20 +75,20 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : liso. Touche la lettre du son i."
+          "text": "Yoka : liso. Simba letre ya mongongo i."
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "i",
             "text": "i"
-          },
-          {
-            "id": "t",
-            "text": "t"
-          },
-          {
-            "id": "j",
-            "text": "j"
           }
         ],
         "answer": "i",
@@ -110,16 +110,16 @@
         },
         "choices": [
           {
-            "id": "l",
-            "text": "l"
-          },
-          {
             "id": "i",
             "text": "i"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "l",
@@ -138,7 +138,7 @@
       "params": {
         "word": "lala",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "L  l",
@@ -159,16 +159,16 @@
         },
         "choices": [
           {
-            "id": "i",
-            "text": "i"
+            "id": "a",
+            "text": "a"
           },
           {
             "id": "l",
             "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "i",
@@ -187,7 +187,7 @@
       "params": {
         "word": "imba",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "I  i",
@@ -204,7 +204,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche l."
+          "text": "Motuna 1 na 3 : simba l."
         },
         "choices": [
           {
@@ -236,20 +236,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche i."
+          "text": "Motuna 2 na 3 : simba i."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "i",
             "text": "i"
           },
           {
-            "id": "l",
-            "text": "l"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "i",
@@ -268,13 +268,9 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
-          {
-            "id": "i",
-            "text": "i"
-          },
           {
             "id": "a",
             "text": "a"
@@ -282,6 +278,10 @@
           {
             "id": "l",
             "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -301,7 +301,7 @@
       "params": {
         "word": "imba",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

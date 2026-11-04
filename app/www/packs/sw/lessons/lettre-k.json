@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : kuku. Touche la lettre du son k."
+          "text": "Sikiliza : kuku. Gusa herufi ya sauti k."
         },
         "choices": [
           {
-            "id": "x",
-            "text": "x"
-          },
-          {
-            "id": "h",
-            "text": "h"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "k",
             "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "k",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "k",
             "text": "k"
           },
           {
-            "id": "g",
-            "text": "g"
-          },
-          {
-            "id": "t",
-            "text": "t"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "k",
@@ -92,7 +92,7 @@
       "params": {
         "word": "kuku",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "K · k",
@@ -109,9 +109,13 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche k."
+          "text": "Swali 1 kati ya 3 : gusa k."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "k",
             "text": "k"
@@ -119,10 +123,6 @@
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "e",
-            "text": "e"
           }
         ],
         "answer": "k",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "k",
-            "text": "k"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
-          },
-          {
-            "id": "k",
-            "text": "k"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
             "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "kuku",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "mama",
             "text": "mama"
-          },
-          {
-            "id": "baba",
-            "text": "baba"
-          },
-          {
-            "id": "lala",
-            "text": "lala"
           }
         ],
         "answer": "mama",
@@ -46,12 +46,12 @@
         },
         "choices": [
           {
-            "id": "mama",
-            "text": "mama"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "baba",
-            "text": "baba"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "lala",
@@ -74,7 +74,7 @@
       "params": {
         "word": "mama",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "ma",
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche mama."
+          "text": "Swali 1 kati ya 3 : gusa mama."
         },
         "choices": [
           {
@@ -99,8 +99,8 @@
             "text": "a"
           },
           {
-            "id": "lala",
-            "text": "lala"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "mama",
@@ -123,7 +123,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche lala."
+          "text": "Swali 2 kati ya 3 : gusa lala."
         },
         "choices": [
           {
@@ -135,8 +135,8 @@
             "text": "a"
           },
           {
-            "id": "mama",
-            "text": "mama"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "lala",
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
@@ -163,12 +163,12 @@
             "text": "a"
           },
           {
-            "id": "mama",
-            "text": "mama"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "lala",
-            "text": "lala"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "mama",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

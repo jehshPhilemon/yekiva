@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : velo. Touche la lettre du son v."
+          "text": "Yoka : velo. Simba letre ya mongongo v."
         },
         "choices": [
           {
@@ -37,12 +37,12 @@
             "text": "v"
           },
           {
-            "id": "u",
-            "text": "u"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "r",
-            "text": "r"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "v",
@@ -68,12 +68,12 @@
             "text": "v"
           },
           {
-            "id": "f",
-            "text": "f"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "b",
-            "text": "b"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "v",
@@ -92,7 +92,7 @@
       "params": {
         "word": "velo",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "V  v",
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche v."
+          "text": "Motuna 1 na 3 : simba v."
         },
         "choices": [
           {
@@ -117,12 +117,12 @@
             "text": "v"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "v",
@@ -141,16 +141,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "v",
-            "text": "v"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
-          {
-            "id": "a",
-            "text": "a"
-          },
           {
             "id": "e",
             "text": "e"
           },
           {
-            "id": "v",
-            "text": "v"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "velo",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

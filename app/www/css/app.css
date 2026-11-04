@@ -1,4 +1,12 @@
 :root { --bg: #fff8f0; --ink: #19344d; --accent: #17324d; --tile: #17324d; --surface: #ffffff; --gold: #efc35b; --success: #2e7d57; }
+/* Cursive handwriting: local file first (offline APK), Google Fonts as fallback. */
+@font-face {
+  font-family: "Parisienne";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/parisienne-latin.woff2") format("woff2");
+}
 * { box-sizing: border-box; }
 html, body, #app { height: 100%; margin: 0; }
 body {
@@ -100,6 +108,34 @@ button:focus-visible { outline: 4px solid #e1a928; outline-offset: 3px; }
 .progress > i { display: block; height: 100%; background: var(--success); transition: width .3s; }
 canvas.glyph { width: min(86vw, 46vh); height: min(86vw, 46vh); touch-action: none; background: #fff;
   border-radius: 24px; box-shadow: 0 2px 12px #17324d22; }
+.script-letter {
+  width: min(78vw, 39vh); height: min(78vw, 39vh);
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; border: 2px dashed #17324d33; border-radius: 24px; box-shadow: 0 2px 12px #17324d22;
+  font-family: "Parisienne", cursive; font-size: min(52vw, 26vh); line-height: 1; color: #19344d;
+}
+.script-letter .clip { display: inline-block; overflow: visible; white-space: nowrap; max-width: none; opacity: 0; }
+.script-letter.is-playing .clip { animation: script-reveal 2.6s steps(24) forwards; }
+.script-letter.is-done .clip { opacity: 1; max-width: none; }
+@keyframes script-reveal { from { opacity: 1; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+/* Print letters: real system fonts (serif/sans/roboto — never hand-made strokes).
+   Uppercase leans serif (book capitals), lowercase leans sans (Roboto-style). */
+.print-letter {
+  width: min(78vw, 39vh); height: min(78vw, 39vh);
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; border-radius: 24px; box-shadow: 0 2px 12px #17324d22;
+  font-size: min(52vw, 26vh); line-height: 1; color: #19344d;
+}
+.print-letter .clip { display: inline-block; font-family: Georgia, "Times New Roman", "Nimbus Roman", serif; }
+.print-letter.lower .clip { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; font-weight: 600; }
+.print-letter.upper .clip { font-family: Georgia, "Times New Roman", "Nimbus Roman", serif; font-weight: 700; }
+.print-letter .clip { overflow: visible; white-space: nowrap; opacity: 0; }
+.print-letter.is-playing .clip { animation: print-reveal 2.2s ease-out forwards; }
+.print-letter.is-done .clip { opacity: 1; }
+@keyframes print-reveal { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: scale(1); } }
+.choice-text.script { font-family: "Parisienne", cursive; }
+.choice-text.print-upper { font-family: Georgia, "Times New Roman", "Nimbus Roman", serif; font-weight: 700; }
+.choice-text.print-lower { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-weight: 600; }
 .choices { flex: 2; display: flex; min-height: 0; }
 .choice { flex: 1; margin: 8px; border: 0; border-radius: 24px; background: #fff; box-shadow: 0 2px 10px #17324d1a;
   font-size: min(16vw, 12vh); color: var(--ink); display: flex; align-items: center; justify-content: center; }
@@ -173,5 +209,9 @@ canvas.glyph { width: min(86vw, 46vh); height: min(86vw, 46vh); touch-action: no
 .conversation-mic-wrap { display: flex; justify-content: center; align-items: center; min-height: 170px; }
 .conversation-mic { flex: 0 0 150px; width: 150px; height: 150px; margin: 0; border-radius: 50%; background: var(--accent); box-shadow: 0 9px 0 #0f2438, 0 16px 28px #17324d2b; }
 .conversation-mic.is-recording { background: #b83232; box-shadow: 0 9px 0 #752020, 0 16px 28px #b8323240; }
-.conversation-transcript { min-height: 64px; display: flex; align-items: center; justify-content: center; }
+.conversation-transcript { min-height: 64px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
 .conversation-bubble { max-width: 92%; padding: 14px 18px; border-radius: 20px 20px 20px 4px; background: #e3f2e7; color: #1d5c38; font-size: clamp(16px, 4.5vw, 21px); font-weight: 650; }
+.conversation-bubble.is-user { background: #e8eef4; color: var(--ink); border-radius: 20px 20px 4px 20px; align-self: flex-end; }
+.conversation-bubble.is-reply { background: #e3f2e7; color: #1d5c38; align-self: flex-start; }
+.conversation-bubble.is-working { background: #f3e4bd; color: #765311; animation: blink .9s ease-in-out infinite alternate; }
+.status.is-working { animation: blink .9s ease-in-out infinite alternate; }

@@ -1,0 +1,221 @@
+{
+  "id": "lettre-r",
+  "title": "La lettre R",
+  "symbol": "R · r",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "La lettre R fait le son rrr, comme dans riz. Écoute bien : rrr."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : riz. Touche la lettre du son r."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : riz. Touche la lettre du son rrr."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "word": "riz",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:r"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche r."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:riz"
+      ],
+      "params": {
+        "word": "riz",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

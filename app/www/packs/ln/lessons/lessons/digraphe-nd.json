@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-nd",
+  "title": "Mongongo ND",
+  "symbol": "nd",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nd"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na D elongo ebimisaka mongongo moko : nd, lokola na ndeke. Simba nd."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          }
+        ],
+        "answer": "nd",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ndeke"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba ndeke. Simba liloba ndeke."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ndeke",
+            "text": "ndeke"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ndeke",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ndeke"
+      ],
+      "params": {
+        "word": "ndeke",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nd"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba nd."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          }
+        ],
+        "answer": "nd",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ndeke"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba ndeke."
+        },
+        "choices": [
+          {
+            "id": "ndeke",
+            "text": "ndeke"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ndeke",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ndeke"
+      ],
+      "params": {
+        "word": "ndeke",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

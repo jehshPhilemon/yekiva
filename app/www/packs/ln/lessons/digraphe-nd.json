@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "nd",
             "text": "nd"
-          },
-          {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "d",
-            "text": "d"
           }
         ],
         "answer": "nd",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "ndeke",
             "text": "ndeke"
           },
           {
-            "id": "ndundu",
-            "text": "ndundu"
-          },
-          {
-            "id": "nzete",
-            "text": "nzete"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ndeke",
@@ -74,7 +74,7 @@
       "params": {
         "word": "ndeke",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "nd",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche nd."
+          "text": "Motuna 1 na 3 : simba nd."
         },
         "choices": [
           {
-            "id": "ndeke",
-            "text": "ndeke"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "nd",
             "text": "nd"
-          },
-          {
-            "id": "a",
-            "text": "a"
           }
         ],
         "answer": "nd",
@@ -123,7 +123,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche ndeke."
+          "text": "Motuna 2 na 3 : simba ndeke."
         },
         "choices": [
           {
@@ -135,8 +135,8 @@
             "text": "a"
           },
           {
-            "id": "nd",
-            "text": "nd"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ndeke",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "ndeke",
-            "text": "ndeke"
-          },
-          {
-            "id": "nd",
-            "text": "nd"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "ndeke",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

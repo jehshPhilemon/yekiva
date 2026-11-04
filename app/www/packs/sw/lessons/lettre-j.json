@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : jicho. Touche la lettre du son j."
+          "text": "Sikiliza : jicho. Gusa herufi ya sauti j."
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "j",
             "text": "j"
-          },
-          {
-            "id": "w",
-            "text": "w"
-          },
-          {
-            "id": "t",
-            "text": "t"
           }
         ],
         "answer": "j",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "j",
             "text": "j"
-          },
-          {
-            "id": "g",
-            "text": "g"
-          },
-          {
-            "id": "y",
-            "text": "y"
           }
         ],
         "answer": "j",
@@ -92,7 +92,7 @@
       "params": {
         "word": "jicho",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "J · j",
@@ -109,20 +109,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche j."
+          "text": "Swali 1 kati ya 3 : gusa j."
         },
         "choices": [
           {
-            "id": "j",
-            "text": "j"
-          },
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "j",
+            "text": "j"
           }
         ],
         "answer": "j",
@@ -141,7 +141,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
           {
@@ -149,12 +149,12 @@
             "text": "a"
           },
           {
-            "id": "j",
-            "text": "j"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -173,16 +173,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
           {
-            "id": "j",
-            "text": "j"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "jicho",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

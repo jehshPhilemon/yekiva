@@ -1,0 +1,221 @@
+{
+  "id": "lettre-z",
+  "title": "Herufi Z",
+  "symbol": "Z · z",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "glyph": "z:lower_script",
+        "say": {
+          "text": "Herufi Z inatoa sauti zzz, kama katika neno zabibu. Sikiliza : zzz."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : zabibu. Gusa herufi ya sauti z."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : zabibu. Gusa herufi ya sauti zzz."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "word": "zabibu",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:z"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa z."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:zabibu"
+      ],
+      "params": {
+        "word": "zabibu",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

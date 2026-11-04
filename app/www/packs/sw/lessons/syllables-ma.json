@@ -12,16 +12,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "ma",
             "text": "ma"
-          },
-          {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
-            "id": "ji",
-            "text": "ji"
           }
         ],
         "answer": "ma",
@@ -43,16 +43,16 @@
         },
         "choices": [
           {
-            "id": "ma",
-            "text": "ma"
-          },
-          {
-            "id": "ba",
-            "text": "ba"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ji",
             "text": "ji"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ji"
@@ -65,20 +65,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ma."
+          "text": "Swali 1 kati ya 3 : gusa ma."
         },
         "choices": [
           {
-            "id": "ma",
-            "text": "ma"
-          },
-          {
-            "id": "ji",
-            "text": "ji"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ma",
+            "text": "ma"
           }
         ],
         "answer": "ma",
@@ -97,12 +97,12 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche ji."
+          "text": "Swali 2 kati ya 3 : gusa ji."
         },
         "choices": [
           {
-            "id": "ma",
-            "text": "ma"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ji",
@@ -129,20 +129,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "ma",
-            "text": "ma"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "ji",
-            "text": "ji"
           }
         ],
         "answer": "a",

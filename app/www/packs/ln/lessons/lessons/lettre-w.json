@@ -1,0 +1,221 @@
+{
+  "id": "lettre-w",
+  "title": "Letre W",
+  "symbol": "W  w",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "glyph": "w:lower_script",
+        "say": {
+          "text": "Letre W ezali na mongongo w, lokola na liloba wagon. Yoka : w."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : wagon. Simba letre ya mongongo w."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : wagon. Simba letre ya mongongo w."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "word": "wagon",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:w"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba w."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:wagon"
+      ],
+      "params": {
+        "word": "wagon",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

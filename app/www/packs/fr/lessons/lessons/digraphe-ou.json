@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-ou",
+  "title": "Le son OU",
+  "symbol": "ou",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ou"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : O et U ensemble chantent un seul son : ou, comme dans loup. Touche ou."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ou",
+            "text": "ou"
+          }
+        ],
+        "answer": "ou",
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "loup"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot loup. Touche le mot loup."
+        },
+        "choices": [
+          {
+            "id": "loup",
+            "text": "loup"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "loup",
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "loup"
+      ],
+      "params": {
+        "word": "loup",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ou"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ou."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ou",
+            "text": "ou"
+          }
+        ],
+        "answer": "ou",
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:loup"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche loup."
+        },
+        "choices": [
+          {
+            "id": "loup",
+            "text": "loup"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "loup",
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:loup"
+      ],
+      "params": {
+        "word": "loup",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

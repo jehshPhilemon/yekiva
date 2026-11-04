@@ -1,0 +1,234 @@
+{
+  "id": "syllabes-ba",
+  "title": "Silabi ba, be, bi",
+  "symbol": "ba  be  bi",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka ba, lokola na ebandeli ya baba. Simba ba."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "be"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka be, lokola na bebe. Simba be."
+        },
+        "choices": [
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "be",
+        "context": {
+          "letter": "be",
+          "word": "bebe",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bi"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka bi, lokola na biso. Simba bi."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "bi",
+        "context": {
+          "letter": "bi",
+          "word": "biso",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba ba."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:be"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba be."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "be",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:bi"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba bi."
+        },
+        "choices": [
+          {
+            "id": "bi",
+            "text": "bi"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "bi",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

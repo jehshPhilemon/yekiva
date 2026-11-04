@@ -19,7 +19,7 @@ export function serverScreen({ services, state, go }) {
     screenPrompt(services, state.language, "server_hint");
     if (!base || !api?.configured?.()) {
       show("cloudoff");
-      explain("Mode hors-ligne : leçons + voix déjà entendues, voix téléphone en secours.");
+      explain("Mode hors-ligne : leçons + voix déjà entendues, aucun fallback téléphone.");
       return;
     }
     show("");

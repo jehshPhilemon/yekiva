@@ -1,0 +1,221 @@
+{
+  "id": "lettre-v",
+  "title": "Herufi V",
+  "symbol": "V · v",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "glyph": "v:lower_script",
+        "say": {
+          "text": "Herufi V inatoa sauti vvv, kama katika neno viazi. Sikiliza : vvv."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : viazi. Gusa herufi ya sauti v."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : viazi. Gusa herufi ya sauti vvv."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "word": "viazi",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:v"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa v."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:viazi"
+      ],
+      "params": {
+        "word": "viazi",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

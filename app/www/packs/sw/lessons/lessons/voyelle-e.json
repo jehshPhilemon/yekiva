@@ -1,0 +1,221 @@
+{
+  "id": "voyelle-e",
+  "title": "Vokali E",
+  "symbol": "E · e",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "glyph": "e:lower_script",
+        "say": {
+          "text": "Herufi E inatoa sauti e, kama mwanzoni mwa neno embe. Sikiliza : e."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "E · e",
+          "word": "embe",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : embe. Gusa herufi ya sauti e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "embe",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : embe. Gusa herufi ya sauti e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "embe",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "word": "embe",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "E · e",
+          "word": "embe",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "embe",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "E · e",
+          "word": "embe",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "embe",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:embe"
+      ],
+      "params": {
+        "word": "embe",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "E · e",
+          "word": "embe",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "id": "lettre-b",
+  "title": "Herufi B",
+  "symbol": "B · b",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "Herufi B inatoa sauti bbb, kama katika neno baba. Sikiliza : bbb."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : baba. Gusa herufi ya sauti b."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : baba. Gusa herufi ya sauti bbb."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:b"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa b."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

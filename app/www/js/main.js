@@ -33,7 +33,7 @@ const packs = createPacks();
 const learners = new Map();
 // L'app appelle l'API Yekiva TTS DIRECTEMENT (aucun serveur intermédiaire) :
 // même code dans Termux et dans l'APK. Hors-ligne : speak() -> null ->
-// cache IndexedDB puis voix téléphone. Transcription/photo : pas de routes
+// cache IndexedDB, sans fallback téléphone. Transcription/photo : pas de routes
 // API pour l'instant -> plan B offline (écoute+tap, photo expliquée).
 const voiceApi = createVoiceApi({ apiUrl: config.apiUrl, apiKey: config.apiKey });
 const speakFn = (text, lang) => voiceApi.speak(text, lang);
@@ -42,7 +42,7 @@ speakFn.endpoint = () => `${voiceApi.baseUrl}/tts/v1/speak`;
 speakFn.diagnoseSpeak = (text, lang) => voiceApi.diagnoseSpeak(text, lang);
 const services = {
   packs,
-  // Voix naturelle : API directe, cachée sur l'appareil ; voix téléphone en secours offline.
+  // Voix naturelle : API directe, cachée sur l'appareil ; aucun fallback téléphone.
   speaker: createSpeaker({ speakFn }),
   recorder: createRecorder(),
   transcriber: voiceApi,
@@ -69,12 +69,19 @@ const screens = {
 };
 const app = document.getElementById("app");
 let current = null;
+let navigationId = 0;
 
 async function go(name, props = {}) {
+  const id = ++navigationId;
   try {
     current?.destroy?.();
     services.speaker.stop();
-    current = await screens[name]({ services, state, go, ...props });
+    const next = await screens[name]({ services, state, go, ...props });
+    if (id !== navigationId) {
+      next?.destroy?.();
+      return;
+    }
+    current = next;
     app.replaceChildren(current);
   } catch (e) {
     console.error(e);

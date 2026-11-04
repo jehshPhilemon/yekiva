@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-nd",
+  "title": "Sauti ND",
+  "symbol": "nd",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nd"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na D pamoja hutoa sauti moja : nd, kama katika ndizi. Gusa nd."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nd",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ndizi"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno ndizi. Gusa neno ndizi."
+        },
+        "choices": [
+          {
+            "id": "ndizi",
+            "text": "ndizi"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ndizi",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ndizi"
+      ],
+      "params": {
+        "word": "ndizi",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nd"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa nd."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nd",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ndizi"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa ndizi."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ndizi",
+            "text": "ndizi"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ndizi",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ndizi"
+      ],
+      "params": {
+        "word": "ndizi",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "ba",
             "text": "ba"
           },
           {
-            "id": "bo",
-            "text": "bo"
-          },
-          {
-            "id": "bi",
-            "text": "bi"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ba",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
             "id": "bo",
             "text": "bo"
           },
           {
-            "id": "bi",
-            "text": "bi"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "bo",
@@ -77,16 +77,16 @@
         },
         "choices": [
           {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
-            "id": "bo",
-            "text": "bo"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "bi",
             "text": "bi"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "bi",
@@ -126,16 +126,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "ba",
             "text": "ba"
           },
           {
-            "id": "bi",
-            "text": "bi"
-          },
-          {
-            "id": "bo",
-            "text": "bo"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ba",
@@ -158,16 +158,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "bo",
             "text": "bo"
           },
           {
-            "id": "bi",
-            "text": "bi"
-          },
-          {
-            "id": "ba",
-            "text": "ba"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "bo",
@@ -190,16 +190,16 @@
         },
         "choices": [
           {
-            "id": "bo",
-            "text": "bo"
-          },
-          {
-            "id": "ba",
-            "text": "ba"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "bi",
             "text": "bi"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "bi",

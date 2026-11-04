@@ -29,16 +29,16 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : zando. Touche la lettre du son z."
+          "text": "Yoka : zando. Simba letre ya mongongo z."
         },
         "choices": [
           {
-            "id": "s",
-            "text": "s"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "x",
-            "text": "x"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "z",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "z",
             "text": "z"
-          },
-          {
-            "id": "s",
-            "text": "s"
-          },
-          {
-            "id": "j",
-            "text": "j"
           }
         ],
         "answer": "z",
@@ -92,7 +92,7 @@
       "params": {
         "word": "zando",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "Z  z",
@@ -109,16 +109,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche z."
+          "text": "Motuna 1 na 3 : simba z."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "z",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "z",
-            "text": "z"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -173,13 +173,9 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
-          {
-            "id": "z",
-            "text": "z"
-          },
           {
             "id": "e",
             "text": "e"
@@ -187,6 +183,10 @@
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "zando",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

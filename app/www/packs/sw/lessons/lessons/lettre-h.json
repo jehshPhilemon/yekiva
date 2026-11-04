@@ -1,0 +1,221 @@
+{
+  "id": "lettre-h",
+  "title": "Herufi H",
+  "symbol": "H · h",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "glyph": "h:lower_script",
+        "say": {
+          "text": "Herufi H inatoa sauti hhh, kama katika neno hewa. Sikiliza : hhh."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : hewa. Gusa herufi ya sauti h."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : hewa. Gusa herufi ya sauti hhh."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "word": "hewa",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:h"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa h."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:hewa"
+      ],
+      "params": {
+        "word": "hewa",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

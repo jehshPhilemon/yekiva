@@ -1,0 +1,221 @@
+{
+  "id": "voyelle-e",
+  "title": "La voyelle E",
+  "symbol": "E · e",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "glyph": "e:lower_script",
+        "say": {
+          "text": "La lettre E fait le son é, comme au début du mot école. Écoute bien : é."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : école. Touche la lettre du son e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : école. Quel son entends-tu au début ? Touche la lettre."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "word": "école",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:école"
+      ],
+      "params": {
+        "word": "école",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

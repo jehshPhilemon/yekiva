@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "gn",
             "text": "gn"
-          },
-          {
-            "id": "g",
-            "text": "g"
-          },
-          {
-            "id": "n",
-            "text": "n"
           }
         ],
         "answer": "gn",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "montagne",
             "text": "montagne"
           },
           {
-            "id": "maman",
-            "text": "maman"
-          },
-          {
-            "id": "moto",
-            "text": "moto"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "montagne",
@@ -95,16 +95,16 @@
         },
         "choices": [
           {
-            "id": "gn",
-            "text": "gn"
-          },
-          {
-            "id": "montagne",
-            "text": "montagne"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "gn",
+            "text": "gn"
           }
         ],
         "answer": "gn",
@@ -127,16 +127,16 @@
         },
         "choices": [
           {
+            "id": "montagne",
+            "text": "montagne"
+          },
+          {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "gn",
-            "text": "gn"
-          },
-          {
-            "id": "montagne",
-            "text": "montagne"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "montagne",
@@ -159,16 +159,16 @@
         },
         "choices": [
           {
-            "id": "gn",
-            "text": "gn"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "montagne",
-            "text": "montagne"
           }
         ],
         "answer": "a",

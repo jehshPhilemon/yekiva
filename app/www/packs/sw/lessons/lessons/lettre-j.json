@@ -1,0 +1,221 @@
+{
+  "id": "lettre-j",
+  "title": "Herufi J",
+  "symbol": "J · j",
+  "icon": "eye",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "glyph": "j:lower_script",
+        "say": {
+          "text": "Herufi J inatoa sauti jjj, kama katika neno jicho. Sikiliza : jjj."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : jicho. Gusa herufi ya sauti j."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : jicho. Gusa herufi ya sauti jjj."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "word": "jicho",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:j"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa j."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:jicho"
+      ],
+      "params": {
+        "word": "jicho",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : guitare. Touche la lettre du son g."
+          "text": "Yoka : guitare. Simba letre ya mongongo g."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "g",
             "text": "g"
           },
           {
-            "id": "j",
-            "text": "j"
-          },
-          {
-            "id": "q",
-            "text": "q"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "g",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "g",
             "text": "g"
           },
           {
-            "id": "k",
-            "text": "k"
-          },
-          {
-            "id": "j",
-            "text": "j"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "g",
@@ -92,7 +92,7 @@
       "params": {
         "word": "guitare",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "G  g",
@@ -109,20 +109,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche g."
+          "text": "Motuna 1 na 3 : simba g."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "g",
             "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "g",
@@ -141,16 +141,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "g",
-            "text": "g"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
-          {
-            "id": "a",
-            "text": "a"
-          },
           {
             "id": "e",
             "text": "e"
           },
           {
-            "id": "g",
-            "text": "g"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "guitare",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

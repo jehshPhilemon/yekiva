@@ -1,0 +1,221 @@
+{
+  "id": "lettre-b",
+  "title": "Letre B",
+  "symbol": "B  b",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "Letre B ezali na mongongo bbb, lokola na liloba bana. Yoka : bbb."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : bana. Simba letre ya mongongo b."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : bana. Simba letre ya mongongo bbb."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "word": "bana",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:b"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba b."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:bana"
+      ],
+      "params": {
+        "word": "bana",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

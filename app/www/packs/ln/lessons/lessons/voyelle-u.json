@@ -1,0 +1,221 @@
+{
+  "id": "voyelle-u",
+  "title": "Vowele U",
+  "symbol": "U  u",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "Letre U ezali na mongongo u, lokola na liloba mbu. Yoka : u."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mbu. Simba letre ya mongongo u."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mbu. Simba letre ya mongongo u."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "word": "mbu",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:u"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba u."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mbu"
+      ],
+      "params": {
+        "word": "mbu",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

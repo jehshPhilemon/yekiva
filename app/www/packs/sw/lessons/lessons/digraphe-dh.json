@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-dh",
+  "title": "Sauti DH",
+  "symbol": "dh",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "dh"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : D na H pamoja hutoa sauti moja : dh, kama katika dhahabu. Gusa dh."
+        },
+        "choices": [
+          {
+            "id": "dh",
+            "text": "dh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "dh",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "dhahabu"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno dhahabu. Gusa neno dhahabu."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "dhahabu",
+            "text": "dhahabu"
+          }
+        ],
+        "answer": "dhahabu",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "dhahabu"
+      ],
+      "params": {
+        "word": "dhahabu",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:dh"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa dh."
+        },
+        "choices": [
+          {
+            "id": "dh",
+            "text": "dh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "dh",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:dhahabu"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa dhahabu."
+        },
+        "choices": [
+          {
+            "id": "dhahabu",
+            "text": "dhahabu"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "dhahabu",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:dhahabu"
+      ],
+      "params": {
+        "word": "dhahabu",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

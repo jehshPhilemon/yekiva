@@ -1,0 +1,221 @@
+{
+  "id": "lettre-p",
+  "title": "Herufi P",
+  "symbol": "P · p",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "Herufi P inatoa sauti ppp, kama katika neno paka. Sikiliza : ppp."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : paka. Gusa herufi ya sauti p."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : paka. Gusa herufi ya sauti ppp."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "word": "paka",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:p"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa p."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:paka"
+      ],
+      "params": {
+        "word": "paka",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

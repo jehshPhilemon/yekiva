@@ -1,0 +1,221 @@
+{
+  "id": "lettre-h",
+  "title": "Letre H",
+  "symbol": "H  h",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "glyph": "h:lower_script",
+        "say": {
+          "text": "Letre H ezali na mongongo h, lokola na liloba hoteli. Yoka : h."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : hoteli. Simba letre ya mongongo h."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : hoteli. Simba letre ya mongongo h."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "word": "hoteli",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:h"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba h."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:hoteli"
+      ],
+      "params": {
+        "word": "hoteli",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

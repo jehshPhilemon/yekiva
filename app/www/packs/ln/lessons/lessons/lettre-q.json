@@ -1,0 +1,221 @@
+{
+  "id": "lettre-q",
+  "title": "Letre Q",
+  "symbol": "Q  q",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "Q esalelamaka na maloba ya bapaya lokola quartier. Etangamaka k. Yoka : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Q  q",
+          "word": "quartier",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : quartier. Simba letre ya mongongo q."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q  q",
+          "word": "quartier",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : quartier. Simba letre Q."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q  q",
+          "word": "quartier",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "word": "quartier",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "Q  q",
+          "word": "quartier",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:q"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba q."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q  q",
+          "word": "quartier",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Q  q",
+          "word": "quartier",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Q  q",
+          "word": "quartier",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:quartier"
+      ],
+      "params": {
+        "word": "quartier",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Q  q",
+          "word": "quartier",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

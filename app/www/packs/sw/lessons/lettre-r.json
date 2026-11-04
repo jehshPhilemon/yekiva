@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : rafiki. Touche la lettre du son r."
+          "text": "Sikiliza : rafiki. Gusa herufi ya sauti r."
         },
         "choices": [
-          {
-            "id": "v",
-            "text": "v"
-          },
           {
             "id": "r",
             "text": "r"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "r",
@@ -68,12 +68,12 @@
             "text": "r"
           },
           {
-            "id": "l",
-            "text": "l"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "r",
@@ -92,7 +92,7 @@
       "params": {
         "word": "rafiki",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "R · r",
@@ -109,20 +109,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche r."
+          "text": "Swali 1 kati ya 3 : gusa r."
         },
         "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "r",
-            "text": "r"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "r",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "r",
-            "text": "r"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
           {
-            "id": "r",
-            "text": "r"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
             "text": "e"
-          },
-          {
-            "id": "a",
-            "text": "a"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "rafiki",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

@@ -19,12 +19,12 @@
             "text": "ng"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "g",
-            "text": "g"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ng",
@@ -46,12 +46,12 @@
         },
         "choices": [
           {
-            "id": "ngai",
-            "text": "ngai"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "ngolu",
-            "text": "ngolu"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ngai",
@@ -74,7 +74,7 @@
       "params": {
         "word": "ngai",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "ng",
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ng."
+          "text": "Motuna 1 na 3 : simba ng."
         },
         "choices": [
           {
@@ -103,8 +103,8 @@
             "text": "a"
           },
           {
-            "id": "ngai",
-            "text": "ngai"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ng",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche ngai."
+          "text": "Motuna 2 na 3 : simba ngai."
         },
         "choices": [
           {
-            "id": "ng",
-            "text": "ng"
-          },
-          {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ngai",
             "text": "ngai"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ngai",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "ng",
-            "text": "ng"
-          },
-          {
-            "id": "ngai",
-            "text": "ngai"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "ngai",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-ph",
+  "title": "Mongongo PH",
+  "symbol": "ph",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ph"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : P na H elongo ebimisaka mongongo moko : f, lokola na photo. Simba ph."
+        },
+        "choices": [
+          {
+            "id": "ph",
+            "text": "ph"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ph",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "photo"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba photo. Simba liloba photo."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "photo",
+            "text": "photo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "photo",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "photo"
+      ],
+      "params": {
+        "word": "photo",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ph"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba ph."
+        },
+        "choices": [
+          {
+            "id": "ph",
+            "text": "ph"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ph",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:photo"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba photo."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "photo",
+            "text": "photo"
+          }
+        ],
+        "answer": "photo",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:photo"
+      ],
+      "params": {
+        "word": "photo",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

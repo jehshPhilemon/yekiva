@@ -19,12 +19,12 @@
             "text": "ch"
           },
           {
-            "id": "c",
-            "text": "c"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "h",
-            "text": "h"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ch",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "chat",
             "text": "chat"
           },
           {
-            "id": "chaud",
-            "text": "chaud"
-          },
-          {
-            "id": "champ",
-            "text": "champ"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "chat",
@@ -99,12 +99,12 @@
             "text": "ch"
           },
           {
-            "id": "chat",
-            "text": "chat"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ch",
@@ -127,12 +127,12 @@
         },
         "choices": [
           {
-            "id": "chat",
-            "text": "chat"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "ch",
-            "text": "ch"
+            "id": "chat",
+            "text": "chat"
           },
           {
             "id": "a",
@@ -159,12 +159,12 @@
         },
         "choices": [
           {
-            "id": "ch",
-            "text": "ch"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "chat",
-            "text": "chat"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",

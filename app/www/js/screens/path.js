@@ -106,7 +106,7 @@ export async function pathScreen({ services, state, go }) {
     label: actions.replay ?? "repeat", caption: actions.replay,
     className: "path-action",
   });
-  // Diagnostic son 100 % tactile : 3 tests (bip, voix téléphone, voix serveur).
+  // Diagnostic son 100 % tactile : 2 tests (bip, voix API).
   const diag = tile("music", {
     onClick: () => go("diag"), size: 40,
     label: "Son et voix : tester", caption: "son ?",

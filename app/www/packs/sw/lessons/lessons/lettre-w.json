@@ -1,0 +1,221 @@
+{
+  "id": "lettre-w",
+  "title": "Herufi W",
+  "symbol": "W · w",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "glyph": "w:lower_script",
+        "say": {
+          "text": "Herufi W inatoa sauti www, kama katika neno wali. Sikiliza : www."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : wali. Gusa herufi ya sauti w."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : wali. Gusa herufi ya sauti www."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "word": "wali",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:w"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa w."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:wali"
+      ],
+      "params": {
+        "word": "wali",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

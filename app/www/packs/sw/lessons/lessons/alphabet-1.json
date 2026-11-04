@@ -1,0 +1,197 @@
+{
+  "id": "alphabet-1",
+  "title": "Majina ya herufi",
+  "symbol": "A · B · C",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "B"
+      ],
+      "params": {
+        "say": {
+          "text": "Herufi zina majina. Sikiliza na gusa herufi B."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "B",
+        "context": {
+          "letter": "B",
+          "word": "herufi B",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "E"
+      ],
+      "params": {
+        "say": {
+          "text": "Gusa herufi E."
+        },
+        "choices": [
+          {
+            "id": "E",
+            "text": "E"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "E",
+        "context": {
+          "letter": "E",
+          "word": "herufi E",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "M"
+      ],
+      "params": {
+        "say": {
+          "text": "Gusa herufi M."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "M",
+            "text": "M"
+          }
+        ],
+        "answer": "M",
+        "context": {
+          "letter": "M",
+          "word": "herufi M",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:B"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa B."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "B",
+        "context": {
+          "letter": "B",
+          "word": "herufi B",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:E"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa E."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "E",
+            "text": "E"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "E",
+        "context": {
+          "letter": "B",
+          "word": "herufi B",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:M"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa M."
+        },
+        "choices": [
+          {
+            "id": "M",
+            "text": "M"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "M",
+        "context": {
+          "letter": "B",
+          "word": "herufi B",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

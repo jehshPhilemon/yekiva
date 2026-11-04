@@ -1,0 +1,221 @@
+{
+  "id": "lettre-c",
+  "title": "Herufi C",
+  "symbol": "C · c",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "Herufi C inasomwa ch, kama katika neno chai. Sikiliza : ch."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : chai. Gusa herufi ya sauti c."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : chai. Gusa herufi ya sauti ch."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "word": "chai",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:c"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa c."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:chai"
+      ],
+      "params": {
+        "word": "chai",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

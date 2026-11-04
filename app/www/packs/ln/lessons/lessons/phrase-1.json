@@ -1,0 +1,172 @@
+{
+  "id": "phrase-1",
+  "title": "Frazi na ngai ya liboso",
+  "symbol": "Mama na bana.",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "Mama na bana."
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka frazi. Simba frazi oyo oyoki."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama na bana.",
+            "text": "Mama na bana."
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "Mama na bana.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Mama na bana."
+      ],
+      "params": {
+        "word": "Mama na bana.",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama na bana."
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba Mama na bana.."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama na bana.",
+            "text": "Mama na bana."
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "Mama na bana.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Mama na bana."
+      ],
+      "params": {
+        "word": "Mama na bana.",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-ng",
+  "title": "Sauti NG",
+  "symbol": "ng",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ng"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na G pamoja hutoa sauti moja : ng, kama mwishoni mwa neno unga. Gusa ng."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ng",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "unga"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno unga. Gusa neno unga."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "unga",
+            "text": "unga"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "unga",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "unga"
+      ],
+      "params": {
+        "word": "unga",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ng"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa ng."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ng",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:unga"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa unga."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "unga",
+            "text": "unga"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "unga",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:unga"
+      ],
+      "params": {
+        "word": "unga",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

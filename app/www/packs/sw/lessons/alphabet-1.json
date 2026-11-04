@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "B",
             "text": "B"
           },
           {
-            "id": "A",
-            "text": "A"
-          },
-          {
-            "id": "C",
-            "text": "C"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "B",
@@ -50,12 +50,12 @@
             "text": "E"
           },
           {
-            "id": "F",
-            "text": "F"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "O",
-            "text": "O"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "E",
@@ -77,16 +77,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "M",
             "text": "M"
-          },
-          {
-            "id": "N",
-            "text": "N"
-          },
-          {
-            "id": "S",
-            "text": "S"
           }
         ],
         "answer": "M",
@@ -104,20 +104,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche B."
+          "text": "Swali 1 kati ya 3 : gusa B."
         },
         "choices": [
           {
-            "id": "M",
-            "text": "M"
-          },
-          {
-            "id": "E",
-            "text": "E"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "B",
             "text": "B"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "B",
@@ -136,20 +136,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche E."
+          "text": "Swali 2 kati ya 3 : gusa E."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "E",
             "text": "E"
           },
           {
-            "id": "B",
-            "text": "B"
-          },
-          {
-            "id": "M",
-            "text": "M"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "E",
@@ -168,20 +168,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche M."
+          "text": "Swali 3 kati ya 3 : gusa M."
         },
         "choices": [
-          {
-            "id": "B",
-            "text": "B"
-          },
           {
             "id": "M",
             "text": "M"
           },
           {
-            "id": "E",
-            "text": "E"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "M",

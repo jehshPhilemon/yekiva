@@ -1,0 +1,221 @@
+{
+  "id": "voyelle-u",
+  "title": "La voyelle U",
+  "symbol": "U · u",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "La lettre U fait le son u, comme dans lune. Écoute bien : u."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : lune. Touche la lettre du son u."
+        },
+        "choices": [
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : lune. Touche la lettre du son u."
+        },
+        "choices": [
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "word": "lune",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:u"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche u."
+        },
+        "choices": [
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:lune"
+      ],
+      "params": {
+        "word": "lune",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

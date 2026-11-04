@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : tata. Touche la lettre du son t."
+          "text": "Yoka : tata. Simba letre ya mongongo t."
         },
         "choices": [
           {
@@ -37,12 +37,12 @@
             "text": "t"
           },
           {
-            "id": "f",
-            "text": "f"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "w",
-            "text": "w"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "t",
@@ -68,12 +68,12 @@
             "text": "t"
           },
           {
-            "id": "s",
-            "text": "s"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "t",
@@ -92,7 +92,7 @@
       "params": {
         "word": "tata",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "T  t",
@@ -109,20 +109,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche t."
+          "text": "Motuna 1 na 3 : simba t."
         },
         "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "t",
-            "text": "t"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "t",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "t",
-            "text": "t"
-          },
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -173,9 +173,13 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "e",
             "text": "e"
@@ -183,10 +187,6 @@
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "t",
-            "text": "t"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "tata",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

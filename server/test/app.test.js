@@ -109,11 +109,17 @@ test("buildLesson: word in syllables -> valid steps", () => {
   assert.equal(l.title, "mama");
   assert.equal(l.symbol, "M");
   assert.equal(l.icon, "family");
+  const types = l.steps.map((s) => s.type);
+  assert.ok(types.includes("listen_tap"));
+  assert.ok(types.includes("say_word"), "photo lesson explains then asks to repeat");
+  assert.ok(l.steps.some((s) => (s.items ?? []).some((i) => String(i).startsWith("quiz:"))), "photo lesson ends with a quiz");
   for (const s of l.steps) {
-    assert.equal(s.type, "listen_tap");
-    assert.ok(s.params.choices.length >= 2);
-    assert.ok(s.params.choices.some((c) => c.id === s.params.answer));
+    if (s.type === "listen_tap") {
+      assert.ok(s.params.choices.length >= 2);
+      assert.ok(s.params.choices.some((c) => c.id === s.params.answer));
+    }
     assert.deepEqual(s.params.context, { letter: "M", word: "mama", icon: "family" });
+    assert.ok(s.params.say?.text);
   }
 });
 
@@ -178,8 +184,21 @@ test("generate-lesson: missing word -> 400", () =>
   }));
 
 test("generate-lesson: relays word+lang to provider and returns the lesson", () =>
-  withServer({ provider: { ...fakeProvider, generateLesson: async (w, o) => ({ id: "t", word: w, lang: o.lang, steps: [] }) } }, async (base) => {
+  withServer({ provider: { ...fakeProvider, generateLesson: async (w, o) => ({ id: "t", word: "mangue", lang: "sw", steps: [] }) } }, async (base) => {
     const r = await fetch(`${base}/v1/generate-lesson?lang=sw`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ word: "mangue" }) });
     assert.equal(r.status, 200);
     assert.deepEqual(await r.json(), { id: "t", word: "mangue", lang: "sw", steps: [] });
+  }));
+
+test("chat: missing text -> 400", () =>
+  withServer({}, async (base) => {
+    const r = await fetch(`${base}/v1/chat`, { method: "POST", headers: { "content-type": "application/json" }, body: "{}" });
+    assert.equal(r.status, 400);
+  }));
+
+test("chat: relays transcription+lang to provider and returns the reply", () =>
+  withServer({ provider: { ...fakeProvider, chat: async (t, o) => ({ text: `echo:${t}:${o.lang}` }) } }, async (base) => {
+    const r = await fetch(`${base}/v1/chat?lang=ln`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text: "mbote" }) });
+    assert.equal(r.status, 200);
+    assert.deepEqual(await r.json(), { text: "echo:mbote:ln" });
   }));

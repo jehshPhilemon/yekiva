@@ -1,0 +1,319 @@
+{
+  "id": "i-l",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "glyph": "l:lower_script",
+        "say": {
+          "text": "Sikiliza sauti l katika neno lala. Tazama herufi l ikiandikwa."
+        },
+        "durationMs": 2500,
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : lala. Gusa herufi ya sauti l."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "glyph": "i:lower_script",
+        "say": {
+          "text": "Sikiliza sauti i mwanzoni mwa neno imba. Tazama herufi i ikiandikwa."
+        },
+        "durationMs": 3000,
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : imba. Gusa herufi ya sauti i."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : lala. Gusa herufi ya sauti l."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "word": "lala",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : imba. Gusa herufi ya sauti i."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "word": "imba",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "moon"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:l"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa l."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:i"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa i."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:imba"
+      ],
+      "params": {
+        "word": "imba",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    }
+  ],
+  "title": "Herufi za mwanzo",
+  "symbol": "L · I",
+  "icon": "moon"
+}

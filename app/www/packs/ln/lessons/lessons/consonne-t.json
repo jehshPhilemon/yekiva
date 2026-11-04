@@ -1,0 +1,221 @@
+{
+  "id": "consonne-t",
+  "title": "Konsoni T",
+  "symbol": "T  t",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "glyph": "t:lower_script",
+        "say": {
+          "text": "Letre T ezali na mongongo ttt, lokola na liloba tata. Yoka : ttt."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : tata. Simba letre ya mongongo t."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : tata. Simba letre ya mongongo ttt."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "word": "tata",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:t"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba t."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:tata"
+      ],
+      "params": {
+        "word": "tata",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

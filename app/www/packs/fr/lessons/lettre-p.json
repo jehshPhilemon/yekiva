@@ -33,16 +33,16 @@
         },
         "choices": [
           {
-            "id": "d",
-            "text": "d"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "p",
             "text": "p"
           },
           {
-            "id": "b",
-            "text": "b"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "p",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "p",
             "text": "p"
           },
           {
-            "id": "b",
-            "text": "b"
-          },
-          {
-            "id": "t",
-            "text": "t"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "p",
@@ -113,16 +113,16 @@
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "p",
             "text": "p"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "p",
@@ -145,16 +145,16 @@
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "p",
-            "text": "p"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -181,12 +181,12 @@
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "p",
-            "text": "p"
+            "id": "e",
+            "text": "e"
           }
         ],
         "answer": "e",

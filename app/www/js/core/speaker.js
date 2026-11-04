@@ -10,71 +10,29 @@
 // APK note: the API audio element must be unlocked by a user gesture.
 // Phone speech synthesis is intentionally not used.
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const FOCUS_PAUSE_MS = 450;
+// Natural speech rhythm: split a long prompt into spoken phrases so the TTS
+// breathes after strong punctuation (., !, ?, :, ;) and lightly after commas.
+const PHRASE_PAUSE_MS = { ".": 700, "!": 700, "?": 700, ":": 550, ";": 550, ",": 350 };
+function splitPhrases(text) {
+  const parts = String(text ?? "").split(/([.,!?:;]+)/).map((p) => p.trim()).filter(Boolean);
+  const out = [];
+  for (let i = 0; i < parts.length; i += 2) {
+    const phrase = parts[i] ?? "";
+    const punct = parts[i + 1] ?? "";
+    if (!phrase) continue;
+    const last = punct.slice(-1);
+    out.push({ text: punct ? `${phrase}${punct}` : phrase, pause: PHRASE_PAUSE_MS[last] ?? FOCUS_PAUSE_MS });
+  }
+  if (!out.length && String(text ?? "").trim()) out.push({ text: String(text).trim(), pause: FOCUS_PAUSE_MS });
+  return out;
+}
 
 const BCP47 = { fr: "fr-FR", sw: "sw-KE", ln: "ln-CD", en: "en-US" };
 export function bcp47(code) {
   if (!code) return undefined;
   if (code.includes("-")) return code;
   return BCP47[code] ?? code;
-}
-
-function synth() {
-  try {
-    return "speechSynthesis" in window ? window.speechSynthesis : null;
-  } catch {
-    return null;
-  }
-}
-
-let cachedVoices = null;
-function loadVoices() {
-  const s = synth();
-  if (!s) return Promise.resolve([]);
-  const read = () => { try { return s.getVoices() ?? []; } catch { return []; } };
-  const first = read();
-  if (first.length) {
-    cachedVoices = first;
-    return Promise.resolve(first);
-  }
-  return new Promise((resolve) => {
-    const t = setTimeout(() => resolve(read()), 1500);
-    const on = () => {
-      clearTimeout(t);
-      cachedVoices = read();
-      resolve(cachedVoices);
-    };
-    try {
-      s.onvoiceschanged = on;
-    } catch {
-      clearTimeout(t);
-      resolve(read());
-    }
-  });
-}
-
-function pickVoice(voices, code) {
-  if (!voices?.length) return null;
-  const target = (bcp47(code) ?? code ?? "").toLowerCase();
-  const prefix = (code ?? "").toLowerCase();
-  const score = (v) => {
-    const l = String(v.lang ?? "").toLowerCase();
-    if (l === target) return 3;
-    if (target && l.startsWith(target.split("-")[0])) return 2;
-    if (prefix && l.startsWith(prefix)) return 2;
-    return 0;
-  };
-  let best = null;
-  let bestScore = 0;
-  for (const v of voices) {
-    const sc = score(v);
-    if (sc > bestScore) {
-      bestScore = sc;
-      best = v;
-    }
-  }
-  // No exact/prefix match: use the device default voice rather than silence.
-  if (!best && voices.length) return voices[0];
-  return bestScore > 0 ? best : (voices[0] ?? null);
 }
 
 // ---- on-device audio cache (IndexedDB): generated once, replayed offline ----
@@ -136,34 +94,35 @@ async function cachePut(lang, text, blob) {
 export function createSpeaker({ speakFn } = {}) {
   let current = null;
   let warmed = false;
+  let generation = 0;
   const mem = new Map(); // session cache: key -> Blob
 
   // Traduction des causes techniques en phrases pour un testeur sans clavier.
   function explainCause(cause) {
     switch (String(cause ?? "")) {
       case "no-config":
-        return "cet APK a été construit sans --api (adresse API manquante) : voix téléphone uniquement";
+        return "cet APK a été construit sans --api (adresse API manquante) : API vocale uniquement";
       case "no-key":
-        return "clé API manquante dans cet APK (build sans --key) : l'API répond 401, voix téléphone uniquement";
+        return "clé API manquante dans cet APK (build sans --key) : l'API répond 401, API vocale uniquement";
       case "offline":
-        return "téléphone hors-ligne (Wi-Fi/4G coupé) : voix téléphone uniquement";
+        return "téléphone hors-ligne (Wi-Fi/4G coupé) : API vocale uniquement";
       case "http-401":
-        return "l'API refuse la clé (401) : clé absente ou fausse dans le build, voix téléphone uniquement";
+        return "l'API refuse la clé (401) : clé absente ou fausse dans le build, API vocale uniquement";
       case "http-422":
-        return "l'API refuse le texte ou la langue (422) : voix téléphone, prévenez le développeur";
+        return "l'API refuse le texte ou la langue (422) : aucun fallback téléphone, prévenez le développeur";
       case "http-500":
       case "http-502":
       case "http-503":
-        return `l'API est en panne (${cause}) : réessayez, voix téléphone en attendant`;
+        return `l'API est en panne (${cause}) : réessayez, aucun fallback téléphone`;
       case "empty":
-        return "l'API répond vide : réessayez, voix téléphone en attendant";
+        return "l'API répond vide : réessayez, aucun fallback téléphone";
       case "empty-text":
         return "rien à dire (texte vide) : erreur interne, prévenez le développeur";
       case "network":
-        return "API injoignable (réseau ? adresse fausse ?) : voix téléphone uniquement";
+        return "API injoignable (réseau ? adresse fausse ?) : API vocale uniquement";
       default:
         return /^http-\d+$/.test(String(cause))
-          ? `l'API répond ${String(cause).slice(5)} : voix téléphone, voir « erreurs »`
+          ? `l'API répond ${String(cause).slice(5)} : aucun fallback téléphone, voir « erreurs »`
           : "l'API ne renvoie aucun audio (voir « erreurs »)";
     }
   }
@@ -177,9 +136,7 @@ export function createSpeaker({ speakFn } = {}) {
       } catch { /* ignore */ }
       current = null;
     }
-    try {
-      synth()?.cancel();
-    } catch { /* ignore */ }
+    generation += 1;
   }
 
   /** Call on first user gesture: unlocks audio + preloads voices. */
@@ -196,7 +153,8 @@ export function createSpeaker({ speakFn } = {}) {
     } catch { /* ignore */ }
   }
 
-  function playBlob(blob) {
+  function playBlob(blob, token = generation) {
+    if (token !== generation) return Promise.resolve(false);
     return new Promise((resolve) => {
       let settled = false;
       const done = () => {
@@ -206,7 +164,7 @@ export function createSpeaker({ speakFn } = {}) {
           URL.revokeObjectURL(url);
         } catch { /* ignore */ }
         if (current === a) current = null;
-        resolve();
+        resolve(true);
       };
       let url = "";
       try {
@@ -218,6 +176,10 @@ export function createSpeaker({ speakFn } = {}) {
       try {
         a.dataset.objectUrl = url;
       } catch { /* ignore */ }
+      if (token !== generation) {
+        try { URL.revokeObjectURL(url); } catch { /* ignore */ }
+        return resolve(false);
+      }
       current = a;
       a.onended = done;
       a.onerror = done;
@@ -231,19 +193,13 @@ export function createSpeaker({ speakFn } = {}) {
     });
   }
 
-  /** Natural voice: server TTS (Meta) with session + IndexedDB cache. Null when unavailable. */
-  async function speakRemote(text, lang) {
-    if (!speakFn || !text) return null;
+  async function speakOnce(text, lang, token) {
     const key = cacheKey(lang, text);
-    if (mem.has(key)) {
-      await playBlob(mem.get(key));
-      return true;
-    }
+    if (mem.has(key)) return playBlob(mem.get(key), token);
     const cached = await cacheGet(lang, text);
     if (cached) {
       mem.set(key, cached);
-      await playBlob(cached);
-      return true;
+      return playBlob(cached, token);
     }
     let blob = null;
     try {
@@ -251,11 +207,25 @@ export function createSpeaker({ speakFn } = {}) {
     } catch {
       return null;
     }
-    if (!blob) return null;
+    if (!blob || token !== generation) return null;
     mem.set(key, blob);
     cachePut(lang, text, blob);
-    await playBlob(blob);
-    return true;
+    return playBlob(blob, token);
+  }
+
+  /** Natural voice: server TTS (Meta) with session + IndexedDB cache. Null when unavailable. */
+  async function speakRemote(text, lang, token = generation) {
+    if (!speakFn || !text || token !== generation) return null;
+    const phrases = splitPhrases(text);
+    let played = false;
+    for (const phrase of phrases) {
+      if (token !== generation) return played ? true : null;
+      const ok = await speakOnce(phrase.text, lang, token);
+      if (!ok) return played ? true : null;
+      played = true;
+      if (token === generation) await sleep(phrase.pause);
+    }
+    return played;
   }
 
   return {
@@ -286,14 +256,12 @@ export function createSpeaker({ speakFn } = {}) {
     async say(say, lang) {
       if (!say?.text) return;
       stop();
-      if (!cachedVoices) await loadVoices().then((v) => { cachedVoices = v; });
+      const token = generation;
       // API-only mode: never use the unreliable phone fallback.
-      try { return await speakRemote(say.text, lang); } catch { return false; }
+      try { return Boolean(await speakRemote(say.text, lang, token)); } catch { return false; }
     },
-    /** Diagnostics: server voice reachable? how many utterances cached? phone voices? */
+    /** Diagnostics: server voice reachable? how many utterances cached? */
     async diagnose() {
-      const voices = await loadVoices();
-      cachedVoices = voices;
       let serverVoice = null;
       let serverDetail = "";
       if (speakFn) {
@@ -332,16 +300,15 @@ export function createSpeaker({ speakFn } = {}) {
         natural: serverVoice, // true = API voice reachable; false = unavailable (no phone fallback)
         serverDetail,
         cached, // utterances stored on-device (offline replay)
-        hasSynthesis: Boolean(synth()),
-        count: voices.length,
-        langs: [...new Set(voices.map((v) => v.lang))].sort(),
-        picked: { fr: pickVoice(voices, "fr")?.lang ?? null, sw: pickVoice(voices, "sw")?.lang ?? null, ln: pickVoice(voices, "ln")?.lang ?? null },
+        hasSynthesis: false,
+        count: 0,
+        langs: [],
+        picked: {},
       };
     },
     /**
      * Tests son 100 % tactiles (appelables par des boutons, sans console) :
-     * testBeep = le haut-parleur sort-il un son ? testPhoneVoice = la voix
-     * téléphone parle-t-elle ? testServerVoice = l'API vocale répond-elle ?
+     * testBeep = le haut-parleur sort-il un son ? testServerVoice = l'API vocale répond-elle ?
      * Chacun renvoie { ok, detail } pour affichage à l'écran.
      */
     async testBeep() {
@@ -351,11 +318,9 @@ export function createSpeaker({ speakFn } = {}) {
         ? { ok: true, detail: "bip entendu = le haut-parleur fonctionne" }
         : { ok: false, detail: "aucun son produit (vérifiez le volume / le mode silencieux)" };
     },
-    async testPhoneVoice() {
-      return { ok: false, detail: "fallback telephone desactive (API uniquement)" };
-    },
     async testServerVoice(text = "Bonjour", lang = "fr") {
       await ready().catch(() => {});
+      const token = generation;
       if (!speakFn) {
         return { ok: false, detail: "voix API absente de cet APK (prévenez le développeur)" };
       }
@@ -364,7 +329,7 @@ export function createSpeaker({ speakFn } = {}) {
         try {
           const d = await speakFn.diagnoseSpeak(text, lang);
           if (d.ok && d.blob?.size) {
-            await playBlob(d.blob);
+            await playBlob(d.blob, token);
             return { ok: true, detail: "voix de l'API entendue (voix naturelle)" };
           }
           return { ok: false, detail: explainCause(d.cause) };
@@ -375,7 +340,7 @@ export function createSpeaker({ speakFn } = {}) {
       try {
         const blob = await speakFn(text, lang);
         if (!blob?.size) return { ok: false, detail: "l'API ne renvoie aucun audio (voir « erreurs »)" };
-        await playBlob(blob);
+        await playBlob(blob, token);
         return { ok: true, detail: "voix de l'API entendue (voix naturelle)" };
       } catch (e) {
         return { ok: false, detail: `API injoignable (${e?.message ?? "réseau"})` };

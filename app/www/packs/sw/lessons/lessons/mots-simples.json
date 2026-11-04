@@ -1,0 +1,203 @@
+{
+  "id": "mots-simples",
+  "title": "Maneno yangu ya kwanza",
+  "symbol": "mama · baba · lala",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno mama. Gusa neno mama."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "mama",
+            "text": "mama"
+          }
+        ],
+        "answer": "mama",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "lala"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno lala. Gusa neno lala."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "lala",
+            "text": "lala"
+          }
+        ],
+        "answer": "lala",
+        "context": {
+          "letter": "la",
+          "word": "lala",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa mama."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "mama",
+            "text": "mama"
+          }
+        ],
+        "answer": "mama",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:lala"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa lala."
+        },
+        "choices": [
+          {
+            "id": "lala",
+            "text": "lala"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "lala",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

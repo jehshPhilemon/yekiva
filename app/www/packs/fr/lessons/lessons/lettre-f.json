@@ -1,0 +1,221 @@
+{
+  "id": "lettre-f",
+  "title": "La lettre F",
+  "symbol": "F · f",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "La lettre F fait le son fff, comme dans fleur. Écoute bien : fff."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : fleur. Touche la lettre du son f."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : fleur. Touche la lettre du son fff."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "word": "fleur",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:f"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche f."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:fleur"
+      ],
+      "params": {
+        "word": "fleur",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

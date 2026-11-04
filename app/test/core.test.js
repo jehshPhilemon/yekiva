@@ -161,11 +161,24 @@ test("direct API: trailing route suffixes are stripped", async () => {
   assert.equal(t.apiUrl, "https://api.jehshphilemon.com");
 });
 
-test("direct API: no transcription/photo routes yet -> null (offline plan B)", async () => {
+test("direct API: empty payloads -> null, chat() asks Spark for a reply (offline plan B)", async () => {
   const { createVoiceApi } = await import("../www/js/core/voice-api.js");
   const t = createVoiceApi({ apiUrl: "https://api.jehshphilemon.com", apiKey: "x" });
   assert.equal(await t.transcribe(new Blob([])), null);
   assert.equal(await t.lessonFromPhoto(new Blob([])), null);
+  assert.equal(await t.chat("", "fr"), null);
+  assert.equal(await t.chat("   ", "sw"), null);
+});
+test("listen_tap never leaks the answer (no blink cheat)", async () => {
+  const src = new URL("../www/js/steps/listen_tap.js", import.meta.url);
+  const code = await import("node:fs").then((fs) => fs.readFileSync(src, "utf8"));
+  assert.ok(!code.includes("targetButton"), "the answer button must not be tracked for blinking");
+  assert.ok(!code.includes("blink"), "no blinking of the correct choice");
+});
+test("watch_write keeps the Parisienne letter visible after the animation", async () => {
+  const src = new URL("../www/js/steps/watch_write.js", import.meta.url);
+  const code = await import("node:fs").then((fs) => fs.readFileSync(src, "utf8"));
+  assert.ok(code.includes("is-done"), "the letter must stay visible (is-done) after the reveal");
 });
 
 test("direct API: diagnoseSpeak names the cause (no-config / no-key / http)", async () => {

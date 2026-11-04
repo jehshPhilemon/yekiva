@@ -1,0 +1,221 @@
+{
+  "id": "lettre-y",
+  "title": "Letre Y",
+  "symbol": "Y  y",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "Letre Y ezali na mongongo y, lokola na liloba yaourt. Yoka : y."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Y  y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : yaourt. Simba letre ya mongongo y."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y  y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : yaourt. Simba letre ya mongongo y."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y  y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "word": "yaourt",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "Y  y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:y"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba y."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y  y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Y  y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Y  y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:yaourt"
+      ],
+      "params": {
+        "word": "yaourt",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Y  y",
+          "word": "yaourt",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

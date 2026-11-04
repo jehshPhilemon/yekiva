@@ -19,12 +19,12 @@
             "text": "nj"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "j",
-            "text": "j"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "nj",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "njela",
             "text": "njela"
           },
           {
-            "id": "njoka",
-            "text": "njoka"
-          },
-          {
-            "id": "nyama",
-            "text": "nyama"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "njela",
@@ -74,7 +74,7 @@
       "params": {
         "word": "njela",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "nj",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche nj."
+          "text": "Motuna 1 na 3 : simba nj."
         },
         "choices": [
+          {
+            "id": "nj",
+            "text": "nj"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "njela",
-            "text": "njela"
-          },
-          {
-            "id": "nj",
-            "text": "nj"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "nj",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche njela."
+          "text": "Motuna 2 na 3 : simba njela."
         },
         "choices": [
           {
-            "id": "nj",
-            "text": "nj"
-          },
-          {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "njela",
             "text": "njela"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "njela",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "njela",
-            "text": "njela"
-          },
-          {
-            "id": "nj",
-            "text": "nj"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "njela",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

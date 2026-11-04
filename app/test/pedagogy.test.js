@@ -14,13 +14,19 @@ test("each language begins with the same letter A lesson and a localized example
     const lesson = readJson(`${code}/lessons/letter-a.json`);
     assert.equal(manifest.tracks.adult[0], "letter-a", `${code} adult path should start with A`);
     assert.equal(manifest.tracks.child[0], "letter-a", `${code} child path should start with A`);
-    assert.ok(glyphs["a:lower_script"], `${code} needs an offline A tracing model`);
+    for (const g of ["A:upper_print", "a:lower_print", "a:lower_script", "A:upper_script"]) {
+      assert.ok(glyphs[g], `${code} needs the A form '${g}' (print + script, upper + lower)`);
+    }
     const types = lesson.steps.map((s) => s.type);
     assert.ok(types.includes("watch_write"));
     assert.ok(!types.includes("trace_letter"), `${code} must not validate hand drawing`);
     assert.ok(types.filter((x) => x === "listen_tap").length >= 2, `${code}/letter-a needs 2+ listen-then-choose steps`);
+    const shown = lesson.steps.filter((s) => s.type === "watch_write").map((s) => s.params.glyph);
+    for (const g of ["A:upper_print", "a:lower_print", "a:lower_script", "A:upper_script"]) {
+      assert.ok(shown.includes(g), `${code}/letter-a must show the A form '${g}'`);
+    }
     for (const step of lesson.steps) {
-      if (step.params.glyph) assert.equal(step.params.glyph, "a:lower_script");
+      if (step.params.glyph) assert.ok(glyphs[step.params.glyph], `${code} uses unknown glyph '${step.params.glyph}'`);
       if (step.type === "listen_tap") {
         assert.ok(Array.isArray(step.params.choices) && step.params.choices.length >= 3, `${code} listen_tap needs 3+ choices`);
         assert.ok(step.params.answer, `${code} listen_tap needs an answer`);
@@ -40,6 +46,95 @@ test("existing letter lessons connect sound, familiar word, and picture cue", ()
       assert.ok(step.params.context?.word, `${code} ${step.items[0]} needs a familiar word`);
       assert.ok(step.params.context?.icon, `${code} ${step.items[0]} needs a visual cue`);
       assert.ok(step.params.say?.text, `${code} ${step.items[0]} needs runtime voice text`);
+    }
+  }
+});
+
+test("voice-first: every conversation status and every quiz prompt exists in all 3 languages", async () => {
+  const { readFileSync } = await import("node:fs");
+  for (const code of ["fr", "sw", "ln"]) {
+    const m = JSON.parse(readFileSync(new URL(`../www/packs/${code}/manifest.json`, import.meta.url), "utf8"));
+    for (const k of ["conversation_hint", "conversation_recording", "conversation_sending", "conversation_thinking", "conversation_received", "conversation_offline", "conversation_mic_error", "conversation_empty"]) {
+      assert.ok(m[k]?.text, `${code} needs pack prompt '${k}' (every chat status is spoken)`);
+    }
+  }
+  const conv = readFileSync(new URL("../www/js/screens/conversation.js", import.meta.url), "utf8");
+  // No silent status: setStatus is always paired with say() (via sayStatus or direct await say).
+  const statuses = (conv.match(/setStatus\(/g) ?? []).length;
+  const speaks = (conv.match(/await say\(/g) ?? []).length;
+  assert.ok(speaks >= statuses, `every shown status must be spoken (${speaks} say for ${statuses} setStatus)`);
+  assert.ok(conv.includes("await say(sending)"), "the sending status must be spoken");
+  assert.ok(conv.includes("await say(thinking)"), "the thinking status must be spoken");
+  assert.ok(conv.includes("await say({ text: answer"), "the Spark reply must be read aloud (text alone is not enough)");
+});
+
+test("sw/ln lessons speak their own language (no French voice text)", () => {
+  const fr = /[ÉÈ]coute|Touche|Question|Derni[eè]re|Bravo|Petit test|lettre du son|comme avion/i;
+  for (const code of ["sw", "ln"]) {
+    const manifest = readJson(`${code}/manifest.json`);
+    for (const track of Object.values(manifest.tracks ?? {})) {
+      for (const lid of track) {
+        let lesson;
+        try { lesson = readJson(`${code}/lessons/${lid}.json`); } catch { continue; }
+        for (const step of lesson.steps ?? []) {
+          const say = step.params?.say?.text ?? "";
+          assert.ok(!fr.test(say), `${code}/${lid}: French voice text leaked: "${say.slice(0, 60)}"`);
+        }
+      }
+    }
+  }
+});
+
+test("quizzes only use taught letters (never an untaught letter as answer or distractor)", () => {
+  for (const code of ["fr", "sw", "ln"]) {
+    const manifest = readJson(`${code}/manifest.json`);
+    const known = new Set();
+    for (const lid of manifest.tracks.adult) {
+      let lesson;
+      try { lesson = readJson(`${code}/lessons/${lid}.json`); } catch { continue; }
+      const taught = new Set();
+      for (const st of lesson.steps ?? []) {
+        for (const it of st.items ?? []) {
+          if (!String(it).startsWith("quiz:") && String(it).length === 1 && /[a-z]/i.test(it)) taught.add(String(it).toLowerCase());
+        }
+      }
+      const avail = new Set([...known, ...taught]);
+      for (const st of lesson.steps ?? []) {
+        if (st.type !== "listen_tap") continue;
+        const ans = String(st.params?.answer ?? "").toLowerCase();
+        assert.ok(!/^[a-z]$/.test(ans) || avail.has(ans), `${code}/${lid}: quiz answer '${ans}' was never taught`);
+        for (const c of st.params?.choices ?? []) {
+          const base = String(c.id ?? "").toLowerCase().replace("-script", "");
+          assert.ok(!/^[a-z]$/.test(base) || avail.has(base), `${code}/${lid}: choice '${c.id}' was never taught (confusing distractor)`);
+        }
+      }
+      for (const t of taught) known.add(t);
+    }
+  }
+});
+
+test("every letter shows its 4 versions (print upper/lower in system fonts, script upper/lower in Parisienne)", async () => {
+  // Print = real system fonts (serif caps / sans lowercase), script = Parisienne.
+  // No hand-made stroke bricolage anywhere: watch_write renders all 4 via fonts.
+  const { readFileSync } = await import("node:fs");
+  const ww = readFileSync(new URL("../www/js/steps/watch_write.js", import.meta.url), "utf8");
+  assert.ok(ww.includes("upper_print") && ww.includes("lower_print"), "watch_write renders print via fonts");
+  assert.ok(ww.includes("upper_script") && ww.includes("lower_script"), "watch_write renders script via fonts");
+  assert.ok(ww.includes("print-letter"), "print uses the print-letter card (system fonts)");
+  assert.ok(ww.includes("script-letter"), "script uses the Parisienne card");
+  const css = readFileSync(new URL("../www/css/app.css", import.meta.url), "utf8");
+  assert.ok(css.includes("print-upper") || css.includes("print-letter"), "CSS styles print versions (system serif/sans)");
+  assert.ok(css.includes("Parisienne"), "CSS loads Parisienne for handwriting");
+  const lt = readFileSync(new URL("../www/js/steps/listen_tap.js", import.meta.url), "utf8");
+  assert.ok(lt.includes("print-upper") && lt.includes("print-lower") && lt.includes("script"), "choices use the 4 font versions (never bricolage)");
+  // letter-a demonstrates all 4 versions of A in the lesson itself.
+  for (const code of ["fr", "sw", "ln"]) {
+    const lesson = readJson(`${code}/lessons/letter-a.json`);
+    const glyphs = readJson(`${code}/glyphs.json`);
+    const shown = lesson.steps.filter((s) => s.type === "watch_write").map((s) => s.params.glyph);
+    for (const g of ["A:upper_print", "a:lower_print", "a:lower_script", "A:upper_script"]) {
+      assert.ok(shown.includes(g), `${code}/letter-a must show the A form '${g}'`);
+      assert.ok(glyphs[g], `${code} needs the A form '${g}'`);
     }
   }
 });

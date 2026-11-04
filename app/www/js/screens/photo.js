@@ -1,8 +1,5 @@
-// "Read the world": photographie un mot, puis Meta génère une mini-leçon.
-// AUJOURD'HUI : pas de route photo dans l'API -> l'écran l'explique en voix
-// (prompts.photo_hint) et repart au parcours. Aucun appel Meta, aucun serveur
-// intermédiaire. Quand la route existera, brancher voiceApi.lessonFromPhoto()
-// (elle renverra une leçon au lieu de null) — le jeu inline ci-dessous est prêt.
+// "Read the world": photographie un mot, Meta l'explique (description simple)
+// puis génère une vraie leçon (répétition + quiz) jouée inline.
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
@@ -30,18 +27,48 @@ export function photoScreen({ services, state, go }) {
 
   async function play() {
     if (!blob) return;
-    const lesson = await services.transcriber.lessonFromPhoto(blob, state.language?.code);
+    let cancelled = false;
+    const cancel = () => { cancelled = true; };
+    screen.destroy = cancel;
+    // Processing feedback: the analysis takes a few seconds (photo -> Spark -> lesson).
+    status.replaceChildren(icon("volume", 64));
+    const waitMsg = state.language?.photo_analyzing?.text ?? "Je regarde ta photo…";
+    status.append(waitMsg);
+    status.classList.add("is-working");
+    await services.speaker.say({ text: waitMsg }, state.language?.code, state.language?.basePackId);
+    if (cancelled) return;
+    let lesson = null;
+    try {
+      lesson = await services.transcriber.lessonFromPhoto(blob, state.language?.code);
+    } catch {
+      lesson = null;
+    }
+    status.classList.remove("is-working");
+    if (cancelled) return;
     if (!lesson?.steps?.length) {
-      // API indisponible ou photo illisible : retour gracieux au parcours.
-      show("cloudoff");
-      setTimeout(() => go("path"), 1600);
+      // API indisponible ou photo illisible : l'expliquer en voix, puis parcours.
+      const sorry = state.language?.photo_failed?.text ?? "Je n’ai pas pu lire cette photo. Essaie avec un mot bien visible.";
+      status.replaceChildren(icon("cloudoff", 64));
+      status.append(sorry);
+      await services.speaker.say({ text: sorry }, state.language?.code, state.language?.basePackId);
+      if (!cancelled) setTimeout(() => go("path"), 2600);
       return;
     }
-    // Route photo disponible un jour : joue la leçon générée inline.
+    // 1. L'app explique l'image : le mot lu + ce qui est visible.
+    const word = lesson.word ?? lesson.title ?? "";
+    const desc = typeof lesson.description === "string" ? lesson.description.trim() : "";
+    const seen = state.language?.photo_seen ?? null;
+    const intro = desc
+      ? `${seen?.text ?? `Je vois : ${word}.`} ${desc} On apprend ce mot ensemble.`
+      : (seen?.text ?? `Je vois le mot : ${word}. On apprend ce mot ensemble.`);
+    await services.speaker.say({ text: intro }, state.language?.code, state.language?.basePackId);
+    if (cancelled) return;
+    // 2. Joue la leçon générée inline (répétition + quiz).
     const learner = services.learnerFor(state.language.code);
     const steps = lesson.steps.filter((s) => registry[s.type]);
     let i = 0;
     const render = () => {
+      if (cancelled) return;
       if (i >= steps.length) {
         services.saveLearner(state.language.code);
         return go("path");

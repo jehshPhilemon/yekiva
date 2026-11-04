@@ -1,0 +1,221 @@
+{
+  "id": "lettre-d",
+  "title": "La lettre D",
+  "symbol": "D · d",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "glyph": "d:lower_script",
+        "say": {
+          "text": "La lettre D fait le son ddd, comme dans dodo. Écoute bien : ddd."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : dodo. Touche la lettre du son d."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : dodo. Touche la lettre du son ddd."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "word": "dodo",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:d"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche d."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:dodo"
+      ],
+      "params": {
+        "word": "dodo",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

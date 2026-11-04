@@ -1,0 +1,221 @@
+{
+  "id": "lettre-c",
+  "title": "La lettre C",
+  "symbol": "C · c",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "La lettre C fait le son k, comme dans chat. Devant a, C chante k. Écoute bien : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : chat. Touche la lettre du son c."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : chat. Touche la lettre du son k."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "word": "chat",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:c"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche c."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:chat"
+      ],
+      "params": {
+        "word": "chat",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

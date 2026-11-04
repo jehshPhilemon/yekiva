@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-nz",
+  "title": "Mongongo NZ",
+  "symbol": "nz",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nz"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na Z elongo ebimisaka mongongo moko : nz, lokola na nzete. Simba nz."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nz",
+            "text": "nz"
+          }
+        ],
+        "answer": "nz",
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "nzete"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba nzete. Simba liloba nzete."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nzete",
+            "text": "nzete"
+          }
+        ],
+        "answer": "nzete",
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "nzete"
+      ],
+      "params": {
+        "word": "nzete",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nz"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba nz."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nz",
+            "text": "nz"
+          }
+        ],
+        "answer": "nz",
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nzete"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba nzete."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nzete",
+            "text": "nzete"
+          }
+        ],
+        "answer": "nzete",
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nzete"
+      ],
+      "params": {
+        "word": "nzete",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

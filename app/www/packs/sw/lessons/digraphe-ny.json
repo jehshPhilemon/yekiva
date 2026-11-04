@@ -19,12 +19,12 @@
             "text": "ny"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "y",
-            "text": "y"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ny",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "nyumba",
             "text": "nyumba"
           },
           {
-            "id": "nyanya",
-            "text": "nyanya"
-          },
-          {
-            "id": "nyota",
-            "text": "nyota"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "nyumba",
@@ -74,7 +74,7 @@
       "params": {
         "word": "nyumba",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "ny",
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ny."
+          "text": "Swali 1 kati ya 3 : gusa ny."
         },
         "choices": [
           {
@@ -99,12 +99,12 @@
             "text": "ny"
           },
           {
-            "id": "nyumba",
-            "text": "nyumba"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ny",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche nyumba."
+          "text": "Swali 2 kati ya 3 : gusa nyumba."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
-          },
-          {
-            "id": "ny",
-            "text": "ny"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "nyumba",
             "text": "nyumba"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "nyumba",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
-          {
-            "id": "nyumba",
-            "text": "nyumba"
-          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "ny",
-            "text": "ny"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "nyumba",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

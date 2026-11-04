@@ -12,7 +12,7 @@
       "params": {
         "word": "Mama alali.",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "Mama",
@@ -30,7 +30,7 @@
       "params": {
         "word": "Bana balali.",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "Bana",
@@ -51,12 +51,16 @@
         },
         "choices": [
           {
-            "id": "Mama",
-            "text": "Mama"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "Bana",
-            "text": "Bana"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama",
+            "text": "Mama"
           }
         ],
         "answer": "Mama",
@@ -74,20 +78,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche Mama alali.."
+          "text": "Motuna 1 na 3 : simba Mama alali.."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "Mama alali.",
             "text": "Mama alali."
           },
           {
-            "id": "Bana balali.",
-            "text": "Bana balali."
-          },
-          {
-            "id": "Mama",
-            "text": "Mama"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "Mama alali.",
@@ -106,20 +110,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche Bana balali.."
+          "text": "Motuna 2 na 3 : simba Bana balali.."
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "Bana balali.",
             "text": "Bana balali."
-          },
-          {
-            "id": "Mama alali.",
-            "text": "Mama alali."
-          },
-          {
-            "id": "Mama",
-            "text": "Mama"
           }
         ],
         "answer": "Bana balali.",
@@ -138,20 +142,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche Mama."
+          "text": "Motuna 3 na 3 : simba Mama."
         },
         "choices": [
           {
-            "id": "Mama alali.",
-            "text": "Mama alali."
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "Mama",
             "text": "Mama"
           },
           {
-            "id": "Bana balali.",
-            "text": "Bana balali."
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "Mama",
@@ -171,7 +175,7 @@
       "params": {
         "word": "Bana balali.",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

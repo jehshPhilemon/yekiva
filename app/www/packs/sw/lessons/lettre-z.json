@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : zabibu. Touche la lettre du son z."
+          "text": "Sikiliza : zabibu. Gusa herufi ya sauti z."
         },
         "choices": [
           {
-            "id": "s",
-            "text": "s"
-          },
-          {
-            "id": "x",
-            "text": "x"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "z",
             "text": "z"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "z",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "z",
             "text": "z"
           },
           {
-            "id": "s",
-            "text": "s"
-          },
-          {
-            "id": "j",
-            "text": "j"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "z",
@@ -92,7 +92,7 @@
       "params": {
         "word": "zabibu",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "Z · z",
@@ -109,16 +109,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche z."
+          "text": "Swali 1 kati ya 3 : gusa z."
         },
         "choices": [
           {
-            "id": "z",
-            "text": "z"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "z",
+            "text": "z"
           },
           {
             "id": "a",
@@ -141,7 +141,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
           {
@@ -149,12 +149,12 @@
             "text": "a"
           },
           {
-            "id": "z",
-            "text": "z"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -173,9 +173,13 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "e",
             "text": "e"
@@ -183,10 +187,6 @@
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "z",
-            "text": "z"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "zabibu",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

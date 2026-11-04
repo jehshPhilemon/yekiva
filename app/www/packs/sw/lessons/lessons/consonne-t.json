@@ -1,0 +1,221 @@
+{
+  "id": "consonne-t",
+  "title": "Konsonanti T",
+  "symbol": "T · t",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "glyph": "t:lower_script",
+        "say": {
+          "text": "Herufi T inatoa sauti ttt, kama katika neno tata. Sikiliza : ttt."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : tata. Gusa herufi ya sauti t."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : tata. Gusa herufi ya sauti ttt."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "word": "tata",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:t"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa t."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:tata"
+      ],
+      "params": {
+        "word": "tata",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

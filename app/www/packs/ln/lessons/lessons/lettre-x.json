@@ -1,0 +1,221 @@
+{
+  "id": "lettre-x",
+  "title": "Letre X",
+  "symbol": "X  x",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "X esalelamaka na maloba ya bapaya lokola taxi. Etangamaka ks. Yoka : ks."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : taxi. Simba letre ya mongongo x."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : taxi. Simba letre X."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "word": "taxi",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:x"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba x."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:taxi"
+      ],
+      "params": {
+        "word": "taxi",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

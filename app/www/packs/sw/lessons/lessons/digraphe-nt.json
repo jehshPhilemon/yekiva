@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-nt",
+  "title": "Sauti NT",
+  "symbol": "nt",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nt"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na T pamoja hutoa sauti moja : nt, kama katika ntaa. Gusa nt."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
+          }
+        ],
+        "answer": "nt",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ntaa"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno ntaa. Gusa neno ntaa."
+        },
+        "choices": [
+          {
+            "id": "ntaa",
+            "text": "ntaa"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ntaa",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ntaa"
+      ],
+      "params": {
+        "word": "ntaa",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nt"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa nt."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
+          }
+        ],
+        "answer": "nt",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ntaa"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa ntaa."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ntaa",
+            "text": "ntaa"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ntaa",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ntaa"
+      ],
+      "params": {
+        "word": "ntaa",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -29,5 +29,6 @@ export function startCycle(items, { gapMs = 800, pauseMs = 3000, minMs = 1600 } 
   return () => {
     stopped = true;
     items.forEach((i) => i.el.classList.remove("blink"));
+    // The speaker cancellation is intentionally done by the screen owner.
   };
 }

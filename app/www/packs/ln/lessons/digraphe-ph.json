@@ -19,12 +19,12 @@
             "text": "ph"
           },
           {
-            "id": "p",
-            "text": "p"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "f",
-            "text": "f"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ph",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
-            "id": "photo",
-            "text": "photo"
-          },
-          {
-            "id": "papa",
-            "text": "papa"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "photo",
             "text": "photo"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "photo",
@@ -74,7 +74,7 @@
       "params": {
         "word": "photo",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "ph",
@@ -91,13 +91,9 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ph."
+          "text": "Motuna 1 na 3 : simba ph."
         },
         "choices": [
-          {
-            "id": "photo",
-            "text": "photo"
-          },
           {
             "id": "ph",
             "text": "ph"
@@ -105,6 +101,10 @@
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ph",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche photo."
+          "text": "Motuna 2 na 3 : simba photo."
         },
         "choices": [
-          {
-            "id": "photo",
-            "text": "photo"
-          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "ph",
-            "text": "ph"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "photo",
+            "text": "photo"
           }
         ],
         "answer": "photo",
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
           {
@@ -163,12 +163,12 @@
             "text": "a"
           },
           {
-            "id": "ph",
-            "text": "ph"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "photo",
-            "text": "photo"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "photo",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

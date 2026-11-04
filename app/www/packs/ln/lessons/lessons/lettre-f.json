@@ -1,0 +1,221 @@
+{
+  "id": "lettre-f",
+  "title": "Letre F",
+  "symbol": "F  f",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "Letre F ezali na mongongo fff, lokola na liloba fufu. Yoka : fff."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : fufu. Simba letre ya mongongo f."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : fufu. Simba letre ya mongongo fff."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "word": "fufu",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:f"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba f."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:fufu"
+      ],
+      "params": {
+        "word": "fufu",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

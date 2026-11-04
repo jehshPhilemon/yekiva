@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-ch",
+  "title": "Sauti CH",
+  "symbol": "ch",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ch"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : C na H pamoja hutoa sauti moja : ch, kama katika chai. Gusa ch."
+        },
+        "choices": [
+          {
+            "id": "ch",
+            "text": "ch"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ch",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "chai"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno chai. Gusa neno chai."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "chai",
+            "text": "chai"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "chai",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "chai"
+      ],
+      "params": {
+        "word": "chai",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ch"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa ch."
+        },
+        "choices": [
+          {
+            "id": "ch",
+            "text": "ch"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ch",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:chai"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa chai."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "chai",
+            "text": "chai"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "chai",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:chai"
+      ],
+      "params": {
+        "word": "chai",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

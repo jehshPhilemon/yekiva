@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-ch",
+  "title": "Mongongo CH",
+  "symbol": "ch",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ch"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : C na H elongo ebimisaka mongongo moko : ch, lokola na cherie. Simba ch."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ch",
+            "text": "ch"
+          }
+        ],
+        "answer": "ch",
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "cherie"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba cherie. Simba liloba cherie."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "cherie",
+            "text": "cherie"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "cherie",
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "cherie"
+      ],
+      "params": {
+        "word": "cherie",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ch"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba ch."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ch",
+            "text": "ch"
+          }
+        ],
+        "answer": "ch",
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:cherie"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba cherie."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "cherie",
+            "text": "cherie"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "cherie",
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:cherie"
+      ],
+      "params": {
+        "word": "cherie",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "nt",
             "text": "nt"
-          },
-          {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "t",
-            "text": "t"
           }
         ],
         "answer": "nt",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "ntaba",
             "text": "ntaba"
-          },
-          {
-            "id": "ntongo",
-            "text": "ntongo"
-          },
-          {
-            "id": "ndeke",
-            "text": "ndeke"
           }
         ],
         "answer": "ntaba",
@@ -74,7 +74,7 @@
       "params": {
         "word": "ntaba",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "nt",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche nt."
+          "text": "Motuna 1 na 3 : simba nt."
         },
         "choices": [
-          {
-            "id": "nt",
-            "text": "nt"
-          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "ntaba",
-            "text": "ntaba"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
           }
         ],
         "answer": "nt",
@@ -123,7 +123,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche ntaba."
+          "text": "Motuna 2 na 3 : simba ntaba."
         },
         "choices": [
           {
@@ -131,8 +131,8 @@
             "text": "a"
           },
           {
-            "id": "nt",
-            "text": "nt"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ntaba",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "ntaba",
-            "text": "ntaba"
-          },
-          {
-            "id": "nt",
-            "text": "nt"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "ntaba",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

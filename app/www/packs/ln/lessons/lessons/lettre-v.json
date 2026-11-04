@@ -1,0 +1,221 @@
+{
+  "id": "lettre-v",
+  "title": "Letre V",
+  "symbol": "V  v",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "glyph": "v:lower_script",
+        "say": {
+          "text": "Letre V ezali na mongongo vvv, lokola na liloba velo. Yoka : vvv."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : velo. Simba letre ya mongongo v."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : velo. Simba letre ya mongongo vvv."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "word": "velo",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:v"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba v."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:velo"
+      ],
+      "params": {
+        "word": "velo",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

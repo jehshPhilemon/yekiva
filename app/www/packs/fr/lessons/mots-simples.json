@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "lit",
             "text": "lit"
           },
           {
-            "id": "la",
-            "text": "la"
-          },
-          {
-            "id": "lune",
-            "text": "lune"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "lit",
@@ -50,12 +50,12 @@
             "text": "la"
           },
           {
-            "id": "le",
-            "text": "le"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "li",
-            "text": "li"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "la",
@@ -95,16 +95,16 @@
         },
         "choices": [
           {
-            "id": "lune",
-            "text": "lune"
-          },
-          {
-            "id": "la",
-            "text": "la"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "lit",
             "text": "lit"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "lit",
@@ -127,12 +127,12 @@
         },
         "choices": [
           {
-            "id": "lune",
-            "text": "lune"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "lit",
-            "text": "lit"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "la",
@@ -159,16 +159,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "lune",
             "text": "lune"
-          },
-          {
-            "id": "lit",
-            "text": "lit"
-          },
-          {
-            "id": "la",
-            "text": "la"
           }
         ],
         "answer": "lune",

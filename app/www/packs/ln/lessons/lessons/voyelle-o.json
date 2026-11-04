@@ -1,0 +1,221 @@
+{
+  "id": "voyelle-o",
+  "title": "Vowele O",
+  "symbol": "O  o",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "glyph": "o:lower_script",
+        "say": {
+          "text": "Letre O ezali na mongongo o, lokola na liloba moto. Yoka : o."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : moto. Simba letre ya mongongo o."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : moto. Simba letre ya mongongo o."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "word": "moto",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:o"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba o."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:moto"
+      ],
+      "params": {
+        "word": "moto",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : moto. Touche la lettre du son o."
+          "text": "Yoka : moto. Simba letre ya mongongo o."
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "o",
             "text": "o"
-          },
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "c",
-            "text": "c"
           }
         ],
         "answer": "o",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
-            "id": "o",
-            "text": "o"
-          },
-          {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "u",
-            "text": "u"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
           }
         ],
         "answer": "o",
@@ -92,7 +92,7 @@
       "params": {
         "word": "moto",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "O  o",
@@ -109,20 +109,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche o."
+          "text": "Motuna 1 na 3 : simba o."
         },
         "choices": [
           {
-            "id": "o",
-            "text": "o"
-          },
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
           }
         ],
         "answer": "o",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "o",
-            "text": "o"
-          },
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -173,12 +173,12 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
           {
-            "id": "o",
-            "text": "o"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "moto",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

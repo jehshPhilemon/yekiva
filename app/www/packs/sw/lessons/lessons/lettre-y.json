@@ -1,0 +1,221 @@
+{
+  "id": "lettre-y",
+  "title": "Herufi Y",
+  "symbol": "Y · y",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "Herufi Y inatoa sauti yyy, kama katika neno yai. Sikiliza : yyy."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : yai. Gusa herufi ya sauti y."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : yai. Gusa herufi ya sauti yyy."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "word": "yai",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:y"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa y."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:yai"
+      ],
+      "params": {
+        "word": "yai",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

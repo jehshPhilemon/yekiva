@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-th",
+  "title": "Sauti TH",
+  "symbol": "th",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "th"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : T na H pamoja hutoa sauti moja : th, kama katika thelathini. Gusa th."
+        },
+        "choices": [
+          {
+            "id": "th",
+            "text": "th"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "th",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "thelathini"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno thelathini. Gusa neno thelathini."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "thelathini",
+            "text": "thelathini"
+          }
+        ],
+        "answer": "thelathini",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "thelathini"
+      ],
+      "params": {
+        "word": "thelathini",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:th"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa th."
+        },
+        "choices": [
+          {
+            "id": "th",
+            "text": "th"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "th",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:thelathini"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa thelathini."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "thelathini",
+            "text": "thelathini"
+          }
+        ],
+        "answer": "thelathini",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:thelathini"
+      ],
+      "params": {
+        "word": "thelathini",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

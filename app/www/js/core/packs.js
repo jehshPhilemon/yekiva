@@ -30,6 +30,11 @@ export function createPacks({ root = "packs", fetchFn = (...a) => fetch(...a) } 
         color: m.ui?.color ?? "#EF6C00",
         labels: m.labels ?? {},
         prompts: m.prompts ?? {},
+        // Voice features live at the manifest ROOT (sibling of prompts):
+        // conversation_* (voice chat) and photo_* (read-the-world feedback).
+        ...Object.fromEntries(
+          Object.entries(m).filter(([k]) => k.startsWith("conversation_") || k.startsWith("photo_")),
+        ),
         matching: m.matching ?? {},
         tracks: merged.tracks,
         glyphs: merged.glyphs,

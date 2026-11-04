@@ -1,0 +1,221 @@
+{
+  "id": "consonne-t",
+  "title": "La consonne T",
+  "symbol": "T · t",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "glyph": "t:lower_script",
+        "say": {
+          "text": "La lettre T fait le son ttt, comme dans tasse. Écoute bien : ttt."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : tasse. Touche la lettre du son t."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : tasse. Touche la lettre du son ttt."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "word": "tasse",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:t"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche t."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:tasse"
+      ],
+      "params": {
+        "word": "tasse",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

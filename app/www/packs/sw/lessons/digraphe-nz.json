@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "nz",
             "text": "nz"
           },
           {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "z",
-            "text": "z"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "nz",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "nzuri",
             "text": "nzuri"
           },
           {
-            "id": "nzito",
-            "text": "nzito"
-          },
-          {
-            "id": "nazi",
-            "text": "nazi"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "nzuri",
@@ -74,7 +74,7 @@
       "params": {
         "word": "nzuri",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "nz",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche nz."
+          "text": "Swali 1 kati ya 3 : gusa nz."
         },
         "choices": [
           {
-            "id": "nzuri",
-            "text": "nzuri"
-          },
-          {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "nz",
             "text": "nz"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "nz",
@@ -123,9 +123,13 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche nzuri."
+          "text": "Swali 2 kati ya 3 : gusa nzuri."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "nzuri",
             "text": "nzuri"
@@ -133,10 +137,6 @@
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "nz",
-            "text": "nz"
           }
         ],
         "answer": "nzuri",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "nzuri",
-            "text": "nzuri"
-          },
-          {
-            "id": "nz",
-            "text": "nz"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "nzuri",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

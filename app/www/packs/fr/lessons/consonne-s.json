@@ -33,16 +33,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "s",
             "text": "s"
           },
           {
-            "id": "c",
-            "text": "c"
-          },
-          {
-            "id": "z",
-            "text": "z"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "s",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "s",
             "text": "s"
           },
           {
-            "id": "t",
-            "text": "t"
-          },
-          {
-            "id": "m",
-            "text": "m"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "s",
@@ -113,16 +113,16 @@
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "s",
             "text": "s"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "s",
@@ -145,16 +145,16 @@
         },
         "choices": [
           {
+            "id": "i",
+            "text": "i"
+          },
+          {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "s",
-            "text": "s"
-          },
-          {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -185,8 +185,8 @@
             "text": "a"
           },
           {
-            "id": "s",
-            "text": "s"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "e",

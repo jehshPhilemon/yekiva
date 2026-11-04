@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-nt",
+  "title": "Mongongo NT",
+  "symbol": "nt",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nt"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na T elongo ebimisaka mongongo moko : nt, lokola na ntaba. Simba nt."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
+          }
+        ],
+        "answer": "nt",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ntaba"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba ntaba. Simba liloba ntaba."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ntaba",
+            "text": "ntaba"
+          }
+        ],
+        "answer": "ntaba",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ntaba"
+      ],
+      "params": {
+        "word": "ntaba",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nt"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba nt."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
+          }
+        ],
+        "answer": "nt",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ntaba"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba ntaba."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ntaba",
+            "text": "ntaba"
+          }
+        ],
+        "answer": "ntaba",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ntaba"
+      ],
+      "params": {
+        "word": "ntaba",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

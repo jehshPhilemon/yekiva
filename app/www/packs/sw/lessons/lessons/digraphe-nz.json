@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-nz",
+  "title": "Sauti NZ",
+  "symbol": "nz",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nz"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na Z pamoja hutoa sauti moja : nz, kama katika nzuri. Gusa nz."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nz",
+            "text": "nz"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nz",
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "nzuri"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno nzuri. Gusa neno nzuri."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nzuri",
+            "text": "nzuri"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nzuri",
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "nzuri"
+      ],
+      "params": {
+        "word": "nzuri",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nz"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa nz."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nz",
+            "text": "nz"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nz",
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nzuri"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa nzuri."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "nzuri",
+            "text": "nzuri"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nzuri",
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nzuri"
+      ],
+      "params": {
+        "word": "nzuri",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

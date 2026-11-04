@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-an",
+  "title": "Le son AN",
+  "symbol": "an",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "an"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : A et N ensemble chantent un seul son : an, comme dans maman. Touche an."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "an",
+            "text": "an"
+          }
+        ],
+        "answer": "an",
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "maman"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot maman. Touche le mot maman."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "maman",
+            "text": "maman"
+          }
+        ],
+        "answer": "maman",
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "maman"
+      ],
+      "params": {
+        "word": "maman",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:an"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche an."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "an",
+            "text": "an"
+          }
+        ],
+        "answer": "an",
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:maman"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche maman."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "maman",
+            "text": "maman"
+          }
+        ],
+        "answer": "maman",
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:maman"
+      ],
+      "params": {
+        "word": "maman",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

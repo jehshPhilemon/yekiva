@@ -1,0 +1,221 @@
+{
+  "id": "lettre-g",
+  "title": "Letre G",
+  "symbol": "G  g",
+  "icon": "music",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "glyph": "g:lower_script",
+        "say": {
+          "text": "Letre G ezali na mongongo ggg, lokola na liloba guitare. Yoka : ggg."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : guitare. Simba letre ya mongongo g."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : guitare. Simba letre ya mongongo ggg."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "word": "guitare",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:g"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba g."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:guitare"
+      ],
+      "params": {
+        "word": "guitare",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

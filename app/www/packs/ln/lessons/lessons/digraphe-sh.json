@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-sh",
+  "title": "Mongongo SH",
+  "symbol": "sh",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "sh"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : S na H elongo ebimisaka mongongo moko : sh, lokola na shapo. Simba sh."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "sh",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "shapo"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba shapo. Simba liloba shapo."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "shapo",
+            "text": "shapo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "shapo",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "shapo"
+      ],
+      "params": {
+        "word": "shapo",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:sh"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba sh."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "sh",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:shapo"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba shapo."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "shapo",
+            "text": "shapo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "shapo",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:shapo"
+      ],
+      "params": {
+        "word": "shapo",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

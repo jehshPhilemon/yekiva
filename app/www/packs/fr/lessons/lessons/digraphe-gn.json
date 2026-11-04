@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-gn",
+  "title": "Le son GN",
+  "symbol": "gn",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "gn"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : G et N ensemble chantent un seul son : gn, comme dans montagne. Touche gn."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "gn",
+            "text": "gn"
+          }
+        ],
+        "answer": "gn",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "montagne"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot montagne. Touche le mot montagne."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "montagne",
+            "text": "montagne"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "montagne",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "montagne"
+      ],
+      "params": {
+        "word": "montagne",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:gn"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche gn."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "gn",
+            "text": "gn"
+          }
+        ],
+        "answer": "gn",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:montagne"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche montagne."
+        },
+        "choices": [
+          {
+            "id": "montagne",
+            "text": "montagne"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "montagne",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:montagne"
+      ],
+      "params": {
+        "word": "montagne",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

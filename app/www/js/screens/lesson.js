@@ -43,6 +43,8 @@ export async function lessonScreen({ services, state, go, lessonId }) {
   const screen = h("div", { class: "screen" }, h("div", { class: "progress" }, bar), body);
   let index = 0;
   let current = null;
+  let cancelled = false;
+  let finishTimer = null;
   // Score for gating: only counted steps (success === true/false), never skips (null).
   // Quiz steps (items "quiz:*") weigh QUIZ_WEIGHT: unlocking requires proving on new questions.
   let scored = 0;
@@ -76,6 +78,7 @@ export async function lessonScreen({ services, state, go, lessonId }) {
   });
 
   function finish() {
+    if (cancelled) return;
     const done = progress.load(lang.code, audience);
     // Gating: unlock only on success rate. A lesson with no scored steps
     // (all offline-skipped) never unlocks — the learner simply retries later.
@@ -94,10 +97,11 @@ export async function lessonScreen({ services, state, go, lessonId }) {
       else await lessonDone(services, lang, lesson, lesson.owner);
     })();
     // After a miss: stay a bit longer so the "try again" voice finishes, then back to path (still locked here).
-    setTimeout(() => go("path"), passed ? 2200 : 3200);
+    finishTimer = setTimeout(() => { if (!cancelled) go("path"); }, passed ? 2200 : 3200);
   }
 
   function render() {
+    if (cancelled) return;
     current?.destroy?.();
     services.speaker.stop();
     if (index >= steps.length) return finish();
@@ -106,7 +110,12 @@ export async function lessonScreen({ services, state, go, lessonId }) {
     body.replaceChildren(current);
   }
 
-  screen.destroy = () => current?.destroy?.();
+  screen.destroy = () => {
+    cancelled = true;
+    if (finishTimer) clearTimeout(finishTimer);
+    current?.destroy?.();
+    services.speaker.stop();
+  };
   // Explained intro: the lesson presents itself (title + what to do) BEFORE the
   // first exercise, so a lesson lasts minutes and teaches — not 15 seconds.
   // lesson_<id>_intro (pack) > generated intro (title + first context) > first step audio.
@@ -114,7 +123,8 @@ export async function lessonScreen({ services, state, go, lessonId }) {
     const specific = lang?.prompts?.[`lesson_${lesson.id}_intro`];
     if (specific?.text) {
       await services.speaker.say(specific, lang.code, lesson.owner);
-      return render();
+      if (!cancelled) render();
+      return;
     }
     const first = steps[0];
     const ctx0 = first?.params?.context;
@@ -123,7 +133,7 @@ export async function lessonScreen({ services, state, go, lessonId }) {
       ? { text: `${title}. ${ctx0.letter ?? ""}, comme dans ${ctx0.word}. Écoute bien, regarde, puis touche.` }
       : { text: `${title}. Écoute bien, puis fais comme moi.` };
     await services.speaker.say(intro, lang.code, lesson.owner);
-    render();
+    if (!cancelled) render();
   })();
   return screen;
 }

@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "sh",
             "text": "sh"
           },
           {
-            "id": "s",
-            "text": "s"
-          },
-          {
-            "id": "ch",
-            "text": "ch"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "sh",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
-            "id": "shapo",
-            "text": "shapo"
-          },
-          {
-            "id": "sasa",
-            "text": "sasa"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "shapo",
             "text": "shapo"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "shapo",
@@ -74,7 +74,7 @@
       "params": {
         "word": "shapo",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "sh",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche sh."
+          "text": "Motuna 1 na 3 : simba sh."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
-          },
-          {
-            "id": "shapo",
-            "text": "shapo"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "sh",
             "text": "sh"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "sh",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche shapo."
+          "text": "Motuna 2 na 3 : simba shapo."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "shapo",
             "text": "shapo"
           },
           {
-            "id": "sh",
-            "text": "sh"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "shapo",
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
           {
@@ -163,12 +163,12 @@
             "text": "a"
           },
           {
-            "id": "sh",
-            "text": "sh"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "shapo",
-            "text": "shapo"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "shapo",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

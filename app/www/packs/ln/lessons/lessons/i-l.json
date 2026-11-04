@@ -1,0 +1,319 @@
+{
+  "id": "i-l",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "glyph": "l:lower_script",
+        "say": {
+          "text": "Yoka mongongo l na liloba liso. Tala ndenge ya kokoma l."
+        },
+        "durationMs": 2500,
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : liso. Simba letre ya mongongo l."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "glyph": "i:lower_script",
+        "say": {
+          "text": "Yoka mongongo i na liloba liso. Tala ndenge ya kokoma i."
+        },
+        "durationMs": 3000,
+        "context": {
+          "letter": "I  i",
+          "word": "liso",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : liso. Simba letre ya mongongo i."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "I  i",
+          "word": "liso",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : lala. Simba letre ya mongongo l."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L  l",
+          "word": "lala",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "word": "lala",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "L  l",
+          "word": "lala",
+          "icon": "eye"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : imba. Simba letre ya mongongo i."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "I  i",
+          "word": "imba",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "word": "imba",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "I  i",
+          "word": "imba",
+          "icon": "eye"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:l"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba l."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:i"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba i."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:imba"
+      ],
+      "params": {
+        "word": "imba",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    }
+  ],
+  "title": "Bilembo ya ebandeli",
+  "symbol": "L  I",
+  "icon": "eye"
+}

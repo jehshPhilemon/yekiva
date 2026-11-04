@@ -1,0 +1,221 @@
+{
+  "id": "lettre-k",
+  "title": "Letre K",
+  "symbol": "K  k",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "glyph": "k:lower_script",
+        "say": {
+          "text": "Letre K ezali na mongongo kkk, lokola na liloba kiti. Yoka : kkk."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : kiti. Simba letre ya mongongo k."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : kiti. Simba letre ya mongongo kkk."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "word": "kiti",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:k"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba k."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:kiti"
+      ],
+      "params": {
+        "word": "kiti",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

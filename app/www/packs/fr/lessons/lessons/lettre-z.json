@@ -1,0 +1,221 @@
+{
+  "id": "lettre-z",
+  "title": "La lettre Z",
+  "symbol": "Z · z",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "glyph": "z:lower_script",
+        "say": {
+          "text": "La lettre Z fait le son zzz, comme dans zèbre. Écoute bien : zzz."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : zèbre. Touche la lettre du son z."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : zèbre. Touche la lettre du son zzz."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "word": "zèbre",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:z"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche z."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:zèbre"
+      ],
+      "params": {
+        "word": "zèbre",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "id": "lettre-x",
+  "title": "Herufi X",
+  "symbol": "X · x",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "X hutumika katika maneno ya kigeni kama teksi. Inasomwa ks. Sikiliza : ks."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : teksi. Gusa herufi ya sauti x."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : teksi. Gusa herufi X."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "word": "teksi",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:x"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa x."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:teksi"
+      ],
+      "params": {
+        "word": "teksi",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

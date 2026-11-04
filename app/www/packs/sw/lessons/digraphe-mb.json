@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "mb",
             "text": "mb"
           },
           {
-            "id": "m",
-            "text": "m"
-          },
-          {
-            "id": "b",
-            "text": "b"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "mb",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "mboga",
             "text": "mboga"
-          },
-          {
-            "id": "mbwa",
-            "text": "mbwa"
-          },
-          {
-            "id": "mbuzi",
-            "text": "mbuzi"
           }
         ],
         "answer": "mboga",
@@ -74,7 +74,7 @@
       "params": {
         "word": "mboga",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "mb",
@@ -91,20 +91,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche mb."
+          "text": "Swali 1 kati ya 3 : gusa mb."
         },
         "choices": [
           {
-            "id": "mboga",
-            "text": "mboga"
-          },
-          {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "mb",
             "text": "mb"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "mb",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche mboga."
+          "text": "Swali 2 kati ya 3 : gusa mboga."
         },
         "choices": [
           {
-            "id": "mboga",
-            "text": "mboga"
-          },
-          {
-            "id": "mb",
-            "text": "mb"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "mboga",
+            "text": "mboga"
           }
         ],
         "answer": "mboga",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "mb",
-            "text": "mb"
-          },
-          {
-            "id": "mboga",
-            "text": "mboga"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "mboga",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

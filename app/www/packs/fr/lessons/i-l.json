@@ -30,16 +30,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
             "id": "l",
             "text": "l"
-          },
-          {
-            "id": "t",
-            "text": "t"
-          },
-          {
-            "id": "j",
-            "text": "j"
           }
         ],
         "answer": "l",
@@ -83,12 +83,12 @@
             "text": "i"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "j",
-            "text": "j"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "i",
@@ -110,16 +110,16 @@
         },
         "choices": [
           {
-            "id": "l",
-            "text": "l"
+            "id": "a",
+            "text": "a"
           },
           {
             "id": "i",
             "text": "i"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "l",
@@ -163,12 +163,12 @@
             "text": "i"
           },
           {
-            "id": "l",
-            "text": "l"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "i",
@@ -208,12 +208,12 @@
         },
         "choices": [
           {
-            "id": "i",
-            "text": "i"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "l",
@@ -240,16 +240,16 @@
         },
         "choices": [
           {
-            "id": "i",
-            "text": "i"
+            "id": "a",
+            "text": "a"
           },
           {
             "id": "l",
             "text": "l"
           },
           {
-            "id": "a",
-            "text": "a"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "i",

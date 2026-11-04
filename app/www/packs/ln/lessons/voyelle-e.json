@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : nzete. Touche la lettre du son e."
+          "text": "Yoka : nzete. Simba letre ya mongongo e."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "e",
             "text": "e"
           },
           {
-            "id": "c",
-            "text": "c"
-          },
-          {
-            "id": "o",
-            "text": "o"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "e",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "e",
             "text": "e"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "o",
-            "text": "o"
           }
         ],
         "answer": "e",
@@ -92,7 +92,7 @@
       "params": {
         "word": "nzete",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "E  e",
@@ -109,16 +109,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche e."
+          "text": "Motuna 1 na 3 : simba e."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "i",
-            "text": "i"
+            "id": "e",
+            "text": "e"
           },
           {
             "id": "a",
@@ -141,12 +141,12 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "i",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "i",
-            "text": "i"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "nzete",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "B",
             "text": "B"
-          },
-          {
-            "id": "A",
-            "text": "A"
-          },
-          {
-            "id": "C",
-            "text": "C"
           }
         ],
         "answer": "B",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "E",
             "text": "E"
           },
           {
-            "id": "F",
-            "text": "F"
-          },
-          {
-            "id": "O",
-            "text": "O"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "E",
@@ -77,16 +77,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "M",
             "text": "M"
-          },
-          {
-            "id": "N",
-            "text": "N"
-          },
-          {
-            "id": "S",
-            "text": "S"
           }
         ],
         "answer": "M",
@@ -104,20 +104,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche B."
+          "text": "Motuna 1 na 3 : simba B."
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "B",
             "text": "B"
-          },
-          {
-            "id": "E",
-            "text": "E"
-          },
-          {
-            "id": "M",
-            "text": "M"
           }
         ],
         "answer": "B",
@@ -136,20 +136,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche E."
+          "text": "Motuna 2 na 3 : simba E."
         },
         "choices": [
           {
-            "id": "B",
-            "text": "B"
-          },
-          {
-            "id": "M",
-            "text": "M"
-          },
-          {
             "id": "E",
             "text": "E"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "E",
@@ -168,20 +168,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche M."
+          "text": "Motuna 3 na 3 : simba M."
         },
         "choices": [
           {
-            "id": "B",
-            "text": "B"
-          },
-          {
-            "id": "E",
-            "text": "E"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "M",
             "text": "M"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "M",

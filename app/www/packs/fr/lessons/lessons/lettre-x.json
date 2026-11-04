@@ -1,0 +1,221 @@
+{
+  "id": "lettre-x",
+  "title": "La lettre X",
+  "symbol": "X · x",
+  "icon": "music",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "La lettre X fait le son ksss, comme dans xylophone. Écoute bien : ksss."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : xylophone. Touche la lettre du son x."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : xylophone. Touche la lettre du son ksss."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "word": "xylophone",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:x"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche x."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:xylophone"
+      ],
+      "params": {
+        "word": "xylophone",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

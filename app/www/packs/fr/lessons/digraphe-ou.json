@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "ou",
             "text": "ou"
-          },
-          {
-            "id": "o",
-            "text": "o"
-          },
-          {
-            "id": "u",
-            "text": "u"
           }
         ],
         "answer": "ou",
@@ -50,12 +50,12 @@
             "text": "loup"
           },
           {
-            "id": "loupe",
-            "text": "loupe"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "lune",
-            "text": "lune"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "loup",
@@ -95,16 +95,16 @@
         },
         "choices": [
           {
-            "id": "ou",
-            "text": "ou"
-          },
-          {
-            "id": "loup",
-            "text": "loup"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ou",
+            "text": "ou"
           }
         ],
         "answer": "ou",
@@ -127,16 +127,16 @@
         },
         "choices": [
           {
+            "id": "loup",
+            "text": "loup"
+          },
+          {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "ou",
-            "text": "ou"
-          },
-          {
-            "id": "loup",
-            "text": "loup"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "loup",
@@ -159,16 +159,16 @@
         },
         "choices": [
           {
-            "id": "ou",
-            "text": "ou"
-          },
-          {
-            "id": "loup",
-            "text": "loup"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",

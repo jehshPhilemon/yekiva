@@ -1,0 +1,221 @@
+{
+  "id": "lettre-b",
+  "title": "La lettre B",
+  "symbol": "B · b",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "La lettre B fait le son bbb, comme dans bébé. Écoute bien : bbb."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : bébé. Touche la lettre du son b."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : bébé. Touche la lettre du son bbb."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "word": "bébé",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:b"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche b."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:bébé"
+      ],
+      "params": {
+        "word": "bébé",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

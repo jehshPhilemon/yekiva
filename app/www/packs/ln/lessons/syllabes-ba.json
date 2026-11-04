@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "ba",
             "text": "ba"
           },
           {
-            "id": "be",
-            "text": "be"
-          },
-          {
-            "id": "bi",
-            "text": "bi"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ba",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
             "id": "be",
             "text": "be"
           },
           {
-            "id": "bi",
-            "text": "bi"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "be",
@@ -77,16 +77,16 @@
         },
         "choices": [
           {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
-            "id": "be",
-            "text": "be"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "bi",
             "text": "bi"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "bi",
@@ -105,7 +105,7 @@
       "params": {
         "word": "baba",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "ba",
@@ -122,20 +122,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ba."
+          "text": "Motuna 1 na 3 : simba ba."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "ba",
             "text": "ba"
           },
           {
-            "id": "be",
-            "text": "be"
-          },
-          {
-            "id": "bi",
-            "text": "bi"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ba",
@@ -154,20 +154,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche be."
+          "text": "Motuna 2 na 3 : simba be."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "be",
             "text": "be"
           },
           {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
-            "id": "bi",
-            "text": "bi"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "be",
@@ -186,20 +186,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche bi."
+          "text": "Motuna 3 na 3 : simba bi."
         },
         "choices": [
           {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
-            "id": "be",
-            "text": "be"
-          },
-          {
             "id": "bi",
             "text": "bi"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "bi",
@@ -219,7 +219,7 @@
       "params": {
         "word": "baba",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

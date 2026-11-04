@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : nani. Touche la lettre du son n."
+          "text": "Yoka : nani. Simba letre ya mongongo n."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "n",
             "text": "n"
           },
           {
-            "id": "u",
-            "text": "u"
-          },
-          {
-            "id": "m",
-            "text": "m"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "n",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "n",
             "text": "n"
           },
           {
-            "id": "m",
-            "text": "m"
-          },
-          {
-            "id": "t",
-            "text": "t"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "n",
@@ -92,7 +92,7 @@
       "params": {
         "word": "nani",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "N  n",
@@ -109,9 +109,13 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche n."
+          "text": "Motuna 1 na 3 : simba n."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "n",
             "text": "n"
@@ -119,10 +123,6 @@
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "e",
-            "text": "e"
           }
         ],
         "answer": "n",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "e",
-            "text": "e"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
             "text": "e"
           },
           {
-            "id": "n",
-            "text": "n"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "nani",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

@@ -1,0 +1,221 @@
+{
+  "id": "voyelle-o",
+  "title": "La voyelle O",
+  "symbol": "O · o",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "glyph": "o:lower_script",
+        "say": {
+          "text": "La lettre O fait le son o, comme dans oiseau. Écoute bien : o."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : oiseau. Touche la lettre du son o."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : oiseau. Touche la lettre du son o."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "word": "oiseau",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:o"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche o."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:oiseau"
+      ],
+      "params": {
+        "word": "oiseau",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

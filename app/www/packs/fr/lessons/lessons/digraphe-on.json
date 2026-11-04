@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-on",
+  "title": "Le son ON",
+  "symbol": "on",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "on"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : O et N ensemble chantent un seul son : on, comme dans bonbon. Touche on."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "on",
+            "text": "on"
+          }
+        ],
+        "answer": "on",
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bonbon"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot bonbon. Touche le mot bonbon."
+        },
+        "choices": [
+          {
+            "id": "bonbon",
+            "text": "bonbon"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "bonbon",
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "bonbon"
+      ],
+      "params": {
+        "word": "bonbon",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:on"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche on."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "on",
+            "text": "on"
+          }
+        ],
+        "answer": "on",
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:bonbon"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche bonbon."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "bonbon",
+            "text": "bonbon"
+          }
+        ],
+        "answer": "bonbon",
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:bonbon"
+      ],
+      "params": {
+        "word": "bonbon",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

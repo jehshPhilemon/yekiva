@@ -1,0 +1,221 @@
+{
+  "id": "lettre-h",
+  "title": "La lettre H",
+  "symbol": "H · h",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "glyph": "h:lower_script",
+        "say": {
+          "text": "La lettre H ne chante pas, elle est muette, comme dans hibou. On écrit H mais on entend i."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : hibou. Touche la lettre du son h."
+        },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : hibou. Touche la lettre muette."
+        },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "word": "hibou",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:h"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche h."
+        },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:hibou"
+      ],
+      "params": {
+        "word": "hibou",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-mb",
+  "title": "Mongongo MB",
+  "symbol": "mb",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "mb"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : M na B elongo ebimisaka mongongo moko : mb, lokola na ebandeli ya mboka. Simba mb."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "mb",
+            "text": "mb"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "mb",
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "mboka"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba mboka. Simba liloba mboka."
+        },
+        "choices": [
+          {
+            "id": "mboka",
+            "text": "mboka"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "mboka",
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "mboka"
+      ],
+      "params": {
+        "word": "mboka",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mb"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba mb."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "mb",
+            "text": "mb"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "mb",
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mboka"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba mboka."
+        },
+        "choices": [
+          {
+            "id": "mboka",
+            "text": "mboka"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "mboka",
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mboka"
+      ],
+      "params": {
+        "word": "mboka",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "id": "lettre-k",
+  "title": "Herufi K",
+  "symbol": "K · k",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "glyph": "k:lower_script",
+        "say": {
+          "text": "Herufi K inatoa sauti kkk, kama katika neno kuku. Sikiliza : kkk."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : kuku. Gusa herufi ya sauti k."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : kuku. Gusa herufi ya sauti kkk."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "word": "kuku",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:k"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa k."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:kuku"
+      ],
+      "params": {
+        "word": "kuku",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

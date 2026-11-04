@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : taxi. Touche la lettre du son x."
+          "text": "Yoka : taxi. Simba letre ya mongongo x."
         },
         "choices": [
           {
@@ -37,12 +37,12 @@
             "text": "x"
           },
           {
-            "id": "z",
-            "text": "z"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "k",
-            "text": "k"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "x",
@@ -68,12 +68,12 @@
             "text": "x"
           },
           {
-            "id": "s",
-            "text": "s"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "z",
-            "text": "z"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "x",
@@ -92,7 +92,7 @@
       "params": {
         "word": "taxi",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "X  x",
@@ -109,13 +109,9 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche x."
+          "text": "Motuna 1 na 3 : simba x."
         },
         "choices": [
-          {
-            "id": "e",
-            "text": "e"
-          },
           {
             "id": "x",
             "text": "x"
@@ -123,6 +119,10 @@
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "x",
@@ -141,16 +141,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "x",
-            "text": "x"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
@@ -173,16 +173,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "x",
-            "text": "x"
+            "id": "e",
+            "text": "e"
           },
           {
             "id": "a",
@@ -206,7 +206,7 @@
       "params": {
         "word": "taxi",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

@@ -1,0 +1,221 @@
+{
+  "id": "consonne-n",
+  "title": "Konsoni N",
+  "symbol": "N  n",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "glyph": "n:lower_script",
+        "say": {
+          "text": "Letre N ezali na mongongo nnn, lokola na liloba nani. Yoka : nnn."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "N  n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : nani. Simba letre ya mongongo n."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N  n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : nani. Simba letre ya mongongo nnn."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N  n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "word": "nani",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "N  n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:n"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba n."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N  n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "N  n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "N  n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nani"
+      ],
+      "params": {
+        "word": "nani",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "N  n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

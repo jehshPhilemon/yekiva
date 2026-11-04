@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : farasi. Touche la lettre du son f."
+          "text": "Sikiliza : farasi. Gusa herufi ya sauti f."
         },
         "choices": [
           {
-            "id": "h",
-            "text": "h"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "f",
             "text": "f"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "f",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "f",
             "text": "f"
           },
           {
-            "id": "v",
-            "text": "v"
-          },
-          {
-            "id": "s",
-            "text": "s"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "f",
@@ -92,7 +92,7 @@
       "params": {
         "word": "farasi",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "F · f",
@@ -109,16 +109,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche f."
+          "text": "Swali 1 kati ya 3 : gusa f."
         },
         "choices": [
           {
-            "id": "f",
-            "text": "f"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "f",
+            "text": "f"
           },
           {
             "id": "a",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "f",
-            "text": "f"
-          },
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
-          {
-            "id": "a",
-            "text": "a"
-          },
           {
             "id": "e",
             "text": "e"
           },
           {
-            "id": "f",
-            "text": "f"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "farasi",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

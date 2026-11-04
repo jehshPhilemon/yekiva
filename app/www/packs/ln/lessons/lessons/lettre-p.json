@@ -1,0 +1,221 @@
+{
+  "id": "lettre-p",
+  "title": "Letre P",
+  "symbol": "P  p",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "Letre P ezali na mongongo ppp, lokola na liloba papa. Yoka : ppp."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : papa. Simba letre ya mongongo p."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : papa. Simba letre ya mongongo ppp."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "word": "papa",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:p"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba p."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:papa"
+      ],
+      "params": {
+        "word": "papa",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

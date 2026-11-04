@@ -1,0 +1,203 @@
+{
+  "id": "digraphe-ng",
+  "title": "Mongongo NG",
+  "symbol": "ng",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ng"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na G elongo ebimisaka mongongo moko : ng, lokola na ngai. Simba ng."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ng",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ngai"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba ngai. Simba liloba ngai."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ngai",
+            "text": "ngai"
+          }
+        ],
+        "answer": "ngai",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ngai"
+      ],
+      "params": {
+        "word": "ngai",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ng"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba ng."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "ng",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ngai"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba ngai."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "ngai",
+            "text": "ngai"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ngai",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ngai"
+      ],
+      "params": {
+        "word": "ngai",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

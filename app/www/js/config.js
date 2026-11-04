@@ -4,7 +4,7 @@
 //   GET  {apiUrl}/health (diagnostic)
 // La clé TTS n'est PAS un secret (lisible dans l'app) : elle limite l'abus.
 //   - Prod (APK + Termux) : node tools/build-config.mjs --api https://... --key YKV-....
-//   - Offline volontaire : placeholders / vide = cache + voix téléphone uniquement.
+//   - Offline volontaire : placeholders / vide = cache uniquement.
 export const config = {
   apiUrl: "__TTS_API_URL__",
   apiKey: "__TTS_API_KEY__",

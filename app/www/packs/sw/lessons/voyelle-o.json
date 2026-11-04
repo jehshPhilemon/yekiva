@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : moto. Touche la lettre du son o."
+          "text": "Sikiliza : moto. Gusa herufi ya sauti o."
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "o",
             "text": "o"
-          },
-          {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "c",
-            "text": "c"
           }
         ],
         "answer": "o",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
-            "id": "o",
-            "text": "o"
-          },
-          {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "u",
-            "text": "u"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "o",
+            "text": "o"
           }
         ],
         "answer": "o",
@@ -92,7 +92,7 @@
       "params": {
         "word": "moto",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "O · o",
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche o."
+          "text": "Swali 1 kati ya 3 : gusa o."
         },
         "choices": [
           {
@@ -117,8 +117,8 @@
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "o",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "o",
-            "text": "o"
           }
         ],
         "answer": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
-          {
-            "id": "e",
-            "text": "e"
-          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "o",
-            "text": "o"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "moto",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

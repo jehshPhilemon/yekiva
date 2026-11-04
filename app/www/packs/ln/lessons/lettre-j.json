@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : jardi. Touche la lettre du son j."
+          "text": "Yoka : jardi. Simba letre ya mongongo j."
         },
         "choices": [
           {
@@ -37,12 +37,12 @@
             "text": "j"
           },
           {
-            "id": "w",
-            "text": "w"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "j",
@@ -68,12 +68,12 @@
             "text": "j"
           },
           {
-            "id": "g",
-            "text": "g"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "y",
-            "text": "y"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "j",
@@ -92,7 +92,7 @@
       "params": {
         "word": "jardi",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "J  j",
@@ -109,20 +109,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche j."
+          "text": "Motuna 1 na 3 : simba j."
         },
         "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "j",
-            "text": "j"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "j",
@@ -141,7 +141,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
@@ -149,12 +149,12 @@
             "text": "a"
           },
           {
-            "id": "j",
-            "text": "j"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
-          {
-            "id": "e",
-            "text": "e"
-          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "j",
-            "text": "j"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "jardi",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

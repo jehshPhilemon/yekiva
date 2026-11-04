@@ -59,8 +59,13 @@ export function sayWord(ctx) {
     className: "lesson-action",
   });
   el.append(h("div", { class: "row small lesson-actions" }, btn));
-  hearInstr().then(markListened);
-  hearWord().then(() => {});
-  markListened();
+  // Keep the pedagogical order: instruction first, then the target word.
+  // Never launch two Audio elements concurrently.
+  (async () => {
+    await hearInstr();
+    if (!el.isConnected) return;
+    await hearWord();
+    markListened();
+  })();
   return el;
 }

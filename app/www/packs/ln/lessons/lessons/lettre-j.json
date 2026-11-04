@@ -1,0 +1,221 @@
+{
+  "id": "lettre-j",
+  "title": "Letre J",
+  "symbol": "J  j",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "glyph": "j:lower_script",
+        "say": {
+          "text": "Letre J ezali na mongongo jjj, lokola na liloba jardi. Yoka : jjj."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : jardi. Simba letre ya mongongo j."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : jardi. Simba letre ya mongongo jjj."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "word": "jardi",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:j"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba j."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:jardi"
+      ],
+      "params": {
+        "word": "jardi",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

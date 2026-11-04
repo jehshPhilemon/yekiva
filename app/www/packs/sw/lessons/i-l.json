@@ -26,7 +26,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : lala. Touche la lettre du son l."
+          "text": "Sikiliza : lala. Gusa herufi ya sauti l."
         },
         "choices": [
           {
@@ -34,12 +34,12 @@
             "text": "l"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "j",
-            "text": "j"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "l",
@@ -75,20 +75,20 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : imba. Touche la lettre du son i."
+          "text": "Sikiliza : imba. Gusa herufi ya sauti i."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "i",
             "text": "i"
           },
           {
-            "id": "t",
-            "text": "t"
-          },
-          {
-            "id": "j",
-            "text": "j"
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "i",
@@ -114,12 +114,12 @@
             "text": "l"
           },
           {
-            "id": "i",
-            "text": "i"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "l",
@@ -138,7 +138,7 @@
       "params": {
         "word": "lala",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "L · l",
@@ -159,16 +159,16 @@
         },
         "choices": [
           {
-            "id": "i",
-            "text": "i"
-          },
-          {
             "id": "l",
             "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "i",
@@ -187,7 +187,7 @@
       "params": {
         "word": "imba",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "I · i",
@@ -204,16 +204,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche l."
+          "text": "Swali 1 kati ya 3 : gusa l."
         },
         "choices": [
           {
-            "id": "a",
-            "text": "a"
-          },
-          {
             "id": "l",
             "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
           },
           {
             "id": "i",
@@ -236,7 +236,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche i."
+          "text": "Swali 2 kati ya 3 : gusa i."
         },
         "choices": [
           {
@@ -268,9 +268,13 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "i",
             "text": "i"
@@ -278,10 +282,6 @@
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "l",
-            "text": "l"
           }
         ],
         "answer": "a",
@@ -301,7 +301,7 @@
       "params": {
         "word": "imba",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

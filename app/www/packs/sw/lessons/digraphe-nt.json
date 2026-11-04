@@ -15,16 +15,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "nt",
             "text": "nt"
-          },
-          {
-            "id": "n",
-            "text": "n"
-          },
-          {
-            "id": "t",
-            "text": "t"
           }
         ],
         "answer": "nt",
@@ -50,12 +50,12 @@
             "text": "ntaa"
           },
           {
-            "id": "ntumba",
-            "text": "ntumba"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "ndege",
-            "text": "ndege"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ntaa",
@@ -74,7 +74,7 @@
       "params": {
         "word": "ntaa",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "nt",
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche nt."
+          "text": "Swali 1 kati ya 3 : gusa nt."
         },
         "choices": [
           {
@@ -99,8 +99,8 @@
             "text": "a"
           },
           {
-            "id": "ntaa",
-            "text": "ntaa"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "nt",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche ntaa."
+          "text": "Swali 2 kati ya 3 : gusa ntaa."
         },
         "choices": [
           {
-            "id": "nt",
-            "text": "nt"
-          },
-          {
-            "id": "a",
-            "text": "a"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ntaa",
             "text": "ntaa"
+          },
+          {
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "ntaa",
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
@@ -163,12 +163,12 @@
             "text": "a"
           },
           {
-            "id": "nt",
-            "text": "nt"
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "ntaa",
-            "text": "ntaa"
+            "id": "i",
+            "text": "i"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "ntaa",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

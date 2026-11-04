@@ -29,20 +29,20 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : hoteli. Touche la lettre du son h."
+          "text": "Yoka : hoteli. Simba letre ya mongongo h."
         },
         "choices": [
           {
-            "id": "k",
-            "text": "k"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "h",
             "text": "h"
-          },
-          {
-            "id": "f",
-            "text": "f"
           }
         ],
         "answer": "h",
@@ -64,16 +64,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "h",
             "text": "h"
-          },
-          {
-            "id": "f",
-            "text": "f"
-          },
-          {
-            "id": "m",
-            "text": "m"
           }
         ],
         "answer": "h",
@@ -92,7 +92,7 @@
       "params": {
         "word": "hoteli",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "H  h",
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche h."
+          "text": "Motuna 1 na 3 : simba h."
         },
         "choices": [
           {
@@ -117,8 +117,8 @@
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "h",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "h",
-            "text": "h"
-          },
-          {
-            "id": "e",
-            "text": "e"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -173,9 +173,13 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
           {
             "id": "e",
             "text": "e"
@@ -183,10 +187,6 @@
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "h",
-            "text": "h"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "hoteli",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

@@ -83,6 +83,11 @@ function pointAt(p, d) {
 
 export function traceLetter(ctx) {
   const { glyph, say, context } = ctx.step.params;
+  // Script forms are shown with the Parisienne font: finger tracing stays on
+  // print strokes only (a dotted font-style guide would mislead the hand).
+  if (/:upper_script|:lower_script/.test(glyph ?? "")) {
+    return h("div", { class: "center" }, icon("alert", 96));
+  }
   const strokes = ctx.language.glyphs[glyph];
   if (!strokes) return h("div", { class: "center" }, icon("alert", 96));
 

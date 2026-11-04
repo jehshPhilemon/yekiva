@@ -15,10 +15,23 @@ export function highlightTarget(word, target) {
   return [w.slice(0, i), h("mark", { class: "hl" }, w.slice(i, i + t.length)), w.slice(i + t.length)];
 }
 
+/** 4 versions: script (Parisienne) vs print (system serif/sans); upper (serif caps) vs lower (sans). */
+function choiceFontClass(c) {
+  const font = String(c.font ?? "");
+  if (/:upper_script|:lower_script/.test(font) || font === "script") return "script";
+  const text = String(c.text ?? c.id ?? "");
+  const isUpper = text === text.toUpperCase() && /[A-Z]/.test(text);
+  if (/print/.test(font) || !font) return isUpper ? "print-upper" : "print-lower";
+  return "";
+}
+
 export function listenTap(ctx, { isQuiz = false } = {}) {
   const params = ctx.step.params ?? {};
   const quiz = isQuiz || params.isQuiz === true;
-  const { say, choices, answer, image, context } = params;
+  const { say, choices, answer, answers, image, context } = params;
+  // A letter can have several accepted forms (print A + Parisienne A):
+  // tapping any of them is correct, never a trick with an untaught letter.
+  const good = new Set([answer, ...(answers ?? [])].filter(Boolean));
   const labels = ctx.language.labels?.actions ?? {};
   let wrongOnce = false;
   // Quiz: announce the test first ("Petit test..."), then the question itself.
@@ -34,9 +47,9 @@ export function listenTap(ctx, { isQuiz = false } = {}) {
   const buttons = (choices ?? []).map((c) => {
     const b = h("button", { class: "choice", type: "button", "aria-label": c.text ?? c.id },
       c.image ? h("img", { class: "choice-img", src: ctx.assetUrl(c.image), alt: "" }) : "",
-      h("span", { class: "choice-text" }, c.text));
+      h("span", { class: "choice-text " + choiceFontClass(c) }, c.text));
     b.addEventListener("click", () => {
-      if (c.id === answer) return ctx.onDone(!wrongOnce);
+      if (good.has(c.id)) return ctx.onDone(!wrongOnce);
       wrongOnce = true;
       b.classList.remove("shake");
       void b.offsetWidth;

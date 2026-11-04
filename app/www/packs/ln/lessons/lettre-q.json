@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Ecoute : quartier. Touche la lettre du son q."
+          "text": "Yoka : quartier. Simba letre ya mongongo q."
         },
         "choices": [
           {
@@ -37,12 +37,12 @@
             "text": "q"
           },
           {
-            "id": "p",
-            "text": "p"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "g",
-            "text": "g"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "q",
@@ -68,12 +68,12 @@
             "text": "q"
           },
           {
-            "id": "k",
-            "text": "k"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "g",
-            "text": "g"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "q",
@@ -92,7 +92,7 @@
       "params": {
         "word": "quartier",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "Q  q",
@@ -109,20 +109,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche q."
+          "text": "Motuna 1 na 3 : simba q."
         },
         "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "q",
-            "text": "q"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "q",
@@ -141,20 +141,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "q",
-            "text": "q"
           }
         ],
         "answer": "a",
@@ -173,20 +173,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
           {
-            "id": "q",
-            "text": "q"
+            "id": "e",
+            "text": "e"
           },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "e",
@@ -206,7 +206,7 @@
       "params": {
         "word": "quartier",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

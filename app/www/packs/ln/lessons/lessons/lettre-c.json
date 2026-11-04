@@ -1,0 +1,221 @@
+{
+  "id": "lettre-c",
+  "title": "Letre C",
+  "symbol": "C  c",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "Letre C ezali na mongongo k, lokola na liloba classe. Yoka : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : classe. Simba letre ya mongongo c."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : classe. Simba letre ya mongongo k."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "word": "classe",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:c"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba c."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:classe"
+      ],
+      "params": {
+        "word": "classe",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

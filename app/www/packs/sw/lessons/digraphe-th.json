@@ -19,12 +19,12 @@
             "text": "th"
           },
           {
-            "id": "t",
-            "text": "t"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "dh",
-            "text": "dh"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "th",
@@ -46,16 +46,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "thelathini",
             "text": "thelathini"
-          },
-          {
-            "id": "tatu",
-            "text": "tatu"
-          },
-          {
-            "id": "sita",
-            "text": "sita"
           }
         ],
         "answer": "thelathini",
@@ -74,7 +74,7 @@
       "params": {
         "word": "thelathini",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "th",
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche th."
+          "text": "Swali 1 kati ya 3 : gusa th."
         },
         "choices": [
           {
@@ -103,8 +103,8 @@
             "text": "a"
           },
           {
-            "id": "thelathini",
-            "text": "thelathini"
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "th",
@@ -123,20 +123,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche thelathini."
+          "text": "Swali 2 kati ya 3 : gusa thelathini."
         },
         "choices": [
           {
-            "id": "thelathini",
-            "text": "thelathini"
-          },
-          {
-            "id": "th",
-            "text": "th"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "thelathini",
+            "text": "thelathini"
           }
         ],
         "answer": "thelathini",
@@ -155,20 +155,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Swali 3 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "thelathini",
-            "text": "thelathini"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "th",
-            "text": "th"
           }
         ],
         "answer": "a",
@@ -188,7 +188,7 @@
       "params": {
         "word": "thelathini",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

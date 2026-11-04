@@ -1,0 +1,348 @@
+{
+  "id": "letter-a",
+  "title": "A, a : maumbo manne",
+  "symbol": "A · a",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "A:upper_print",
+        "say": {
+          "text": "Herufi A. A kama mama. Hii ni A kubwa. Sikiliza, tazama jinsi inavyoandikwa."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_script",
+        "say": {
+          "text": "Hii ni a ndogo ya mwandiko. Tazama kila mstari."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_print",
+        "say": {
+          "text": "Hii ni a ndogo ya kuchapa, kama vitabuni."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "A:upper_script",
+        "say": {
+          "text": "Hii ni A kubwa ya mwandiko. Tazama vizuri."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "A"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : mama. Gusa A kubwa."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "answers": [
+          "A",
+          "A-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : mama. Gusa a ndogo."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a-script",
+            "text": "a",
+            "font": "script"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "answers": [
+          "a",
+          "a-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "A"
+      ],
+      "params": {
+        "say": {
+          "text": "Gusa A kubwa ya mwandiko."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "answers": [
+          "A",
+          "A-script"
+        ]
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:A"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa A kubwa."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true,
+        "answers": [
+          "A",
+          "A-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a ndogo."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "a-script",
+            "text": "a",
+            "font": "script"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true,
+        "answers": [
+          "a",
+          "a-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:A"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa A kubwa ya mwandiko."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true,
+        "answers": [
+          "A",
+          "A-script"
+        ]
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

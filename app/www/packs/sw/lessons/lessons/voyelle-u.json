@@ -1,0 +1,221 @@
+{
+  "id": "voyelle-u",
+  "title": "Vokali U",
+  "symbol": "U · u",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "Herufi U inatoa sauti u, kama katika neno unga. Sikiliza : u."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : unga. Gusa herufi ya sauti u."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : unga. Gusa herufi ya sauti u."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "word": "unga",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:u"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa u."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:unga"
+      ],
+      "params": {
+        "word": "unga",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

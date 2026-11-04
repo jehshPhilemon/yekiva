@@ -1,0 +1,221 @@
+{
+  "id": "lettre-q",
+  "title": "Herufi Q",
+  "symbol": "Q · q",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "Q hutumika katika maneno ya kigeni kama Qurani. Inasomwa k. Sikiliza : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : Qurani. Gusa herufi ya sauti q."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : Qurani. Gusa herufi Q."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "word": "Qurani",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:q"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa q."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Qurani"
+      ],
+      "params": {
+        "word": "Qurani",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

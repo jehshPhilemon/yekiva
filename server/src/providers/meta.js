@@ -95,8 +95,9 @@ export async function transcribe(audio, { lang } = {}) {
 
 const VISION_PROMPT =
   "In this photo, find the most legible written word. Answer ONLY with JSON: " +
-  '{"word": "...", "syllables": ["..."], "language": "ISO 639-1 code"}. ' +
-  "Split the word into syllables as they are pronounced. If no word is legible, answer {}. " +
+  '{"word": "...", "syllables": ["..."], "language": "ISO 639-1 code", "description": "short simple sentence"}. ' +
+  "Split the word into syllables as they are pronounced. The description explains in very simple words what is visible (object, color, action), for an illiterate learner. " +
+  "If no word is legible, answer {}. " +
   "For Lingala (ln), use ONLY unaccented ASCII Latin letters a-z: never use ɛ, ɔ, accents, apostrophes, hyphens, or other special characters.";
 
 /** @param {Buffer} image  @returns {Promise<object>} a lesson in the docs/LESSON_FORMAT.md format */
@@ -184,6 +185,46 @@ export async function generateLesson(word, { lang } = {}) {
     throw Object.assign(new Error("lesson model returned no word/syllables"), { status: 502 });
   }
   return buildLesson({ ...spark, language: lang ?? null });
+}
+
+// Voice chat: the learner speaks, the app transcribes, Spark answers simply.
+// Plain-text answer (never JSON): the app reads it aloud with TTS in the
+// user's language. Short sentences for illiterate learners; same language as input.
+export async function chat(text, { lang } = {}) {
+  const apiKey = key();
+  const t = String(text ?? "").trim().slice(0, 500);
+  if (!t) throw Object.assign(new Error("missing text"), { status: 400 });
+  const languageName = { fr: "French", sw: "Swahili", ln: "Lingala", en: "English" }[String(lang ?? "").toLowerCase()] ?? "French";
+  const prompt =
+    `You are Yekiva, a kind tutor for illiterate adults and children learning to read. ` +
+    `Answer in ${languageName}, in very simple short sentences (at most 2 sentences, at most 40 words). ` +
+    `Encourage learning to read. ` +
+    (String(lang ?? "").toLowerCase() === "ln"
+      ? `STRICT Lingala rule: use ONLY plain ASCII Latin letters a-z (no accents, no special characters). `
+      : ``) +
+    `The learner said: "${t}"`;
+  let res;
+  try {
+    res = await metaFetch(`${BASE}/chat/completions`, {
+      method: "POST",
+      headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
+      body: JSON.stringify({
+        model: process.env.META_SPARK_MODEL ?? "muse-spark-1.1",
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+  } catch (e) {
+    throw Object.assign(new Error(`Meta unreachable: ${e?.message ?? e}`), { status: 502 });
+  }
+  if (!res.ok) {
+    const body = await res.text().then((t2) => t2.slice(0, 300)).catch(() => "");
+    throw Object.assign(new Error(`Meta answered ${res.status}${body ? `: ${body}` : ""}`), { status: 502 });
+  }
+  const data = await res.json().catch(() => null);
+  const raw = data?.choices?.[0]?.message?.content ?? data?.output_text ?? "";
+  const answer = String(raw ?? "").trim().slice(0, 600);
+  if (!answer) throw Object.assign(new Error("chat model returned no answer"), { status: 502 });
+  return { text: answer };
 }
 
 // One fixed cartoon style for ALL lesson illustrations: simple drawings are recognized

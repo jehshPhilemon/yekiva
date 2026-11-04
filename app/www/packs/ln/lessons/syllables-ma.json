@@ -12,16 +12,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "ma",
             "text": "ma"
-          },
-          {
-            "id": "ba",
-            "text": "ba"
-          },
-          {
-            "id": "ji",
-            "text": "ji"
           }
         ],
         "answer": "ma",
@@ -43,12 +43,12 @@
         },
         "choices": [
           {
-            "id": "ma",
-            "text": "ma"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "ba",
-            "text": "ba"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ji",
@@ -65,20 +65,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ma."
+          "text": "Motuna 1 na 3 : simba ma."
         },
         "choices": [
           {
-            "id": "ji",
-            "text": "ji"
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "ma",
             "text": "ma"
-          },
-          {
-            "id": "a",
-            "text": "a"
           }
         ],
         "answer": "ma",
@@ -97,7 +97,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche ji."
+          "text": "Motuna 2 na 3 : simba ji."
         },
         "choices": [
           {
@@ -105,12 +105,12 @@
             "text": "ji"
           },
           {
-            "id": "ma",
-            "text": "ma"
-          },
-          {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "ji",
@@ -129,20 +129,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Motuna 3 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "ma",
-            "text": "ma"
-          },
-          {
-            "id": "ji",
-            "text": "ji"
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",

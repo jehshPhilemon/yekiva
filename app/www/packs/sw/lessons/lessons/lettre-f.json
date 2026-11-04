@@ -1,0 +1,221 @@
+{
+  "id": "lettre-f",
+  "title": "Herufi F",
+  "symbol": "F · f",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "Herufi F inatoa sauti fff, kama katika neno farasi. Sikiliza : fff."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : farasi. Gusa herufi ya sauti f."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : farasi. Gusa herufi ya sauti fff."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "word": "farasi",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:f"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa f."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:farasi"
+      ],
+      "params": {
+        "word": "farasi",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

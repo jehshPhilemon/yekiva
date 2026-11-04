@@ -51,12 +51,16 @@
         },
         "choices": [
           {
-            "id": "Lili",
-            "text": "Lili"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "Maman",
-            "text": "Maman"
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Lili",
+            "text": "Lili"
           }
         ],
         "answer": "Lili",
@@ -78,16 +82,16 @@
         },
         "choices": [
           {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "Maman aime Lili.",
             "text": "Maman aime Lili."
-          },
-          {
-            "id": "Lili lit.",
-            "text": "Lili lit."
-          },
-          {
-            "id": "Lili",
-            "text": "Lili"
           }
         ],
         "answer": "Maman aime Lili.",
@@ -110,12 +114,12 @@
         },
         "choices": [
           {
-            "id": "Lili",
-            "text": "Lili"
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "Maman aime Lili.",
-            "text": "Maman aime Lili."
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "Lili lit.",
@@ -146,12 +150,12 @@
             "text": "Lili"
           },
           {
-            "id": "Maman aime Lili.",
-            "text": "Maman aime Lili."
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "Lili lit.",
-            "text": "Lili lit."
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "Lili",

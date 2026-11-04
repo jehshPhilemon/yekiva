@@ -170,5 +170,25 @@
   "conversation_offline": {
     "text": "Sijaweza kuelewa ujumbe. Angalia mtandao kisha ujaribu tena.",
     "audio": null
+  },
+  "photo_analyzing": {
+    "text": "Ninatazama picha yako…",
+    "audio": null
+  },
+  "photo_failed": {
+    "text": "Sikuweza kusoma picha hii. Jaribu na neno linaloonekana vizuri.",
+    "audio": null
+  },
+  "conversation_thinking": {
+    "text": "Ninafikiria…",
+    "audio": null
+  },
+  "conversation_mic_error": {
+    "text": "Kipaza sauti haifanyi kazi. Ruhusu kipaza sauti kisha ujaribu tena.",
+    "audio": null
+  },
+  "conversation_empty": {
+    "text": "Sikusikia chochote. Ongea kwa sauti kubwa karibu na simu, kisha gusa tena.",
+    "audio": null
   }
 }

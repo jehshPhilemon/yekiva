@@ -15,12 +15,16 @@
         },
         "choices": [
           {
+            "id": "l",
+            "text": "l"
+          },
+          {
             "id": "Mama na bana.",
             "text": "Mama na bana."
           },
           {
-            "id": "Bana na mama.",
-            "text": "Bana na mama."
+            "id": "a",
+            "text": "a"
           }
         ],
         "answer": "Mama na bana.",
@@ -39,7 +43,7 @@
       "params": {
         "word": "Mama na bana.",
         "say": {
-          "text": "Ecoute le mot, puis dis-le a voix haute."
+          "text": "Yoka liloba, mpe lobela yango."
         },
         "context": {
           "letter": "Mama",
@@ -56,16 +60,16 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche Mama na bana.."
+          "text": "Motuna 1 na 3 : simba Mama na bana.."
         },
         "choices": [
           {
-            "id": "Mama na bana.",
-            "text": "Mama na bana."
+            "id": "l",
+            "text": "l"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "Mama na bana.",
+            "text": "Mama na bana."
           },
           {
             "id": "a",
@@ -88,20 +92,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Motuna 2 na 3 : simba a."
         },
         "choices": [
           {
-            "id": "e",
-            "text": "e"
-          },
-          {
-            "id": "Mama na bana.",
-            "text": "Mama na bana."
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
           }
         ],
         "answer": "a",
@@ -120,20 +124,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Motuna 3 na 3 : simba e."
         },
         "choices": [
-          {
-            "id": "e",
-            "text": "e"
-          },
           {
             "id": "a",
             "text": "a"
           },
           {
-            "id": "Mama na bana.",
-            "text": "Mama na bana."
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
           }
         ],
         "answer": "e",
@@ -153,7 +157,7 @@
       "params": {
         "word": "Mama na bana.",
         "say": {
-          "text": "Derniere question : ecoute le mot, puis dis-le."
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
         },
         "hideWord": true,
         "context": {

@@ -165,5 +165,25 @@
   "conversation_offline": {
     "text": "Je n’ai pas pu comprendre le message. Vérifie la connexion et réessaie.",
     "audio": null
+  },
+  "photo_analyzing": {
+    "text": "Je regarde ta photo…",
+    "audio": null
+  },
+  "photo_failed": {
+    "text": "Je n’ai pas pu lire cette photo. Essaie avec un mot bien visible.",
+    "audio": null
+  },
+  "conversation_thinking": {
+    "text": "Je réfléchis…",
+    "audio": null
+  },
+  "conversation_mic_error": {
+    "text": "Le microphone ne marche pas. Autorise le micro puis réessaie.",
+    "audio": null
+  },
+  "conversation_empty": {
+    "text": "Je n’ai rien entendu. Parle bien fort près du téléphone, puis appuie encore.",
+    "audio": null
   }
 }

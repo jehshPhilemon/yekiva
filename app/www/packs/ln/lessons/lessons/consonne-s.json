@@ -1,0 +1,221 @@
+{
+  "id": "consonne-s",
+  "title": "Konsoni S",
+  "symbol": "S  s",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "Letre S ezali na mongongo sss, lokola na liloba sasa. Yoka : sss."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : sasa. Simba letre ya mongongo s."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : sasa. Simba letre ya mongongo sss."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "word": "sasa",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:s"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba s."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:sasa"
+      ],
+      "params": {
+        "word": "sasa",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

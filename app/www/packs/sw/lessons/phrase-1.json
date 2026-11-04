@@ -15,12 +15,16 @@
         },
         "choices": [
           {
-            "id": "Mama na baba.",
-            "text": "Mama na baba."
+            "id": "a",
+            "text": "a"
           },
           {
-            "id": "Baba na mama.",
-            "text": "Baba na mama."
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "Mama na baba.",
+            "text": "Mama na baba."
           }
         ],
         "answer": "Mama na baba.",
@@ -39,7 +43,7 @@
       "params": {
         "word": "Mama na baba.",
         "say": {
-          "text": "Écoute le mot, puis dis-le à voix haute."
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
         },
         "context": {
           "letter": "Mama",
@@ -56,7 +60,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche Mama na baba.."
+          "text": "Swali 1 kati ya 3 : gusa Mama na baba.."
         },
         "choices": [
           {
@@ -64,8 +68,8 @@
             "text": "a"
           },
           {
-            "id": "e",
-            "text": "e"
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "Mama na baba.",
@@ -88,20 +92,20 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Swali 2 kati ya 3 : gusa a."
         },
         "choices": [
           {
-            "id": "Mama na baba.",
-            "text": "Mama na baba."
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
           },
           {
             "id": "a",
             "text": "a"
-          },
-          {
-            "id": "e",
-            "text": "e"
           }
         ],
         "answer": "a",
@@ -120,12 +124,12 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Swali 3 kati ya 3 : gusa e."
         },
         "choices": [
           {
-            "id": "Mama na baba.",
-            "text": "Mama na baba."
+            "id": "l",
+            "text": "l"
           },
           {
             "id": "e",
@@ -153,7 +157,7 @@
       "params": {
         "word": "Mama na baba.",
         "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
         },
         "hideWord": true,
         "context": {

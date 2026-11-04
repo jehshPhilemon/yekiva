@@ -1,0 +1,221 @@
+{
+  "id": "lettre-q",
+  "title": "La lettre Q",
+  "symbol": "Q · q",
+  "icon": "star",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "La lettre Q fait le son k, presque toujours avec U, comme dans quatre. Écoute bien : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : quatre. Touche la lettre du son q."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : quatre. Touche la lettre du son k."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "word": "quatre",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:q"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche q."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:quatre"
+      ],
+      "params": {
+        "word": "quatre",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

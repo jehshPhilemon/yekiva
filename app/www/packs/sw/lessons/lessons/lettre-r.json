@@ -1,0 +1,221 @@
+{
+  "id": "lettre-r",
+  "title": "Herufi R",
+  "symbol": "R · r",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "Herufi R inatoa sauti rrr, kama katika neno rafiki. Sikiliza : rrr."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : rafiki. Gusa herufi ya sauti r."
+        },
+        "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : rafiki. Gusa herufi ya sauti rrr."
+        },
+        "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "word": "rafiki",
+        "say": {
+          "text": "Sikiliza neno, kisha liseme kwa sauti."
+        },
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:r"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 1 kati ya 3 : gusa r."
+        },
+        "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 2 kati ya 3 : gusa a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Swali 3 kati ya 3 : gusa e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:rafiki"
+      ],
+      "params": {
+        "word": "rafiki",
+        "say": {
+          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

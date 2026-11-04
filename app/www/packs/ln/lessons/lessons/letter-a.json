@@ -1,0 +1,348 @@
+{
+  "id": "letter-a",
+  "title": "A, a : lolenge minei",
+  "symbol": "A  a",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "A:upper_print",
+        "say": {
+          "text": "Letre A. A na liloba mama. Oyo ni A monene. Yoka, tala ndenge bakoma yango."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_script",
+        "say": {
+          "text": "Oyo ni a moke ya maboko. Tala malamu."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_print",
+        "say": {
+          "text": "Oyo ni a moke ya buku, lokola na mikanda."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "A:upper_script",
+        "say": {
+          "text": "Oyo ni A monene ya maboko. Tala malamu."
+        },
+        "durationMs": 3200,
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "A"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mama. Simba A monene."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "answers": [
+          "A",
+          "A-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mama. Simba a moke."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a-script",
+            "text": "a",
+            "font": "script"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "answers": [
+          "a",
+          "a-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "A"
+      ],
+      "params": {
+        "say": {
+          "text": "Simba A monene ya maboko."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "answers": [
+          "A",
+          "A-script"
+        ]
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:A"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba A monene."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true,
+        "answers": [
+          "A",
+          "A-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a moke."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "a-script",
+            "text": "a",
+            "font": "script"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true,
+        "answers": [
+          "a",
+          "a-script"
+        ]
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:A"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba A monene ya maboko."
+        },
+        "choices": [
+          {
+            "id": "A",
+            "text": "A",
+            "font": "print"
+          },
+          {
+            "id": "a",
+            "text": "a",
+            "font": "print"
+          },
+          {
+            "id": "A-script",
+            "text": "A",
+            "font": "script"
+          }
+        ],
+        "answer": "A",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true,
+        "answers": [
+          "A",
+          "A-script"
+        ]
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

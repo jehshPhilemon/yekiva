@@ -1,0 +1,221 @@
+{
+  "id": "consonne-s",
+  "title": "La consonne S",
+  "symbol": "S · s",
+  "icon": "star",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "La lettre S fait le son sss, comme dans soleil. Écoute bien : sss."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : soleil. Touche la lettre du son s."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : soleil. Touche la lettre du son sss."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "word": "soleil",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:s"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche s."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:soleil"
+      ],
+      "params": {
+        "word": "soleil",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "id": "consonne-n",
+  "title": "La consonne N",
+  "symbol": "N · n",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "glyph": "n:lower_script",
+        "say": {
+          "text": "La lettre N fait le son nnn, comme dans nounours. Écoute bien : nnn."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : nounours. Touche la lettre du son n."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : nounours. Touche la lettre du son nnn."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "word": "nounours",
+        "say": {
+          "text": "Écoute le mot, puis dis-le à voix haute."
+        },
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:n"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche n."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nounours"
+      ],
+      "params": {
+        "word": "nounours",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}

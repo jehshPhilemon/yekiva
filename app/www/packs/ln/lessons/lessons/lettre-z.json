@@ -1,0 +1,221 @@
+{
+  "id": "lettre-z",
+  "title": "Letre Z",
+  "symbol": "Z  z",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "glyph": "z:lower_script",
+        "say": {
+          "text": "Letre Z ezali na mongongo zzz, lokola na liloba zando. Yoka : zzz."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : zando. Simba letre ya mongongo z."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : zando. Simba letre ya mongongo zzz."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "word": "zando",
+        "say": {
+          "text": "Yoka liloba, mpe lobela yango."
+        },
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:z"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 1 na 3 : simba z."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 2 na 3 : simba a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Motuna 3 na 3 : simba e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:zando"
+      ],
+      "params": {
+        "word": "zando",
+        "say": {
+          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    }
+  ]
+}
