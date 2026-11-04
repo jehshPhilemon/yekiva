@@ -37,6 +37,8 @@ const learners = new Map();
 const voiceApi = createVoiceApi({ apiUrl: config.apiUrl, apiKey: config.apiKey });
 const speakFn = (text, lang) => voiceApi.speak(text, lang);
 speakFn.endpoint = () => `${voiceApi.baseUrl}/tts/v1/speak`;
+// Transmet le diagnostic honnête (sinon le test 3 retombe sur un message vague).
+speakFn.diagnoseSpeak = (text, lang) => voiceApi.diagnoseSpeak(text, lang);
 const services = {
   packs,
   // Voix naturelle : API directe, cachée sur l'appareil ; voix téléphone en secours offline.

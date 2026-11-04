@@ -33,7 +33,7 @@ jobs:
       # L'app appelle l'API Yekiva TTS DIRECTEMENT (aucun serveur à héberger).
       # Secrets GitHub (Settings -> Secrets -> Actions) :
       #   TTS_API_URL = https://api.jehshphilemon.com (requis)
-      #   TTS_API_KEY = YKV-.... (requis : sans elle l'API répond 401)
+      #   TTS_API_KEY = YKV-.... (requis : sans elle l'API répond 401 et l'APK est muette)
       - name: Bake API URL + key (fail-closed: refuses silent APK)
         env:
           TTS_API_URL: ${{ secrets.TTS_API_URL }}
@@ -45,7 +45,9 @@ jobs:
             exit 1
           fi
           if [ -z "$TTS_API_KEY" ]; then
-            echo "::warning::TTS_API_KEY secret manquant — l'API répondra 401 (cache + voix téléphone uniquement)."
+            echo "::error::TTS_API_KEY secret manquant — sans clé l'API répond 401 et l'APK est muette."
+            echo "::error::Ajoutez-le : GitHub -> Settings -> Secrets -> Actions -> TTS_API_KEY=YKV-...."
+            exit 1
           fi
           node tools/build-config.mjs
           node tools/build-config.mjs --check
