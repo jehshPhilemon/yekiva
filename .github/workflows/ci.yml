@@ -93,9 +93,7 @@ jobs:
       - name: Copy the web app into the Android project
         working-directory: app
         run: npx cap sync android
-      - name: 
-
-Build the APK (debug, signed with the debug key: installable)
+      - name: "Build the APK (debug, signed with the debug key: installable)"
         working-directory: app/android
         run: ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
