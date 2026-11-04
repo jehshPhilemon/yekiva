@@ -1,8 +1,8 @@
-// "Read the world": photograph a word -> the server (Muse Spark) builds a lesson -> play it.
-// Narrated by the pack (prompts.photo_hint): the screen speaks on arrival, like every screen.
-// Text-free: camera tile, preview, replay tile. Without the YEKIVA server: cloudoff icon, back to path.
-// The app NEVER calls Meta here: it POSTs the photo to {yekiva}/v1/lesson-from-photo,
-// and the Yekiva server calls Meta (https://api.meta.ai/v1/chat/completions) server-side.
+// "Read the world": photographie un mot (bientôt : leçon générée).
+// AUJOURD'HUI : pas de route photo dans l'API -> l'écran l'explique en voix
+// (prompts.photo_hint) et repart au parcours. Aucun appel Meta, aucun serveur
+// intermédiaire. Quand la route existera, brancher voiceApi.lessonFromPhoto()
+// (elle renverra une leçon au lieu de null) — le jeu inline ci-dessous est prêt.
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
@@ -30,19 +30,14 @@ export function photoScreen({ services, state, go }) {
 
   async function play() {
     if (!blob) return;
-    if (!services.transcriber.available()) {
-      show("cloudoff");
-      setTimeout(() => go("path"), 1400);
-      return;
-    }
-    show("");
-    status.append(document.createTextNode("…"));
     const lesson = await services.transcriber.lessonFromPhoto(blob, state.language?.code);
     if (!lesson?.steps?.length) {
-      show("alert");
+      // Pas de route photo dans l'API pour l'instant : on le dit, on repart.
+      show("cloudoff");
+      setTimeout(() => go("path"), 1600);
       return;
     }
-    // Play the generated lesson inline (same widgets as normal lessons).
+    // Route photo disponible un jour : joue la leçon générée inline.
     const learner = services.learnerFor(state.language.code);
     const steps = lesson.steps.filter((s) => registry[s.type]);
     let i = 0;

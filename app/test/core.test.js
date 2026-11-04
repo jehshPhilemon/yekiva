@@ -70,7 +70,7 @@ test("packs: the loader reads the real files and merges Swahili", async () => {
 });
 
 test("all screen and step modules import (correct paths and exports)", async () => {
-  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js", "screens/diag.js", "ui/context-cue.js", "steps/listen_tap.js", "steps/watch_write.js", "steps/trace_letter.js"]) {
+  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "core/voice-api.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js", "screens/diag.js", "ui/context-cue.js", "steps/listen_tap.js", "steps/watch_write.js", "steps/trace_letter.js"]) {
     await import(`../www/js/${f}`);
   }
   const { registry } = await import("../www/js/core/registry.js");
@@ -114,23 +114,75 @@ test("server-url: Meta URLs are refused, Yekiva URLs accepted and normalized", a
   assert.equal(checkServerUrl("http://192.168.1.10:8787").ok, true);
 });
 
-test("APK silence fix: placeholders never resolve to location.origin", async () => {
-  const { createTranscriber } = await import("../www/js/core/transcriber.js");
+test("direct API: placeholders = offline, never location.origin", async () => {
+  const { createVoiceApi } = await import("../www/js/core/voice-api.js");
   // Simule la WebView Capacitor : même si location.origin vaut https://localhost,
-  // un build sans --api doit rester offline (pas de fetch vers le vide).
+  // un build sans --api/--key doit rester offline (pas de fetch vers le vide).
   globalThis.location = { origin: "https://localhost" };
-  const t = createTranscriber({ serverUrl: "__YEKIVA_SERVER_URL__", appToken: "__YEKIVA_APP_TOKEN__" });
-  assert.equal(t.serverUrl, "");
+  const t = createVoiceApi({ apiUrl: "__TTS_API_URL__", apiKey: "__TTS_API_KEY__" });
+  assert.equal(t.apiUrl, "");
+  assert.equal(t.configured(), false);
   assert.equal(t.available(), false);
   assert.equal(await t.speak("bonjour", "fr"), null);
-  assert.match(t.serverError(), /non configuré|build sans --api/);
+  assert.match(t.serverError(), /non configurée/);
   delete globalThis.location;
 });
 
-test("APK silence fix: baked https URL stays usable", async () => {
-  const { createTranscriber } = await import("../www/js/core/transcriber.js");
-  globalThis.location = { origin: "https://localhost" };
-  const t = createTranscriber({ serverUrl: "https://voice.example.com", appToken: "" });
-  assert.equal(t.serverUrl, "https://voice.example.com");
-  delete globalThis.location;
+test("direct API: baked URL + key are used verbatim", async () => {
+  const { createVoiceApi, toApiLang } = await import("../www/js/core/voice-api.js");
+  assert.equal(toApiLang("fr"), "fra");
+  assert.equal(toApiLang("sw"), "swh");
+  assert.equal(toApiLang("ln"), "ln");
+  assert.equal(toApiLang("en"), "eng");
+  const seen = {};
+  globalThis.fetch = async (url, opts) => {
+    seen.url = String(url);
+    seen.headers = opts.headers;
+    seen.body = JSON.parse(opts.body);
+    return new Response(new Blob(["x".repeat(1000)], { type: "audio/mpeg" }), { status: 200 });
+  };
+  try {
+    const t = createVoiceApi({ apiUrl: "https://api.jehshphilemon.com", apiKey: "YKV-TEST" });
+    assert.equal(t.apiUrl, "https://api.jehshphilemon.com");
+    assert.equal(t.configured(), true);
+    const blob = await t.speak("Bonjour", "fr");
+    assert.ok(blob?.size > 0);
+    assert.equal(seen.url, "https://api.jehshphilemon.com/tts/v1/speak");
+    assert.equal(seen.headers["x-api-key"], "YKV-TEST");
+    assert.deepEqual(seen.body, { language: "fra", text: "Bonjour", format: "mp3" });
+  } finally {
+    delete globalThis.fetch;
+  }
+});
+
+test("direct API: trailing route suffixes are stripped", async () => {
+  const { createVoiceApi } = await import("../www/js/core/voice-api.js");
+  const t = createVoiceApi({ apiUrl: "https://api.jehshphilemon.com/tts/v1/speak", apiKey: "x" });
+  assert.equal(t.apiUrl, "https://api.jehshphilemon.com");
+});
+
+test("direct API: no transcription/photo routes yet -> null (offline plan B)", async () => {
+  const { createVoiceApi } = await import("../www/js/core/voice-api.js");
+  const t = createVoiceApi({ apiUrl: "https://api.jehshphilemon.com", apiKey: "x" });
+  assert.equal(await t.transcribe(new Blob([])), null);
+  assert.equal(await t.lessonFromPhoto(new Blob([])), null);
+});
+
+test("direct API: diagnoseSpeak names the cause (no-config / no-key / http)", async () => {
+  const { createVoiceApi } = await import("../www/js/core/voice-api.js");
+  const a = createVoiceApi({ apiUrl: "", apiKey: "" });
+  assert.deepEqual(await a.diagnoseSpeak("Bonjour", "fr"), { ok: false, cause: "no-config" });
+  const b = createVoiceApi({ apiUrl: "https://api.jehshphilemon.com", apiKey: "" });
+  assert.deepEqual(await b.diagnoseSpeak("Bonjour", "fr"), { ok: false, cause: "no-key" });
+  // 401 simulé : la cause doit être http-401 (plus jamais un message vague).
+  globalThis.fetch = async () => new Response('{"detail":"Invalid API key"}', { status: 401 });
+  try {
+    const c = createVoiceApi({ apiUrl: "https://api.jehshphilemon.com", apiKey: "FAUSSE" });
+    const d = await c.diagnoseSpeak("Bonjour", "fr");
+    assert.equal(d.ok, false);
+    assert.equal(d.cause, "http-401");
+    assert.equal(await c.speak("Bonjour", "fr"), null);
+  } finally {
+    delete globalThis.fetch;
+  }
 });

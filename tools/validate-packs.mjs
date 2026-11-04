@@ -49,14 +49,14 @@ function main() {
     }
     if (role === "base") {
       const pick = manifest.prompts?.language_pick;
-      // Text-only packs: the natural voice is generated at runtime (POST /v1/speak).
+      // Text-only packs: the natural voice is generated at runtime (POST {api}/tts/v1/speak).
       // Any `audio` reference is a leftover from the pre-generated era: reject it.
       if (!pick || !pick.text) {
         err(at("prompts.language_pick missing: each language must say 'for <language>, tap here' itself"));
       }
       for (const [name, pr] of Object.entries(manifest.prompts ?? {})) {
         if (!pr.text) err(at(`prompt '${name}': text is required (text-only packs)`));
-        if (pr.audio) err(at(`prompt '${name}': 'audio' is forbidden — voice is generated at runtime via POST /v1/speak`));
+        if (pr.audio) err(at(`prompt '${name}': 'audio' is forbidden — voice is generated at runtime via the TTS API`));
       }
     }
     const glyphs = manifest.glyphs ? readJson(join(dir, manifest.glyphs)) ?? {} : {};
@@ -113,7 +113,7 @@ function main() {
           if (!ids.includes(p.answer)) err(S(`answer='${p.answer}' is not in choices`));
         }
         for (const a of [p.say?.audio, ...(p.choices ?? []).map((c) => c.audio)].filter(Boolean)) {
-          err(S(`'audio' is forbidden (${a}) — voice is generated at runtime via POST /v1/speak`));
+          err(S(`'audio' is forbidden (${a}) — voice is generated at runtime via the TTS API`));
         }
         // Images (Muse Image cartoons): optional, but a referenced file must exist in the pack.
         for (const img of [p.image, ...(p.choices ?? []).map((c) => c.image)].filter(Boolean)) {

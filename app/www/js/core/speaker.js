@@ -2,7 +2,7 @@
 // Priority per utterance:
 //   1. memory cache (this session)
 //   2. IndexedDB cache (previous sessions, offline reuse) — key: lang + text + voice
-//   3. Yekiva server POST /v1/speak {text, lang} -> audio (server calls Meta TTS)
+//   3. API Yekiva directe POST /tts/v1/speak {language, text} -> audio
 //   4. last-resort fallback: the phone's speech synthesis (robotic, offline only)
 // Packs carry TEXT ONLY (no pre-generated audio): packs/*.json never reference audio files.
 // The voice is chosen per language (env META_TTS_VOICE / META_TTS_VOICES='{"sw":"..."}').
@@ -139,6 +139,36 @@ export function createSpeaker({ speakFn } = {}) {
   let current = null;
   let warmed = false;
   const mem = new Map(); // session cache: key -> Blob
+
+  // Traduction des causes techniques en phrases pour un testeur sans clavier.
+  function explainCause(cause) {
+    switch (String(cause ?? "")) {
+      case "no-config":
+        return "cet APK a été construit sans --api (adresse API manquante) : voix téléphone uniquement";
+      case "no-key":
+        return "clé API manquante dans cet APK (build sans --key) : l'API répond 401, voix téléphone uniquement";
+      case "offline":
+        return "téléphone hors-ligne (Wi-Fi/4G coupé) : voix téléphone uniquement";
+      case "http-401":
+        return "l'API refuse la clé (401) : clé absente ou fausse dans le build, voix téléphone uniquement";
+      case "http-422":
+        return "l'API refuse le texte ou la langue (422) : voix téléphone, prévenez le développeur";
+      case "http-500":
+      case "http-502":
+      case "http-503":
+        return `l'API est en panne (${cause}) : réessayez, voix téléphone en attendant`;
+      case "empty":
+        return "l'API répond vide : réessayez, voix téléphone en attendant";
+      case "empty-text":
+        return "rien à dire (texte vide) : erreur interne, prévenez le développeur";
+      case "network":
+        return "API injoignable (réseau ? adresse fausse ?) : voix téléphone uniquement";
+      default:
+        return /^http-\d+$/.test(String(cause))
+          ? `l'API répond ${String(cause).slice(5)} : voix téléphone, voir « erreurs »`
+          : "l'API ne renvoie aucun audio (voir « erreurs »)";
+    }
+  }
 
   function stop() {
     if (current) {
@@ -342,21 +372,21 @@ export function createSpeaker({ speakFn } = {}) {
       if (speakFn) {
         try {
           const ep = typeof speakFn.endpoint === "function" ? speakFn.endpoint() : speakFn.endpoint;
-          const base = String(ep).replace(/\/v1\/speak.*$/, "");
-          if (!base || base.includes("__YEKIVA_")) {
-            serverDetail = "serveur non configuré (build sans --api)";
+          const base = String(ep).replace(/\/tts\/v1\/speak.*$/, "");
+          if (!base || base.includes("__TTS_") || base.includes("__YEKIVA_")) {
+            serverDetail = "API non configurée (build sans --api/--key)";
             serverVoice = false;
           } else {
             const r = await fetch(`${base}/health`);
             serverVoice = r.ok;
-            if (!r.ok) serverDetail = `le serveur répond HTTP ${r.status}`;
+            if (!r.ok) serverDetail = `l'API répond HTTP ${r.status}`;
           }
         } catch (e) {
           serverVoice = false;
-          serverDetail = `serveur injoignable (${e?.message ?? "réseau"})`;
+          serverDetail = `API injoignable (${e?.message ?? "réseau"})`;
         }
       } else {
-        serverDetail = "serveur non configuré (build sans --api)";
+        serverDetail = "API non configurée (build sans --api/--key)";
       }
       let cached = 0;
       try {
@@ -384,7 +414,7 @@ export function createSpeaker({ speakFn } = {}) {
     /**
      * Tests son 100 % tactiles (appelables par des boutons, sans console) :
      * testBeep = le haut-parleur sort-il un son ? testPhoneVoice = la voix
-     * téléphone parle-t-elle ? testServerVoice = le serveur vocal répond-il ?
+     * téléphone parle-t-elle ? testServerVoice = l'API vocale répond-elle ?
      * Chacun renvoie { ok, detail } pour affichage à l'écran.
      */
     async testBeep() {
@@ -411,14 +441,29 @@ export function createSpeaker({ speakFn } = {}) {
     },
     async testServerVoice(text = "Bonjour", lang = "fr") {
       await ready().catch(() => {});
-      if (!speakFn) return { ok: false, detail: "serveur non configuré (build sans --api)" };
+      if (!speakFn) {
+        return { ok: false, detail: "voix API absente de cet APK (prévenez le développeur)" };
+      }
+      // Diagnostic honnête : l'API dit POURQUOI (pas de "clé ? réseau ?" vague).
+      if (typeof speakFn.diagnoseSpeak === "function") {
+        try {
+          const d = await speakFn.diagnoseSpeak(text, lang);
+          if (d.ok && d.blob?.size) {
+            await playBlob(d.blob);
+            return { ok: true, detail: "voix de l'API entendue (voix naturelle)" };
+          }
+          return { ok: false, detail: explainCause(d.cause) };
+        } catch (e) {
+          return { ok: false, detail: `API injoignable (${e?.message ?? "réseau"})` };
+        }
+      }
       try {
         const blob = await speakFn(text, lang);
-        if (!blob?.size) return { ok: false, detail: "le serveur ne renvoie aucun audio (vérifiez la clé / le réseau)" };
+        if (!blob?.size) return { ok: false, detail: "l'API ne renvoie aucun audio (voir « erreurs »)" };
         await playBlob(blob);
-        return { ok: true, detail: "voix du serveur entendue (voix naturelle)" };
+        return { ok: true, detail: "voix de l'API entendue (voix naturelle)" };
       } catch (e) {
-        return { ok: false, detail: `serveur injoignable (${e?.message ?? "réseau"})` };
+        return { ok: false, detail: `API injoignable (${e?.message ?? "réseau"})` };
       }
     },
     /** Short beep: proves audio output works. Only runs in a browser/WebView (no audio under Node.js). */

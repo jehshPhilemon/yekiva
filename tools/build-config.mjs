@@ -1,17 +1,12 @@
 #!/usr/bin/env node
-// Injects the Yekiva server URL (+ optional app token) into app/www/js/config.js at build/dev time.
-// The learner NEVER types a URL: this is the only place the server address enters the app.
-//   node tools/build-config.mjs --api http://192.168.1.10:8787 [--token xxx]
-// Mint app keys offline with: node tools/make-key.mjs (see docs/APP_KEYS.md).
-//   node tools/build-config.mjs --reset   (back to same-origin placeholders)
-// Reads server/.env (YEKIVA_SERVER_URL, APP_TOKEN) when flags are absent.
-//
-// CI SAFETY: building an APK with the "__YEKIVA_SERVER_URL__" placeholder means
-// the app can NEVER reach the voice server — and the APK goes silent (Termux
-// works only because tools/serve.mjs injects a same-origin proxy). So:
-//   - plain `node tools/build-config.mjs` without --api now FAILS loudly,
-//   - `--check` verifies the baked URL without rewriting (for GitHub Actions),
-//   - `--allow-offline` explicitly documents an offline-only APK build.
+// Bake l'URL + la clé de l'API Yekiva TTS dans app/www/js/config.js.
+// L'app appelle l'API DIRECTEMENT (aucun serveur intermédiaire à héberger).
+//   node tools/build-config.mjs --api https://api.jehshphilemon.com --key YKV-....
+//   node tools/build-config.mjs --check        (vérifie, pour la CI)
+//   node tools/build-config.mjs --allow-offline (build offline volontaire)
+//   node tools/build-config.mjs --reset        (placeholders)
+// Variables lues quand les flags sont absents : TTS_API_URL, TTS_API_KEY
+// (ou server/.env / .env, mêmes noms). La clé TTS n'est pas un secret.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
@@ -36,87 +31,77 @@ const flag = (name) => {
   return i === -1 ? null : (args[i + 1] ?? "");
 };
 
+const PLACEHOLDER = `// Build-time settings: l'adresse de l'API Yekiva TTS + sa clé, bakées au build.\n` +
+  `// L'app appelle l'API DIRECTEMENT (aucun serveur intermédiaire) :\n` +
+  `//   POST {apiUrl}/tts/v1/speak { language, text, format } + header x-api-key\n` +
+  `//   GET  {apiUrl}/health (diagnostic)\n` +
+  `// La clé TTS n'est PAS un secret (lisible dans l'app) : elle limite l'abus.\n` +
+  `//   - Prod (APK + Termux) : node tools/build-config.mjs --api https://... --key YKV-....\n` +
+  `//   - Offline volontaire : placeholders / vide = cache + voix téléphone uniquement.\n` +
+  `export const config = {\n  apiUrl: "__TTS_API_URL__",\n  apiKey: "__TTS_API_KEY__",\n};\n`;
+
 function readBaked() {
   try {
     const text = readFileSync(configPath, "utf8");
-    const url = text.match(/serverUrl:\s*"([^"]*)"/)?.[1] ?? "";
-    const token = text.match(/appToken:\s*"([^"]*)"/)?.[1] ?? "";
-    return { url, token };
+    const url = text.match(/apiUrl:\s*"([^"]*)"/)?.[1] ?? "";
+    const key = text.match(/apiKey:\s*"([^"]*)"/)?.[1] ?? "";
+    return { url, key };
   } catch {
-    return { url: "", token: "" };
+    return { url: "", key: "" };
   }
 }
 
 if (args.includes("--reset")) {
-  writeFileSync(
-    configPath,
-    `// Build-time settings. The learner NEVER types a server URL: it is baked in here.\n` +
-      `//   - Dev (browser/Termux): npm run dev writes the local server URL (see tools/serve.mjs --api).\n` +
-      `//   - Prod (APK): the hackathon server URL, replaced at build time (see tools/build-config.mjs).\n` +
-      `//   - Offline APK: placeholders mean "no server" (phone voice fallback only).\n` +
-      `// The APP_TOKEN is NOT a secret (readable in the app): it limits abuse, not authentication.\n` +
-      `export const config = {\n  serverUrl: "__YEKIVA_SERVER_URL__",\n  appToken: "__YEKIVA_APP_TOKEN__",\n};\n`,
-  );
-  console.log("config reset to placeholders");
+  writeFileSync(configPath, PLACEHOLDER);
+  console.log("config reset to placeholders (offline: cache + voix téléphone)");
   process.exit(0);
 }
 
 if (args.includes("--check")) {
   const { url } = readBaked();
-  if (!url || url.includes("__YEKIVA_")) {
+  if (!url || url.includes("__TTS_") || url.includes("__YEKIVA_")) {
     console.error("config NOT baked: app/www/js/config.js still has placeholders.");
-    console.error("Fix: node tools/build-config.mjs --api https://VOTRE-SERVEUR [--token YKV-....]");
+    console.error("Fix: node tools/build-config.mjs --api https://api.jehshphilemon.com --key YKV-....");
     process.exit(1);
   }
   if (!/^https?:\/\//i.test(url)) {
-    console.error(`config invalid: serverUrl=${JSON.stringify(url)} (must start with http(s)://)`);
+    console.error(`config invalid: apiUrl=${JSON.stringify(url)} (must start with http(s)://)`);
     process.exit(1);
   }
-  if (/api\.meta\.ai|api\.mata\.ai/i.test(url)) {
-    console.error("config invalid: this is a Meta URL. Give the YEKIVA server URL.");
-    process.exit(1);
-  }
-  console.log(`config OK: serverUrl=${url}`);
+  console.log(`config OK: apiUrl=${url}`);
   process.exit(0);
 }
 
-const api = (flag("--api") || process.env.YEKIVA_SERVER_URL || "").trim();
-const token = (flag("--token") || process.env.APP_TOKEN || "").trim();
+const api = (flag("--api") || process.env.TTS_API_URL || process.env.YEKIVA_SERVER_URL || "").trim();
+const key = (flag("--key") || flag("--token") || process.env.TTS_API_KEY || process.env.APP_TOKEN || "").trim();
 
-// Explicit offline build (documented choice, phone voice only).
 if (args.includes("--allow-offline")) {
   writeFileSync(
     configPath,
-    `// GENERATED by tools/build-config.mjs --allow-offline (offline APK: phone voice only).\n` +
-      `export const config = {\n  serverUrl: "",\n  appToken: ${JSON.stringify(token)},\n};\n`,
+    `// GENERATED by tools/build-config.mjs --allow-offline (offline: cache + voix téléphone).\n` +
+      `export const config = {\n  apiUrl: "",\n  apiKey: ${JSON.stringify(key)},\n};\n`,
   );
-  console.log("config: offline build (no server, phone voice fallback only)");
+  console.log("config: offline build (cache + voix téléphone uniquement)");
   process.exit(0);
 }
 
 if (!api) {
-  console.error("missing server URL: --api https://... or YEKIVA_SERVER_URL in server/.env");
+  console.error("missing API URL: --api https://... or TTS_API_URL env (ex. https://api.jehshphilemon.com)");
   console.error("Refusing to build a silent APK. For a deliberate offline APK, add --allow-offline.");
   process.exit(1);
 }
-if (/__YEKIVA_/.test(api)) {
-  console.error("refused: placeholder URL would build a silent APK. Give the real YEKIVA server URL.");
+if (/__TTS_|__YEKIVA_/.test(api)) {
+  console.error("refused: placeholder URL would build a silent APK.");
   process.exit(1);
 }
 if (!/^https?:\/\//i.test(api)) {
-  console.error(`refused: server URL must start with http(s):// — got ${JSON.stringify(api)}`);
+  console.error(`refused: API URL must start with http(s):// — got ${JSON.stringify(api)}`);
   process.exit(1);
-}
-if (/api\.meta\.ai|api\.mata\.ai/i.test(api)) {
-  console.error("refused: this is a Meta URL. Give the YEKIVA server URL (the server alone calls Meta).");
-  process.exit(1);
-}
-if (/^http:\/\//i.test(api) && !/localhost|127\.0\.0\.1|192\.168\.|10\.|172\.(1[6-9]|2\d|3[01])\./.test(api)) {
-  console.warn(`warning: public http:// URL (${api}) — Android blocks cleartext to public hosts; prefer https://`);
 }
 writeFileSync(
   configPath,
-  `// GENERATED by tools/build-config.mjs — do not edit by hand (use --api / --reset).\n` +
-    `export const config = {\n  serverUrl: ${JSON.stringify(api)},\n  appToken: ${JSON.stringify(token)},\n};\n`,
+  `// GENERATED by tools/build-config.mjs — do not edit by hand (use --api/--key).\n` +
+    `export const config = {\n  apiUrl: ${JSON.stringify(api)},\n  apiKey: ${JSON.stringify(key)},\n};\n`,
 );
-console.log(`config: serverUrl=${api}`);
+console.log(`config: apiUrl=${api} key=${key ? "présente" : "ABSENTE (l'API répondra 401)"}`);
+if (!key) console.warn("warning: no API key baked — the TTS API answers 401 without x-api-key.");

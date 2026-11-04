@@ -117,7 +117,7 @@ export function createDebug() {
   function labelUrl(u) {
     const s = String(u).toLowerCase();
     if (s.includes("api.meta.ai") || s.includes("api.mata.ai")) return "META (interdit dans l'app — utilisez le serveur Yekiva)";
-    if (s.includes("/v1/transcribe") || s.includes("/v1/lesson-from-photo") || s.includes("/v1/speak") || s.includes("/v1/voice") || s.includes("/health")) return "serveur Yekiva";
+    if (s.includes("/tts/v1/speak") || s.includes("/health")) return "API Yekiva";
     if (s.includes("packs/") || s.endsWith(".wav") || s.endsWith(".json")) return "fichier local";
     return "réseau";
   }

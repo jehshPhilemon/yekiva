@@ -3,7 +3,7 @@
 // affiche son résultat en toutes lettres + parle quand il le peut.
 //   1. "bip" : le haut-parleur sort-il un son ? (hors voix)
 //   2. "voix téléphone" : la synthèse vocale de secours parle-t-elle ?
-//   3. "voix serveur" : la voix naturelle (serveur Yekiva) répond-elle ?
+//   3. "voix API" : la voix naturelle (API Yekiva directe) répond-elle ?
 // + un bouton "erreurs" qui affiche le bandeau de debug (5-tapes sinon).
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
@@ -48,11 +48,11 @@ export function diagScreen({ services, go }) {
     },
   });
   const btnServer = tile("cloudoff", {
-    size: 56, label: "test de la voix serveur", caption: "3 · voix serveur",
+    size: 56, label: "test de la voix API", caption: "3 · voix API",
     className: "diag-btn",
     onClick: async () => {
       busy(line3, "…");
-      const r = await speaker.testServerVoice("Bonjour, la voix du serveur arrive.", "fr");
+      const r = await speaker.testServerVoice("Bonjour, la voix de l'API arrive.", "fr");
       say(line3, r.ok, r.detail);
       // L'icône reflète le dernier résultat : check = joint, cloudoff = injoignable.
       try {
@@ -61,14 +61,26 @@ export function diagScreen({ services, go }) {
     },
   });
 
-  // Résumé serveur baké (sans jargon) : quelle adresse l'APK essaie de joindre ?
-  const base = services.transcriber?.serverUrl || "";
-  const summary = resultLine(
-    base
-      ? `Serveur configuré : ${base}`
-      : "Serveur NON configuré : cet APK a été construit sans --api (voix téléphone uniquement).",
-  );
-  summary.classList.add(base ? "ok" : "ko");
+  // Résumé API bakée (sans jargon) : quelle adresse l'APK essaie de joindre ?
+  // Résumé API bakée (sans jargon) : adresse + présence de la clé.
+  // "API NON configurée" = l'app tourne sans --api (cas de l'utilisateur).
+  const api = services.voiceApi ?? services.transcriber;
+  const base = api?.apiUrl || api?.serverUrl || "";
+  const hasKey = (() => {
+    try {
+      // voice-api n'expose pas la clé (normal) : on la déduit du diagnostic.
+      return api?.hasKey?.() ?? null;
+    } catch {
+      return null;
+    }
+  })();
+  const summaryText = !base
+    ? "API NON configurée : cet APK a été construit sans --api (cache + voix téléphone uniquement)."
+    : hasKey === false
+      ? `API ${base} : clé manquante (build sans --key) → l'API répondra 401.`
+      : `API configurée : ${base}`;
+  const summary = resultLine(summaryText);
+  summary.classList.add(!base || hasKey === false ? "ko" : "ok");
 
   const btnErrors = tile("alert", {
     size: 40, label: "afficher les erreurs", caption: "erreurs",

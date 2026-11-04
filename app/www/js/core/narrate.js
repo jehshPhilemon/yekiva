@@ -1,7 +1,7 @@
 // Pack-driven narration: EVERY screen and step speaks through the language pack.
 // Rule: no hardcoded French/English text in screens or steps. Each screen asks the pack:
 //   prompts.<key> { text }  ->  speaker.say(prompt, lang.code)
-// Packs are text-only: the natural voice is generated at runtime (POST /v1/speak)
+// Packs are text-only: the natural voice is generated at runtime (POST {api}/tts/v1/speak)
 // and cached on-device; the phone voice is the offline fallback.
 // Fallbacks (when the pack omits a key): replay the most relevant step audio, else silence.
 // This keeps animations + voice consistent from language choice down to every lesson step.

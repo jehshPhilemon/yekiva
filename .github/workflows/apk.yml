@@ -30,21 +30,22 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      # Bake the voice server URL into the app. Without this the APK is silent:
-      # Termux works only because tools/serve.mjs proxies same-origin /v1/*,
-      # a mechanism that does not exist inside the Capacitor APK.
-      # Configure in GitHub: Settings -> Secrets -> Actions:
-      #   YEKIVA_SERVER_URL = https://votre-serveur (requis)
-      #   APP_TOKEN         = YKV-.... (optionnel, même valeur que server/.env)
-      - name: Bake server URL (fail-closed: refuses silent APK)
+      # L'app appelle l'API Yekiva TTS DIRECTEMENT (aucun serveur à héberger).
+      # Secrets GitHub (Settings -> Secrets -> Actions) :
+      #   TTS_API_URL = https://api.jehshphilemon.com (requis)
+      #   TTS_API_KEY = YKV-.... (requis : sans elle l'API répond 401)
+      - name: Bake API URL + key (fail-closed: refuses silent APK)
         env:
-          YEKIVA_SERVER_URL: ${{ secrets.YEKIVA_SERVER_URL }}
-          APP_TOKEN: ${{ secrets.APP_TOKEN }}
+          TTS_API_URL: ${{ secrets.TTS_API_URL }}
+          TTS_API_KEY: ${{ secrets.TTS_API_KEY }}
         run: |
-          if [ -z "$YEKIVA_SERVER_URL" ]; then
-            echo "::error::YEKIVA_SERVER_URL secret manquant — sans lui l'APK serait muet."
-            echo "::error::Ajoutez-le : GitHub -> Settings -> Secrets -> Actions -> YEKIVA_SERVER_URL=https://votre-serveur"
+          if [ -z "$TTS_API_URL" ]; then
+            echo "::error::TTS_API_URL secret manquant — sans lui l'APK serait muet."
+            echo "::error::Ajoutez-le : GitHub -> Settings -> Secrets -> Actions -> TTS_API_URL=https://api.jehshphilemon.com"
             exit 1
+          fi
+          if [ -z "$TTS_API_KEY" ]; then
+            echo "::warning::TTS_API_KEY secret manquant — l'API répondra 401 (cache + voix téléphone uniquement)."
           fi
           node tools/build-config.mjs
           node tools/build-config.mjs --check
@@ -60,7 +61,7 @@ jobs:
             npx cap add android
           fi
 
-      - name: Patch Android manifest (permissions + cleartext for http:// voice server)
+      - name: Patch Android manifest (permissions + cleartext for http:// API)
         run: node tools/patch-android.mjs app/android/app/src/main/AndroidManifest.xml
 
       - name: Sync web assets

@@ -1,9 +1,11 @@
-// Build-time settings. The learner NEVER types a server URL: it is baked in here.
-//   - Dev (browser/Termux): npm run dev writes the local server URL (see tools/serve.mjs --api).
-//   - Prod (APK): the hackathon server URL, replaced at build time (see tools/build-config.mjs).
-//   - Offline APK: placeholders mean "no server" (phone voice fallback only).
-// The APP_TOKEN is NOT a secret (readable in the app): it limits abuse, not authentication.
+// Build-time settings: l'adresse de l'API Yekiva TTS + sa clé, bakées au build.
+// L'app appelle l'API DIRECTEMENT (aucun serveur intermédiaire) :
+//   POST {apiUrl}/tts/v1/speak { language, text, format } + header x-api-key
+//   GET  {apiUrl}/health (diagnostic)
+// La clé TTS n'est PAS un secret (lisible dans l'app) : elle limite l'abus.
+//   - Prod (APK + Termux) : node tools/build-config.mjs --api https://... --key YKV-....
+//   - Offline volontaire : placeholders / vide = cache + voix téléphone uniquement.
 export const config = {
-  serverUrl: "__YEKIVA_SERVER_URL__",
-  appToken: "__YEKIVA_APP_TOKEN__",
+  apiUrl: "__TTS_API_URL__",
+  apiKey: "__TTS_API_KEY__",
 };

@@ -1,7 +1,7 @@
-// Server status (read-only): the learner NEVER types a URL.
-// Narrated by the pack (prompts.server_hint), like every other screen.
-// The server address is baked in at build time (tools/build-config.mjs).
-// This screen only shows whether the Yekiva server answers, with a retry tile.
+// État de la voix (lecture seule) : l'apprenant ne tape JAMAIS d'URL.
+// L'adresse de l'API est bakée au build (tools/build-config.mjs --api/--key).
+// Cet écran dit si l'API TTS répond (GET /health), avec une tuile réessayer.
+// Narré par le pack (prompts.server_hint), comme tous les écrans.
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
@@ -14,11 +14,12 @@ export function serverScreen({ services, state, go }) {
   const explain = (msg) => hint.replaceChildren(msg ? document.createTextNode(msg) : "");
 
   async function test() {
-    const base = services.transcriber.serverUrl;
+    const api = services.voiceApi ?? services.transcriber;
+    const base = api?.apiUrl || api?.serverUrl || "";
     screenPrompt(services, state.language, "server_hint");
-    if (!base) {
+    if (!base || !api?.configured?.()) {
       show("cloudoff");
-      explain("Mode hors-ligne : exercices d'écoute, la voix reviendra avec le serveur.");
+      explain("Mode hors-ligne : leçons + voix déjà entendues, voix téléphone en secours.");
       return;
     }
     show("");
@@ -26,15 +27,17 @@ export function serverScreen({ services, state, go }) {
     try {
       const r = await fetch(`${base}/health`);
       if (r.ok) {
+        const info = await r.json().catch(() => null);
+        const langs = Array.isArray(info?.languages) ? info.languages.join(", ") : "";
         show("check");
-        explain("Serveur Yekiva joint : la voix et la photo sont actives.");
+        explain(langs ? `API Yekiva jointe : voix ${langs} actives.` : "API Yekiva jointe : la voix est active.");
       } else {
         show("alert");
-        explain("Le serveur ne répond pas correctement.");
+        explain("L'API ne répond pas correctement pour l'instant.");
       }
     } catch {
       show("cloudoff");
-      explain("Serveur injoignable pour l'instant : on continue hors-ligne.");
+      explain("API injoignable pour l'instant : on continue hors-ligne.");
     }
   }
 

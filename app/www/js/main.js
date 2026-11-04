@@ -1,7 +1,7 @@
 import { createPacks } from "./core/packs.js";
 import { createSpeaker } from "./core/speaker.js";
 import { createRecorder } from "./core/recorder.js";
-import { createTranscriber } from "./core/transcriber.js";
+import { createVoiceApi } from "./core/voice-api.js";
 import { LearnerModel } from "./core/learner.js";
 import { learnerData, profile } from "./core/storage.js";
 import { config } from "./config.js";
@@ -30,24 +30,20 @@ debug.mount();
 
 const packs = createPacks();
 const learners = new Map();
-const transcriber = createTranscriber(config);
-const speakFn = (text, lang) => transcriber.speak(text, lang);
-speakFn.endpoint = () => `${transcriber.serverUrl}/v1/speak`;
+// L'app appelle l'API Yekiva TTS DIRECTEMENT (aucun serveur intermédiaire) :
+// même code dans Termux et dans l'APK. Hors-ligne : speak() -> null ->
+// cache IndexedDB puis voix téléphone. Transcription/photo : pas de routes
+// API pour l'instant -> plan B offline (écoute+tap, photo expliquée).
+const voiceApi = createVoiceApi({ apiUrl: config.apiUrl, apiKey: config.apiKey });
+const speakFn = (text, lang) => voiceApi.speak(text, lang);
+speakFn.endpoint = () => `${voiceApi.baseUrl}/tts/v1/speak`;
 const services = {
   packs,
-  // Natural voice: generated at runtime by the server (Meta has no TTS endpoint),
-  // cached on-device; the robotic phone voice is only the offline fallback.
+  // Voix naturelle : API directe, cachée sur l'appareil ; voix téléphone en secours offline.
   speaker: createSpeaker({ speakFn }),
   recorder: createRecorder(),
-  transcriber,
-  refreshTranscriber() {
-    const fresh = createTranscriber(config);
-    this.transcriber = fresh;
-    const fn = (text, lang) => fresh.speak(text, lang);
-    fn.endpoint = () => `${fresh.serverUrl}/v1/speak`;
-    this.speaker = createSpeaker({ speakFn: fn });
-    return this.transcriber;
-  },
+  transcriber: voiceApi,
+  voiceApi,
   learnerFor(code) {
     if (!learners.has(code)) learners.set(code, new LearnerModel({ data: learnerData.load(code) }));
     return learners.get(code);
@@ -103,7 +99,7 @@ async function boot() {
 }
 boot();
 
-// Read-only diagnostics (?debug=1 shows the on-screen banner; no console needed).
+// Diagnostics tactiles (écran "Son et voix") + console navigateur (Termux/dev).
 window.YEKIVA = {
   async voice() {
     const d = await services.speaker.diagnose();
@@ -112,8 +108,8 @@ window.YEKIVA = {
     return d;
   },
   server() {
-    console.log("serverUrl:", services.transcriber.serverUrl || "(offline)");
-    return services.transcriber.serverUrl;
+    console.log("apiUrl:", services.voiceApi.apiUrl || "(offline)");
+    return services.voiceApi.apiUrl;
   },
   /** Test mode: YEKIVA.debugOn() shows the error banner; YEKIVA.debugOff() removes it. */
   debugOn() {
