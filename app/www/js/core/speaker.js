@@ -6,6 +6,11 @@
 //   4. last-resort fallback: the phone's speech synthesis (robotic, offline only)
 // Packs carry TEXT ONLY (no pre-generated audio): packs/*.json never reference audio files.
 // The voice is chosen per language (env META_TTS_VOICE / META_TTS_VOICES='{"sw":"..."}').
+//
+// APK note: inside a Capacitor WebView the Audio element + speechSynthesis both
+// work, BUT (a) audio must be unlocked by a user gesture, (b) speechSynthesis
+// voices may arrive late/empty, (c) fetch failures must NEVER leave the app
+// silent — the phone voice fallback must always run.
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const BCP47 = { fr: "fr-FR", sw: "sw-KE", ln: "ln-CD", en: "en-US" };
@@ -69,7 +74,9 @@ function pickVoice(voices, code) {
       best = v;
     }
   }
-  return bestScore > 0 ? best : null;
+  // No exact/prefix match: use the device default voice rather than silence.
+  if (!best && voices.length) return voices[0];
+  return bestScore > 0 ? best : (voices[0] ?? null);
 }
 
 // ---- on-device audio cache (IndexedDB): generated once, replayed offline ----
@@ -164,20 +171,35 @@ export function createSpeaker({ speakFn } = {}) {
 
   function playBlob(blob) {
     return new Promise((resolve) => {
-      const url = URL.createObjectURL(blob);
-      const a = new Audio(url);
-      a.dataset.objectUrl = url;
-      current = a;
+      let settled = false;
       const done = () => {
+        if (settled) return;
+        settled = true;
         try {
           URL.revokeObjectURL(url);
         } catch { /* ignore */ }
         if (current === a) current = null;
         resolve();
       };
+      let url = "";
+      try {
+        url = URL.createObjectURL(blob);
+      } catch {
+        return done();
+      }
+      const a = new Audio(url);
+      try {
+        a.dataset.objectUrl = url;
+      } catch { /* ignore */ }
+      current = a;
       a.onended = done;
       a.onerror = done;
-      a.play().catch(done);
+      try {
+        const p = a.play();
+        if (p?.catch) p.catch(done);
+      } catch {
+        done();
+      }
       setTimeout(done, 15000); // safety net
     });
   }
@@ -207,13 +229,31 @@ export function createSpeaker({ speakFn } = {}) {
         u.pitch = 1;
         const voice = pickVoice(cachedVoices ?? loadVoicesSync(), lang);
         if (voice) {
-          u.voice = voice;
-          u.lang = voice.lang;
+          try {
+            u.voice = voice;
+          } catch { /* ignore */ }
+          // Keep the requested language tag when the voice is a generic default.
+          if (!u.lang || !String(voice.lang ?? "").toLowerCase().startsWith(String(lang ?? "").toLowerCase())) {
+            if (tag) u.lang = tag;
+            else u.lang = voice.lang;
+          } else {
+            u.lang = voice.lang;
+          }
         }
         u.onend = end;
         u.onerror = end;
-        s.cancel();
-        s.speak(u);
+        try {
+          s.cancel();
+        } catch { /* ignore */ }
+        // Android WebView quirk: speak() right after cancel() can be swallowed.
+        // A tiny delay makes the fallback audible on real devices.
+        setTimeout(() => {
+          try {
+            s.speak(u);
+          } catch {
+            end();
+          }
+        }, 60);
         setTimeout(end, Math.max(4000, minMs + 2000));
       } catch {
         end();
@@ -286,8 +326,11 @@ export function createSpeaker({ speakFn } = {}) {
       stop();
       if (!cachedVoices) await loadVoices().then((v) => { cachedVoices = v; });
       // Natural Meta voice first (runtime, in-app generation); robotic phone voice only as fallback.
-      const ok = await speakRemote(say.text, lang);
-      if (ok) return;
+      // NEVER stay silent: any remote failure falls through to the phone voice.
+      try {
+        const ok = await speakRemote(say.text, lang);
+        if (ok) return;
+      } catch { /* fall through to phone voice */ }
       return speakLocal(say.text, lang);
     },
     /** Diagnostics: server voice reachable? how many utterances cached? phone voices? */
@@ -295,14 +338,25 @@ export function createSpeaker({ speakFn } = {}) {
       const voices = await loadVoices();
       cachedVoices = voices;
       let serverVoice = null;
+      let serverDetail = "";
       if (speakFn) {
         try {
           const ep = typeof speakFn.endpoint === "function" ? speakFn.endpoint() : speakFn.endpoint;
-          const r = await fetch(String(ep).replace(/\/v1\/speak.*$/, "/health"));
-          serverVoice = r.ok;
-        } catch {
+          const base = String(ep).replace(/\/v1\/speak.*$/, "");
+          if (!base || base.includes("__YEKIVA_")) {
+            serverDetail = "serveur non configuré (build sans --api)";
+            serverVoice = false;
+          } else {
+            const r = await fetch(`${base}/health`);
+            serverVoice = r.ok;
+            if (!r.ok) serverDetail = `le serveur répond HTTP ${r.status}`;
+          }
+        } catch (e) {
           serverVoice = false;
+          serverDetail = `serveur injoignable (${e?.message ?? "réseau"})`;
         }
+      } else {
+        serverDetail = "serveur non configuré (build sans --api)";
       }
       let cached = 0;
       try {
@@ -319,12 +373,53 @@ export function createSpeaker({ speakFn } = {}) {
       } catch { /* ignore */ }
       return {
         natural: serverVoice, // true = Meta voice reachable; false/null = robotic fallback or offline
+        serverDetail,
         cached, // utterances stored on-device (offline replay)
         hasSynthesis: Boolean(synth()),
         count: voices.length,
         langs: [...new Set(voices.map((v) => v.lang))].sort(),
         picked: { fr: pickVoice(voices, "fr")?.lang ?? null, sw: pickVoice(voices, "sw")?.lang ?? null, ln: pickVoice(voices, "ln")?.lang ?? null },
       };
+    },
+    /**
+     * Tests son 100 % tactiles (appelables par des boutons, sans console) :
+     * testBeep = le haut-parleur sort-il un son ? testPhoneVoice = la voix
+     * téléphone parle-t-elle ? testServerVoice = le serveur vocal répond-il ?
+     * Chacun renvoie { ok, detail } pour affichage à l'écran.
+     */
+    async testBeep() {
+      await ready().catch(() => {});
+      const ok = await this.beep(660, 400);
+      return ok
+        ? { ok: true, detail: "bip entendu = le haut-parleur fonctionne" }
+        : { ok: false, detail: "aucun son produit (vérifiez le volume / le mode silencieux)" };
+    },
+    async testPhoneVoice(lang = "fr") {
+      await ready().catch(() => {});
+      const voices = await loadVoices().catch(() => []);
+      cachedVoices = voices;
+      if (!synth()) return { ok: false, detail: "synthèse vocale absente de cet appareil" };
+      if (!voices.length) {
+        return { ok: false, detail: "aucune voix installée : installez « synthèse vocale Google »" };
+      }
+      try {
+        await speakLocal("Bonjour, vous m'entendez ?", lang, { minMs: 800 });
+        return { ok: true, detail: `voix téléphone OK (${voices.length} voix, ex. ${voices[0]?.lang ?? "?"})` };
+      } catch (e) {
+        return { ok: false, detail: `voix téléphone en échec (${e?.message ?? "?"})` };
+      }
+    },
+    async testServerVoice(text = "Bonjour", lang = "fr") {
+      await ready().catch(() => {});
+      if (!speakFn) return { ok: false, detail: "serveur non configuré (build sans --api)" };
+      try {
+        const blob = await speakFn(text, lang);
+        if (!blob?.size) return { ok: false, detail: "le serveur ne renvoie aucun audio (vérifiez la clé / le réseau)" };
+        await playBlob(blob);
+        return { ok: true, detail: "voix du serveur entendue (voix naturelle)" };
+      } catch (e) {
+        return { ok: false, detail: `serveur injoignable (${e?.message ?? "réseau"})` };
+      }
     },
     /** Short beep: proves audio output works. Only runs in a browser/WebView (no audio under Node.js). */
     async beep(freq = 660, ms = 300) {

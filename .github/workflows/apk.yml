@@ -1,0 +1,78 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node tools/validate-packs.mjs
+      - run: npm test --prefix app
+      - run: npm test --prefix server
+
+  apk:
+    needs: validate
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      # Bake the voice server URL into the app. Without this the APK is silent:
+      # Termux works only because tools/serve.mjs proxies same-origin /v1/*,
+      # a mechanism that does not exist inside the Capacitor APK.
+      # Configure in GitHub: Settings -> Secrets -> Actions:
+      #   YEKIVA_SERVER_URL = https://votre-serveur (requis)
+      #   APP_TOKEN         = YKV-.... (optionnel, même valeur que server/.env)
+      - name: Bake server URL (fail-closed: refuses silent APK)
+        env:
+          YEKIVA_SERVER_URL: ${{ secrets.YEKIVA_SERVER_URL }}
+          APP_TOKEN: ${{ secrets.APP_TOKEN }}
+        run: |
+          if [ -z "$YEKIVA_SERVER_URL" ]; then
+            echo "::error::YEKIVA_SERVER_URL secret manquant — sans lui l'APK serait muet."
+            echo "::error::Ajoutez-le : GitHub -> Settings -> Secrets -> Actions -> YEKIVA_SERVER_URL=https://votre-serveur"
+            exit 1
+          fi
+          node tools/build-config.mjs
+          node tools/build-config.mjs --check
+
+      - name: Install app deps
+        working-directory: app
+        run: npm install
+
+      - name: Add Android platform (first build only)
+        working-directory: app
+        run: |
+          if [ ! -d android ]; then
+            npx cap add android
+          fi
+
+      - name: Patch Android manifest (permissions + cleartext for http:// voice server)
+        run: node tools/patch-android.mjs app/android/app/src/main/AndroidManifest.xml
+
+      - name: Sync web assets
+        working-directory: app
+        run: npx cap sync android
+
+      - name: Build debug APK
+        working-directory: app/android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: yekiva-apk
+          path: app/android/app/build/outputs/apk/debug/app-debug.apk

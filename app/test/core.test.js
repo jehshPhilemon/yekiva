@@ -70,7 +70,7 @@ test("packs: the loader reads the real files and merges Swahili", async () => {
 });
 
 test("all screen and step modules import (correct paths and exports)", async () => {
-  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js", "ui/context-cue.js", "steps/listen_tap.js", "steps/watch_write.js", "steps/trace_letter.js"]) {
+  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js", "screens/diag.js", "ui/context-cue.js", "steps/listen_tap.js", "steps/watch_write.js", "steps/trace_letter.js"]) {
     await import(`../www/js/${f}`);
   }
   const { registry } = await import("../www/js/core/registry.js");
@@ -112,4 +112,25 @@ test("server-url: Meta URLs are refused, Yekiva URLs accepted and normalized", a
   assert.equal(checkServerUrl("https://api.meta.ai/v1").ok, false);
   assert.equal(checkServerUrl("https://api.mata.ai/v1/v1/lesson-from-photo?lang=fr").ok, false);
   assert.equal(checkServerUrl("http://192.168.1.10:8787").ok, true);
+});
+
+test("APK silence fix: placeholders never resolve to location.origin", async () => {
+  const { createTranscriber } = await import("../www/js/core/transcriber.js");
+  // Simule la WebView Capacitor : même si location.origin vaut https://localhost,
+  // un build sans --api doit rester offline (pas de fetch vers le vide).
+  globalThis.location = { origin: "https://localhost" };
+  const t = createTranscriber({ serverUrl: "__YEKIVA_SERVER_URL__", appToken: "__YEKIVA_APP_TOKEN__" });
+  assert.equal(t.serverUrl, "");
+  assert.equal(t.available(), false);
+  assert.equal(await t.speak("bonjour", "fr"), null);
+  assert.match(t.serverError(), /non configuré|build sans --api/);
+  delete globalThis.location;
+});
+
+test("APK silence fix: baked https URL stays usable", async () => {
+  const { createTranscriber } = await import("../www/js/core/transcriber.js");
+  globalThis.location = { origin: "https://localhost" };
+  const t = createTranscriber({ serverUrl: "https://voice.example.com", appToken: "" });
+  assert.equal(t.serverUrl, "https://voice.example.com");
+  delete globalThis.location;
 });

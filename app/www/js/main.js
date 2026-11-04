@@ -15,10 +15,13 @@ import { pathScreen } from "./screens/path.js";
 import { lessonScreen } from "./screens/lesson.js";
 import { photoScreen } from "./screens/photo.js";
 import { serverScreen } from "./screens/server.js";
+import { diagScreen } from "./screens/diag.js";
 
 const debug = createDebug();
 debug.install();
-// No console on Termux/phones: ?debug=1 (or #debug) in the URL enables the banner.
+// Navigateur (Termux/dev) : ?debug=1 (ou #debug) affiche le bandeau.
+// APK installée : pas d'URL modifiable — 5 tapes sur le logo "Yekiva"
+// (écran d'accueil) ou bouton "erreurs" de l'écran "Son et voix".
 try {
   const q = new URLSearchParams(location.search);
   if (q.get("debug") === "1" || location.hash.includes("debug")) setDebug(true);
@@ -61,6 +64,7 @@ const screens = {
   lesson: lessonScreen,
   photo: photoScreen,
   server: serverScreen,
+  diag: diagScreen,
 };
 const app = document.getElementById("app");
 let current = null;
@@ -125,5 +129,10 @@ window.YEKIVA = {
   },
   debug(msg) {
     debug.push(msg);
+  },
+  /** Bascule tactile du bandeau d'erreurs (5 tapes sur le logo, ou écran diag). */
+  debugToggle() {
+    const on = debug.toggle();
+    return on;
   },
 };

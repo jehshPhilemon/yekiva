@@ -9,7 +9,7 @@
   },
   "prompts": {
     "language_pick": {
-      "text": "Mpo na Lingala, tyá awa",
+      "text": "Mpo na Lingála, tyá awa",
       "audio": null
     },
     "audience_adult": {
@@ -137,4 +137,3 @@
   },
   "qualityNote": "Traduction initiale NLLB : à faire relire par un locuteur natif."
 }
-

@@ -90,7 +90,13 @@ export async function pathScreen({ services, state, go }) {
     label: actions.replay ?? "repeat", caption: actions.replay,
     className: "path-action",
   });
-  const bar = h("div", { class: "path-actions" }, photo, server, replay);
+  // Diagnostic son 100 % tactile : 3 tests (bip, voix téléphone, voix serveur).
+  const diag = tile("music", {
+    onClick: () => go("diag"), size: 40,
+    label: "Son et voix : tester", caption: "son ?",
+    className: "path-action",
+  });
+  const bar = h("div", { class: "path-actions" }, photo, server, replay, diag);
 
   const screen = h(
     "div",

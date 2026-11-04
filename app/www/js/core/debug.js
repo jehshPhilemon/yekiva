@@ -1,10 +1,10 @@
-// Test-only error overlay: makes every error VISIBLE on the phone screen
-// (a non-reader tester cannot open the console). Enabled with:
-//   localStorage.setItem("yekiva.debug", "1")   then reload.
-// Disabled (and fully removed) with YEKIVA.debugOff() or one tap on "tout effacer".
+// Bandeau d'erreurs visible sur l'écran du téléphone (pas de console dans l'APK).
+// Activation 100 % tactile, sans URL ni clavier :
+//   - écran d'accueil : taper 5 fois le logo "Yekiva" en moins de 3 secondes,
+//   - ou écran "voix/serveur" : bouton "afficher les erreurs".
+// Désactivation : bouton "off" du bandeau, ou 5 tapes à nouveau.
 //
-// What it shows: JS errors, failed fetches (packs/audio/server), voice failures.
-// One button clears the list; one button disables the overlay entirely.
+// Affiche : erreurs JS, fetch échoués (packs/audio/serveur) avec l'URL fautive.
 import { h } from "../ui/dom.js";
 
 const KEY = "yekiva.debug";
@@ -53,25 +53,40 @@ export function createDebug() {
     render();
   }
 
-  function mount() {
-    if (bar || !debugEnabled()) return;
+  // force=true : affiche même si le flag n'est pas encore posé (activation tactile).
+  function mount(force = false) {
+    if (bar) return true;
+    if (!force && !debugEnabled()) return false;
+    if (force) setDebug(true);
     bar = h("div", { class: "dbg", role: "status" },
       h("span", { class: "dbg-dot" }),
       h("span", { class: "dbg-count" }, "aucune erreur"),
       h("button", { class: "dbg-btn", type: "button", onclick: () => { list?.classList.toggle("open"); } }, "voir"),
       h("button", { class: "dbg-btn", type: "button", onclick: () => { errors.length = 0; render(); } }, "tout effacer"),
-      h("button", { class: "dbg-btn", type: "button", onclick: () => window.YEKIVA?.debugOff() }, "off"),
+      h("button", { class: "dbg-btn", type: "button", onclick: () => toggle() }, "off"),
     );
     list = h("div", { class: "dbg-list" });
     bar.append(list);
     document.body.append(bar);
     render();
+    return true;
   }
 
   function unmount() {
     bar?.remove();
     bar = null;
     list = null;
+  }
+
+  function toggle() {
+    if (bar) {
+      setDebug(false);
+      errors.length = 0;
+      unmount();
+      return false;
+    }
+    mount(true);
+    return true;
   }
 
   // Catch-all: JS errors + failed fetches, with the URL that failed.
@@ -111,6 +126,9 @@ export function createDebug() {
     push,
     mount,
     unmount,
+    toggle,
+    isOn: () => Boolean(bar),
+    errors: () => errors.slice(),
     clear() {
       errors.length = 0;
       render();

@@ -2,5 +2,12 @@
   "appId": "com.jehshphilemon.yekiva",
   "appName": "Yekiva",
   "webDir": "www",
-  "server": { "androidScheme": "https" }
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true,
+    "allowNavigation": []
+  },
+  "android": {
+    "allowMixedContent": true
+  }
 }
