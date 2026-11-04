@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "f"
       ],
       "params": {
-        "glyph": "f:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi f, kisha sema : fff."
+          "text": "Écoute : farasi. Touche la lettre du son f."
         },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "f",
         "context": {
           "letter": "F · f",
           "word": "farasi",
@@ -78,13 +92,129 @@
       "params": {
         "word": "farasi",
         "say": {
-          "text": "Sema neno : farasi."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "F · f",
           "word": "farasi",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:f"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche f."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:farasi"
+      ],
+      "params": {
+        "word": "farasi",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

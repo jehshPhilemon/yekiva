@@ -74,13 +74,129 @@
       "params": {
         "word": "shule",
         "say": {
-          "text": "Sema neno : shule."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "sh",
           "word": "shule",
           "icon": "book"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:sh"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche sh."
+        },
+        "choices": [
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "shule",
+            "text": "shule"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "sh",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:shule"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche shule."
+        },
+        "choices": [
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "shule",
+            "text": "shule"
+          }
+        ],
+        "answer": "shule",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "shule",
+            "text": "shule"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:shule"
+      ],
+      "params": {
+        "word": "shule",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        },
+        "isQuiz": true
       }
     }
   ]

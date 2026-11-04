@@ -74,13 +74,129 @@
       "params": {
         "word": "thelathini",
         "say": {
-          "text": "Sema neno : thelathini."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "th",
           "word": "thelathini",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:th"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche th."
+        },
+        "choices": [
+          {
+            "id": "th",
+            "text": "th"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "thelathini",
+            "text": "thelathini"
+          }
+        ],
+        "answer": "th",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:thelathini"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche thelathini."
+        },
+        "choices": [
+          {
+            "id": "thelathini",
+            "text": "thelathini"
+          },
+          {
+            "id": "th",
+            "text": "th"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "thelathini",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "thelathini",
+            "text": "thelathini"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "th",
+            "text": "th"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:thelathini"
+      ],
+      "params": {
+        "word": "thelathini",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

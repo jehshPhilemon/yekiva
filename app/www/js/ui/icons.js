@@ -46,6 +46,7 @@ const PATHS = {
   swap: `<path ${S} d="M7 7h12l-3-3M17 17H5l3 3"/>`,
   cloudoff: `<path ${S} d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1 .5 9H7z"/><path ${S} d="M3 3l18 18"/>`,
   alert: `<circle ${S} cx="12" cy="12" r="9"/><path ${S} d="M12 7v6M12 16.5v.5"/>`,
+  lock: `<rect ${S} x="5" y="10" width="14" height="10" rx="2"/><path ${S} d="M8 10V7a4 4 0 0 1 8 0v3"/>`,
   "lang-fr": langIcon("fr"),
   "lang-sw": langIcon("sw"),
   "lang-ln": langIcon("ln"),

@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "a"
       ],
       "params": {
-        "glyph": "a:lower_script",
         "say": {
-          "text": "A comme avion. Trace la lettre a en suivant les pointillés."
+          "text": "Écoute : avion. Touche la lettre du son a."
         },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
         "context": {
           "letter": "A · a",
           "word": "avion",
@@ -78,13 +92,129 @@
       "params": {
         "word": "avion",
         "say": {
-          "text": "Dis le mot : avion."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "A · a",
           "word": "avion",
           "icon": "plane"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:avion"
+      ],
+      "params": {
+        "word": "avion",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "id": "lettre-w",
-  "title": "Lɛtrɛ W",
-  "symbol": "W · w",
+  "title": "Letre W",
+  "symbol": "W  w",
   "icon": "picture",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "w:lower_script",
         "say": {
-          "text": "Lɛtrɛ W ezali na mongongo w, lokola na liloba wagon. Yoka : w."
+          "text": "Letre W ezali na mongongo w, lokola na liloba wagon. Yoka : w."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "W · w",
-          "word": "wagon",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "w"
-      ],
-      "params": {
-        "glyph": "w:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ w, mpe loba : w."
-        },
-        "context": {
-          "letter": "W · w",
+          "letter": "W  w",
           "word": "wagon",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : wagon. Simba lɛtrɛ ya mongongo w."
+          "text": "Ecoute : wagon. Touche la lettre du son w."
+        },
+        "choices": [
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : wagon. Simba letre ya mongongo w."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "w",
         "context": {
-          "letter": "W · w",
+          "letter": "W  w",
           "word": "wagon",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "wagon",
         "say": {
-          "text": "Loba liloba : wagon."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "W · w",
+          "letter": "W  w",
           "word": "wagon",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:w"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche w."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:wagon"
+      ],
+      "params": {
+        "word": "wagon",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "W  w",
+          "word": "wagon",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

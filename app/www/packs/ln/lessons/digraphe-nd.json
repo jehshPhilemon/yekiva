@@ -74,13 +74,129 @@
       "params": {
         "word": "ndeke",
         "say": {
-          "text": "Loba liloba : ndeke."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "nd",
           "word": "ndeke",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nd"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche nd."
+        },
+        "choices": [
+          {
+            "id": "ndeke",
+            "text": "ndeke"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nd",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ndeke"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche ndeke."
+        },
+        "choices": [
+          {
+            "id": "ndeke",
+            "text": "ndeke"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          }
+        ],
+        "answer": "ndeke",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "ndeke",
+            "text": "ndeke"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ndeke"
+      ],
+      "params": {
+        "word": "ndeke",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

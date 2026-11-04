@@ -1,7 +1,7 @@
 {
   "id": "lettre-c",
-  "title": "Lɛtrɛ C",
-  "symbol": "C · c",
+  "title": "Letre C",
+  "symbol": "C  c",
   "icon": "book",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "c:lower_script",
         "say": {
-          "text": "Lɛtrɛ C ezali na mongongo k, lokola na liloba classe. Yoka : k."
+          "text": "Letre C ezali na mongongo k, lokola na liloba classe. Yoka : k."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "C · c",
-          "word": "classe",
-          "icon": "book"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "c"
-      ],
-      "params": {
-        "glyph": "c:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ c, mpe loba : k."
-        },
-        "context": {
-          "letter": "C · c",
+          "letter": "C  c",
           "word": "classe",
           "icon": "book"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : classe. Simba lɛtrɛ ya mongongo k."
+          "text": "Ecoute : classe. Touche la lettre du son c."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : classe. Simba letre ya mongongo k."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "c",
         "context": {
-          "letter": "C · c",
+          "letter": "C  c",
           "word": "classe",
           "icon": "book"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "classe",
         "say": {
-          "text": "Loba liloba : classe."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "C · c",
+          "letter": "C  c",
           "word": "classe",
           "icon": "book"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:c"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche c."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:classe"
+      ],
+      "params": {
+        "word": "classe",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "C  c",
+          "word": "classe",
+          "icon": "book"
+        },
+        "isQuiz": true
       }
     }
   ]

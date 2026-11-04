@@ -16,6 +16,7 @@ import { lessonScreen } from "./screens/lesson.js";
 import { photoScreen } from "./screens/photo.js";
 import { serverScreen } from "./screens/server.js";
 import { diagScreen } from "./screens/diag.js";
+import { conversationScreen } from "./screens/conversation.js";
 
 const debug = createDebug();
 debug.install();
@@ -51,6 +52,7 @@ const services = {
     return learners.get(code);
   },
   saveLearner: (code) => learnerData.save(code, learners.get(code)?.toJSON() ?? {}),
+  debug,
 };
 
 const state = { language: null, audience: null };
@@ -63,6 +65,7 @@ const screens = {
   photo: photoScreen,
   server: serverScreen,
   diag: diagScreen,
+  conversation: conversationScreen,
 };
 const app = document.getElementById("app");
 let current = null;

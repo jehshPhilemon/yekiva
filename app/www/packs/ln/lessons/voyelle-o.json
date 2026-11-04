@@ -1,7 +1,7 @@
 {
   "id": "voyelle-o",
-  "title": "Vowɛlɛ O",
-  "symbol": "O · o",
+  "title": "Vowele O",
+  "symbol": "O  o",
   "icon": "family",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "o:lower_script",
         "say": {
-          "text": "Lɛtrɛ O ezali na mongongo o, lokola na liloba moto. Yoka : o."
+          "text": "Letre O ezali na mongongo o, lokola na liloba moto. Yoka : o."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "O · o",
-          "word": "moto",
-          "icon": "family"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "o"
-      ],
-      "params": {
-        "glyph": "o:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ o, mpe loba : o."
-        },
-        "context": {
-          "letter": "O · o",
+          "letter": "O  o",
           "word": "moto",
           "icon": "family"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : moto. Simba lɛtrɛ ya mongongo o."
+          "text": "Ecoute : moto. Touche la lettre du son o."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : moto. Simba letre ya mongongo o."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "o",
         "context": {
-          "letter": "O · o",
+          "letter": "O  o",
           "word": "moto",
           "icon": "family"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "moto",
         "say": {
-          "text": "Loba liloba : moto."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "O · o",
+          "letter": "O  o",
           "word": "moto",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:o"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche o."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:moto"
+      ],
+      "params": {
+        "word": "moto",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "O  o",
+          "word": "moto",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

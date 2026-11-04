@@ -74,13 +74,129 @@
       "params": {
         "word": "ghali",
         "say": {
-          "text": "Sema neno : ghali."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "gh",
           "word": "ghali",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:gh"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche gh."
+        },
+        "choices": [
+          {
+            "id": "ghali",
+            "text": "ghali"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "gh",
+            "text": "gh"
+          }
+        ],
+        "answer": "gh",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ghali"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche ghali."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ghali",
+            "text": "ghali"
+          },
+          {
+            "id": "gh",
+            "text": "gh"
+          }
+        ],
+        "answer": "ghali",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "ghali",
+            "text": "ghali"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "gh",
+            "text": "gh"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ghali"
+      ],
+      "params": {
+        "word": "ghali",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

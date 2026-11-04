@@ -1,7 +1,7 @@
 {
   "id": "lettre-k",
-  "title": "Lɛtrɛ K",
-  "symbol": "K · k",
+  "title": "Letre K",
+  "symbol": "K  k",
   "icon": "picture",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "k:lower_script",
         "say": {
-          "text": "Lɛtrɛ K ezali na mongongo kkk, lokola na liloba kiti. Yoka : kkk."
+          "text": "Letre K ezali na mongongo kkk, lokola na liloba kiti. Yoka : kkk."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "K · k",
-          "word": "kiti",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "k"
-      ],
-      "params": {
-        "glyph": "k:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ k, mpe loba : kkk."
-        },
-        "context": {
-          "letter": "K · k",
+          "letter": "K  k",
           "word": "kiti",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : kiti. Simba lɛtrɛ ya mongongo kkk."
+          "text": "Ecoute : kiti. Touche la lettre du son k."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : kiti. Simba letre ya mongongo kkk."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "k",
         "context": {
-          "letter": "K · k",
+          "letter": "K  k",
           "word": "kiti",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "kiti",
         "say": {
-          "text": "Loba liloba : kiti."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "K · k",
+          "letter": "K  k",
           "word": "kiti",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:k"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche k."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:kiti"
+      ],
+      "params": {
+        "word": "kiti",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "K  k",
+          "word": "kiti",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

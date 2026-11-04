@@ -74,13 +74,129 @@
       "params": {
         "word": "mpunda",
         "say": {
-          "text": "Loba liloba : mpunda."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "mp",
           "word": "mpunda",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mp"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche mp."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "mpunda",
+            "text": "mpunda"
+          },
+          {
+            "id": "mp",
+            "text": "mp"
+          }
+        ],
+        "answer": "mp",
+        "context": {
+          "letter": "mp",
+          "word": "mpunda",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mpunda"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche mpunda."
+        },
+        "choices": [
+          {
+            "id": "mp",
+            "text": "mp"
+          },
+          {
+            "id": "mpunda",
+            "text": "mpunda"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "mpunda",
+        "context": {
+          "letter": "mp",
+          "word": "mpunda",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "mp",
+            "text": "mp"
+          },
+          {
+            "id": "mpunda",
+            "text": "mpunda"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "mp",
+          "word": "mpunda",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mpunda"
+      ],
+      "params": {
+        "word": "mpunda",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "mp",
+          "word": "mpunda",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

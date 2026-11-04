@@ -1,7 +1,7 @@
 {
   "id": "consonne-t",
   "title": "Konsoni T",
-  "symbol": "T · t",
+  "symbol": "T  t",
   "icon": "family",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "t:lower_script",
         "say": {
-          "text": "Lɛtrɛ T ezali na mongongo ttt, lokola na liloba tata. Yoka : ttt."
+          "text": "Letre T ezali na mongongo ttt, lokola na liloba tata. Yoka : ttt."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "T · t",
-          "word": "tata",
-          "icon": "family"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "t"
-      ],
-      "params": {
-        "glyph": "t:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ t, mpe loba : ttt."
-        },
-        "context": {
-          "letter": "T · t",
+          "letter": "T  t",
           "word": "tata",
           "icon": "family"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : tata. Simba lɛtrɛ ya mongongo ttt."
+          "text": "Ecoute : tata. Touche la lettre du son t."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : tata. Simba letre ya mongongo ttt."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "t",
         "context": {
-          "letter": "T · t",
+          "letter": "T  t",
           "word": "tata",
           "icon": "family"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "tata",
         "say": {
-          "text": "Loba liloba : tata."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "T · t",
+          "letter": "T  t",
           "word": "tata",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:t"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche t."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:tata"
+      ],
+      "params": {
+        "word": "tata",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "T  t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

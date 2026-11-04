@@ -1,7 +1,7 @@
 {
   "id": "alphabet-1",
-  "title": "Bankombo ya balɛtrɛ",
-  "symbol": "A · B · C",
+  "title": "Bankombo ya baletre",
+  "symbol": "A  B  C",
   "icon": "book",
   "steps": [
     {
@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Balɛtrɛ bazali na bankombo. Yoka mpe simba lɛtrɛ B."
+          "text": "Baletre bazali na bankombo. Yoka mpe simba letre B."
         },
         "choices": [
           {
@@ -30,7 +30,7 @@
         "answer": "B",
         "context": {
           "letter": "B",
-          "word": "lɛtrɛ B",
+          "word": "letre B",
           "icon": "book"
         }
       }
@@ -42,7 +42,7 @@
       ],
       "params": {
         "say": {
-          "text": "Simba lɛtrɛ E."
+          "text": "Simba letre E."
         },
         "choices": [
           {
@@ -61,7 +61,7 @@
         "answer": "E",
         "context": {
           "letter": "E",
-          "word": "lɛtrɛ E",
+          "word": "letre E",
           "icon": "book"
         }
       }
@@ -73,7 +73,7 @@
       ],
       "params": {
         "say": {
-          "text": "Simba lɛtrɛ M."
+          "text": "Simba letre M."
         },
         "choices": [
           {
@@ -92,9 +92,105 @@
         "answer": "M",
         "context": {
           "letter": "M",
-          "word": "lɛtrɛ M",
+          "word": "letre M",
           "icon": "book"
         }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:B"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche B."
+        },
+        "choices": [
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "E",
+            "text": "E"
+          },
+          {
+            "id": "M",
+            "text": "M"
+          }
+        ],
+        "answer": "B",
+        "context": {
+          "letter": "B",
+          "word": "letre B",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:E"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche E."
+        },
+        "choices": [
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "M",
+            "text": "M"
+          },
+          {
+            "id": "E",
+            "text": "E"
+          }
+        ],
+        "answer": "E",
+        "context": {
+          "letter": "B",
+          "word": "letre B",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:M"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche M."
+        },
+        "choices": [
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "E",
+            "text": "E"
+          },
+          {
+            "id": "M",
+            "text": "M"
+          }
+        ],
+        "answer": "M",
+        "context": {
+          "letter": "B",
+          "word": "letre B",
+          "icon": "book"
+        },
+        "isQuiz": true
       }
     }
   ]

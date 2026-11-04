@@ -74,13 +74,129 @@
       "params": {
         "word": "dhahabu",
         "say": {
-          "text": "Sema neno : dhahabu."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "dh",
           "word": "dhahabu",
           "icon": "star"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:dh"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche dh."
+        },
+        "choices": [
+          {
+            "id": "dhahabu",
+            "text": "dhahabu"
+          },
+          {
+            "id": "dh",
+            "text": "dh"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "dh",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:dhahabu"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche dhahabu."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "dh",
+            "text": "dh"
+          },
+          {
+            "id": "dhahabu",
+            "text": "dhahabu"
+          }
+        ],
+        "answer": "dhahabu",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "dh",
+            "text": "dh"
+          },
+          {
+            "id": "dhahabu",
+            "text": "dhahabu"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:dhahabu"
+      ],
+      "params": {
+        "word": "dhahabu",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        },
+        "isQuiz": true
       }
     }
   ]

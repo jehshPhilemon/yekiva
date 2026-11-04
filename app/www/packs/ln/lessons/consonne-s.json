@@ -1,7 +1,7 @@
 {
   "id": "consonne-s",
   "title": "Konsoni S",
-  "symbol": "S · s",
+  "symbol": "S  s",
   "icon": "picture",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "s:lower_script",
         "say": {
-          "text": "Lɛtrɛ S ezali na mongongo sss, lokola na liloba sasa. Yoka : sss."
+          "text": "Letre S ezali na mongongo sss, lokola na liloba sasa. Yoka : sss."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "S · s",
-          "word": "sasa",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "s"
-      ],
-      "params": {
-        "glyph": "s:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ s, mpe loba : sss."
-        },
-        "context": {
-          "letter": "S · s",
+          "letter": "S  s",
           "word": "sasa",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : sasa. Simba lɛtrɛ ya mongongo sss."
+          "text": "Ecoute : sasa. Touche la lettre du son s."
+        },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : sasa. Simba letre ya mongongo sss."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "s",
         "context": {
-          "letter": "S · s",
+          "letter": "S  s",
           "word": "sasa",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "sasa",
         "say": {
-          "text": "Loba liloba : sasa."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "S · s",
+          "letter": "S  s",
           "word": "sasa",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:s"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche s."
+        },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:sasa"
+      ],
+      "params": {
+        "word": "sasa",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "S  s",
+          "word": "sasa",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

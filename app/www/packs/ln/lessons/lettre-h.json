@@ -1,7 +1,7 @@
 {
   "id": "lettre-h",
-  "title": "Lɛtrɛ H",
-  "symbol": "H · h",
+  "title": "Letre H",
+  "symbol": "H  h",
   "icon": "picture",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "h:lower_script",
         "say": {
-          "text": "Lɛtrɛ H ezali na mongongo h, lokola na liloba hoteli. Yoka : h."
+          "text": "Letre H ezali na mongongo h, lokola na liloba hoteli. Yoka : h."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "H · h",
-          "word": "hoteli",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "h"
-      ],
-      "params": {
-        "glyph": "h:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ h, mpe loba : h."
-        },
-        "context": {
-          "letter": "H · h",
+          "letter": "H  h",
           "word": "hoteli",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : hoteli. Simba lɛtrɛ ya mongongo h."
+          "text": "Ecoute : hoteli. Touche la lettre du son h."
+        },
+        "choices": [
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : hoteli. Simba letre ya mongongo h."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "h",
         "context": {
-          "letter": "H · h",
+          "letter": "H  h",
           "word": "hoteli",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "hoteli",
         "say": {
-          "text": "Loba liloba : hoteli."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "H · h",
+          "letter": "H  h",
           "word": "hoteli",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:h"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche h."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:hoteli"
+      ],
+      "params": {
+        "word": "hoteli",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "H  h",
+          "word": "hoteli",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

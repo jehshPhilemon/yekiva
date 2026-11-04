@@ -74,13 +74,129 @@
       "params": {
         "word": "shapo",
         "say": {
-          "text": "Loba liloba : shapo."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "sh",
           "word": "shapo",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:sh"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche sh."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "shapo",
+            "text": "shapo"
+          },
+          {
+            "id": "sh",
+            "text": "sh"
+          }
+        ],
+        "answer": "sh",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:shapo"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche shapo."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "shapo",
+            "text": "shapo"
+          },
+          {
+            "id": "sh",
+            "text": "sh"
+          }
+        ],
+        "answer": "shapo",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "shapo",
+            "text": "shapo"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:shapo"
+      ],
+      "params": {
+        "word": "shapo",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

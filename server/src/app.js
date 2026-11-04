@@ -69,7 +69,8 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
       if (req.method === "GET" && url.pathname === "/v1/voice") return send(200, voice.engine());
 
       // Prototype app keys: exact APP_TOKEN, or any valid YKV key (server-side check only).
-      if (appToken && !isValidAppToken(req.headers["x-app-token"], appToken)) return send(401, { error: "unauthorized" });
+      const suppliedToken = req.headers["x-app-token"] ?? req.headers["x-api-key"];
+      if (appToken && !isValidAppToken(suppliedToken, appToken)) return send(401, { error: "unauthorized" });
       if (!allow(req.socket.remoteAddress ?? "?")) return send(429, { error: "too many requests" });
 
       const lang = url.searchParams.get("lang") ?? undefined;

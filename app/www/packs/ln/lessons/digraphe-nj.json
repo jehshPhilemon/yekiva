@@ -74,13 +74,129 @@
       "params": {
         "word": "njela",
         "say": {
-          "text": "Loba liloba : njela."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "nj",
           "word": "njela",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nj"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche nj."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "njela",
+            "text": "njela"
+          },
+          {
+            "id": "nj",
+            "text": "nj"
+          }
+        ],
+        "answer": "nj",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:njela"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche njela."
+        },
+        "choices": [
+          {
+            "id": "nj",
+            "text": "nj"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "njela",
+            "text": "njela"
+          }
+        ],
+        "answer": "njela",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "njela",
+            "text": "njela"
+          },
+          {
+            "id": "nj",
+            "text": "nj"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:njela"
+      ],
+      "params": {
+        "word": "njela",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

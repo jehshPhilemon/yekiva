@@ -1,7 +1,7 @@
 {
   "id": "lettre-b",
-  "title": "Lɛtrɛ B",
-  "symbol": "B · b",
+  "title": "Letre B",
+  "symbol": "B  b",
   "icon": "family",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "b:lower_script",
         "say": {
-          "text": "Lɛtrɛ B ezali na mongongo bbb, lokola na liloba bana. Yoka : bbb."
+          "text": "Letre B ezali na mongongo bbb, lokola na liloba bana. Yoka : bbb."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "B · b",
-          "word": "bana",
-          "icon": "family"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "b"
-      ],
-      "params": {
-        "glyph": "b:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ b, mpe loba : bbb."
-        },
-        "context": {
-          "letter": "B · b",
+          "letter": "B  b",
           "word": "bana",
           "icon": "family"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : bana. Simba lɛtrɛ ya mongongo bbb."
+          "text": "Ecoute : bana. Touche la lettre du son b."
+        },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : bana. Simba letre ya mongongo bbb."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "b",
         "context": {
-          "letter": "B · b",
+          "letter": "B  b",
           "word": "bana",
           "icon": "family"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "bana",
         "say": {
-          "text": "Loba liloba : bana."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "B · b",
+          "letter": "B  b",
           "word": "bana",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:b"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche b."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:bana"
+      ],
+      "params": {
+        "word": "bana",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "B  b",
+          "word": "bana",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

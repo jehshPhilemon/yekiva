@@ -117,6 +117,12 @@ test("buildLesson: word in syllables -> valid steps", () => {
   }
 });
 
+test("buildLesson: Lingala rejects accents and special letters", () => {
+  assert.throws(() => buildLesson({ word: "lingála", syllables: ["lin", "gá", "la"], language: "ln" }), /plain ASCII Latin/);
+  const lesson = buildLesson({ word: "lingala", syllables: ["lin", "ga", "la"], language: "ln" });
+  assert.match(lesson.title, /^[a-z]+$/);
+});
+
 test("parseModelJson tolerates ```json fences", () => {
   assert.deepEqual(parseModelJson('```json\n{"word":"a"}\n```'), { word: "a" });
 });

@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "o"
       ],
       "params": {
-        "glyph": "o:lower_script",
         "say": {
-          "text": "Trace la lettre o en suivant les pointillés, puis dis : o."
+          "text": "Écoute : oiseau. Touche la lettre du son o."
         },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          }
+        ],
+        "answer": "o",
         "context": {
           "letter": "O · o",
           "word": "oiseau",
@@ -78,13 +92,129 @@
       "params": {
         "word": "oiseau",
         "say": {
-          "text": "Dis le mot : oiseau."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "O · o",
           "word": "oiseau",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:o"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche o."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:oiseau"
+      ],
+      "params": {
+        "word": "oiseau",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

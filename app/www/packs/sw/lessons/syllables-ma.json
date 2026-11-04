@@ -57,6 +57,102 @@
         ],
         "answer": "ji"
       }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ma"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ma."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ji"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche ji."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ji",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
     }
   ],
   "title": "Silabi ma",

@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "k"
       ],
       "params": {
-        "glyph": "k:lower_script",
         "say": {
-          "text": "Trace la lettre k en suivant les pointillés, puis dis : k."
+          "text": "Écoute : koala. Touche la lettre du son k."
         },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          }
+        ],
+        "answer": "k",
         "context": {
           "letter": "K · k",
           "word": "koala",
@@ -78,13 +92,129 @@
       "params": {
         "word": "koala",
         "say": {
-          "text": "Dis le mot : koala."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "K · k",
           "word": "koala",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:k"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche k."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K · k",
+          "word": "koala",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "K · k",
+          "word": "koala",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "K · k",
+          "word": "koala",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:koala"
+      ],
+      "params": {
+        "word": "koala",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "K · k",
+          "word": "koala",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -74,13 +74,129 @@
       "params": {
         "word": "mboga",
         "say": {
-          "text": "Sema neno : mboga."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "mb",
           "word": "mboga",
           "icon": "plant"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mb"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche mb."
+        },
+        "choices": [
+          {
+            "id": "mboga",
+            "text": "mboga"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "mb",
+            "text": "mb"
+          }
+        ],
+        "answer": "mb",
+        "context": {
+          "letter": "mb",
+          "word": "mboga",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mboga"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche mboga."
+        },
+        "choices": [
+          {
+            "id": "mboga",
+            "text": "mboga"
+          },
+          {
+            "id": "mb",
+            "text": "mb"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "mboga",
+        "context": {
+          "letter": "mb",
+          "word": "mboga",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "mb",
+            "text": "mb"
+          },
+          {
+            "id": "mboga",
+            "text": "mboga"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "mb",
+          "word": "mboga",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mboga"
+      ],
+      "params": {
+        "word": "mboga",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "mb",
+          "word": "mboga",
+          "icon": "plant"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -1,4 +1,7 @@
 // Visual learning path: each step carries a contextual symbol, a short title and visible progress.
+// GATING: lessons unlock in order — lesson N+1 opens only when lesson N is
+// validated (progress.done). The first lesson is always open. Locked lessons
+// show a lock, cannot be tapped, and the voice says so (non-reader friendly).
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
@@ -49,6 +52,8 @@ export async function pathScreen({ services, state, go }) {
 
   const nodes = lessons.map((lesson, index) => {
     const isDone = Boolean(done[lesson.id]);
+    // Sequential unlock: open if first lesson or the previous one is validated.
+    const isOpen = index === 0 || Boolean(done[lessons[index - 1]?.id]);
     const context = lesson.steps?.find((step) => step.params?.context)?.params?.context;
     const title = lesson.title ?? lesson.id;
     const symbol = lesson.symbol ?? context?.letter ?? String(index + 1);
@@ -56,9 +61,10 @@ export async function pathScreen({ services, state, go }) {
     const card = h(
       "button",
       {
-        class: `path-node${isDone ? " is-complete" : ""}`,
+        class: `path-node${isDone ? " is-complete" : ""}${isOpen ? "" : " is-locked"}`,
         type: "button",
-        "aria-label": `${title} — ${symbol}`,
+        "aria-label": isOpen ? `${title} — ${symbol}` : `${title} — ${labels.locked ?? "locked, finish the previous lesson"}`,
+        ...(isOpen ? {} : { disabled: "true", "aria-disabled": "true" }),
       },
       h("span", { class: "path-node-art" }, icon(visual, 54)),
       h(
@@ -67,10 +73,20 @@ export async function pathScreen({ services, state, go }) {
         h("span", { class: "path-node-symbol" }, symbol),
         h("span", { class: "path-node-title" }, title),
       ),
-      h("span", { class: "path-node-action", "aria-hidden": "true" }, icon(isDone ? "star" : "play", 30)),
+      h("span", { class: "path-node-action", "aria-hidden": "true" }, icon(isDone ? "star" : isOpen ? "play" : "lock", 30)),
     );
     card.style.setProperty("--path-color", lang.color);
-    card.addEventListener("click", () => go("lesson", { lessonId: lesson.id }));
+    if (isOpen) {
+      card.addEventListener("click", () => go("lesson", { lessonId: lesson.id }));
+    } else {
+      // Locked: gentle voice reminder (non-reader) + shake, never a punishment.
+      card.addEventListener("click", () => {
+        card.classList.remove("shake");
+        void card.offsetWidth;
+        card.classList.add("shake");
+        screenPrompt(services, lang, "path_hint");
+      });
+    }
     return card;
   });
 
@@ -96,7 +112,12 @@ export async function pathScreen({ services, state, go }) {
     label: "Son et voix : tester", caption: "son ?",
     className: "path-action",
   });
-  const bar = h("div", { class: "path-actions" }, photo, server, replay, diag);
+  const conversation = tile("mic", {
+    onClick: () => go("conversation"), size: 40,
+    label: actions.conversation ?? "parler à Yekiva", caption: actions.conversation ?? "parler",
+    className: "path-action path-conversation",
+  });
+  const bar = h("div", { class: "path-actions" }, photo, server, replay, conversation, diag);
 
   const screen = h(
     "div",

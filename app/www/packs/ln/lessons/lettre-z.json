@@ -1,7 +1,7 @@
 {
   "id": "lettre-z",
-  "title": "Lɛtrɛ Z",
-  "symbol": "Z · z",
+  "title": "Letre Z",
+  "symbol": "Z  z",
   "icon": "picture",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "z:lower_script",
         "say": {
-          "text": "Lɛtrɛ Z ezali na mongongo zzz, lokola na liloba zando. Yoka : zzz."
+          "text": "Letre Z ezali na mongongo zzz, lokola na liloba zando. Yoka : zzz."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "Z · z",
-          "word": "zando",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "z"
-      ],
-      "params": {
-        "glyph": "z:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ z, mpe loba : zzz."
-        },
-        "context": {
-          "letter": "Z · z",
+          "letter": "Z  z",
           "word": "zando",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : zando. Simba lɛtrɛ ya mongongo zzz."
+          "text": "Ecoute : zando. Touche la lettre du son z."
+        },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : zando. Simba letre ya mongongo zzz."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "z",
         "context": {
-          "letter": "Z · z",
+          "letter": "Z  z",
           "word": "zando",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "zando",
         "say": {
-          "text": "Loba liloba : zando."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "Z · z",
+          "letter": "Z  z",
           "word": "zando",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:z"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche z."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:zando"
+      ],
+      "params": {
+        "word": "zando",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Z  z",
+          "word": "zando",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -74,13 +74,129 @@
       "params": {
         "word": "mboka",
         "say": {
-          "text": "Loba liloba : mboka."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "mb",
           "word": "mboka",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mb"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche mb."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "mb",
+            "text": "mb"
+          },
+          {
+            "id": "mboka",
+            "text": "mboka"
+          }
+        ],
+        "answer": "mb",
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mboka"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche mboka."
+        },
+        "choices": [
+          {
+            "id": "mb",
+            "text": "mb"
+          },
+          {
+            "id": "mboka",
+            "text": "mboka"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "mboka",
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "mb",
+            "text": "mb"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "mboka",
+            "text": "mboka"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mboka"
+      ],
+      "params": {
+        "word": "mboka",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "mb",
+          "word": "mboka",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

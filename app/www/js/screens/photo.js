@@ -1,4 +1,4 @@
-// "Read the world": photographie un mot (bientôt : leçon générée).
+// "Read the world": photographie un mot, puis Meta génère une mini-leçon.
 // AUJOURD'HUI : pas de route photo dans l'API -> l'écran l'explique en voix
 // (prompts.photo_hint) et repart au parcours. Aucun appel Meta, aucun serveur
 // intermédiaire. Quand la route existera, brancher voiceApi.lessonFromPhoto()
@@ -32,7 +32,7 @@ export function photoScreen({ services, state, go }) {
     if (!blob) return;
     const lesson = await services.transcriber.lessonFromPhoto(blob, state.language?.code);
     if (!lesson?.steps?.length) {
-      // Pas de route photo dans l'API pour l'instant : on le dit, on repart.
+      // API indisponible ou photo illisible : retour gracieux au parcours.
       show("cloudoff");
       setTimeout(() => go("path"), 1600);
       return;

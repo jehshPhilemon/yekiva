@@ -74,13 +74,129 @@
       "params": {
         "word": "unga",
         "say": {
-          "text": "Sema neno : unga."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "ng",
           "word": "unga",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ng"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ng."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "unga",
+            "text": "unga"
+          }
+        ],
+        "answer": "ng",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:unga"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche unga."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "unga",
+            "text": "unga"
+          },
+          {
+            "id": "ng",
+            "text": "ng"
+          }
+        ],
+        "answer": "unga",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "unga",
+            "text": "unga"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:unga"
+      ],
+      "params": {
+        "word": "unga",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

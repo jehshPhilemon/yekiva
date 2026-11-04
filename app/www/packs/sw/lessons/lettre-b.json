@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "b"
       ],
       "params": {
-        "glyph": "b:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi b, kisha sema : bbb."
+          "text": "Écoute : baba. Touche la lettre du son b."
         },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "b",
         "context": {
           "letter": "B · b",
           "word": "baba",
@@ -78,13 +92,129 @@
       "params": {
         "word": "baba",
         "say": {
-          "text": "Sema neno : baba."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "B · b",
           "word": "baba",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:b"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche b."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

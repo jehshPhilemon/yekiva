@@ -12,13 +12,14 @@
       "params": {
         "word": "Maman aime Lili.",
         "say": {
-          "text": "Lis avec moi : Maman aime Lili."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "Maman",
           "word": "Maman aime Lili.",
           "icon": "family"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -29,13 +30,14 @@
       "params": {
         "word": "Lili lit.",
         "say": {
-          "text": "Continue : Lili lit."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "Lili",
           "word": "Lili lit.",
           "icon": "book"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -63,6 +65,121 @@
           "word": "Lili lit.",
           "icon": "star"
         }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Maman aime Lili."
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche Maman aime Lili.."
+        },
+        "choices": [
+          {
+            "id": "Maman aime Lili.",
+            "text": "Maman aime Lili."
+          },
+          {
+            "id": "Lili lit.",
+            "text": "Lili lit."
+          },
+          {
+            "id": "Lili",
+            "text": "Lili"
+          }
+        ],
+        "answer": "Maman aime Lili.",
+        "context": {
+          "letter": "Maman",
+          "word": "Maman aime Lili.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Lili lit."
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche Lili lit.."
+        },
+        "choices": [
+          {
+            "id": "Lili",
+            "text": "Lili"
+          },
+          {
+            "id": "Maman aime Lili.",
+            "text": "Maman aime Lili."
+          },
+          {
+            "id": "Lili lit.",
+            "text": "Lili lit."
+          }
+        ],
+        "answer": "Lili lit.",
+        "context": {
+          "letter": "Maman",
+          "word": "Maman aime Lili.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Lili"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche Lili."
+        },
+        "choices": [
+          {
+            "id": "Lili",
+            "text": "Lili"
+          },
+          {
+            "id": "Maman aime Lili.",
+            "text": "Maman aime Lili."
+          },
+          {
+            "id": "Lili lit.",
+            "text": "Lili lit."
+          }
+        ],
+        "answer": "Lili",
+        "context": {
+          "letter": "Maman",
+          "word": "Maman aime Lili.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Lili lit."
+      ],
+      "params": {
+        "word": "Lili lit.",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Maman",
+          "word": "Maman aime Lili.",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

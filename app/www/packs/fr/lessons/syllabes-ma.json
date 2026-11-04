@@ -105,13 +105,129 @@
       "params": {
         "word": "maman",
         "say": {
-          "text": "Dis le mot : maman."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "ma",
           "word": "maman",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ma"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ma."
+        },
+        "choices": [
+          {
+            "id": "me",
+            "text": "me"
+          },
+          {
+            "id": "mi",
+            "text": "mi"
+          },
+          {
+            "id": "ma",
+            "text": "ma"
+          }
+        ],
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:me"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche me."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "mi",
+            "text": "mi"
+          },
+          {
+            "id": "me",
+            "text": "me"
+          }
+        ],
+        "answer": "me",
+        "context": {
+          "letter": "ma",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mi"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche mi."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "mi",
+            "text": "mi"
+          },
+          {
+            "id": "me",
+            "text": "me"
+          }
+        ],
+        "answer": "mi",
+        "context": {
+          "letter": "ma",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:maman"
+      ],
+      "params": {
+        "word": "maman",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ma",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

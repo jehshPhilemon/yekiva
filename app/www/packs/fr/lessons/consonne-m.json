@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "m"
       ],
       "params": {
-        "glyph": "m:lower_script",
         "say": {
-          "text": "Trace la lettre m en suivant les pointillés, puis dis : mmm."
+          "text": "Écoute : maman. Touche la lettre du son m."
         },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "m",
         "context": {
           "letter": "M · m",
           "word": "maman",
@@ -78,13 +92,129 @@
       "params": {
         "word": "maman",
         "say": {
-          "text": "Dis le mot : maman."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "M · m",
           "word": "maman",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:m"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche m."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "m",
+        "context": {
+          "letter": "M · m",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "M · m",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "M · m",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:maman"
+      ],
+      "params": {
+        "word": "maman",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "M · m",
+          "word": "maman",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

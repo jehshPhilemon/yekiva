@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "v"
       ],
       "params": {
-        "glyph": "v:lower_script",
         "say": {
-          "text": "Trace la lettre v en suivant les pointillés, puis dis : vvv."
+          "text": "Écoute : vélo. Touche la lettre du son v."
         },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          }
+        ],
+        "answer": "v",
         "context": {
           "letter": "V · v",
           "word": "vélo",
@@ -78,13 +92,129 @@
       "params": {
         "word": "vélo",
         "say": {
-          "text": "Dis le mot : vélo."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "V · v",
           "word": "vélo",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:v"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche v."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:vélo"
+      ],
+      "params": {
+        "word": "vélo",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

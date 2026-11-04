@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "n"
       ],
       "params": {
-        "glyph": "n:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi n, kisha sema : nnn."
+          "text": "Écoute : nani. Touche la lettre du son n."
         },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "n",
         "context": {
           "letter": "N · n",
           "word": "nani",
@@ -78,13 +92,129 @@
       "params": {
         "word": "nani",
         "say": {
-          "text": "Sema neno : nani."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "N · n",
           "word": "nani",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:n"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche n."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nani"
+      ],
+      "params": {
+        "word": "nani",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

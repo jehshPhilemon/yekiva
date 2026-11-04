@@ -186,3 +186,23 @@ test("direct API: diagnoseSpeak names the cause (no-config / no-key / http)", as
     delete globalThis.fetch;
   }
 });
+
+test("gating: lesson unlocks only at 70% success", async () => {
+  const { PASS_RATE } = await import("../www/js/screens/lesson.js");
+  assert.equal(PASS_RATE, 0.7);
+  const pass = (good, scored) => scored > 0 && good / scored >= PASS_RATE;
+  assert.equal(pass(7, 10), true);
+  assert.equal(pass(6, 10), false);
+  assert.equal(pass(0, 0), false); // all skipped (offline) -> stays locked
+  assert.equal(pass(2, 2), true);
+});
+
+test("gating: sequential unlock rule (first open, next needs previous done)", async () => {
+  const isOpen = (index, done, ids) => index === 0 || Boolean(done[ids[index - 1]]);
+  const ids = ["a", "b", "c"];
+  assert.equal(isOpen(0, {}, ids), true);
+  assert.equal(isOpen(1, {}, ids), false);
+  assert.equal(isOpen(1, { a: true }, ids), true);
+  assert.equal(isOpen(2, { a: true }, ids), false);
+  assert.equal(isOpen(2, { a: true, b: true }, ids), true);
+});

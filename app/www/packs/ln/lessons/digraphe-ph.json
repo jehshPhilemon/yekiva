@@ -74,13 +74,129 @@
       "params": {
         "word": "photo",
         "say": {
-          "text": "Loba liloba : photo."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "ph",
           "word": "photo",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ph"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ph."
+        },
+        "choices": [
+          {
+            "id": "photo",
+            "text": "photo"
+          },
+          {
+            "id": "ph",
+            "text": "ph"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ph",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:photo"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche photo."
+        },
+        "choices": [
+          {
+            "id": "photo",
+            "text": "photo"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ph",
+            "text": "ph"
+          }
+        ],
+        "answer": "photo",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ph",
+            "text": "ph"
+          },
+          {
+            "id": "photo",
+            "text": "photo"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:photo"
+      ],
+      "params": {
+        "word": "photo",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

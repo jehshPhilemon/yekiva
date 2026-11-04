@@ -1,7 +1,7 @@
 {
   "id": "voyelle-u",
-  "title": "Vowɛlɛ U",
-  "symbol": "U · u",
+  "title": "Vowele U",
+  "symbol": "U  u",
   "icon": "picture",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "u:lower_script",
         "say": {
-          "text": "Lɛtrɛ U ezali na mongongo u, lokola na liloba mbu. Yoka : u."
+          "text": "Letre U ezali na mongongo u, lokola na liloba mbu. Yoka : u."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "U · u",
-          "word": "mbu",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "u"
-      ],
-      "params": {
-        "glyph": "u:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ u, mpe loba : u."
-        },
-        "context": {
-          "letter": "U · u",
+          "letter": "U  u",
           "word": "mbu",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : mbu. Simba lɛtrɛ ya mongongo u."
+          "text": "Ecoute : mbu. Touche la lettre du son u."
+        },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mbu. Simba letre ya mongongo u."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "u",
         "context": {
-          "letter": "U · u",
+          "letter": "U  u",
           "word": "mbu",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "mbu",
         "say": {
-          "text": "Loba liloba : mbu."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "U · u",
+          "letter": "U  u",
           "word": "mbu",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:u"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche u."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mbu"
+      ],
+      "params": {
+        "word": "mbu",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "U  u",
+          "word": "mbu",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

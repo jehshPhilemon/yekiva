@@ -1,7 +1,7 @@
 {
   "id": "mots-simples",
   "title": "Maloba na ngai ya liboso",
-  "symbol": "mama · tata · lala",
+  "symbol": "mama  tata  lala",
   "icon": "moon",
   "steps": [
     {
@@ -74,13 +74,129 @@
       "params": {
         "word": "mama",
         "say": {
-          "text": "Loba liloba : mama."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "ma",
           "word": "mama",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche mama."
+        },
+        "choices": [
+          {
+            "id": "tata",
+            "text": "tata"
+          },
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "mama",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:tata"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche tata."
+        },
+        "choices": [
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "tata",
+            "text": "tata"
+          }
+        ],
+        "answer": "tata",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "tata",
+            "text": "tata"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "x"
       ],
       "params": {
-        "glyph": "x:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi x, kisha sema : ks."
+          "text": "Écoute : teksi. Touche la lettre du son x."
         },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          }
+        ],
+        "answer": "x",
         "context": {
           "letter": "X · x",
           "word": "teksi",
@@ -78,13 +92,129 @@
       "params": {
         "word": "teksi",
         "say": {
-          "text": "Sema neno : teksi."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "X · x",
           "word": "teksi",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:x"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche x."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:teksi"
+      ],
+      "params": {
+        "word": "teksi",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

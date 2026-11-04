@@ -74,13 +74,129 @@
       "params": {
         "word": "ndizi",
         "say": {
-          "text": "Sema neno : ndizi."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "nd",
           "word": "ndizi",
           "icon": "plant"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nd"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche nd."
+        },
+        "choices": [
+          {
+            "id": "ndizi",
+            "text": "ndizi"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "nd",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ndizi"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche ndizi."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ndizi",
+            "text": "ndizi"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          }
+        ],
+        "answer": "ndizi",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "ndizi",
+            "text": "ndizi"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "nd",
+            "text": "nd"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ndizi"
+      ],
+      "params": {
+        "word": "ndizi",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        },
+        "isQuiz": true
       }
     }
   ]

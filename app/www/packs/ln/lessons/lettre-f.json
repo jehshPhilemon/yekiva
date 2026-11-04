@@ -1,7 +1,7 @@
 {
   "id": "lettre-f",
-  "title": "Lɛtrɛ F",
-  "symbol": "F · f",
+  "title": "Letre F",
+  "symbol": "F  f",
   "icon": "picture",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "f:lower_script",
         "say": {
-          "text": "Lɛtrɛ F ezali na mongongo fff, lokola na liloba fufu. Yoka : fff."
+          "text": "Letre F ezali na mongongo fff, lokola na liloba fufu. Yoka : fff."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "F · f",
-          "word": "fufu",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "f"
-      ],
-      "params": {
-        "glyph": "f:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ f, mpe loba : fff."
-        },
-        "context": {
-          "letter": "F · f",
+          "letter": "F  f",
           "word": "fufu",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : fufu. Simba lɛtrɛ ya mongongo fff."
+          "text": "Ecoute : fufu. Touche la lettre du son f."
+        },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : fufu. Simba letre ya mongongo fff."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "f",
         "context": {
-          "letter": "F · f",
+          "letter": "F  f",
           "word": "fufu",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "fufu",
         "say": {
-          "text": "Loba liloba : fufu."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "F · f",
+          "letter": "F  f",
           "word": "fufu",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:f"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche f."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:fufu"
+      ],
+      "params": {
+        "word": "fufu",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "F  f",
+          "word": "fufu",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

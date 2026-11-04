@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "e"
       ],
       "params": {
-        "glyph": "e:lower_script",
         "say": {
-          "text": "Trace la lettre e en suivant les pointillés, puis dis : é."
+          "text": "Écoute : école. Touche la lettre du son e."
         },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "e",
         "context": {
           "letter": "E · e",
           "word": "école",
@@ -78,13 +92,129 @@
       "params": {
         "word": "école",
         "say": {
-          "text": "Dis le mot : école."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "E · e",
           "word": "école",
           "icon": "book"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:école"
+      ],
+      "params": {
+        "word": "école",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        },
+        "isQuiz": true
       }
     }
   ]

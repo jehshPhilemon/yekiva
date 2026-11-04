@@ -74,13 +74,129 @@
       "params": {
         "word": "ntaa",
         "say": {
-          "text": "Sema neno : ntaa."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "nt",
           "word": "ntaa",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nt"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche nt."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ntaa",
+            "text": "ntaa"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
+          }
+        ],
+        "answer": "nt",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ntaa"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche ntaa."
+        },
+        "choices": [
+          {
+            "id": "nt",
+            "text": "nt"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ntaa",
+            "text": "ntaa"
+          }
+        ],
+        "answer": "ntaa",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
+          },
+          {
+            "id": "ntaa",
+            "text": "ntaa"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ntaa"
+      ],
+      "params": {
+        "word": "ntaa",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

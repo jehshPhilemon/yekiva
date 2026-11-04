@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "c"
       ],
       "params": {
-        "glyph": "c:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi c, kisha sema : ch."
+          "text": "Écoute : chai. Touche la lettre du son c."
         },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "c",
         "context": {
           "letter": "C · c",
           "word": "chai",
@@ -78,13 +92,129 @@
       "params": {
         "word": "chai",
         "say": {
-          "text": "Sema neno : chai."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "C · c",
           "word": "chai",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:c"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche c."
+        },
+        "choices": [
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:chai"
+      ],
+      "params": {
+        "word": "chai",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

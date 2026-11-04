@@ -51,6 +51,18 @@
     "say_hint": {
       "text": "Rudia tena",
       "audio": null
+    },
+    "quiz_intro": {
+      "text": "Jaribio dogo : onyesha ulichojifunza. Sikiliza kila swali.",
+      "audio": null
+    },
+    "quiz_pass": {
+      "text": "Hongera, umefaulu. Somo linalofuata limefunguka.",
+      "audio": null
+    },
+    "quiz_retry": {
+      "text": "Bado. Rudia somo, kisha rudi kwa jaribio.",
+      "audio": null
     }
   },
   "glyphs": "glyphs.json",
@@ -134,7 +146,29 @@
       "replay": "Sikiliza tena",
       "continue": "Endelea",
       "clear": "Futa",
-      "validate": "Thibitisha"
+      "validate": "Thibitisha",
+      "conversation": "ongea",
+      "conversationTitle": "Ongea na Yekiva"
     }
+  },
+  "conversation_hint": {
+    "text": "Gusa kipaza sauti, ongea, kisha gusa tena kutuma ujumbe wako.",
+    "audio": null
+  },
+  "conversation_recording": {
+    "text": "Ninakusikiliza. Gusa tena kutuma.",
+    "audio": null
+  },
+  "conversation_sending": {
+    "text": "Ninatuma ujumbe wako.",
+    "audio": null
+  },
+  "conversation_received": {
+    "text": "Nimepokea ujumbe wako.",
+    "audio": null
+  },
+  "conversation_offline": {
+    "text": "Sijaweza kuelewa ujumbe. Angalia mtandao kisha ujaribu tena.",
+    "audio": null
   }
 }

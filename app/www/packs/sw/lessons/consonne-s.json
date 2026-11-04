@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "s"
       ],
       "params": {
-        "glyph": "s:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi s, kisha sema : sss."
+          "text": "Écoute : sisi. Touche la lettre du son s."
         },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "s",
         "context": {
           "letter": "S · s",
           "word": "sisi",
@@ -78,13 +92,129 @@
       "params": {
         "word": "sisi",
         "say": {
-          "text": "Sema neno : sisi."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "S · s",
           "word": "sisi",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:s"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche s."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:sisi"
+      ],
+      "params": {
+        "word": "sisi",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

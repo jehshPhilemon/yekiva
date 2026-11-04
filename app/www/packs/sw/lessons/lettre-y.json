@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "y"
       ],
       "params": {
-        "glyph": "y:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi y, kisha sema : yyy."
+          "text": "Écoute : yai. Touche la lettre du son y."
         },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "y",
         "context": {
           "letter": "Y · y",
           "word": "yai",
@@ -78,13 +92,129 @@
       "params": {
         "word": "yai",
         "say": {
-          "text": "Sema neno : yai."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "Y · y",
           "word": "yai",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:y"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche y."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:yai"
+      ],
+      "params": {
+        "word": "yai",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

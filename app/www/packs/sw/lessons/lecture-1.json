@@ -12,13 +12,14 @@
       "params": {
         "word": "Mama analala.",
         "say": {
-          "text": "Soma nami : Mama analala."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "Mama",
           "word": "Mama analala.",
           "icon": "family"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -29,13 +30,14 @@
       "params": {
         "word": "Mtoto analala.",
         "say": {
-          "text": "Endelea : Mtoto analala."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "Mtoto",
           "word": "Mtoto analala.",
           "icon": "moon"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -63,6 +65,121 @@
           "word": "Mama analala.",
           "icon": "star"
         }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama analala."
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche Mama analala.."
+        },
+        "choices": [
+          {
+            "id": "Mtoto analala.",
+            "text": "Mtoto analala."
+          },
+          {
+            "id": "Mama",
+            "text": "Mama"
+          },
+          {
+            "id": "Mama analala.",
+            "text": "Mama analala."
+          }
+        ],
+        "answer": "Mama analala.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mtoto analala."
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche Mtoto analala.."
+        },
+        "choices": [
+          {
+            "id": "Mama",
+            "text": "Mama"
+          },
+          {
+            "id": "Mama analala.",
+            "text": "Mama analala."
+          },
+          {
+            "id": "Mtoto analala.",
+            "text": "Mtoto analala."
+          }
+        ],
+        "answer": "Mtoto analala.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche Mama."
+        },
+        "choices": [
+          {
+            "id": "Mama",
+            "text": "Mama"
+          },
+          {
+            "id": "Mtoto analala.",
+            "text": "Mtoto analala."
+          },
+          {
+            "id": "Mama analala.",
+            "text": "Mama analala."
+          }
+        ],
+        "answer": "Mama",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Mtoto analala."
+      ],
+      "params": {
+        "word": "Mtoto analala.",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Mama",
+          "word": "Mama analala.",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

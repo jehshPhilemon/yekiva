@@ -96,6 +96,102 @@
           "icon": "book"
         }
       }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:B"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche B."
+        },
+        "choices": [
+          {
+            "id": "M",
+            "text": "M"
+          },
+          {
+            "id": "E",
+            "text": "E"
+          },
+          {
+            "id": "B",
+            "text": "B"
+          }
+        ],
+        "answer": "B",
+        "context": {
+          "letter": "B",
+          "word": "lettre B",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:E"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche E."
+        },
+        "choices": [
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "M",
+            "text": "M"
+          },
+          {
+            "id": "E",
+            "text": "E"
+          }
+        ],
+        "answer": "E",
+        "context": {
+          "letter": "B",
+          "word": "lettre B",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:M"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche M."
+        },
+        "choices": [
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "M",
+            "text": "M"
+          },
+          {
+            "id": "E",
+            "text": "E"
+          }
+        ],
+        "answer": "M",
+        "context": {
+          "letter": "B",
+          "word": "lettre B",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
     }
   ]
 }

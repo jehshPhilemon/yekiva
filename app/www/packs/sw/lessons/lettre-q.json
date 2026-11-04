@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "q"
       ],
       "params": {
-        "glyph": "q:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi q, kisha sema : k."
+          "text": "Écoute : Qurani. Touche la lettre du son q."
         },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "q",
         "context": {
           "letter": "Q · q",
           "word": "Qurani",
@@ -78,13 +92,129 @@
       "params": {
         "word": "Qurani",
         "say": {
-          "text": "Sema neno : Qurani."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "Q · q",
           "word": "Qurani",
           "icon": "book"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:q"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche q."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Qurani"
+      ],
+      "params": {
+        "word": "Qurani",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        },
+        "isQuiz": true
       }
     }
   ]

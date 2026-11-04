@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "b"
       ],
       "params": {
-        "glyph": "b:lower_script",
         "say": {
-          "text": "Trace la lettre b en suivant les pointillés, puis dis : bbb."
+          "text": "Écoute : bébé. Touche la lettre du son b."
         },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "b",
         "context": {
           "letter": "B · b",
           "word": "bébé",
@@ -78,13 +92,129 @@
       "params": {
         "word": "bébé",
         "say": {
-          "text": "Dis le mot : bébé."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "B · b",
           "word": "bébé",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:b"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche b."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:bébé"
+      ],
+      "params": {
+        "word": "bébé",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

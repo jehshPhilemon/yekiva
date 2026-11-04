@@ -74,13 +74,129 @@
       "params": {
         "word": "nzuri",
         "say": {
-          "text": "Sema neno : nzuri."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "nz",
           "word": "nzuri",
           "icon": "star"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nz"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche nz."
+        },
+        "choices": [
+          {
+            "id": "nzuri",
+            "text": "nzuri"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "nz",
+            "text": "nz"
+          }
+        ],
+        "answer": "nz",
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nzuri"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche nzuri."
+        },
+        "choices": [
+          {
+            "id": "nzuri",
+            "text": "nzuri"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "nz",
+            "text": "nz"
+          }
+        ],
+        "answer": "nzuri",
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "nzuri",
+            "text": "nzuri"
+          },
+          {
+            "id": "nz",
+            "text": "nz"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nzuri"
+      ],
+      "params": {
+        "word": "nzuri",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nz",
+          "word": "nzuri",
+          "icon": "star"
+        },
+        "isQuiz": true
       }
     }
   ]

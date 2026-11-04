@@ -39,13 +39,129 @@
       "params": {
         "word": "Mama na bana.",
         "say": {
-          "text": "Loba frazi : Mama na bana."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "Mama",
           "word": "Mama na bana.",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama na bana."
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche Mama na bana.."
+        },
+        "choices": [
+          {
+            "id": "Mama na bana.",
+            "text": "Mama na bana."
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "Mama na bana.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "Mama na bana.",
+            "text": "Mama na bana."
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "Mama na bana.",
+            "text": "Mama na bana."
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Mama na bana."
+      ],
+      "params": {
+        "word": "Mama na bana.",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

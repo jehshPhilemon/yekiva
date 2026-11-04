@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "w"
       ],
       "params": {
-        "glyph": "w:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi w, kisha sema : www."
+          "text": "Écoute : wali. Touche la lettre du son w."
         },
+        "choices": [
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          }
+        ],
+        "answer": "w",
         "context": {
           "letter": "W · w",
           "word": "wali",
@@ -78,13 +92,129 @@
       "params": {
         "word": "wali",
         "say": {
-          "text": "Sema neno : wali."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "W · w",
           "word": "wali",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:w"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche w."
+        },
+        "choices": [
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:wali"
+      ],
+      "params": {
+        "word": "wali",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

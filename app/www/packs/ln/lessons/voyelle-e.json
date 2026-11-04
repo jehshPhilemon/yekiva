@@ -1,7 +1,7 @@
 {
   "id": "voyelle-e",
-  "title": "Vowɛlɛ E",
-  "symbol": "E · e",
+  "title": "Vowele E",
+  "symbol": "E  e",
   "icon": "plant",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "e:lower_script",
         "say": {
-          "text": "Lɛtrɛ E ezali na mongongo e, lokola na ebandeli ya liloba nzete. Yoka : e."
+          "text": "Letre E ezali na mongongo e, lokola na ebandeli ya liloba nzete. Yoka : e."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "E · e",
-          "word": "nzete",
-          "icon": "plant"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "e"
-      ],
-      "params": {
-        "glyph": "e:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ e, mpe loba : e."
-        },
-        "context": {
-          "letter": "E · e",
+          "letter": "E  e",
           "word": "nzete",
           "icon": "plant"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : nzete. Simba lɛtrɛ ya mongongo e."
+          "text": "Ecoute : nzete. Touche la lettre du son e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E  e",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : nzete. Simba letre ya mongongo e."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "e",
         "context": {
-          "letter": "E · e",
+          "letter": "E  e",
           "word": "nzete",
           "icon": "plant"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "nzete",
         "say": {
-          "text": "Loba liloba : nzete."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "E · e",
+          "letter": "E  e",
           "word": "nzete",
           "icon": "plant"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E  e",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "E  e",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E  e",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nzete"
+      ],
+      "params": {
+        "word": "nzete",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "E  e",
+          "word": "nzete",
+          "icon": "plant"
+        },
+        "isQuiz": true
       }
     }
   ]

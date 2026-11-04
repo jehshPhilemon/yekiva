@@ -74,13 +74,129 @@
       "params": {
         "word": "lune",
         "say": {
-          "text": "Dis le mot : lune."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "lu",
           "word": "lune",
           "icon": "moon"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:lit"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche lit."
+        },
+        "choices": [
+          {
+            "id": "lune",
+            "text": "lune"
+          },
+          {
+            "id": "la",
+            "text": "la"
+          },
+          {
+            "id": "lit",
+            "text": "lit"
+          }
+        ],
+        "answer": "lit",
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:la"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche la."
+        },
+        "choices": [
+          {
+            "id": "lune",
+            "text": "lune"
+          },
+          {
+            "id": "lit",
+            "text": "lit"
+          },
+          {
+            "id": "la",
+            "text": "la"
+          }
+        ],
+        "answer": "la",
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:lune"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche lune."
+        },
+        "choices": [
+          {
+            "id": "lune",
+            "text": "lune"
+          },
+          {
+            "id": "lit",
+            "text": "lit"
+          },
+          {
+            "id": "la",
+            "text": "la"
+          }
+        ],
+        "answer": "lune",
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:lune"
+      ],
+      "params": {
+        "word": "lune",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        },
+        "isQuiz": true
       }
     }
   ]

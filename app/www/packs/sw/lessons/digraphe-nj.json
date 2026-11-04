@@ -74,13 +74,129 @@
       "params": {
         "word": "njia",
         "say": {
-          "text": "Sema neno : njia."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "nj",
           "word": "njia",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nj"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche nj."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "njia",
+            "text": "njia"
+          },
+          {
+            "id": "nj",
+            "text": "nj"
+          }
+        ],
+        "answer": "nj",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:njia"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche njia."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "njia",
+            "text": "njia"
+          },
+          {
+            "id": "nj",
+            "text": "nj"
+          }
+        ],
+        "answer": "njia",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "nj",
+            "text": "nj"
+          },
+          {
+            "id": "njia",
+            "text": "njia"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:njia"
+      ],
+      "params": {
+        "word": "njia",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -20,15 +20,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "l"
       ],
       "params": {
-        "glyph": "l:lower_script",
         "say": {
-          "text": "Sauti l iko katika neno lala. Fuata nukta kuandika herufi l."
+          "text": "Écoute : lala. Touche la lettre du son l."
         },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "l",
         "context": {
           "letter": "L · l",
           "word": "lala",
@@ -55,15 +69,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "i"
       ],
       "params": {
-        "glyph": "i:lower_script",
         "say": {
-          "text": "Sauti i iko katika neno imba. Fuata nukta kuandika herufi i."
+          "text": "Écoute : imba. Touche la lettre du son i."
         },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "i",
         "context": {
           "letter": "I · i",
           "word": "imba",
@@ -110,13 +138,14 @@
       "params": {
         "word": "lala",
         "say": {
-          "text": "Sema neno : lala."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "L · l",
           "word": "lala",
           "icon": "moon"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -158,13 +187,129 @@
       "params": {
         "word": "imba",
         "say": {
-          "text": "Sema neno : imba."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "I · i",
           "word": "imba",
           "icon": "moon"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:l"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche l."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:i"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche i."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:imba"
+      ],
+      "params": {
+        "word": "imba",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        },
+        "isQuiz": true
       }
     }
   ],

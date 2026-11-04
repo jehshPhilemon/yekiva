@@ -1,7 +1,7 @@
 {
   "id": "syllabes-ba",
   "title": "Silabi ba, be, bi",
-  "symbol": "ba · be · bi",
+  "symbol": "ba  be  bi",
   "icon": "family",
   "steps": [
     {
@@ -105,13 +105,129 @@
       "params": {
         "word": "baba",
         "say": {
-          "text": "Loba liloba : baba."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "ba",
           "word": "baba",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ba."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:be"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche be."
+        },
+        "choices": [
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "be",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:bi"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche bi."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "bi",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

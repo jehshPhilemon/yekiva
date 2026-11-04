@@ -74,13 +74,129 @@
       "params": {
         "word": "chai",
         "say": {
-          "text": "Sema neno : chai."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "ch",
           "word": "chai",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ch"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ch."
+        },
+        "choices": [
+          {
+            "id": "ch",
+            "text": "ch"
+          },
+          {
+            "id": "chai",
+            "text": "chai"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ch",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:chai"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche chai."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "chai",
+            "text": "chai"
+          },
+          {
+            "id": "ch",
+            "text": "ch"
+          }
+        ],
+        "answer": "chai",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "chai",
+            "text": "chai"
+          },
+          {
+            "id": "ch",
+            "text": "ch"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:chai"
+      ],
+      "params": {
+        "word": "chai",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

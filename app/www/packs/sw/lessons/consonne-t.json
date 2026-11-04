@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "t"
       ],
       "params": {
-        "glyph": "t:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi t, kisha sema : ttt."
+          "text": "Écoute : tata. Touche la lettre du son t."
         },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          }
+        ],
+        "answer": "t",
         "context": {
           "letter": "T · t",
           "word": "tata",
@@ -78,13 +92,129 @@
       "params": {
         "word": "tata",
         "say": {
-          "text": "Sema neno : tata."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "T · t",
           "word": "tata",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:t"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche t."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:tata"
+      ],
+      "params": {
+        "word": "tata",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

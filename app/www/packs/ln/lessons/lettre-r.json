@@ -1,7 +1,7 @@
 {
   "id": "lettre-r",
-  "title": "Lɛtrɛ R",
-  "symbol": "R · r",
+  "title": "Letre R",
+  "symbol": "R  r",
   "icon": "music",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "r:lower_script",
         "say": {
-          "text": "Lɛtrɛ R ezali na mongongo rrr, lokola na liloba radio. Yoka : rrr."
+          "text": "Letre R ezali na mongongo rrr, lokola na liloba radio. Yoka : rrr."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "R · r",
-          "word": "radio",
-          "icon": "music"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "r"
-      ],
-      "params": {
-        "glyph": "r:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ r, mpe loba : rrr."
-        },
-        "context": {
-          "letter": "R · r",
+          "letter": "R  r",
           "word": "radio",
           "icon": "music"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : radio. Simba lɛtrɛ ya mongongo rrr."
+          "text": "Ecoute : radio. Touche la lettre du son r."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : radio. Simba letre ya mongongo rrr."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "r",
         "context": {
-          "letter": "R · r",
+          "letter": "R  r",
           "word": "radio",
           "icon": "music"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "radio",
         "say": {
-          "text": "Loba liloba : radio."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "R · r",
+          "letter": "R  r",
           "word": "radio",
           "icon": "music"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:r"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche r."
+        },
+        "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:radio"
+      ],
+      "params": {
+        "word": "radio",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "R  r",
+          "word": "radio",
+          "icon": "music"
+        },
+        "isQuiz": true
       }
     }
   ]

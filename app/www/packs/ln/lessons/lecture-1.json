@@ -12,13 +12,14 @@
       "params": {
         "word": "Mama alali.",
         "say": {
-          "text": "Tanga na ngai : Mama alali."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "Mama",
           "word": "Mama alali.",
           "icon": "family"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -29,13 +30,14 @@
       "params": {
         "word": "Bana balali.",
         "say": {
-          "text": "Koba : Bana balali."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "Bana",
           "word": "Bana balali.",
           "icon": "moon"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -63,6 +65,121 @@
           "word": "Mama alali.",
           "icon": "star"
         }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama alali."
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche Mama alali.."
+        },
+        "choices": [
+          {
+            "id": "Mama alali.",
+            "text": "Mama alali."
+          },
+          {
+            "id": "Bana balali.",
+            "text": "Bana balali."
+          },
+          {
+            "id": "Mama",
+            "text": "Mama"
+          }
+        ],
+        "answer": "Mama alali.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Bana balali."
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche Bana balali.."
+        },
+        "choices": [
+          {
+            "id": "Bana balali.",
+            "text": "Bana balali."
+          },
+          {
+            "id": "Mama alali.",
+            "text": "Mama alali."
+          },
+          {
+            "id": "Mama",
+            "text": "Mama"
+          }
+        ],
+        "answer": "Bana balali.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:Mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche Mama."
+        },
+        "choices": [
+          {
+            "id": "Mama alali.",
+            "text": "Mama alali."
+          },
+          {
+            "id": "Mama",
+            "text": "Mama"
+          },
+          {
+            "id": "Bana balali.",
+            "text": "Bana balali."
+          }
+        ],
+        "answer": "Mama",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:Bana balali."
+      ],
+      "params": {
+        "word": "Bana balali.",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

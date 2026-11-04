@@ -3,11 +3,20 @@
 // outro prompt on finish (prompts.lesson_done), plus each step's own voice.
 // The learner model reorders steps: missed items come back first (adaptive path).
 // A step of unknown type is skipped: an older app can read a newer pack.
+// Gating: the lesson counts as "learned" only if enough scored steps succeed
+// (PASS_RATE). Otherwise the path stays locked on this lesson — retry, never punish.
+// Quiz finale: steps with items "quiz:*" count double — a lesson is unlocked by
+// proving on NEW questions, not by repeating the exercises.
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
 import { registry } from "../core/registry.js";
 import { progress } from "../core/storage.js";
 import { lessonIntro, lessonDone } from "../core/narrate.js";
+
+/** Minimum success rate on scored steps to unlock the next lesson. */
+export const PASS_RATE = 0.7;
+/** Quiz steps weigh double: proving on new questions unlocks the lesson. */
+export const QUIZ_WEIGHT = 2;
 
 export async function lessonScreen({ services, state, go, lessonId }) {
   const { language: lang, audience } = state;
@@ -34,6 +43,11 @@ export async function lessonScreen({ services, state, go, lessonId }) {
   const screen = h("div", { class: "screen" }, h("div", { class: "progress" }, bar), body);
   let index = 0;
   let current = null;
+  // Score for gating: only counted steps (success === true/false), never skips (null).
+  // Quiz steps (items "quiz:*") weigh QUIZ_WEIGHT: unlocking requires proving on new questions.
+  let scored = 0;
+  let good = 0;
+  const weightOf = (step) => ((step.items ?? []).some((i) => String(i).startsWith("quiz:")) ? QUIZ_WEIGHT : 1);
 
   const ctxFor = (step) => ({
     step,
@@ -49,7 +63,12 @@ export async function lessonScreen({ services, state, go, lessonId }) {
     },
     onDone: (success) => {
       // null = step skipped without being counted (offline): the learner model ignores it.
-      if (success !== null) for (const item of step.items ?? []) learner.record(item, success);
+      if (success !== null) {
+        for (const item of step.items ?? []) learner.record(item, success);
+        const w = weightOf(step);
+        scored += w;
+        if (success) good += w;
+      }
       services.saveLearner(lang.code);
       index++;
       render();
@@ -58,12 +77,24 @@ export async function lessonScreen({ services, state, go, lessonId }) {
 
   function finish() {
     const done = progress.load(lang.code, audience);
-    done[lessonId] = true;
-    progress.save(lang.code, audience, done);
-    body.replaceChildren(h("div", { class: "center", style: "color:#ffc107" }, icon("star", 160)));
+    // Gating: unlock only on success rate. A lesson with no scored steps
+    // (all offline-skipped) never unlocks — the learner simply retries later.
+    const passed = scored > 0 && good / scored >= PASS_RATE;
+    if (passed) {
+      done[lessonId] = true;
+      progress.save(lang.code, audience, done);
+    }
+    body.replaceChildren(h("div", { class: "center", style: `color:${passed ? "#ffc107" : "#90a4ae"}` }, icon(passed ? "star" : "replay", 160)));
     bar.style.width = "100%";
-    lessonDone(services, lang, lesson, lesson.owner);
-    setTimeout(() => go("path"), 2200);
+    // Spoken verdict: quiz_pass ("la prochaine leçon est ouverte") or quiz_retry ("rejoue la leçon").
+    (async () => {
+      const key = passed ? "quiz_pass" : "quiz_retry";
+      const say = lang?.prompts?.[key];
+      if (say?.text) await services.speaker.say(say, lang.code, lesson.owner);
+      else await lessonDone(services, lang, lesson, lesson.owner);
+    })();
+    // After a miss: stay a bit longer so the "try again" voice finishes, then back to path (still locked here).
+    setTimeout(() => go("path"), passed ? 2200 : 3200);
   }
 
   function render() {
@@ -76,9 +107,23 @@ export async function lessonScreen({ services, state, go, lessonId }) {
   }
 
   screen.destroy = () => current?.destroy?.();
-  // The first step already gives a specific instruction in its own language. Render it
-  // immediately instead of leaving an empty screen while a generic intro audio request waits.
-  if (steps[0]?.params?.say?.text) render();
-  else lessonIntro(services, lang, lesson, lesson.owner).then(render);
+  // Explained intro: the lesson presents itself (title + what to do) BEFORE the
+  // first exercise, so a lesson lasts minutes and teaches — not 15 seconds.
+  // lesson_<id>_intro (pack) > generated intro (title + first context) > first step audio.
+  (async () => {
+    const specific = lang?.prompts?.[`lesson_${lesson.id}_intro`];
+    if (specific?.text) {
+      await services.speaker.say(specific, lang.code, lesson.owner);
+      return render();
+    }
+    const first = steps[0];
+    const ctx0 = first?.params?.context;
+    const title = lesson.title ?? lesson.id;
+    const intro = ctx0?.word
+      ? { text: `${title}. ${ctx0.letter ?? ""}, comme dans ${ctx0.word}. Écoute bien, regarde, puis touche.` }
+      : { text: `${title}. Écoute bien, puis fais comme moi.` };
+    await services.speaker.say(intro, lang.code, lesson.owner);
+    render();
+  })();
   return screen;
 }

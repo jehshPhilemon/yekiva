@@ -63,6 +63,102 @@
       "params": {
         "note": "unknown type: the app must skip it without crashing"
       }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:li"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche li."
+        },
+        "choices": [
+          {
+            "id": "la",
+            "text": "la"
+          },
+          {
+            "id": "li",
+            "text": "li"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "li",
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:la"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche la."
+        },
+        "choices": [
+          {
+            "id": "la",
+            "text": "la"
+          },
+          {
+            "id": "li",
+            "text": "li"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "la",
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "li",
+            "text": "li"
+          },
+          {
+            "id": "la",
+            "text": "la"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        },
+        "isQuiz": true
+      }
     }
   ],
   "title": "La syllabe li",

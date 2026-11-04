@@ -28,6 +28,12 @@ function contextFor(part, word, icon) {
 export function buildLesson(spark, { id = `photo-${Date.now()}` } = {}) {
   const word = String(spark.word ?? "").trim().toLowerCase();
   const syllables = (spark.syllables ?? []).map((s) => String(s).trim().toLowerCase()).filter(Boolean);
+  if (String(spark.language ?? "").toLowerCase() === "ln") {
+    const valid = (value) => /^[a-z]+$/.test(value);
+    if (!valid(word) || syllables.some((value) => !valid(value))) {
+      throw Object.assign(new Error("Lingala lesson must use plain ASCII Latin letters only"), { status: 422 });
+    }
+  }
   if (!word || syllables.length === 0) throw new Error("missing word or syllables");
 
   const visual = iconForWord(word);

@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "f"
       ],
       "params": {
-        "glyph": "f:lower_script",
         "say": {
-          "text": "Trace la lettre f en suivant les pointillés, puis dis : fff."
+          "text": "Écoute : fleur. Touche la lettre du son f."
         },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "f",
         "context": {
           "letter": "F · f",
           "word": "fleur",
@@ -78,13 +92,129 @@
       "params": {
         "word": "fleur",
         "say": {
-          "text": "Dis le mot : fleur."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "F · f",
           "word": "fleur",
           "icon": "plant"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:f"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche f."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:fleur"
+      ],
+      "params": {
+        "word": "fleur",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        },
+        "isQuiz": true
       }
     }
   ]

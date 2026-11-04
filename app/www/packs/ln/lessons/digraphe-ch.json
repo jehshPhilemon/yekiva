@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : C na H elongo ebimisaka mongongo moko : ch, lokola na chérie. Simba ch."
+          "text": "Yoka : C na H elongo ebimisaka mongongo moko : ch, lokola na cherie. Simba ch."
         },
         "choices": [
           {
@@ -30,7 +30,7 @@
         "answer": "ch",
         "context": {
           "letter": "ch",
-          "word": "chérie",
+          "word": "cherie",
           "icon": "family"
         }
       }
@@ -38,30 +38,30 @@
     {
       "type": "listen_tap",
       "items": [
-        "chérie"
+        "cherie"
       ],
       "params": {
         "say": {
-          "text": "Yoka liloba chérie. Simba liloba chérie."
+          "text": "Yoka liloba cherie. Simba liloba cherie."
         },
         "choices": [
           {
-            "id": "chérie",
-            "text": "chérie"
+            "id": "cherie",
+            "text": "cherie"
           },
           {
             "id": "classe",
             "text": "classe"
           },
           {
-            "id": "chérie",
-            "text": "chérie"
+            "id": "cherie",
+            "text": "cherie"
           }
         ],
-        "answer": "chérie",
+        "answer": "cherie",
         "context": {
           "letter": "ch",
-          "word": "chérie",
+          "word": "cherie",
           "icon": "family"
         }
       }
@@ -69,18 +69,134 @@
     {
       "type": "say_word",
       "items": [
-        "chérie"
+        "cherie"
       ],
       "params": {
-        "word": "chérie",
+        "word": "cherie",
         "say": {
-          "text": "Loba liloba : chérie."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "ch",
-          "word": "chérie",
+          "word": "cherie",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ch"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ch."
+        },
+        "choices": [
+          {
+            "id": "cherie",
+            "text": "cherie"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ch",
+            "text": "ch"
+          }
+        ],
+        "answer": "ch",
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:cherie"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche cherie."
+        },
+        "choices": [
+          {
+            "id": "ch",
+            "text": "ch"
+          },
+          {
+            "id": "cherie",
+            "text": "cherie"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "cherie",
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "ch",
+            "text": "ch"
+          },
+          {
+            "id": "cherie",
+            "text": "cherie"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:cherie"
+      ],
+      "params": {
+        "word": "cherie",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ch",
+          "word": "cherie",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

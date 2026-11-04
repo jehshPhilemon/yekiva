@@ -74,13 +74,129 @@
       "params": {
         "word": "montagne",
         "say": {
-          "text": "Dis le mot : montagne."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "gn",
           "word": "montagne",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:gn"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche gn."
+        },
+        "choices": [
+          {
+            "id": "gn",
+            "text": "gn"
+          },
+          {
+            "id": "montagne",
+            "text": "montagne"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "gn",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:montagne"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche montagne."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "gn",
+            "text": "gn"
+          },
+          {
+            "id": "montagne",
+            "text": "montagne"
+          }
+        ],
+        "answer": "montagne",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "gn",
+            "text": "gn"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "montagne",
+            "text": "montagne"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:montagne"
+      ],
+      "params": {
+        "word": "montagne",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -3,17 +3,17 @@
   "id": "ln",
   "language": "ln",
   "version": 4,
-  "name": "Lingála",
+  "name": "Lingala",
   "ui": {
     "color": "#7B4BA1"
   },
   "prompts": {
     "language_pick": {
-      "text": "Mpo na Lingála, tyá awa",
+      "text": "Mpo na Lingala, tya awa",
       "audio": null
     },
     "audience_adult": {
-      "text": "Nazali mokóló",
+      "text": "Nazali mokolo",
       "audio": null
     },
     "audience_child": {
@@ -21,7 +21,7 @@
       "audio": null
     },
     "lesson_intro": {
-      "text": "Yoká malamu mpe salá lokola ngai",
+      "text": "Yoka malamu mpe sala lokola ngai",
       "audio": null
     },
     "lesson_done": {
@@ -29,11 +29,11 @@
       "audio": null
     },
     "path_hint": {
-      "text": "Poná liteya",
+      "text": "Pona liteya",
       "audio": null
     },
     "photo_hint": {
-      "text": "Zwá liteya na maloba ya elilingi",
+      "text": "Zwa liteya na maloba ya elilingi",
       "audio": null
     },
     "server_hint": {
@@ -41,15 +41,27 @@
       "audio": null
     },
     "trace_hint": {
-      "text": "Lisusu, landá makambo oyo ezali na ntolo",
+      "text": "Lisusu, landa makambo oyo ezali na ntolo",
       "audio": null
     },
     "listen_hint": {
-      "text": "Yoká lisusu, mpe simbá",
+      "text": "Yoka lisusu, mpe simba",
       "audio": null
     },
     "say_hint": {
       "text": "Zongela lisusu",
+      "audio": null
+    },
+    "quiz_intro": {
+      "text": "Momekano moke : lakisa oyo oyekoli. Yoka mituna nyonso malamu.",
+      "audio": null
+    },
+    "quiz_pass": {
+      "text": "Bravo, oleki. Liteya ya sima efungwami.",
+      "audio": null
+    },
+    "quiz_retry": {
+      "text": "Naino te. Zongela liteya, sima zonga mpo na momekano.",
       "audio": null
     }
   },
@@ -121,19 +133,41 @@
     "pathTitle": "Nzela na ngai",
     "completed": "mateya esili",
     "audience": {
-      "adult": "Mokóló",
+      "adult": "Mokolo",
       "child": "Mwana"
     },
     "actions": {
       "start": "Banda",
-      "change": "Minɔkɔ",
+      "change": "Minoko",
       "photo": "Elilingi",
       "server": "Mongongo",
       "replay": "Yoka lisusu",
       "continue": "Koba",
       "clear": "Longola",
-      "validate": "Tosa"
+      "validate": "Tosa",
+      "conversation": "loba",
+      "conversationTitle": "Loba na Yekiva"
     }
   },
-  "qualityNote": "Traduction initiale NLLB : à faire relire par un locuteur natif."
+  "qualityNote": "Traduction initiale NLLB : a faire relire par un locuteur natif.",
+  "conversation_hint": {
+    "text": "Sima elembo ya mongongo, loba, sima lisusu mpo na kotinda nsango na yo.",
+    "audio": null
+  },
+  "conversation_recording": {
+    "text": "Nazali koyoka yo. Sima lisusu mpo na kotinda.",
+    "audio": null
+  },
+  "conversation_sending": {
+    "text": "Nazali kotinda nsango na yo.",
+    "audio": null
+  },
+  "conversation_received": {
+    "text": "Nayambi nsango na yo.",
+    "audio": null
+  },
+  "conversation_offline": {
+    "text": "Nasili koyeba nsango te. Tala internet mpe meka lisusu.",
+    "audio": null
+  }
 }

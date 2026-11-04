@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "v"
       ],
       "params": {
-        "glyph": "v:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi v, kisha sema : vvv."
+          "text": "Écoute : viazi. Touche la lettre du son v."
         },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          }
+        ],
+        "answer": "v",
         "context": {
           "letter": "V · v",
           "word": "viazi",
@@ -78,13 +92,129 @@
       "params": {
         "word": "viazi",
         "say": {
-          "text": "Sema neno : viazi."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "V · v",
           "word": "viazi",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:v"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche v."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:viazi"
+      ],
+      "params": {
+        "word": "viazi",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

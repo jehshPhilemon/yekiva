@@ -13,24 +13,38 @@
         },
         "durationMs": 2500,
         "context": {
-          "letter": "L · l",
+          "letter": "L  l",
           "word": "liso",
           "icon": "eye"
         }
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "l"
       ],
       "params": {
-        "glyph": "l:lower_script",
         "say": {
-          "text": "L lokola na liso. Landa bilembo mpo na kokoma l."
+          "text": "Ecoute : liso. Touche la lettre du son l."
         },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "l",
         "context": {
-          "letter": "L · l",
+          "letter": "L  l",
           "word": "liso",
           "icon": "eye"
         }
@@ -48,24 +62,38 @@
         },
         "durationMs": 3000,
         "context": {
-          "letter": "I · i",
+          "letter": "I  i",
           "word": "liso",
           "icon": "eye"
         }
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "i"
       ],
       "params": {
-        "glyph": "i:lower_script",
         "say": {
-          "text": "I ezali na liloba liso. Landa bilembo mpo na kokoma i."
+          "text": "Ecoute : liso. Touche la lettre du son i."
         },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "i",
         "context": {
-          "letter": "I · i",
+          "letter": "I  i",
           "word": "liso",
           "icon": "eye"
         }
@@ -78,7 +106,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : lala. Simba lɛtrɛ ya mongongo l."
+          "text": "Yoka : lala. Simba letre ya mongongo l."
         },
         "choices": [
           {
@@ -96,7 +124,7 @@
         ],
         "answer": "l",
         "context": {
-          "letter": "L · l",
+          "letter": "L  l",
           "word": "lala",
           "icon": "eye"
         }
@@ -110,13 +138,14 @@
       "params": {
         "word": "lala",
         "say": {
-          "text": "Loba liloba : lala."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "L · l",
+          "letter": "L  l",
           "word": "lala",
           "icon": "eye"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -126,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : imba. Simba lɛtrɛ ya mongongo i."
+          "text": "Yoka : imba. Simba letre ya mongongo i."
         },
         "choices": [
           {
@@ -144,7 +173,7 @@
         ],
         "answer": "i",
         "context": {
-          "letter": "I · i",
+          "letter": "I  i",
           "word": "imba",
           "icon": "eye"
         }
@@ -158,17 +187,133 @@
       "params": {
         "word": "imba",
         "say": {
-          "text": "Loba liloba : imba."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "I · i",
+          "letter": "I  i",
           "word": "imba",
           "icon": "eye"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:l"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche l."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:i"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche i."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:imba"
+      ],
+      "params": {
+        "word": "imba",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "L  l",
+          "word": "liso",
+          "icon": "eye"
+        },
+        "isQuiz": true
       }
     }
   ],
   "title": "Bilembo ya ebandeli",
-  "symbol": "L · I",
+  "symbol": "L  I",
   "icon": "eye"
 }

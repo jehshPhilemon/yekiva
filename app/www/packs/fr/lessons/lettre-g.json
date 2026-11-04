@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "g"
       ],
       "params": {
-        "glyph": "g:lower_script",
         "say": {
-          "text": "Trace la lettre g en suivant les pointillés, puis dis : ggg."
+          "text": "Écoute : gâteau. Touche la lettre du son g."
         },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "q",
+            "text": "q"
+          }
+        ],
+        "answer": "g",
         "context": {
           "letter": "G · g",
           "word": "gâteau",
@@ -78,13 +92,129 @@
       "params": {
         "word": "gâteau",
         "say": {
-          "text": "Dis le mot : gâteau."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "G · g",
           "word": "gâteau",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:g"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche g."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:gâteau"
+      ],
+      "params": {
+        "word": "gâteau",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

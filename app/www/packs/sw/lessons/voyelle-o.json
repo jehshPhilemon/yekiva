@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "o"
       ],
       "params": {
-        "glyph": "o:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi o, kisha sema : o."
+          "text": "Écoute : moto. Touche la lettre du son o."
         },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          }
+        ],
+        "answer": "o",
         "context": {
           "letter": "O · o",
           "word": "moto",
@@ -78,13 +92,129 @@
       "params": {
         "word": "moto",
         "say": {
-          "text": "Sema neno : moto."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "O · o",
           "word": "moto",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:o"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche o."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:moto"
+      ],
+      "params": {
+        "word": "moto",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

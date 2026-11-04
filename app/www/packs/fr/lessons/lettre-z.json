@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "z"
       ],
       "params": {
-        "glyph": "z:lower_script",
         "say": {
-          "text": "Trace la lettre z en suivant les pointillés, puis dis : zzz."
+          "text": "Écoute : zèbre. Touche la lettre du son z."
         },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
         "context": {
           "letter": "Z · z",
           "word": "zèbre",
@@ -78,13 +92,129 @@
       "params": {
         "word": "zèbre",
         "say": {
-          "text": "Dis le mot : zèbre."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "Z · z",
           "word": "zèbre",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:z"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche z."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:zèbre"
+      ],
+      "params": {
+        "word": "zèbre",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "Z · z",
+          "word": "zèbre",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -51,6 +51,18 @@
     "say_hint": {
       "text": "Répète encore une fois",
       "audio": null
+    },
+    "quiz_intro": {
+      "text": "Petit test : montre ce que tu as appris. Écoute bien chaque question.",
+      "audio": null
+    },
+    "quiz_pass": {
+      "text": "Bravo, tu as réussi. La prochaine leçon est ouverte.",
+      "audio": null
+    },
+    "quiz_retry": {
+      "text": "Pas encore. Rejoue la leçon, puis reviens pour le test.",
+      "audio": null
     }
   },
   "glyphs": "glyphs.json",
@@ -129,7 +141,29 @@
       "replay": "Réécouter",
       "continue": "Continuer",
       "clear": "Effacer",
-      "validate": "Valider"
+      "validate": "Valider",
+      "conversation": "parler",
+      "conversationTitle": "Parler avec Yekiva"
     }
+  },
+  "conversation_hint": {
+    "text": "Appuie sur le microphone, parle, puis appuie encore pour envoyer ton message.",
+    "audio": null
+  },
+  "conversation_recording": {
+    "text": "Je t’écoute. Appuie encore pour envoyer.",
+    "audio": null
+  },
+  "conversation_sending": {
+    "text": "J’envoie ton message.",
+    "audio": null
+  },
+  "conversation_received": {
+    "text": "J’ai bien reçu ton message.",
+    "audio": null
+  },
+  "conversation_offline": {
+    "text": "Je n’ai pas pu comprendre le message. Vérifie la connexion et réessaie.",
+    "audio": null
   }
 }

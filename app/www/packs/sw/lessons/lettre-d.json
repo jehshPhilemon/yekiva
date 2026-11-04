@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "d"
       ],
       "params": {
-        "glyph": "d:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi d, kisha sema : ddd."
+          "text": "Écoute : dada. Touche la lettre du son d."
         },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "d",
         "context": {
           "letter": "D · d",
           "word": "dada",
@@ -78,13 +92,129 @@
       "params": {
         "word": "dada",
         "say": {
-          "text": "Sema neno : dada."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "D · d",
           "word": "dada",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:d"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche d."
+        },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:dada"
+      ],
+      "params": {
+        "word": "dada",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

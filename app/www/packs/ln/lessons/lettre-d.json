@@ -1,7 +1,7 @@
 {
   "id": "lettre-d",
-  "title": "Lɛtrɛ D",
-  "symbol": "D · d",
+  "title": "Letre D",
+  "symbol": "D  d",
   "icon": "picture",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "d:lower_script",
         "say": {
-          "text": "Lɛtrɛ D ezali na mongongo ddd, lokola na liloba duka. Yoka : ddd."
+          "text": "Letre D ezali na mongongo ddd, lokola na liloba duka. Yoka : ddd."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "D · d",
-          "word": "duka",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "d"
-      ],
-      "params": {
-        "glyph": "d:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ d, mpe loba : ddd."
-        },
-        "context": {
-          "letter": "D · d",
+          "letter": "D  d",
           "word": "duka",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : duka. Simba lɛtrɛ ya mongongo ddd."
+          "text": "Ecoute : duka. Touche la lettre du son d."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D  d",
+          "word": "duka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : duka. Simba letre ya mongongo ddd."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "d",
         "context": {
-          "letter": "D · d",
+          "letter": "D  d",
           "word": "duka",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "duka",
         "say": {
-          "text": "Loba liloba : duka."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "D · d",
+          "letter": "D  d",
           "word": "duka",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:d"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche d."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D  d",
+          "word": "duka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "D  d",
+          "word": "duka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "D  d",
+          "word": "duka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:duka"
+      ],
+      "params": {
+        "word": "duka",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "D  d",
+          "word": "duka",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

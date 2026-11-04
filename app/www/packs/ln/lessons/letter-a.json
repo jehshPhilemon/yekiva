@@ -1,7 +1,7 @@
 {
   "id": "letter-a",
   "title": "A na liloba mama",
-  "symbol": "A · a",
+  "symbol": "A  a",
   "icon": "family",
   "steps": [
     {
@@ -16,24 +16,7 @@
         },
         "durationMs": 2600,
         "context": {
-          "letter": "A · a",
-          "word": "mama",
-          "icon": "family"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "a"
-      ],
-      "params": {
-        "glyph": "a:lower_script",
-        "say": {
-          "text": "Yoka a na mama, mpe landa bilembo mpo na kokoma a."
-        },
-        "context": {
-          "letter": "A · a",
+          "letter": "A  a",
           "word": "mama",
           "icon": "family"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : mama. Simba lɛtrɛ ya mongongo a."
+          "text": "Ecoute : mama. Touche la lettre du son a."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mama. Simba letre ya mongongo a."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "a",
         "context": {
-          "letter": "A · a",
+          "letter": "A  a",
           "word": "mama",
           "icon": "family"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "mama",
         "say": {
-          "text": "Loba liloba : mama."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "A · a",
+          "letter": "A  a",
           "word": "mama",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "A  a",
+          "word": "mama",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

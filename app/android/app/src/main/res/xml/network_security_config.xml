@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yekiva: the voice/transcription server is often plain http:// (LAN or VPS).
+     Allow cleartext to any host (the app only talks to the configured Yekiva
+     server), keep the default strict policy otherwise. Managed by tools/patch-android.mjs. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

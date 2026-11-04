@@ -1,7 +1,7 @@
 {
   "id": "lettre-v",
-  "title": "Lɛtrɛ V",
-  "symbol": "V · v",
+  "title": "Letre V",
+  "symbol": "V  v",
   "icon": "picture",
   "steps": [
     {
@@ -12,29 +12,12 @@
       "params": {
         "glyph": "v:lower_script",
         "say": {
-          "text": "Lɛtrɛ V ezali na mongongo vvv, lokola na liloba vélo. Yoka : vvv."
+          "text": "Letre V ezali na mongongo vvv, lokola na liloba velo. Yoka : vvv."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "V · v",
-          "word": "vélo",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "v"
-      ],
-      "params": {
-        "glyph": "v:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ v, mpe loba : vvv."
-        },
-        "context": {
-          "letter": "V · v",
-          "word": "vélo",
+          "letter": "V  v",
+          "word": "velo",
           "icon": "picture"
         }
       }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : vélo. Simba lɛtrɛ ya mongongo vvv."
+          "text": "Ecoute : velo. Touche la lettre du son v."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "r",
+            "text": "r"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : velo. Simba letre ya mongongo vvv."
         },
         "choices": [
           {
@@ -64,8 +78,8 @@
         ],
         "answer": "v",
         "context": {
-          "letter": "V · v",
-          "word": "vélo",
+          "letter": "V  v",
+          "word": "velo",
           "icon": "picture"
         }
       }
@@ -76,15 +90,131 @@
         "v"
       ],
       "params": {
-        "word": "vélo",
+        "word": "velo",
         "say": {
-          "text": "Loba liloba : vélo."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "V · v",
-          "word": "vélo",
+          "letter": "V  v",
+          "word": "velo",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:v"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche v."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:velo"
+      ],
+      "params": {
+        "word": "velo",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "V  v",
+          "word": "velo",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

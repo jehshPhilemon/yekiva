@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "h"
       ],
       "params": {
-        "glyph": "h:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi h, kisha sema : hhh."
+          "text": "Écoute : hewa. Touche la lettre du son h."
         },
+        "choices": [
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          }
+        ],
+        "answer": "h",
         "context": {
           "letter": "H · h",
           "word": "hewa",
@@ -78,13 +92,129 @@
       "params": {
         "word": "hewa",
         "say": {
-          "text": "Sema neno : hewa."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "H · h",
           "word": "hewa",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:h"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche h."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:hewa"
+      ],
+      "params": {
+        "word": "hewa",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

@@ -96,7 +96,8 @@ export async function transcribe(audio, { lang } = {}) {
 const VISION_PROMPT =
   "In this photo, find the most legible written word. Answer ONLY with JSON: " +
   '{"word": "...", "syllables": ["..."], "language": "ISO 639-1 code"}. ' +
-  "Split the word into syllables as they are pronounced. If no word is legible, answer {}.";
+  "Split the word into syllables as they are pronounced. If no word is legible, answer {}. " +
+  "For Lingala (ln), use ONLY unaccented ASCII Latin letters a-z: never use ɛ, ɔ, accents, apostrophes, hyphens, or other special characters.";
 
 /** @param {Buffer} image  @returns {Promise<object>} a lesson in the docs/LESSON_FORMAT.md format */
 export async function lessonFromPhoto(image, { contentType, lang } = {}) {
@@ -145,7 +146,8 @@ const LESSON_PROMPT =
   "You help illiterate adults and children learn to read. Given a word, split it into " +
   "syllables as pronounced. Answer ONLY with JSON: " +
   '{"word": "...", "syllables": ["..."]}. ' +
-  "Rules: lowercase, no punctuation, 1-4 syllables, each syllable 1-3 letters.";
+  "Rules: lowercase, no punctuation, 1-4 syllables, each syllable 1-3 letters. " +
+  "STRICT Lingala rule: when language is ln, output ONLY plain ASCII Latin letters a-z, with no accents, ɛ, ɔ, apostrophes, hyphens, or special characters.";
 
 export async function generateLesson(word, { lang } = {}) {
   const apiKey = key();

@@ -74,13 +74,129 @@
       "params": {
         "word": "ntaba",
         "say": {
-          "text": "Loba liloba : ntaba."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "nt",
           "word": "ntaba",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nt"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche nt."
+        },
+        "choices": [
+          {
+            "id": "nt",
+            "text": "nt"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ntaba",
+            "text": "ntaba"
+          }
+        ],
+        "answer": "nt",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ntaba"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche ntaba."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
+          },
+          {
+            "id": "ntaba",
+            "text": "ntaba"
+          }
+        ],
+        "answer": "ntaba",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "ntaba",
+            "text": "ntaba"
+          },
+          {
+            "id": "nt",
+            "text": "nt"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ntaba"
+      ],
+      "params": {
+        "word": "ntaba",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

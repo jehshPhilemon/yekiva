@@ -74,13 +74,129 @@
       "params": {
         "word": "ngai",
         "say": {
-          "text": "Loba liloba : ngai."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
           "letter": "ng",
           "word": "ngai",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ng"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ng."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ngai",
+            "text": "ngai"
+          }
+        ],
+        "answer": "ng",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ngai"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche ngai."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ngai",
+            "text": "ngai"
+          }
+        ],
+        "answer": "ngai",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "ngai",
+            "text": "ngai"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:ngai"
+      ],
+      "params": {
+        "word": "ngai",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

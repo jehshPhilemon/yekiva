@@ -20,15 +20,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "l"
       ],
       "params": {
-        "glyph": "l:lower_script",
         "say": {
-          "text": "L comme dans livre. Trace la lettre l en suivant les pointillés."
+          "text": "Écoute : livre. Touche la lettre du son l."
         },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "l",
         "context": {
           "letter": "L · l",
           "word": "livre",
@@ -55,15 +69,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "i"
       ],
       "params": {
-        "glyph": "i:lower_script",
         "say": {
-          "text": "I comme dans image. Trace la lettre i en suivant les pointillés."
+          "text": "Écoute : image. Touche la lettre du son i."
         },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "i",
         "context": {
           "letter": "I · i",
           "word": "image",
@@ -110,13 +138,14 @@
       "params": {
         "word": "livre",
         "say": {
-          "text": "Dis le mot : livre."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "L · l",
           "word": "livre",
           "icon": "book"
-        }
+        },
+        "hideWord": true
       }
     },
     {
@@ -158,13 +187,129 @@
       "params": {
         "word": "image",
         "say": {
-          "text": "Dis le mot : image."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "I · i",
           "word": "image",
           "icon": "book"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:l"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche l."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L · l",
+          "word": "livre",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:i"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche i."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "L · l",
+          "word": "livre",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "L · l",
+          "word": "livre",
+          "icon": "book"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:image"
+      ],
+      "params": {
+        "word": "image",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "L · l",
+          "word": "livre",
+          "icon": "book"
+        },
+        "isQuiz": true
       }
     }
   ],

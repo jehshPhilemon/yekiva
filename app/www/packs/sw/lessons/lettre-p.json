@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "p"
       ],
       "params": {
-        "glyph": "p:lower_script",
         "say": {
-          "text": "Fuata nukta kuandika herufi p, kisha sema : ppp."
+          "text": "Écoute : paka. Touche la lettre du son p."
         },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "p",
         "context": {
           "letter": "P · p",
           "word": "paka",
@@ -78,13 +92,129 @@
       "params": {
         "word": "paka",
         "say": {
-          "text": "Sema neno : paka."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "P · p",
           "word": "paka",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:p"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche p."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:paka"
+      ],
+      "params": {
+        "word": "paka",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

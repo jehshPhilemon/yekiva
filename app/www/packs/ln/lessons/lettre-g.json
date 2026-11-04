@@ -1,7 +1,7 @@
 {
   "id": "lettre-g",
-  "title": "Lɛtrɛ G",
-  "symbol": "G · g",
+  "title": "Letre G",
+  "symbol": "G  g",
   "icon": "music",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "g:lower_script",
         "say": {
-          "text": "Lɛtrɛ G ezali na mongongo ggg, lokola na liloba guitare. Yoka : ggg."
+          "text": "Letre G ezali na mongongo ggg, lokola na liloba guitare. Yoka : ggg."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "G · g",
-          "word": "guitare",
-          "icon": "music"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "g"
-      ],
-      "params": {
-        "glyph": "g:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ g, mpe loba : ggg."
-        },
-        "context": {
-          "letter": "G · g",
+          "letter": "G  g",
           "word": "guitare",
           "icon": "music"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : guitare. Simba lɛtrɛ ya mongongo ggg."
+          "text": "Ecoute : guitare. Touche la lettre du son g."
+        },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "q",
+            "text": "q"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : guitare. Simba letre ya mongongo ggg."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "g",
         "context": {
-          "letter": "G · g",
+          "letter": "G  g",
           "word": "guitare",
           "icon": "music"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "guitare",
         "say": {
-          "text": "Loba liloba : guitare."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "G · g",
+          "letter": "G  g",
           "word": "guitare",
           "icon": "music"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:g"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche g."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:guitare"
+      ],
+      "params": {
+        "word": "guitare",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "G  g",
+          "word": "guitare",
+          "icon": "music"
+        },
+        "isQuiz": true
       }
     }
   ]

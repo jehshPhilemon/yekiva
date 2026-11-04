@@ -105,13 +105,129 @@
       "params": {
         "word": "baba",
         "say": {
-          "text": "Sema neno : baba."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "ba",
           "word": "baba",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ba."
+        },
+        "choices": [
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:be"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche be."
+        },
+        "choices": [
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          }
+        ],
+        "answer": "be",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:bo"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche bo."
+        },
+        "choices": [
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          }
+        ],
+        "answer": "bo",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]

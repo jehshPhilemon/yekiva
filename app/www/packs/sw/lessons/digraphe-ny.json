@@ -74,13 +74,129 @@
       "params": {
         "word": "nyumba",
         "say": {
-          "text": "Sema neno : nyumba."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "ny",
           "word": "nyumba",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:ny"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche ny."
+        },
+        "choices": [
+          {
+            "id": "ny",
+            "text": "ny"
+          },
+          {
+            "id": "nyumba",
+            "text": "nyumba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "ny",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:nyumba"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche nyumba."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ny",
+            "text": "ny"
+          },
+          {
+            "id": "nyumba",
+            "text": "nyumba"
+          }
+        ],
+        "answer": "nyumba",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "nyumba",
+            "text": "nyumba"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "ny",
+            "text": "ny"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:nyumba"
+      ],
+      "params": {
+        "word": "nyumba",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

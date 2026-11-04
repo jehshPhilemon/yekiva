@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "s"
       ],
       "params": {
-        "glyph": "s:lower_script",
         "say": {
-          "text": "Trace la lettre s en suivant les pointillés, puis dis : sss."
+          "text": "Écoute : soleil. Touche la lettre du son s."
         },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "s",
         "context": {
           "letter": "S · s",
           "word": "soleil",
@@ -78,13 +92,129 @@
       "params": {
         "word": "soleil",
         "say": {
-          "text": "Dis le mot : soleil."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "S · s",
           "word": "soleil",
           "icon": "star"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:s"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche s."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:soleil"
+      ],
+      "params": {
+        "word": "soleil",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        },
+        "isQuiz": true
       }
     }
   ]

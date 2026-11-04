@@ -17,7 +17,7 @@ const set = (k, v) => {
 
 export const profile = {
   load: () => get("yekiva.profile", null), // { language, audience }
-  save: (p) => set("yekiva.profile", p),
+  save: (p) => set("yekiva.profile", { ...p, savedAt: Date.now() }),
   clear: () => {
     try {
       localStorage.removeItem("yekiva.profile");
@@ -32,5 +32,5 @@ export const learnerData = {
 };
 export const progress = {
   load: (lang, audience) => get(`yekiva.progress.${lang}.${audience}`, {}),
-  save: (lang, audience, data) => set(`yekiva.progress.${lang}.${audience}`, data),
+  save: (lang, audience, data) => set(`yekiva.progress.${lang}.${audience}`, { ...data, updatedAt: Date.now() }),
 };

@@ -23,15 +23,29 @@
       }
     },
     {
-      "type": "trace_letter",
+      "type": "listen_tap",
       "items": [
         "j"
       ],
       "params": {
-        "glyph": "j:lower_script",
         "say": {
-          "text": "Trace la lettre j en suivant les pointillés, puis dis : jjj."
+          "text": "Écoute : jus. Touche la lettre du son j."
         },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "j",
         "context": {
           "letter": "J · j",
           "word": "jus",
@@ -78,13 +92,129 @@
       "params": {
         "word": "jus",
         "say": {
-          "text": "Dis le mot : jus."
+          "text": "Écoute le mot, puis dis-le à voix haute."
         },
         "context": {
           "letter": "J · j",
           "word": "jus",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:j"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche j."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J · j",
+          "word": "jus",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "J · j",
+          "word": "jus",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "J · j",
+          "word": "jus",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:jus"
+      ],
+      "params": {
+        "word": "jus",
+        "say": {
+          "text": "Dernière question : écoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "J · j",
+          "word": "jus",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

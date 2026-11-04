@@ -1,7 +1,7 @@
 {
   "id": "lettre-x",
-  "title": "Lɛtrɛ X",
-  "symbol": "X · x",
+  "title": "Letre X",
+  "symbol": "X  x",
   "icon": "picture",
   "steps": [
     {
@@ -16,24 +16,7 @@
         },
         "durationMs": 2600,
         "context": {
-          "letter": "X · x",
-          "word": "taxi",
-          "icon": "picture"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "x"
-      ],
-      "params": {
-        "glyph": "x:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ x, mpe loba : ks."
-        },
-        "context": {
-          "letter": "X · x",
+          "letter": "X  x",
           "word": "taxi",
           "icon": "picture"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : taxi. Simba lɛtrɛ X."
+          "text": "Ecoute : taxi. Touche la lettre du son x."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : taxi. Simba letre X."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "x",
         "context": {
-          "letter": "X · x",
+          "letter": "X  x",
           "word": "taxi",
           "icon": "picture"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "taxi",
         "say": {
-          "text": "Loba liloba : taxi."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "X · x",
+          "letter": "X  x",
           "word": "taxi",
           "icon": "picture"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:x"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche x."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:taxi"
+      ],
+      "params": {
+        "word": "taxi",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "X  x",
+          "word": "taxi",
+          "icon": "picture"
+        },
+        "isQuiz": true
       }
     }
   ]

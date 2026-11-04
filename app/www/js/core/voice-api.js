@@ -48,6 +48,7 @@ export function createVoiceApi({ apiUrl, apiKey }) {
     return Boolean(b) && /^https?:\/\//i.test(b) && !b.includes("__YEKIVA_") && !b.includes("__TTS_");
   };
   const speakEndpoint = () => `${base()}/tts/v1/speak`;
+  const serverSpeakEndpoint = () => `${base()}/v1/speak`;
   const healthEndpoint = () => `${base()}/health`;
 
   return {
@@ -93,16 +94,19 @@ export function createVoiceApi({ apiUrl, apiKey }) {
       if (!String(text ?? "").trim()) return { ok: false, cause: "empty-text" };
       const t = withTimeout(20000);
       try {
-        const res = await fetch(speakEndpoint(), {
-          method: "POST",
-          headers: { "content-type": "application/json", "x-api-key": key() },
-          body: JSON.stringify({
-            language: toApiLang(lang),
-            text: String(text).slice(0, 300),
-            format,
-          }),
-          signal: t.signal,
+        const payload = JSON.stringify({
+          language: toApiLang(lang),
+          text: String(text).slice(0, 300),
+          format,
         });
+        const serverPayload = JSON.stringify({
+          lang,
+          text: String(text).slice(0, 300),
+        });
+        const headers = { "content-type": "application/json", "x-api-key": key(), "x-app-token": key() };
+        let res = await fetch(speakEndpoint(), { method: "POST", headers, body: payload, signal: t.signal });
+        // Yekiva server mode exposes /v1/speak; the legacy hosted TTS exposes /tts/v1/speak.
+        if (res.status === 404) res = await fetch(serverSpeakEndpoint(), { method: "POST", headers, body: serverPayload, signal: t.signal });
         if (!res.ok) return { ok: false, cause: `http-${res.status}` };
         const blob = await res.blob();
         if (!blob?.size) return { ok: false, cause: "empty" };
@@ -127,15 +131,46 @@ export function createVoiceApi({ apiUrl, apiKey }) {
      * Renvoie toujours null -> l'exercice "répéter" bascule sur le plan B
      * "écouter et taper" (offline-friendly), sans jamais bloquer.
      */
-    async transcribe() {
-      return null;
+    async transcribe(audio, lang = "fr") {
+      if (!configured() || !audio?.size) return null;
+      const t = withTimeout(30000);
+      try {
+        const res = await fetch(`${base()}/v1/transcribe?lang=${encodeURIComponent(toApiLang(lang))}`, {
+          method: "POST",
+          headers: { "content-type": "audio/wav", "x-api-key": key(), "x-app-token": key() },
+          body: audio,
+          signal: t.signal,
+        });
+        if (!res.ok) return null;
+        const data = await res.json().catch(() => null);
+        return typeof data?.text === "string" ? { text: data.text } : null;
+      } catch {
+        return null;
+      } finally {
+        t.done();
+      }
     },
     /**
      * Photo -> leçon (FUTUR) : pas de route API pour l'instant.
      * Renvoie toujours null -> l'écran photo l'explique et repart au parcours.
      */
-    async lessonFromPhoto() {
-      return null;
+    async lessonFromPhoto(image, lang = "fr") {
+      if (!configured() || !image?.size) return null;
+      const t = withTimeout(60000);
+      try {
+        const res = await fetch(`${base()}/v1/lesson-from-photo?lang=${encodeURIComponent(toApiLang(lang))}`, {
+          method: "POST",
+          headers: { "content-type": image.type || "image/jpeg", "x-api-key": key(), "x-app-token": key() },
+          body: image,
+          signal: t.signal,
+        });
+        if (!res.ok) return null;
+        return await res.json().catch(() => null);
+      } catch {
+        return null;
+      } finally {
+        t.done();
+      }
     },
   };
 }

@@ -1,7 +1,7 @@
 {
   "id": "lettre-j",
-  "title": "Lɛtrɛ J",
-  "symbol": "J · j",
+  "title": "Letre J",
+  "symbol": "J  j",
   "icon": "plant",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "j:lower_script",
         "say": {
-          "text": "Lɛtrɛ J ezali na mongongo jjj, lokola na liloba jardi. Yoka : jjj."
+          "text": "Letre J ezali na mongongo jjj, lokola na liloba jardi. Yoka : jjj."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "J · j",
-          "word": "jardi",
-          "icon": "plant"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "j"
-      ],
-      "params": {
-        "glyph": "j:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ j, mpe loba : jjj."
-        },
-        "context": {
-          "letter": "J · j",
+          "letter": "J  j",
           "word": "jardi",
           "icon": "plant"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : jardi. Simba lɛtrɛ ya mongongo jjj."
+          "text": "Ecoute : jardi. Touche la lettre du son j."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : jardi. Simba letre ya mongongo jjj."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "j",
         "context": {
-          "letter": "J · j",
+          "letter": "J  j",
           "word": "jardi",
           "icon": "plant"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "jardi",
         "say": {
-          "text": "Loba liloba : jardi."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "J · j",
+          "letter": "J  j",
           "word": "jardi",
           "icon": "plant"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:j"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche j."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:jardi"
+      ],
+      "params": {
+        "word": "jardi",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "J  j",
+          "word": "jardi",
+          "icon": "plant"
+        },
+        "isQuiz": true
       }
     }
   ]

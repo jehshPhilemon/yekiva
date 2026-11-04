@@ -1,7 +1,7 @@
 {
   "id": "lettre-p",
-  "title": "Lɛtrɛ P",
-  "symbol": "P · p",
+  "title": "Letre P",
+  "symbol": "P  p",
   "icon": "family",
   "steps": [
     {
@@ -12,28 +12,11 @@
       "params": {
         "glyph": "p:lower_script",
         "say": {
-          "text": "Lɛtrɛ P ezali na mongongo ppp, lokola na liloba papa. Yoka : ppp."
+          "text": "Letre P ezali na mongongo ppp, lokola na liloba papa. Yoka : ppp."
         },
         "durationMs": 2600,
         "context": {
-          "letter": "P · p",
-          "word": "papa",
-          "icon": "family"
-        }
-      }
-    },
-    {
-      "type": "trace_letter",
-      "items": [
-        "p"
-      ],
-      "params": {
-        "glyph": "p:lower_script",
-        "say": {
-          "text": "Landa biteni mpo okoma lɛtrɛ p, mpe loba : ppp."
-        },
-        "context": {
-          "letter": "P · p",
+          "letter": "P  p",
           "word": "papa",
           "icon": "family"
         }
@@ -46,7 +29,38 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : papa. Simba lɛtrɛ ya mongongo ppp."
+          "text": "Ecoute : papa. Touche la lettre du son p."
+        },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : papa. Simba letre ya mongongo ppp."
         },
         "choices": [
           {
@@ -64,7 +78,7 @@
         ],
         "answer": "p",
         "context": {
-          "letter": "P · p",
+          "letter": "P  p",
           "word": "papa",
           "icon": "family"
         }
@@ -78,13 +92,129 @@
       "params": {
         "word": "papa",
         "say": {
-          "text": "Loba liloba : papa."
+          "text": "Ecoute le mot, puis dis-le a voix haute."
         },
         "context": {
-          "letter": "P · p",
+          "letter": "P  p",
           "word": "papa",
           "icon": "family"
-        }
+        },
+        "hideWord": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:p"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 1 sur 3 : touche p."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:a"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 2 sur 3 : touche a."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "quiz:e"
+      ],
+      "params": {
+        "say": {
+          "text": "Question 3 sur 3 : touche e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "quiz:papa"
+      ],
+      "params": {
+        "word": "papa",
+        "say": {
+          "text": "Derniere question : ecoute le mot, puis dis-le."
+        },
+        "hideWord": true,
+        "context": {
+          "letter": "P  p",
+          "word": "papa",
+          "icon": "family"
+        },
+        "isQuiz": true
       }
     }
   ]
