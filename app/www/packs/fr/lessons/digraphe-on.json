@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-on",
+  "title": "Le son ON",
+  "symbol": "on",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "on"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : O et N ensemble chantent un seul son : on, comme dans bonbon. Touche on."
+        },
+        "choices": [
+          {
+            "id": "on",
+            "text": "on"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "an",
+            "text": "an"
+          }
+        ],
+        "answer": "on",
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bonbon"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot bonbon. Touche le mot bonbon."
+        },
+        "choices": [
+          {
+            "id": "bonbon",
+            "text": "bonbon"
+          },
+          {
+            "id": "ballon",
+            "text": "ballon"
+          },
+          {
+            "id": "bébé",
+            "text": "bébé"
+          }
+        ],
+        "answer": "bonbon",
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "bonbon"
+      ],
+      "params": {
+        "word": "bonbon",
+        "say": {
+          "text": "Dis le mot : bonbon."
+        },
+        "context": {
+          "letter": "on",
+          "word": "bonbon",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "lettre-v",
+  "title": "Herufi V",
+  "symbol": "V · v",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "glyph": "v:lower_script",
+        "say": {
+          "text": "Herufi V inatoa sauti vvv, kama katika neno viazi. Sikiliza : vvv."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "glyph": "v:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi v, kisha sema : vvv."
+        },
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : viazi. Gusa herufi ya sauti vvv."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "word": "viazi",
+        "say": {
+          "text": "Sema neno : viazi."
+        },
+        "context": {
+          "letter": "V · v",
+          "word": "viazi",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

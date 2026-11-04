@@ -1,0 +1,52 @@
+{
+  "id": "phrase-1",
+  "title": "Sentensi yangu ya kwanza",
+  "symbol": "Mama na baba.",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "Mama na baba."
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza sentensi. Gusa sentensi unayosikia."
+        },
+        "choices": [
+          {
+            "id": "Mama na baba.",
+            "text": "Mama na baba."
+          },
+          {
+            "id": "Baba na mama.",
+            "text": "Baba na mama."
+          }
+        ],
+        "answer": "Mama na baba.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na baba.",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Mama na baba."
+      ],
+      "params": {
+        "word": "Mama na baba.",
+        "say": {
+          "text": "Sema sentensi : Mama na baba."
+        },
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na baba.",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

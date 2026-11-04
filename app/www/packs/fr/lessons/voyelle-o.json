@@ -1,0 +1,91 @@
+{
+  "id": "voyelle-o",
+  "title": "La voyelle O",
+  "symbol": "O · o",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "glyph": "o:lower_script",
+        "say": {
+          "text": "La lettre O fait le son o, comme dans oiseau. Écoute bien : o."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "glyph": "o:lower_script",
+        "say": {
+          "text": "Trace la lettre o en suivant les pointillés, puis dis : o."
+        },
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : oiseau. Touche la lettre du son o."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "word": "oiseau",
+        "say": {
+          "text": "Dis le mot : oiseau."
+        },
+        "context": {
+          "letter": "O · o",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

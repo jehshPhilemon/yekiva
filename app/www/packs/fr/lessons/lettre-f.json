@@ -1,0 +1,91 @@
+{
+  "id": "lettre-f",
+  "title": "La lettre F",
+  "symbol": "F · f",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "La lettre F fait le son fff, comme dans fleur. Écoute bien : fff."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "Trace la lettre f en suivant les pointillés, puis dis : fff."
+        },
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : fleur. Touche la lettre du son fff."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "word": "fleur",
+        "say": {
+          "text": "Dis le mot : fleur."
+        },
+        "context": {
+          "letter": "F · f",
+          "word": "fleur",
+          "icon": "plant"
+        }
+      }
+    }
+  ]
+}

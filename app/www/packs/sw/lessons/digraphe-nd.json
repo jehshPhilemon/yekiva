@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-nd",
+  "title": "Sauti ND",
+  "symbol": "nd",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nd"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na D pamoja hutoa sauti moja : nd, kama katika ndizi. Gusa nd."
+        },
+        "choices": [
+          {
+            "id": "nd",
+            "text": "nd"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          }
+        ],
+        "answer": "nd",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ndizi"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno ndizi. Gusa neno ndizi."
+        },
+        "choices": [
+          {
+            "id": "ndizi",
+            "text": "ndizi"
+          },
+          {
+            "id": "ndege",
+            "text": "ndege"
+          },
+          {
+            "id": "nazi",
+            "text": "nazi"
+          }
+        ],
+        "answer": "ndizi",
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ndizi"
+      ],
+      "params": {
+        "word": "ndizi",
+        "say": {
+          "text": "Sema neno : ndizi."
+        },
+        "context": {
+          "letter": "nd",
+          "word": "ndizi",
+          "icon": "plant"
+        }
+      }
+    }
+  ]
+}

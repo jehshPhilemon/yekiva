@@ -1,0 +1,91 @@
+{
+  "id": "lettre-v",
+  "title": "Lɛtrɛ V",
+  "symbol": "V · v",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "glyph": "v:lower_script",
+        "say": {
+          "text": "Lɛtrɛ V ezali na mongongo vvv, lokola na liloba vélo. Yoka : vvv."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "glyph": "v:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ v, mpe loba : vvv."
+        },
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : vélo. Simba lɛtrɛ ya mongongo vvv."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "word": "vélo",
+        "say": {
+          "text": "Loba liloba : vélo."
+        },
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

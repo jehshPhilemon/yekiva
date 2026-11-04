@@ -1,6 +1,7 @@
 import { createServer } from "node:http";
 import * as meta from "./providers/meta.js";
 import * as voice from "./voice.js";
+import { isValidAppToken } from "./apptoken.js";
 import { checkWav } from "./wav.js";
 
 const MAX_BYTES = 5 * 1024 * 1024; // a word or a photo, not a film
@@ -44,12 +45,12 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
     };
     const sendAudio = (wav) => {
       res.writeHead(200, {
-        "content-type": "audio/wav",
-        "content-length": wav.length,
+        "content-type": wav.mime,
+        "content-length": wav.bytes.length,
         "access-control-allow-origin": allowOrigin,
         "cache-control": "no-store",
       });
-      res.end(wav);
+      res.end(wav.bytes);
     };
     try {
       const url = new URL(req.url, "http://local");
@@ -65,16 +66,18 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
       }
       if (req.method === "GET" && url.pathname === "/health") return send(200, { ok: true });
       // Capability probe (no synthesis): the app shows "natural voice" vs "phone voice".
-      if (req.method === "GET" && url.pathname === "/v1/voice") return send(200, { ok: true, engine: "piper", voices: ["fr", "sw"] });
+      if (req.method === "GET" && url.pathname === "/v1/voice") return send(200, voice.engine());
 
-      if (appToken && req.headers["x-app-token"] !== appToken) return send(401, { error: "unauthorized" });
+      // Prototype app keys: exact APP_TOKEN, or any valid YKV key (server-side check only).
+      if (appToken && !isValidAppToken(req.headers["x-app-token"], appToken)) return send(401, { error: "unauthorized" });
       if (!allow(req.socket.remoteAddress ?? "?")) return send(429, { error: "too many requests" });
 
       const lang = url.searchParams.get("lang") ?? undefined;
       const contentType = req.headers["content-type"] ?? "";
 
       if (req.method === "POST" && url.pathname === "/v1/speak") {
-        // Natural voice at request time: { text, lang? } -> audio/wav (Piper, on this server).
+        // Natural Meta voice at request time: { text, lang? } -> audio/mpeg
+        // (MMS-TTS WAV converted to MP3, 10x lighter for low-bandwidth phones).
         if (!contentType.includes("application/json")) return send(415, { error: "application/json expected: { text, lang? }" });
         let body;
         try {
@@ -83,7 +86,7 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
           return send(400, { error: "invalid JSON" });
         }
         if (typeof body.text !== "string" || !body.text.trim()) return send(400, { error: "field 'text' is required" });
-        return sendAudio(voice.speak(body.text, { lang: body.lang ?? lang }));
+        return sendAudio(await voice.speak(body.text, { lang: body.lang ?? lang }));
       }
 
       if (req.method === "POST" && url.pathname === "/v1/transcribe") {
@@ -100,6 +103,41 @@ export function makeApp({ appToken = "", provider = meta, ratePerMinute = 30, al
         const image = await readBody(req);
         if (image.length === 0) return send(400, { error: "empty body" });
         return send(200, await provider.lessonFromPhoto(image, { lang, contentType }));
+      }
+
+      if (req.method === "POST" && url.pathname === "/v1/illustrate") {
+        // One lesson word -> one cartoon illustration (Muse Image, $0.01/image).
+        // Used OFFLINE by tools/illustrate-pack.mjs to fill packs; the app never calls it.
+        if (!contentType.includes("application/json")) return send(415, { error: "application/json expected: { word, hint? }" });
+        let body;
+        try {
+          body = JSON.parse(String(await readBody(req, MAX_SPEAK_TEXT)));
+        } catch {
+          return send(400, { error: "invalid JSON" });
+        }
+        if (typeof body.word !== "string" || !body.word.trim()) return send(400, { error: "field 'word' is required" });
+        const { bytes, mime } = await provider.illustrate(body.word.trim().slice(0, 60), { hint: body.hint });
+        res.writeHead(200, {
+          "content-type": mime,
+          "content-length": bytes.length,
+          "access-control-allow-origin": allowOrigin,
+          "cache-control": "no-store",
+        });
+        return res.end(bytes);
+      }
+
+      if (req.method === "POST" && url.pathname === "/v1/generate-lesson") {
+        // One word -> one full lesson in OUR format (Spark proposes content, we build structure).
+        // Used OFFLINE by tools/generate-lesson.mjs; the app never calls it directly.
+        if (!contentType.includes("application/json")) return send(415, { error: "application/json expected: { word, lang? }" });
+        let body;
+        try {
+          body = JSON.parse(String(await readBody(req, MAX_SPEAK_TEXT)));
+        } catch {
+          return send(400, { error: "invalid JSON" });
+        }
+        if (typeof body.word !== "string" || !body.word.trim()) return send(400, { error: "field 'word' is required" });
+        return send(200, await provider.generateLesson(body.word, { lang: body.lang ?? lang }));
       }
 
       return send(404, { error: "unknown route" });

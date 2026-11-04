@@ -1,0 +1,69 @@
+{
+  "id": "lecture-1",
+  "title": "Je lis une histoire",
+  "symbol": "Lili lit.",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "say_word",
+      "items": [
+        "Maman aime Lili."
+      ],
+      "params": {
+        "word": "Maman aime Lili.",
+        "say": {
+          "text": "Lis avec moi : Maman aime Lili."
+        },
+        "context": {
+          "letter": "Maman",
+          "word": "Maman aime Lili.",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Lili lit."
+      ],
+      "params": {
+        "word": "Lili lit.",
+        "say": {
+          "text": "Continue : Lili lit."
+        },
+        "context": {
+          "letter": "Lili",
+          "word": "Lili lit.",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "Lili"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute la question : qui lit ? Touche la réponse."
+        },
+        "choices": [
+          {
+            "id": "Lili",
+            "text": "Lili"
+          },
+          {
+            "id": "Maman",
+            "text": "Maman"
+          }
+        ],
+        "answer": "Lili",
+        "context": {
+          "letter": "Lili",
+          "word": "Lili lit.",
+          "icon": "star"
+        }
+      }
+    }
+  ]
+}

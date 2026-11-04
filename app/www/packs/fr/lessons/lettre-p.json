@@ -1,0 +1,91 @@
+{
+  "id": "lettre-p",
+  "title": "La lettre P",
+  "symbol": "P · p",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "La lettre P fait le son ppp, comme dans papa. Écoute bien : ppp."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "Trace la lettre p en suivant les pointillés, puis dis : ppp."
+        },
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : papa. Touche la lettre du son ppp."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "word": "papa",
+        "say": {
+          "text": "Dis le mot : papa."
+        },
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

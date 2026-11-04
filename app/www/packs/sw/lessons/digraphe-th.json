@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-th",
+  "title": "Sauti TH",
+  "symbol": "th",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "th"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : T na H pamoja hutoa sauti moja : th, kama katika thelathini. Gusa th."
+        },
+        "choices": [
+          {
+            "id": "th",
+            "text": "th"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "dh",
+            "text": "dh"
+          }
+        ],
+        "answer": "th",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "thelathini"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno thelathini. Gusa neno thelathini."
+        },
+        "choices": [
+          {
+            "id": "thelathini",
+            "text": "thelathini"
+          },
+          {
+            "id": "tatu",
+            "text": "tatu"
+          },
+          {
+            "id": "sita",
+            "text": "sita"
+          }
+        ],
+        "answer": "thelathini",
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "thelathini"
+      ],
+      "params": {
+        "word": "thelathini",
+        "say": {
+          "text": "Sema neno : thelathini."
+        },
+        "context": {
+          "letter": "th",
+          "word": "thelathini",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

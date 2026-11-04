@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-nj",
+  "title": "Sauti NJ",
+  "symbol": "nj",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nj"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na J pamoja hutoa sauti moja : nj, kama katika njia. Gusa nj."
+        },
+        "choices": [
+          {
+            "id": "nj",
+            "text": "nj"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "nj",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "njia"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno njia. Gusa neno njia."
+        },
+        "choices": [
+          {
+            "id": "njia",
+            "text": "njia"
+          },
+          {
+            "id": "njugu",
+            "text": "njugu"
+          },
+          {
+            "id": "nyumba",
+            "text": "nyumba"
+          }
+        ],
+        "answer": "njia",
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "njia"
+      ],
+      "params": {
+        "word": "njia",
+        "say": {
+          "text": "Sema neno : njia."
+        },
+        "context": {
+          "letter": "nj",
+          "word": "njia",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

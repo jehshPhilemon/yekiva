@@ -1,0 +1,91 @@
+{
+  "id": "lettre-j",
+  "title": "Lɛtrɛ J",
+  "symbol": "J · j",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "glyph": "j:lower_script",
+        "say": {
+          "text": "Lɛtrɛ J ezali na mongongo jjj, lokola na liloba jardi. Yoka : jjj."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "J · j",
+          "word": "jardi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "glyph": "j:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ j, mpe loba : jjj."
+        },
+        "context": {
+          "letter": "J · j",
+          "word": "jardi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : jardi. Simba lɛtrɛ ya mongongo jjj."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J · j",
+          "word": "jardi",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "word": "jardi",
+        "say": {
+          "text": "Loba liloba : jardi."
+        },
+        "context": {
+          "letter": "J · j",
+          "word": "jardi",
+          "icon": "plant"
+        }
+      }
+    }
+  ]
+}

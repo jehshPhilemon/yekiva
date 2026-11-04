@@ -1,0 +1,91 @@
+{
+  "id": "lettre-y",
+  "title": "La lettre Y",
+  "symbol": "Y · y",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "La lettre Y fait le son i, comme dans yaourt. Écoute bien : i."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "Trace la lettre y en suivant les pointillés, puis dis : i."
+        },
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : yaourt. Touche la lettre du son i."
+        },
+        "choices": [
+          {
+            "id": "y",
+            "text": "y"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "word": "yaourt",
+        "say": {
+          "text": "Dis le mot : yaourt."
+        },
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

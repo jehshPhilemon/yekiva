@@ -1,0 +1,91 @@
+{
+  "id": "consonne-s",
+  "title": "Konsonanti S",
+  "symbol": "S · s",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "Herufi S inatoa sauti sss, kama katika neno sisi. Sikiliza : sss."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi s, kisha sema : sss."
+        },
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : sisi. Gusa herufi ya sauti sss."
+        },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "word": "sisi",
+        "say": {
+          "text": "Sema neno : sisi."
+        },
+        "context": {
+          "letter": "S · s",
+          "word": "sisi",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

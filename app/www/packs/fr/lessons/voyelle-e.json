@@ -1,0 +1,91 @@
+{
+  "id": "voyelle-e",
+  "title": "La voyelle E",
+  "symbol": "E · e",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "glyph": "e:lower_script",
+        "say": {
+          "text": "La lettre E fait le son é, comme au début du mot école. Écoute bien : é."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "glyph": "e:lower_script",
+        "say": {
+          "text": "Trace la lettre e en suivant les pointillés, puis dis : é."
+        },
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : école. Quel son entends-tu au début ? Touche la lettre."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "word": "école",
+        "say": {
+          "text": "Dis le mot : école."
+        },
+        "context": {
+          "letter": "E · e",
+          "word": "école",
+          "icon": "book"
+        }
+      }
+    }
+  ]
+}

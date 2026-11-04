@@ -1,0 +1,118 @@
+{
+  "id": "syllabes-ba",
+  "title": "Les syllabes ba, bo, bi",
+  "symbol": "ba · bo · bi",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute ba, comme le début de ballon. Touche ba."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "ballon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bo"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute bo, comme dans bonbon. Touche bo."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "bo",
+        "context": {
+          "letter": "bo",
+          "word": "bonbon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bi"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute bi, comme dans biscuit. Touche bi."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "bi",
+        "context": {
+          "letter": "bi",
+          "word": "biscuit",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ballon"
+      ],
+      "params": {
+        "word": "ballon",
+        "say": {
+          "text": "Dis le mot : ballon."
+        },
+        "context": {
+          "letter": "ba",
+          "word": "ballon",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "letter-a",
+  "title": "Sauti a katika mama",
+  "symbol": "A · a",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_script",
+        "say": {
+          "text": "Sikiliza sauti a katika neno mama. Tazama herufi a ikiandikwa."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_script",
+        "say": {
+          "text": "Sauti a iko katika neno mama. Fuata nukta kuandika herufi a."
+        },
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : mama. Gusa herufi ya sauti a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Sema neno : mama."
+        },
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

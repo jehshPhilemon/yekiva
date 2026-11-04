@@ -1,0 +1,91 @@
+{
+  "id": "lettre-c",
+  "title": "La lettre C",
+  "symbol": "C · c",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "La lettre C fait le son k, comme dans chat. Devant a, C chante k. Écoute bien : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "Trace la lettre c en suivant les pointillés, puis dis : k."
+        },
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : chat. Touche la lettre du son k."
+        },
+        "choices": [
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "word": "chat",
+        "say": {
+          "text": "Dis le mot : chat."
+        },
+        "context": {
+          "letter": "C · c",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

@@ -54,17 +54,39 @@ The raw answers make it possible to adjust `meta.js` accordingly.
 |---|---|---|
 | **Yekiva API** (`server/`): `POST /v1/speak`, `POST /v1/transcribe`, `POST /v1/lesson-from-photo` | the app | voice + the only door to Meta; holds the key |
 | **Meta Model API** | the server only | transcription, vision (NO text-to-speech endpoint exists) |
+| **Hosted MMS API** (`YEKIVA_MMS_URL`, key `YEKIVA_MMS_KEY` server-side only) | the server only | natural Meta voice, preloaded models |
 
 ## Natural voice (runtime, in-app generation)
 
 - Meta's Model API has **no TTS endpoint** (verified 2026-10-28 on dev.meta.ai/docs/models:
   Muse Voice Transcribe = speech-to-text only, "does not synthesize speech").
-- So `POST /v1/speak { text, lang? } -> audio/wav` is served by a neural TTS engine
-  (Piper, open-source) running ON the Yekiva server, per request, per language
-  (`fr_FR-upmc-medium`, `sw_CD-lanfrica-medium`; override with `YEKIVA_VOICES`).
+- So `POST /v1/speak { text, lang? } -> audio/mpeg` is served by Meta MMS-TTS
+  in this priority: (1) hosted Yekiva MMS API (`POST /tts/v1/speak` + `X-API-Key`,
+  models pre-loaded, ~2.4 s/phrase, Opus ~12 KB, language codes fra/eng/swh/ln);
+  (2) local persistent micro-service `YEKIVA_VOICE_URL`; (3) local synthesis
+  (facebook/mms-tts-fra, facebook/mms-tts-swh) via transformers + CPU torch.
+  Lingala uses the Swahili voice model upstream (text stays Lingala), else French fallback.
+Transport: upstream Opus/WAV -> converted once to MP3 (~7 KB for 2 s, 10x lighter)
+  with ffmpeg before sending to the phone (low-bandwidth friendly).
 - Nothing is pre-generated at build time: packs carry text only. The app caches each
   utterance on-device (IndexedDB) after the first play, for offline replay.
-- Server setup: `pip install piper-tts` once; voices download automatically on first use.
-- Without the engine: the server answers `501` and the app falls back to the phone voice.
+- `YEKIVA_MMS_KEY` is **not required in the project `server/.env`**. Yekiva sends
+  the request without `X-API-Key` when no server-side key is configured, so an API
+  configured for keyless/allowlisted access works without it. The server can also
+  read a key already present in its own process environment or `/etc/tts-api.env`
+  (override path with `YEKIVA_MMS_KEY_FILE`); recognized names include
+  `YEKIVA_MMS_KEY`, `MMS_API_KEY`, `TTS_API_KEY`, `API_KEY` and `X_API_KEY`.
+  This reads a *local file on the Yekiva server*; a remote VPS file cannot be read
+  by Termux. The supplied API specification says unauthenticated calls return 401;
+  in that case, configure API access for the Yekiva server or inject the existing
+  secret into the Yekiva server environment. Never put it in the APK.
+- Server setup (fallback only): install `torch` from the CPU wheel index plus `transformers`
+  virtual environment, and install `ffmpeg`; put that environment's `bin/` first in `PATH`
+  when starting Node (the voice service calls `python3`);
+  Meta voices download automatically on first use. Optional persistent micro-service:
+  `YEKIVA_VOICE_URL=http://127.0.0.1:5001` (see RAPPORT_MODELES_META.md).
+- A hosted API `401` is surfaced as an auth error (no silent switch to another TTS).
+  Network/engine failures may use the self-hosted Meta MMS fallback; the phone voice
+  is only an emergency offline fallback.
 
 Later, to distribute packs: a plain `index.json` file published (GitHub Pages / Releases) listing packs, versions and hashes; the app downloads what changed when there is a connection. No application server needed for that.

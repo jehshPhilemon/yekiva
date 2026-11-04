@@ -1,0 +1,91 @@
+{
+  "id": "voyelle-o",
+  "title": "Vokali O",
+  "symbol": "O · o",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "glyph": "o:lower_script",
+        "say": {
+          "text": "Herufi O inatoa sauti o, kama katika neno moto. Sikiliza : o."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "glyph": "o:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi o, kisha sema : o."
+        },
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : moto. Gusa herufi ya sauti o."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "word": "moto",
+        "say": {
+          "text": "Sema neno : moto."
+        },
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

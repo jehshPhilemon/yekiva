@@ -2,10 +2,10 @@
   "schema": 1,
   "id": "fr",
   "language": "fr",
-  "version": 1,
+  "version": 4,
   "name": "Français",
   "ui": {
-    "color": "#1565C0"
+    "color": "#1769AA"
   },
   "prompts": {
     "language_pick": {
@@ -61,11 +61,75 @@
   },
   "tracks": {
     "adult": [
+      "letter-a",
       "i-l",
-      "syllables-li"
+      "syllables-li",
+      "syllabes-ma",
+      "voyelle-e",
+      "voyelle-o",
+      "voyelle-u",
+      "consonne-m",
+      "consonne-n",
+      "consonne-t",
+      "consonne-s",
+      "lettre-b",
+      "lettre-c",
+      "lettre-d",
+      "lettre-f",
+      "lettre-g",
+      "lettre-h",
+      "lettre-j",
+      "lettre-k",
+      "lettre-p",
+      "lettre-q",
+      "lettre-r",
+      "lettre-v",
+      "lettre-w",
+      "lettre-x",
+      "lettre-y",
+      "lettre-z",
+      "alphabet-1",
+      "syllabes-ba",
+      "digraphe-ch",
+      "digraphe-ou",
+      "digraphe-on",
+      "digraphe-an",
+      "digraphe-oi",
+      "digraphe-gn",
+      "mots-simples",
+      "phrase-1",
+      "lecture-1"
     ],
     "child": [
-      "i-l"
+      "letter-a",
+      "i-l",
+      "voyelle-e",
+      "voyelle-o",
+      "voyelle-u",
+      "consonne-m",
+      "lettre-b",
+      "lettre-d",
+      "lettre-p",
+      "syllabes-ba",
+      "mots-simples"
     ]
+  },
+  "labels": {
+    "pathTitle": "Mon parcours",
+    "completed": "leçons terminées",
+    "audience": {
+      "adult": "Adulte",
+      "child": "Enfant"
+    },
+    "actions": {
+      "start": "Commencer",
+      "change": "Langues",
+      "photo": "Photo",
+      "server": "Voix",
+      "replay": "Réécouter",
+      "continue": "Continuer",
+      "clear": "Effacer",
+      "validate": "Valider"
+    }
   }
 }

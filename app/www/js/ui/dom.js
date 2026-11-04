@@ -7,6 +7,9 @@ export function h(tag, attrs = {}, ...children) {
     else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
     else el.setAttribute(k, v);
   }
-  for (const c of children.flat()) el.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  for (const child of children.flat()) {
+    if (child == null || child === false) continue;
+    el.append(child instanceof Node ? child : document.createTextNode(String(child)));
+  }
   return el;
 }

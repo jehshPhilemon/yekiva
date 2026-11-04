@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-ch",
+  "title": "Sauti CH",
+  "symbol": "ch",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ch"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : C na H pamoja hutoa sauti moja : ch, kama katika chai. Gusa ch."
+        },
+        "choices": [
+          {
+            "id": "ch",
+            "text": "ch"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "sh",
+            "text": "sh"
+          }
+        ],
+        "answer": "ch",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "chai"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno chai. Gusa neno chai."
+        },
+        "choices": [
+          {
+            "id": "chai",
+            "text": "chai"
+          },
+          {
+            "id": "chakula",
+            "text": "chakula"
+          },
+          {
+            "id": "chupa",
+            "text": "chupa"
+          }
+        ],
+        "answer": "chai",
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "chai"
+      ],
+      "params": {
+        "word": "chai",
+        "say": {
+          "text": "Sema neno : chai."
+        },
+        "context": {
+          "letter": "ch",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

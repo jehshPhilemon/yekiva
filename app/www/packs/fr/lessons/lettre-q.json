@@ -1,0 +1,91 @@
+{
+  "id": "lettre-q",
+  "title": "La lettre Q",
+  "symbol": "Q · q",
+  "icon": "star",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "La lettre Q fait le son k, presque toujours avec U, comme dans quatre. Écoute bien : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "Trace la lettre q en suivant les pointillés, puis dis : k."
+        },
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : quatre. Touche la lettre du son k."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "word": "quatre",
+        "say": {
+          "text": "Dis le mot : quatre."
+        },
+        "context": {
+          "letter": "Q · q",
+          "word": "quatre",
+          "icon": "star"
+        }
+      }
+    }
+  ]
+}

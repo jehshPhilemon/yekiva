@@ -115,6 +115,14 @@ function main() {
         for (const a of [p.say?.audio, ...(p.choices ?? []).map((c) => c.audio)].filter(Boolean)) {
           err(S(`'audio' is forbidden (${a}) — voice is generated at runtime via POST /v1/speak`));
         }
+        // Images (Muse Image cartoons): optional, but a referenced file must exist in the pack.
+        for (const img of [p.image, ...(p.choices ?? []).map((c) => c.image)].filter(Boolean)) {
+          if (typeof img !== "string" || img.includes("..") || img.startsWith("/")) {
+            err(S(`bad image path '${img}' (relative path inside the pack expected)`));
+          } else if (!existsSync(join(pack.dir, img))) {
+            err(S(`image not found: ${img} (run tools/illustrate-pack.mjs ${pack.id})`));
+          }
+        }
       });
     }
     if (show) {

@@ -1,0 +1,91 @@
+{
+  "id": "lettre-f",
+  "title": "Herufi F",
+  "symbol": "F · f",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "Herufi F inatoa sauti fff, kama katika neno farasi. Sikiliza : fff."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi f, kisha sema : fff."
+        },
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : farasi. Gusa herufi ya sauti fff."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "word": "farasi",
+        "say": {
+          "text": "Sema neno : farasi."
+        },
+        "context": {
+          "letter": "F · f",
+          "word": "farasi",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

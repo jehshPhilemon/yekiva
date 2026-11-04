@@ -1,0 +1,91 @@
+{
+  "id": "lettre-h",
+  "title": "Herufi H",
+  "symbol": "H · h",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "glyph": "h:lower_script",
+        "say": {
+          "text": "Herufi H inatoa sauti hhh, kama katika neno hewa. Sikiliza : hhh."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "glyph": "h:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi h, kisha sema : hhh."
+        },
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : hewa. Gusa herufi ya sauti hhh."
+        },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "word": "hewa",
+        "say": {
+          "text": "Sema neno : hewa."
+        },
+        "context": {
+          "letter": "H · h",
+          "word": "hewa",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

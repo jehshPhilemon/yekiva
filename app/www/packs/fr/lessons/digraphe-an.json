@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-an",
+  "title": "Le son AN",
+  "symbol": "an",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "an"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : A et N ensemble chantent un seul son : an, comme dans maman. Touche an."
+        },
+        "choices": [
+          {
+            "id": "an",
+            "text": "an"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "on",
+            "text": "on"
+          }
+        ],
+        "answer": "an",
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "maman"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot maman. Touche le mot maman."
+        },
+        "choices": [
+          {
+            "id": "maman",
+            "text": "maman"
+          },
+          {
+            "id": "maman",
+            "text": "maman"
+          },
+          {
+            "id": "papa",
+            "text": "papa"
+          }
+        ],
+        "answer": "maman",
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "maman"
+      ],
+      "params": {
+        "word": "maman",
+        "say": {
+          "text": "Dis le mot : maman."
+        },
+        "context": {
+          "letter": "an",
+          "word": "maman",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

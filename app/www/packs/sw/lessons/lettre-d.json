@@ -1,0 +1,91 @@
+{
+  "id": "lettre-d",
+  "title": "Herufi D",
+  "symbol": "D · d",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "glyph": "d:lower_script",
+        "say": {
+          "text": "Herufi D inatoa sauti ddd, kama katika neno dada. Sikiliza : ddd."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "glyph": "d:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi d, kisha sema : ddd."
+        },
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : dada. Gusa herufi ya sauti ddd."
+        },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "word": "dada",
+        "say": {
+          "text": "Sema neno : dada."
+        },
+        "context": {
+          "letter": "D · d",
+          "word": "dada",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

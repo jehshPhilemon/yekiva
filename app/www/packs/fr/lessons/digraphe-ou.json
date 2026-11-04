@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-ou",
+  "title": "Le son OU",
+  "symbol": "ou",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ou"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : O et U ensemble chantent un seul son : ou, comme dans loup. Touche ou."
+        },
+        "choices": [
+          {
+            "id": "ou",
+            "text": "ou"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "ou",
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "loup"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot loup. Touche le mot loup."
+        },
+        "choices": [
+          {
+            "id": "loup",
+            "text": "loup"
+          },
+          {
+            "id": "loupe",
+            "text": "loupe"
+          },
+          {
+            "id": "lune",
+            "text": "lune"
+          }
+        ],
+        "answer": "loup",
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "loup"
+      ],
+      "params": {
+        "word": "loup",
+        "say": {
+          "text": "Dis le mot : loup."
+        },
+        "context": {
+          "letter": "ou",
+          "word": "loup",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

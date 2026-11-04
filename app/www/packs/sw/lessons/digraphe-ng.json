@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-ng",
+  "title": "Sauti NG",
+  "symbol": "ng",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ng"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na G pamoja hutoa sauti moja : ng, kama mwishoni mwa neno unga. Gusa ng."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "ng",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "unga"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno unga. Gusa neno unga."
+        },
+        "choices": [
+          {
+            "id": "unga",
+            "text": "unga"
+          },
+          {
+            "id": "anga",
+            "text": "anga"
+          },
+          {
+            "id": "unga",
+            "text": "unga"
+          }
+        ],
+        "answer": "unga",
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "unga"
+      ],
+      "params": {
+        "word": "unga",
+        "say": {
+          "text": "Sema neno : unga."
+        },
+        "context": {
+          "letter": "ng",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

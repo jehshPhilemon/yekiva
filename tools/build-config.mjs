@@ -2,6 +2,7 @@
 // Injects the Yekiva server URL (+ optional app token) into app/www/js/config.js at build/dev time.
 // The learner NEVER types a URL: this is the only place the server address enters the app.
 //   node tools/build-config.mjs --api http://192.168.1.10:8787 [--token xxx]
+// Mint app keys offline with: node tools/make-key.mjs (see docs/APP_KEYS.md).
 //   node tools/build-config.mjs --reset   (back to same-origin placeholders)
 // Reads server/.env (YEKIVA_SERVER_URL, APP_TOKEN) when flags are absent.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";

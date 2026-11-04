@@ -1,0 +1,174 @@
+{
+  "id": "i-l",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "glyph": "l:lower_script",
+        "say": {
+          "text": "Yoka mongongo l na liloba liso. Tala ndenge ya kokoma l."
+        },
+        "durationMs": 2500,
+        "context": {
+          "letter": "L · l",
+          "word": "liso",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "glyph": "l:lower_script",
+        "say": {
+          "text": "L lokola na liso. Landa bilembo mpo na kokoma l."
+        },
+        "context": {
+          "letter": "L · l",
+          "word": "liso",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "watch_write",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "glyph": "i:lower_script",
+        "say": {
+          "text": "Yoka mongongo i na liloba liso. Tala ndenge ya kokoma i."
+        },
+        "durationMs": 3000,
+        "context": {
+          "letter": "I · i",
+          "word": "liso",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "glyph": "i:lower_script",
+        "say": {
+          "text": "I ezali na liloba liso. Landa bilembo mpo na kokoma i."
+        },
+        "context": {
+          "letter": "I · i",
+          "word": "liso",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : lala. Simba lɛtrɛ ya mongongo l."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "word": "lala",
+        "say": {
+          "text": "Loba liloba : lala."
+        },
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : imba. Simba lɛtrɛ ya mongongo i."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "word": "imba",
+        "say": {
+          "text": "Loba liloba : imba."
+        },
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "eye"
+        }
+      }
+    }
+  ],
+  "title": "Bilembo ya ebandeli",
+  "symbol": "L · I",
+  "icon": "eye"
+}

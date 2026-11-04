@@ -1,0 +1,91 @@
+{
+  "id": "lettre-w",
+  "title": "Herufi W",
+  "symbol": "W · w",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "glyph": "w:lower_script",
+        "say": {
+          "text": "Herufi W inatoa sauti www, kama katika neno wali. Sikiliza : www."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "glyph": "w:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi w, kisha sema : www."
+        },
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : wali. Gusa herufi ya sauti www."
+        },
+        "choices": [
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "word": "wali",
+        "say": {
+          "text": "Sema neno : wali."
+        },
+        "context": {
+          "letter": "W · w",
+          "word": "wali",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

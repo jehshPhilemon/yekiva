@@ -1,0 +1,91 @@
+{
+  "id": "lettre-z",
+  "title": "Herufi Z",
+  "symbol": "Z · z",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "glyph": "z:lower_script",
+        "say": {
+          "text": "Herufi Z inatoa sauti zzz, kama katika neno zabibu. Sikiliza : zzz."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "glyph": "z:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi z, kisha sema : zzz."
+        },
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : zabibu. Gusa herufi ya sauti zzz."
+        },
+        "choices": [
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "word": "zabibu",
+        "say": {
+          "text": "Sema neno : zabibu."
+        },
+        "context": {
+          "letter": "Z · z",
+          "word": "zabibu",
+          "icon": "plant"
+        }
+      }
+    }
+  ]
+}

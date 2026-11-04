@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-sh",
+  "title": "Mongongo SH",
+  "symbol": "sh",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "sh"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : S na H elongo ebimisaka mongongo moko : sh, lokola na shapo. Simba sh."
+        },
+        "choices": [
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "ch",
+            "text": "ch"
+          }
+        ],
+        "answer": "sh",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "shapo"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba shapo. Simba liloba shapo."
+        },
+        "choices": [
+          {
+            "id": "shapo",
+            "text": "shapo"
+          },
+          {
+            "id": "sasa",
+            "text": "sasa"
+          },
+          {
+            "id": "shapo",
+            "text": "shapo"
+          }
+        ],
+        "answer": "shapo",
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "shapo"
+      ],
+      "params": {
+        "word": "shapo",
+        "say": {
+          "text": "Loba liloba : shapo."
+        },
+        "context": {
+          "letter": "sh",
+          "word": "shapo",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

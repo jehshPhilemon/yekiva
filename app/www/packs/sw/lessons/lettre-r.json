@@ -1,0 +1,91 @@
+{
+  "id": "lettre-r",
+  "title": "Herufi R",
+  "symbol": "R · r",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "Herufi R inatoa sauti rrr, kama katika neno rafiki. Sikiliza : rrr."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi r, kisha sema : rrr."
+        },
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : rafiki. Gusa herufi ya sauti rrr."
+        },
+        "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "word": "rafiki",
+        "say": {
+          "text": "Sema neno : rafiki."
+        },
+        "context": {
+          "letter": "R · r",
+          "word": "rafiki",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

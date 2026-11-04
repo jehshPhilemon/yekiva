@@ -1,42 +1,105 @@
-// Text-free progress path: one dot per lesson, a star once it is done.
-// Narrated by the pack (prompts.path_hint): every screen speaks, not just setup.
-// Corner: restart setup. Bottom row: photo lesson (read the world) + server status.
+// Visual learning path: each step carries a contextual symbol, a short title and visible progress.
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
 import { profile, progress } from "../core/storage.js";
 import { screenPrompt } from "../core/narrate.js";
 
-export function pathScreen({ services, state, go }) {
+export async function pathScreen({ services, state, go }) {
   const { language: lang, audience } = state;
   const done = progress.load(lang.code, audience);
-  const lessons = lang.tracks[audience] ?? [];
+  const lessonIds = lang.tracks[audience] ?? [];
+  const labels = lang.labels ?? {};
+  const actions = labels.actions ?? {};
+  const lessons = await Promise.all(lessonIds.map(async (id) => {
+    try {
+      return await services.packs.loadLesson(lang, id);
+    } catch {
+      return { id, title: id, symbol: id, icon: "book", steps: [] };
+    }
+  }));
+  const doneCount = lessonIds.filter((id) => done[id]).length;
 
-  const dots = lessons.map((id) => {
-    const b = h("button", { class: `dot${done[id] ? " done" : ""}`, type: "button", "aria-label": id });
-    b.style.background = lang.color;
-    b.append(icon(done[id] ? "star" : "play", 56));
-    b.addEventListener("click", () => go("lesson", { lessonId: id }));
-    return b;
+  const change = tile("swap", {
+    onClick: () => {
+      profile.clear();
+      go("language");
+    },
+    size: 28,
+    label: actions.change ?? "change language",
+    caption: actions.change,
+    className: "path-change",
+  });
+  const progressBadge = h(
+    "div",
+    {
+      class: "path-progress",
+      role: "status",
+      "aria-label": `${doneCount} / ${lessonIds.length} ${labels.completed ?? "lessons completed"}`,
+    },
+    icon("star", 25),
+    h("span", {}, `${doneCount}/${lessonIds.length}`),
+  );
+  const header = h(
+    "div",
+    { class: "path-header" },
+    h("h1", { class: "path-title" }, labels.pathTitle ?? "Mon parcours"),
+    progressBadge,
+  );
+
+  const nodes = lessons.map((lesson, index) => {
+    const isDone = Boolean(done[lesson.id]);
+    const context = lesson.steps?.find((step) => step.params?.context)?.params?.context;
+    const title = lesson.title ?? lesson.id;
+    const symbol = lesson.symbol ?? context?.letter ?? String(index + 1);
+    const visual = lesson.icon ?? context?.icon ?? "book";
+    const card = h(
+      "button",
+      {
+        class: `path-node${isDone ? " is-complete" : ""}`,
+        type: "button",
+        "aria-label": `${title} — ${symbol}`,
+      },
+      h("span", { class: "path-node-art" }, icon(visual, 54)),
+      h(
+        "span",
+        { class: "path-node-info" },
+        h("span", { class: "path-node-symbol" }, symbol),
+        h("span", { class: "path-node-title" }, title),
+      ),
+      h("span", { class: "path-node-action", "aria-hidden": "true" }, icon(isDone ? "star" : "play", 30)),
+    );
+    card.style.setProperty("--path-color", lang.color);
+    card.addEventListener("click", () => go("lesson", { lessonId: lesson.id }));
+    return card;
   });
 
   const online = services.transcriber.available();
-  const change = h("button", { class: "corner", type: "button", "aria-label": "changer" }, icon("swap", 28));
-  change.addEventListener("click", () => {
-    profile.clear();
-    go("language");
+  const photo = tile("camera", {
+    onClick: () => go("photo"), size: 40,
+    label: actions.photo ?? "photo lesson", caption: actions.photo,
+    className: "path-action",
   });
+  const server = tile(online ? "check" : "cloudoff", {
+    onClick: () => go("server"), size: 40,
+    label: actions.server ?? "voice status", caption: actions.server,
+    className: "path-action",
+  });
+  const replay = tile("volume", {
+    onClick: () => screenPrompt(services, lang, "path_hint"), size: 40,
+    label: actions.replay ?? "repeat", caption: actions.replay,
+    className: "path-action",
+  });
+  const bar = h("div", { class: "path-actions" }, photo, server, replay);
 
-  const replay = tile("volume", { onClick: () => screenPrompt(services, lang, "path_hint"), size: 56, label: "reecouter" });
-  const bar = h(
+  const screen = h(
     "div",
-    { class: "row small" },
-    tile("camera", { onClick: () => go("photo"), size: 56, label: "photo" }),
-    tile(online ? "check" : "cloudoff", { onClick: () => go("server"), size: 56, label: "serveur" }),
-    replay,
+    { class: "screen path-screen" },
+    change,
+    header,
+    h("div", { class: "path-list" }, nodes),
+    bar,
   );
-
-  const screen = h("div", { class: "screen" }, change, h("div", { class: "path" }, dots), bar);
   screen.destroy = () => services.speaker.stop();
   screen.prompt = () => screenPrompt(services, lang, "path_hint");
   queueMicrotask(() => screen.prompt());

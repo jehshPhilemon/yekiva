@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-ph",
+  "title": "Mongongo PH",
+  "symbol": "ph",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ph"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : P na H elongo ebimisaka mongongo moko : f, lokola na photo. Simba ph."
+        },
+        "choices": [
+          {
+            "id": "ph",
+            "text": "ph"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          }
+        ],
+        "answer": "ph",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "photo"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba photo. Simba liloba photo."
+        },
+        "choices": [
+          {
+            "id": "photo",
+            "text": "photo"
+          },
+          {
+            "id": "papa",
+            "text": "papa"
+          },
+          {
+            "id": "photo",
+            "text": "photo"
+          }
+        ],
+        "answer": "photo",
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "photo"
+      ],
+      "params": {
+        "word": "photo",
+        "say": {
+          "text": "Loba liloba : photo."
+        },
+        "context": {
+          "letter": "ph",
+          "word": "photo",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

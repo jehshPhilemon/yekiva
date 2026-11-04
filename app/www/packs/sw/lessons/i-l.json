@@ -9,9 +9,14 @@
       "params": {
         "glyph": "l:lower_script",
         "say": {
-          "text": "l"
+          "text": "Sikiliza sauti l katika neno lala. Tazama herufi l ikiandikwa."
         },
-        "durationMs": 2500
+        "durationMs": 2500,
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        }
       }
     },
     {
@@ -22,7 +27,12 @@
       "params": {
         "glyph": "l:lower_script",
         "say": {
-          "text": "l"
+          "text": "Sauti l iko katika neno lala. Fuata nukta kuandika herufi l."
+        },
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
         }
       }
     },
@@ -34,9 +44,14 @@
       "params": {
         "glyph": "i:lower_script",
         "say": {
-          "text": "i"
+          "text": "Sikiliza sauti i mwanzoni mwa neno imba. Tazama herufi i ikiandikwa."
         },
-        "durationMs": 3000
+        "durationMs": 3000,
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "music"
+        }
       }
     },
     {
@@ -47,9 +62,113 @@
       "params": {
         "glyph": "i:lower_script",
         "say": {
-          "text": "i"
+          "text": "Sauti i iko katika neno imba. Fuata nukta kuandika herufi i."
+        },
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : lala. Gusa herufi ya sauti l."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "word": "lala",
+        "say": {
+          "text": "Sema neno : lala."
+        },
+        "context": {
+          "letter": "L · l",
+          "word": "lala",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : imba. Gusa herufi ya sauti i."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "word": "imba",
+        "say": {
+          "text": "Sema neno : imba."
+        },
+        "context": {
+          "letter": "I · i",
+          "word": "imba",
+          "icon": "moon"
         }
       }
     }
-  ]
+  ],
+  "title": "Herufi za mwanzo",
+  "symbol": "L · I",
+  "icon": "moon"
 }

@@ -1,0 +1,91 @@
+{
+  "id": "consonne-s",
+  "title": "La consonne S",
+  "symbol": "S · s",
+  "icon": "star",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "La lettre S fait le son sss, comme dans soleil. Écoute bien : sss."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "Trace la lettre s en suivant les pointillés, puis dis : sss."
+        },
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : soleil. Touche la lettre du son sss."
+        },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "word": "soleil",
+        "say": {
+          "text": "Dis le mot : soleil."
+        },
+        "context": {
+          "letter": "S · s",
+          "word": "soleil",
+          "icon": "star"
+        }
+      }
+    }
+  ]
+}

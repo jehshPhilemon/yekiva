@@ -1,0 +1,91 @@
+{
+  "id": "lettre-g",
+  "title": "La lettre G",
+  "symbol": "G · g",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "glyph": "g:lower_script",
+        "say": {
+          "text": "La lettre G fait le son ggg, comme dans gâteau. Écoute bien : ggg."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "glyph": "g:lower_script",
+        "say": {
+          "text": "Trace la lettre g en suivant les pointillés, puis dis : ggg."
+        },
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : gâteau. Touche la lettre du son ggg."
+        },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "word": "gâteau",
+        "say": {
+          "text": "Dis le mot : gâteau."
+        },
+        "context": {
+          "letter": "G · g",
+          "word": "gâteau",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

@@ -9,9 +9,14 @@
       "params": {
         "glyph": "l:lower_script",
         "say": {
-          "text": "l"
+          "text": "L comme dans livre. Écoute le son l, puis regarde comment la lettre l s’écrit."
         },
-        "durationMs": 2500
+        "durationMs": 2500,
+        "context": {
+          "letter": "L · l",
+          "word": "livre",
+          "icon": "book"
+        }
       }
     },
     {
@@ -22,7 +27,12 @@
       "params": {
         "glyph": "l:lower_script",
         "say": {
-          "text": "l"
+          "text": "L comme dans livre. Trace la lettre l en suivant les pointillés."
+        },
+        "context": {
+          "letter": "L · l",
+          "word": "livre",
+          "icon": "book"
         }
       }
     },
@@ -34,9 +44,14 @@
       "params": {
         "glyph": "i:lower_script",
         "say": {
-          "text": "i"
+          "text": "I comme dans image. Écoute le son i, puis regarde comment la lettre i s’écrit."
         },
-        "durationMs": 3000
+        "durationMs": 3000,
+        "context": {
+          "letter": "I · i",
+          "word": "image",
+          "icon": "picture"
+        }
       }
     },
     {
@@ -47,9 +62,113 @@
       "params": {
         "glyph": "i:lower_script",
         "say": {
-          "text": "i"
+          "text": "I comme dans image. Trace la lettre i en suivant les pointillés."
+        },
+        "context": {
+          "letter": "I · i",
+          "word": "image",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : livre. Touche la lettre du son l."
+        },
+        "choices": [
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "l",
+        "context": {
+          "letter": "L · l",
+          "word": "livre",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "l"
+      ],
+      "params": {
+        "word": "livre",
+        "say": {
+          "text": "Dis le mot : livre."
+        },
+        "context": {
+          "letter": "L · l",
+          "word": "livre",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : image. Touche la lettre du son i."
+        },
+        "choices": [
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          }
+        ],
+        "answer": "i",
+        "context": {
+          "letter": "I · i",
+          "word": "image",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "i"
+      ],
+      "params": {
+        "word": "image",
+        "say": {
+          "text": "Dis le mot : image."
+        },
+        "context": {
+          "letter": "I · i",
+          "word": "image",
+          "icon": "book"
         }
       }
     }
-  ]
+  ],
+  "title": "Premières lettres",
+  "symbol": "L · I",
+  "icon": "book"
 }

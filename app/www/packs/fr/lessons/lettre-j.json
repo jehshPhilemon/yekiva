@@ -1,0 +1,91 @@
+{
+  "id": "lettre-j",
+  "title": "La lettre J",
+  "symbol": "J · j",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "glyph": "j:lower_script",
+        "say": {
+          "text": "La lettre J fait le son jjj, comme dans jus. Écoute bien : jjj."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "J · j",
+          "word": "jus",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "glyph": "j:lower_script",
+        "say": {
+          "text": "Trace la lettre j en suivant les pointillés, puis dis : jjj."
+        },
+        "context": {
+          "letter": "J · j",
+          "word": "jus",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : jus. Touche la lettre du son jjj."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J · j",
+          "word": "jus",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "word": "jus",
+        "say": {
+          "text": "Dis le mot : jus."
+        },
+        "context": {
+          "letter": "J · j",
+          "word": "jus",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

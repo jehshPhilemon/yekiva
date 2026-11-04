@@ -1,0 +1,101 @@
+{
+  "id": "alphabet-1",
+  "title": "Majina ya herufi",
+  "symbol": "A · B · C",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "B"
+      ],
+      "params": {
+        "say": {
+          "text": "Herufi zina majina. Sikiliza na gusa herufi B."
+        },
+        "choices": [
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "A",
+            "text": "A"
+          },
+          {
+            "id": "C",
+            "text": "C"
+          }
+        ],
+        "answer": "B",
+        "context": {
+          "letter": "B",
+          "word": "herufi B",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "E"
+      ],
+      "params": {
+        "say": {
+          "text": "Gusa herufi E."
+        },
+        "choices": [
+          {
+            "id": "E",
+            "text": "E"
+          },
+          {
+            "id": "F",
+            "text": "F"
+          },
+          {
+            "id": "O",
+            "text": "O"
+          }
+        ],
+        "answer": "E",
+        "context": {
+          "letter": "E",
+          "word": "herufi E",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "M"
+      ],
+      "params": {
+        "say": {
+          "text": "Gusa herufi M."
+        },
+        "choices": [
+          {
+            "id": "M",
+            "text": "M"
+          },
+          {
+            "id": "N",
+            "text": "N"
+          },
+          {
+            "id": "S",
+            "text": "S"
+          }
+        ],
+        "answer": "M",
+        "context": {
+          "letter": "M",
+          "word": "herufi M",
+          "icon": "book"
+        }
+      }
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 // The server URL is baked in at build time (tools/build-config.mjs): the learner never types it.
 // Placeholders ("__YEKIVA_SERVER_URL__") or empty = offline mode.
 // Yekiva routes:
-//   POST {server}/v1/speak              { text, lang? } -> audio/wav (natural voice, runtime)
+//   POST {server}/v1/speak              { text, lang? } -> audio/mpeg (Meta MMS-TTS voice, runtime)
 //   POST {server}/v1/transcribe         audio/wav -> { text } (Meta transcription)
 //   POST {server}/v1/lesson-from-photo  image/* -> lesson JSON (Meta vision)
 // Meta routes (server-side only): POST https://api.meta.ai/v1/asr/transcribe, /chat/completions.

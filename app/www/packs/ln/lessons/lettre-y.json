@@ -1,0 +1,91 @@
+{
+  "id": "lettre-y",
+  "title": "Lɛtrɛ Y",
+  "symbol": "Y · y",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "Lɛtrɛ Y ezali na mongongo y, lokola na liloba yaourt. Yoka : y."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ y, mpe loba : y."
+        },
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : yaourt. Simba lɛtrɛ ya mongongo y."
+        },
+        "choices": [
+          {
+            "id": "y",
+            "text": "y"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "word": "yaourt",
+        "say": {
+          "text": "Loba liloba : yaourt."
+        },
+        "context": {
+          "letter": "Y · y",
+          "word": "yaourt",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

@@ -6,22 +6,31 @@
 - La voix naturelle est générée **au moment de l'écoute, dans l'application** :
   texte du pack → `POST {serveur-Yekiva}/v1/speak` → voix neurale (français, swahili)
   → jouée + mise en cache sur le téléphone (rejouée hors-ligne ensuite).
-- Meta fait transcription + vision (pas de TTS chez Meta — vérifié sur dev.meta.ai).
+- Muse sur l'API Meta sert à la transcription/vision/Spark. La voix reste un modèle Meta : MMS-TTS est auto-hébergé, car l'API hébergée Meta n'expose pas de route TTS.
 - Sans serveur : la voix du téléphone dépanne (robotique), les tuiles clignotent quand même.
 
-## 1. Installer la voix naturelle (une fois, sur la machine serveur)
+## 1. Voix naturelle MMS (aucune clé MMS à copier dans le projet)
+
+Le serveur appelle d'abord l'API MMS Yekiva (`https://api.jehshphilemon.com`),
+avec la clé déjà présente dans l'environnement serveur ou `/etc/tts-api.env`.
+`YEKIVA_MMS_KEY` dans `server/.env` est facultative. Si ce fichier système
+n'existe pas sur la machine qui héberge Yekiva, installer une fois le modèle Meta
+local ci-dessous :
 
 ```sh
-pip install piper-tts
-# les voix fr + sw se téléchargent seules à la première écoute
+python3 -m venv "$HOME/yekiva-mms-tts"
+"$HOME/yekiva-mms-tts/bin/python" -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+"$HOME/yekiva-mms-tts/bin/python" -m pip install transformers
+sudo apt install ffmpeg          # conversion WAV -> MP3 (10x plus léger)
+# les voix Meta (mms-tts-fra, mms-tts-swh) se téléchargent à la première écoute
 ```
 
 ## 2. Lancer le serveur + l'app
 
 ```sh
 cp .env.example server/.env
-# éditer server/.env : META_API_KEY=votre_clé  (transcription + photo ; pas besoin pour la voix)
-cd server && node --env-file=.env src/index.js   # :8787
+# META_API_KEY sert à transcription/photo. La voix MMS n'exige pas YEKIVA_MMS_KEY ici.
+cd server && PATH="$HOME/yekiva-mms-tts/bin:$PATH" node --env-file=.env src/index.js   # :8787
 ```
 
 ```sh

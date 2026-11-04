@@ -1,0 +1,91 @@
+{
+  "id": "lettre-c",
+  "title": "Lɛtrɛ C",
+  "symbol": "C · c",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "Lɛtrɛ C ezali na mongongo k, lokola na liloba classe. Yoka : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "C · c",
+          "word": "classe",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ c, mpe loba : k."
+        },
+        "context": {
+          "letter": "C · c",
+          "word": "classe",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : classe. Simba lɛtrɛ ya mongongo k."
+        },
+        "choices": [
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "classe",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "word": "classe",
+        "say": {
+          "text": "Loba liloba : classe."
+        },
+        "context": {
+          "letter": "C · c",
+          "word": "classe",
+          "icon": "book"
+        }
+      }
+    }
+  ]
+}

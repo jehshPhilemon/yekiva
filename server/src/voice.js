@@ -1,82 +1,46 @@
-// Natural voice, generated AT REQUEST TIME inside the Yekiva server (never pre-generated,
-// never robotic phone TTS as the primary voice).
+// Natural voice, generated AT REQUEST TIME (never pre-generated,
+// never robotic phone TTS as the primary voice). 100% Meta MMS models.
 //
-// Honesty note (verified 2026-10-28 against https://dev.meta.ai/docs/models):
-// Meta's Model API has NO text-to-speech endpoint — only transcription (Muse Voice
-// Transcribe), text/vision (Muse Spark/Wonder), image (Muse Image) and segmentation.
-// So the natural voice is a neural TTS engine (Piper, open-source, on-device) running here
-// on the server, per request, per language. Meta keeps doing what it really does:
-// transcription (repeat exercises) + vision (photo lessons).
-//
-// Voices (Piper, rhasspy/piper-voices on HuggingFace, downloaded once, cached on disk):
-//   fr -> fr_FR-upmc-medium (French, natural female voice)
-//   sw -> sw_CD-lanfrica-medium (Swahili, natural voice)
-//   default (ln, en, ...): fr voice with espeak fallback phonemes (replace with a native
-//   voice by setting YEKIVA_VOICES='{"ln":"...onnx path or URL..."}').
-// Requires: python3 + `pip install piper-tts` on the server machine (once).
-// Without it: speak() throws NotImplementedYet -> the server answers 501 ->
+// Priority per utterance (first success wins):
+//   1. Hosted Yekiva MMS API (models pre-loaded, ~2.4 s/phrase, Opus ~12 KB).
+//      Configure: YEKIVA_MMS_URL + YEKIVA_MMS_KEY (server-side only, never in the app).
+//   2. Persistent local micro-service (mms_server.py on the VPS): YEKIVA_VOICE_URL.
+//   3. Local synthesis (transformers + CPU torch, needs pip install + ffmpeg).
+// Without any engine: speak() throws { status: 501 } -> the server answers 501 ->
 // the app falls back to the phone voice (offline) instead of breaking.
+//
+// Language codes sent to the hosted API: fra / eng / swh / ln (Lingala text,
+// Swahili voice model — per the API spec). Local codes stay fr / sw / ln.
+//
+// The app always calls OUR /v1/speak (same JSON, same MP3 answer): the API key
+// never leaves the server. Response stays audio/mpeg for low-bandwidth phones;
+// the APP caches it in IndexedDB (session + offline replay).
+//
+// Env:
+//   YEKIVA_MMS_URL    e.g. https://api.jehshphilemon.com (no trailing /tts path needed)
+//   YEKIVA_MMS_KEY    X-API-Key value (server-side only)
+//   YEKIVA_MMS_FORMAT opus|mp3|wav requested upstream (default opus, lightest)
+//   YEKIVA_VOICE_URL  legacy local micro-service base (fallback)
+//   YEKIVA_MP3_QUALITY lame -q:a value, default 6 (~24 kbps mono 16 kHz, clear voice)
 import { spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, unlinkSync } from "node:fs";
+import { existsSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
+import { resolveMmsApiKey } from "./mms-config.js";
 
-const DEFAULT_VOICES = {
-  fr: "fr_FR-upmc-medium",
-  sw: "sw_CD-lanfrica-medium",
-};
-const HF = "https://huggingface.co/rhasspy/piper-voices/resolve/main";
-const HF_PATH = {
-  "fr_FR-upmc-medium": "fr/fr_FR/upmc/medium/fr_FR-upmc-medium.onnx",
-  "sw_CD-lanfrica-medium": "sw/sw_CD/lanfrica/medium/sw_CD-lanfrica-medium.onnx",
-};
+const MMS_MODELS = { fr: "facebook/mms-tts-fra", sw: "facebook/mms-tts-swh" };
+// Hosted API codes per app language (spec: Lingala text, Swahili voice).
+const HOSTED_LANG = { fr: "fra", sw: "swh", ln: "ln", en: "eng" };
+const FALLBACK_LANG = "fr";
+const MP3_MIME = "audio/mpeg";
+const DEFAULT_MMS_URL = "https://api.jehshphilemon.com";
 
-function voiceDir() {
-  const dir = process.env.YEKIVA_VOICES_DIR ?? join(tmpdir(), "yekiva-voices");
-  mkdirSync(dir, { recursive: true });
-  return dir;
+function modelFor(lang) {
+  return MMS_MODELS[lang] ?? MMS_MODELS[FALLBACK_LANG];
 }
 
-function voiceFor(lang) {
-  try {
-    const custom = JSON.parse(process.env.YEKIVA_VOICES ?? "{}");
-    if (custom[lang]) return custom[lang];
-  } catch { /* ignore bad JSON */ }
-  if (process.env[`YEKIVA_VOICE_${String(lang ?? "").toUpperCase()}`]) {
-    return process.env[`YEKIVA_VOICE_${String(lang ?? "").toUpperCase()}`];
-  }
-  return DEFAULT_VOICES[lang] ?? DEFAULT_VOICES.fr;
-}
-
-/** Ensures the .onnx (+ .json) voice model is on disk; downloads it once from HuggingFace. */
-export function ensureVoice(name) {
-  if (name.endsWith(".onnx") && existsSync(name)) return name;
-  const dir = voiceDir();
-  const base = `${name}.onnx`;
-  const model = join(dir, base);
-  if (existsSync(model)) return model;
-  const remote = HF_PATH[name];
-  if (!remote) throw new Error(`unknown voice '${name}' (set YEKIVA_VOICES to map it)`);
-  for (const suffix of ["", ".json"]) {
-    const dest = join(dir, `${name}.onnx${suffix}`);
-    if (existsSync(dest)) continue;
-    const url = `${HF}/${remote}${suffix}`;
-    const dl = spawnSync("curl", ["-sSL", "--fail", "-o", dest, url], { encoding: "utf8" });
-    if (dl.status !== 0 || !existsSync(dest)) {
-      throw new Error(`voice download failed: ${url}`);
-    }
-  }
-  return model;
-}
-
-function checkPython() {
-  const probe = spawnSync("python3", ["-c", "import piper"], { encoding: "utf8" });
-  if (probe.status !== 0) {
-    throw Object.assign(
-      new Error("natural voice not installed on the server: run `pip install piper-tts` once (https://github.com/rhasspy/piper)"),
-      { status: 501 },
-    );
-  }
+function hostedLang(lang) {
+  return HOSTED_LANG[lang] ?? HOSTED_LANG[FALLBACK_LANG];
 }
 
 function sanitize(text) {
@@ -85,29 +49,182 @@ function sanitize(text) {
   return t;
 }
 
-/**
- * Synthesizes `text` in `lang` at request time. Returns a WAV Buffer (16-bit mono).
- * Not cached server-side (each request is one short prompt); the APP caches in IndexedDB.
- */
-export function speak(text, { lang } = {}) {
-  checkPython();
-  const clean = sanitize(text);
-  const model = ensureVoice(voiceFor(lang));
-  const out = join(tmpdir(), `yekiva-tts-${process.pid}-${Date.now()}.wav`);
-  const r = spawnSync(
-    "python3",
-    ["-m", "piper", "--model", model, "--output_file", out],
-    { input: clean, encoding: "utf8", timeout: 30000 },
-  );
-  if (r.status !== 0 || !existsSync(out)) {
-    throw Object.assign(new Error(`voice synthesis failed${r.stderr ? `: ${String(r.stderr).slice(0, 200)}` : ""}`), { status: 502 });
-  }
-  // Piper writes 22050 Hz mono 16-bit WAV: valid for <audio> playback as-is.
-  try {
-    return readFileSync(out);
-  } finally {
+function tmpFile(ext) {
+  return join(tmpdir(), `yekiva-voice-${process.pid}-${Date.now()}-${Math.floor(Math.random() * 1e6)}.${ext}`);
+}
+
+function cleanup(...files) {
+  for (const f of files) {
     try {
-      unlinkSync(out);
+      if (f && existsSync(f)) unlinkSync(f);
     } catch { /* ignore */ }
   }
+}
+
+/**
+ * Primary path: hosted Yekiva MMS API (POST /tts/v1/speak, X-API-Key).
+ * Returns { bytes, mime } in OUR response format (MP3), or null when
+ * unconfigured/unreachable so the local fallbacks can take over.
+ * Throws only on auth/config errors (401/422) — real problems, not fallbacks.
+ */
+async function tryHostedMms(text, lang) {
+  const base = (process.env.YEKIVA_MMS_URL || DEFAULT_MMS_URL).replace(/\/+$/, "");
+  const key = resolveMmsApiKey();
+  if (!base) return null;
+  const upstreamFormat = process.env.YEKIVA_MMS_FORMAT ?? "opus";
+  let res;
+  try {
+    res = await fetch(`${base}/tts/v1/speak`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        ...(key ? { "x-api-key": key } : {}),
+      },
+      body: JSON.stringify({ language: hostedLang(lang), text, format: upstreamFormat }),
+    });
+  } catch {
+    return null; // network down -> local fallback
+  }
+  if (res.status === 401) {
+    const reason = key
+      ? "the configured server-side API key was rejected"
+      : "no API key was sent";
+    throw Object.assign(new Error(`api.jehshphilemon.com returned 401: ${reason}. The app does not contain the key; configure the API for this Yekiva server or inject the key into the Yekiva server environment.`), { status: 502 });
+  }
+  if (res.status === 422) {
+    throw Object.assign(new Error("MMS API refused the request (422): text or language invalid"), { status: 502 });
+  }
+  if (!res.ok) return null; // 500 / gateway -> local fallback
+  const ctype = res.headers.get("content-type") ?? "";
+  const buf = Buffer.from(await res.arrayBuffer());
+  if (buf.length < 500) return null;
+  if (ctype.includes("audio/mpeg") || (upstreamFormat === "mp3" && buf.slice(0, 3).toString() === "ID3")) {
+    return { bytes: buf, mime: MP3_MIME };
+  }
+  // Opus/WAV upstream -> convert once to our MP3 transport format.
+  const ext = ctype.includes("audio/wav") || upstreamFormat === "wav" ? "wav" : "ogg";
+  const inFile = tmpFile(ext);
+  writeFileSync(inFile, buf);
+  return toMp3FromFile(inFile);
+}
+
+/** Calls the optional persistent micro-service (mms_server.py on the VPS). Returns WAV bytes or null. */
+async function tryMicroService(text, lang) {
+  const base = (process.env.YEKIVA_VOICE_URL ?? "").replace(/\/+$/, "");
+  if (!base) return null;
+  try {
+    const res = await fetch(`${base}/synthesize`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ text, lang }),
+    });
+    if (!res.ok) return null;
+    const buf = Buffer.from(await res.arrayBuffer());
+    return buf.length > 1000 && buf.slice(0, 4).toString() === "RIFF" ? buf : null;
+  } catch {
+    return null;
+  }
+}
+
+const SYNTH_PY = `
+import sys, wave, io
+import torch
+from transformers import VitsModel, AutoTokenizer
+model_id, text = sys.argv[1], sys.argv[2]
+torch.manual_seed(0)
+model = VitsModel.from_pretrained(model_id).eval()
+tok = AutoTokenizer.from_pretrained(model_id)
+with torch.no_grad():
+    wav = model(**tok(text, return_tensors="pt")).waveform.squeeze().numpy()
+import numpy as np
+pcm = (np.clip(wav, -1, 1) * 32767).astype(np.int16)
+buf = io.BytesIO()
+with wave.open(buf, "wb") as w:
+    w.setnchannels(1); w.setsampwidth(2)
+    w.setframerate(model.config.sampling_rate)
+    w.writeframes(pcm.tobytes())
+sys.stdout.buffer.write(buf.getvalue())
+`;
+
+/** Local synthesis with Meta MMS-TTS (transformers + CPU torch). Returns PCM16 WAV bytes. */
+function synthesizeLocal(text, lang) {
+  const probe = spawnSync("python3", ["-c", "import torch, transformers"], { encoding: "utf8" });
+  if (probe.status !== 0) {
+    throw Object.assign(
+      new Error("voice engine not installed (optional): set YEKIVA_MMS_URL + YEKIVA_MMS_KEY in server/.env, or install the local fallback (`pip install torch transformers` + `apt install ffmpeg`). The app keeps working with the phone voice meanwhile."),
+      { status: 501 },
+    );
+  }
+  const wavFile = tmpFile("wav");
+  const r = spawnSync("python3", ["-c", SYNTH_PY, modelFor(lang), text], {
+    encoding: "buffer",
+    timeout: 120000,
+    maxBuffer: 16 * 1024 * 1024,
+  });
+  if (r.status !== 0 || !r.stdout || r.stdout.length < 1000) {
+    const err = r.stderr ? String(r.stderr).slice(0, 200) : "";
+    throw Object.assign(new Error(`Meta MMS-TTS synthesis failed${err ? `: ${err}` : ""}`), { status: 502 });
+  }
+  return { bytes: r.stdout, wavFile };
+}
+
+/** Any input audio file -> MP3 mono 16 kHz via ffmpeg. Returns { bytes, mime }. */
+function toMp3FromFile(inFile) {
+  const mp3File = tmpFile("mp3");
+  const q = process.env.YEKIVA_MP3_QUALITY ?? "6";
+  const r = spawnSync("ffmpeg", [
+    "-hide_banner", "-loglevel", "error", "-y",
+    "-i", inFile, "-codec:a", "libmp3lame", "-q:a", String(q),
+    "-ar", "16000", "-ac", "1", mp3File,
+  ], { encoding: "utf8", timeout: 30000 });
+  if (r.status !== 0 || !existsSync(mp3File)) {
+    cleanup(inFile, mp3File);
+    throw Object.assign(new Error("audio conversion failed: install ffmpeg with libmp3lame (`apt install ffmpeg`)"), { status: 502 });
+  }
+  try {
+    return { bytes: readFileSync(mp3File), mime: MP3_MIME };
+  } finally {
+    cleanup(inFile, mp3File);
+  }
+}
+
+/** WAV (PCM16) -> MP3 mono 16 kHz via ffmpeg. Returns { bytes, mime }. */
+function toMp3(wavBytes, wavFile) {
+  writeFileSync(wavFile, wavBytes);
+  return toMp3FromFile(wavFile);
+}
+
+/**
+ * Synthesizes `text` in `lang` at request time with Meta MMS-TTS.
+ * Returns { bytes: MP3 Buffer, mime: "audio/mpeg" } — light for low-bandwidth phones.
+ * Not cached server-side (each request is one short prompt); the APP caches in IndexedDB.
+ */
+export async function speak(text, { lang } = {}) {
+  const clean = sanitize(text);
+  const l = HOSTED_LANG[lang] ? lang : FALLBACK_LANG;
+  // Fast path: hosted Yekiva MMS API (models pre-loaded in RAM, ~2.4 s/phrase).
+  const hosted = await tryHostedMms(clean, l);
+  if (hosted) return hosted;
+  // Fallback: persistent micro-service on the VPS (WAV -> MP3).
+  const served = await tryMicroService(clean, l);
+  if (served) {
+    const wavFile = tmpFile("wav");
+    return toMp3(served, wavFile);
+  }
+  // Last local path: load Meta model on demand (slower first call, fine for dev/small VPS).
+  const { bytes, wavFile } = synthesizeLocal(clean, l);
+  return toMp3(bytes, wavFile);
+}
+
+/** Engine descriptor for GET /v1/voice (no synthesis). */
+export function engine() {
+  const hosted = Boolean(process.env.YEKIVA_MMS_URL || DEFAULT_MMS_URL);
+  return {
+    ok: true,
+    engine: hosted ? "mms-api" : "mms-tts",
+    format: "mp3",
+    voices: Object.keys(MMS_MODELS),
+    hosted,
+    apiKeyAvailable: Boolean(resolveMmsApiKey()),
+  };
 }

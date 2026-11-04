@@ -1,0 +1,91 @@
+{
+  "id": "lettre-h",
+  "title": "La lettre H",
+  "symbol": "H · h",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "glyph": "h:lower_script",
+        "say": {
+          "text": "La lettre H ne chante pas, elle est muette, comme dans hibou. On écrit H mais on entend i."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "glyph": "h:lower_script",
+        "say": {
+          "text": "Trace la lettre h en suivant les pointillés. Elle ne fait pas de son."
+        },
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : hibou. Touche la lettre muette."
+        },
+        "choices": [
+          {
+            "id": "h",
+            "text": "h"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "h",
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "h"
+      ],
+      "params": {
+        "word": "hibou",
+        "say": {
+          "text": "Dis le mot : hibou."
+        },
+        "context": {
+          "letter": "H · h",
+          "word": "hibou",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

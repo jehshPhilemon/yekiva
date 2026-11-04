@@ -1,0 +1,91 @@
+{
+  "id": "lettre-r",
+  "title": "Lɛtrɛ R",
+  "symbol": "R · r",
+  "icon": "music",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "Lɛtrɛ R ezali na mongongo rrr, lokola na liloba radio. Yoka : rrr."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "R · r",
+          "word": "radio",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ r, mpe loba : rrr."
+        },
+        "context": {
+          "letter": "R · r",
+          "word": "radio",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : radio. Simba lɛtrɛ ya mongongo rrr."
+        },
+        "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "radio",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "word": "radio",
+        "say": {
+          "text": "Loba liloba : radio."
+        },
+        "context": {
+          "letter": "R · r",
+          "word": "radio",
+          "icon": "music"
+        }
+      }
+    }
+  ]
+}

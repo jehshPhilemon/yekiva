@@ -1,0 +1,91 @@
+{
+  "id": "lettre-d",
+  "title": "La lettre D",
+  "symbol": "D · d",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "glyph": "d:lower_script",
+        "say": {
+          "text": "La lettre D fait le son ddd, comme dans dodo. Écoute bien : ddd."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "glyph": "d:lower_script",
+        "say": {
+          "text": "Trace la lettre d en suivant les pointillés, puis dis : ddd."
+        },
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : dodo. Touche la lettre du son ddd."
+        },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "word": "dodo",
+        "say": {
+          "text": "Dis le mot : dodo."
+        },
+        "context": {
+          "letter": "D · d",
+          "word": "dodo",
+          "icon": "moon"
+        }
+      }
+    }
+  ]
+}

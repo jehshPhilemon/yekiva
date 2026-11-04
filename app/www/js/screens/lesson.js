@@ -76,7 +76,9 @@ export async function lessonScreen({ services, state, go, lessonId }) {
   }
 
   screen.destroy = () => current?.destroy?.();
-  // Pack intro first, then the first step (which speaks its own prompt).
-  lessonIntro(services, lang, lesson, lesson.owner).then(render);
+  // The first step already gives a specific instruction in its own language. Render it
+  // immediately instead of leaving an empty screen while a generic intro audio request waits.
+  if (steps[0]?.params?.say?.text) render();
+  else lessonIntro(services, lang, lesson, lesson.owner).then(render);
   return screen;
 }

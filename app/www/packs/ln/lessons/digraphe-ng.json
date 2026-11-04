@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-ng",
+  "title": "Mongongo NG",
+  "symbol": "ng",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ng"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na G elongo ebimisaka mongongo moko : ng, lokola na ngai. Simba ng."
+        },
+        "choices": [
+          {
+            "id": "ng",
+            "text": "ng"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "ng",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ngai"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba ngai. Simba liloba ngai."
+        },
+        "choices": [
+          {
+            "id": "ngai",
+            "text": "ngai"
+          },
+          {
+            "id": "ngolu",
+            "text": "ngolu"
+          },
+          {
+            "id": "ngai",
+            "text": "ngai"
+          }
+        ],
+        "answer": "ngai",
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ngai"
+      ],
+      "params": {
+        "word": "ngai",
+        "say": {
+          "text": "Loba liloba : ngai."
+        },
+        "context": {
+          "letter": "ng",
+          "word": "ngai",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

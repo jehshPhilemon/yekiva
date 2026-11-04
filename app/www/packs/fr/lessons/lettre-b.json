@@ -1,0 +1,91 @@
+{
+  "id": "lettre-b",
+  "title": "La lettre B",
+  "symbol": "B · b",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "La lettre B fait le son bbb, comme dans bébé. Écoute bien : bbb."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "Trace la lettre b en suivant les pointillés, puis dis : bbb."
+        },
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : bébé. Touche la lettre du son bbb."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "word": "bébé",
+        "say": {
+          "text": "Dis le mot : bébé."
+        },
+        "context": {
+          "letter": "B · b",
+          "word": "bébé",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

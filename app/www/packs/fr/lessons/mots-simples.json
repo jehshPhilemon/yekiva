@@ -1,0 +1,87 @@
+{
+  "id": "mots-simples",
+  "title": "Mes premiers mots",
+  "symbol": "la · lit · lune",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "lit"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot lit. Touche le mot lit."
+        },
+        "choices": [
+          {
+            "id": "lit",
+            "text": "lit"
+          },
+          {
+            "id": "la",
+            "text": "la"
+          },
+          {
+            "id": "lune",
+            "text": "lune"
+          }
+        ],
+        "answer": "lit",
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "la"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot la. Touche le mot la."
+        },
+        "choices": [
+          {
+            "id": "la",
+            "text": "la"
+          },
+          {
+            "id": "le",
+            "text": "le"
+          },
+          {
+            "id": "li",
+            "text": "li"
+          }
+        ],
+        "answer": "la",
+        "context": {
+          "letter": "la",
+          "word": "la",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "lune"
+      ],
+      "params": {
+        "word": "lune",
+        "say": {
+          "text": "Dis le mot : lune."
+        },
+        "context": {
+          "letter": "lu",
+          "word": "lune",
+          "icon": "moon"
+        }
+      }
+    }
+  ]
+}

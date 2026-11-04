@@ -1,0 +1,87 @@
+{
+  "id": "mots-simples",
+  "title": "Maloba na ngai ya liboso",
+  "symbol": "mama · tata · lala",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba mama. Simba liloba mama."
+        },
+        "choices": [
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "tata",
+            "text": "tata"
+          },
+          {
+            "id": "lala",
+            "text": "lala"
+          }
+        ],
+        "answer": "mama",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "tata"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba tata. Simba liloba tata."
+        },
+        "choices": [
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "tata",
+            "text": "tata"
+          },
+          {
+            "id": "lala",
+            "text": "lala"
+          }
+        ],
+        "answer": "tata",
+        "context": {
+          "letter": "ta",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Loba liloba : mama."
+        },
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

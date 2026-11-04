@@ -1,0 +1,91 @@
+{
+  "id": "consonne-s",
+  "title": "Konsoni S",
+  "symbol": "S · s",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "Lɛtrɛ S ezali na mongongo sss, lokola na liloba sasa. Yoka : sss."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "S · s",
+          "word": "sasa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "glyph": "s:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ s, mpe loba : sss."
+        },
+        "context": {
+          "letter": "S · s",
+          "word": "sasa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : sasa. Simba lɛtrɛ ya mongongo sss."
+        },
+        "choices": [
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "s",
+        "context": {
+          "letter": "S · s",
+          "word": "sasa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "word": "sasa",
+        "say": {
+          "text": "Loba liloba : sasa."
+        },
+        "context": {
+          "letter": "S · s",
+          "word": "sasa",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-sh",
+  "title": "Sauti SH",
+  "symbol": "sh",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "sh"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : S na H pamoja hutoa sauti moja : sh, kama katika shule. Gusa sh."
+        },
+        "choices": [
+          {
+            "id": "sh",
+            "text": "sh"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "ch",
+            "text": "ch"
+          }
+        ],
+        "answer": "sh",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "shule"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno shule. Gusa neno shule."
+        },
+        "choices": [
+          {
+            "id": "shule",
+            "text": "shule"
+          },
+          {
+            "id": "shamba",
+            "text": "shamba"
+          },
+          {
+            "id": "soko",
+            "text": "soko"
+          }
+        ],
+        "answer": "shule",
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "shule"
+      ],
+      "params": {
+        "word": "shule",
+        "say": {
+          "text": "Sema neno : shule."
+        },
+        "context": {
+          "letter": "sh",
+          "word": "shule",
+          "icon": "book"
+        }
+      }
+    }
+  ]
+}

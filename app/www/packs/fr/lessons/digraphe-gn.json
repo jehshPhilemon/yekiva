@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-gn",
+  "title": "Le son GN",
+  "symbol": "gn",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "gn"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : G et N ensemble chantent un seul son : gn, comme dans montagne. Touche gn."
+        },
+        "choices": [
+          {
+            "id": "gn",
+            "text": "gn"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "gn",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "montagne"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot montagne. Touche le mot montagne."
+        },
+        "choices": [
+          {
+            "id": "montagne",
+            "text": "montagne"
+          },
+          {
+            "id": "maman",
+            "text": "maman"
+          },
+          {
+            "id": "moto",
+            "text": "moto"
+          }
+        ],
+        "answer": "montagne",
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "montagne"
+      ],
+      "params": {
+        "word": "montagne",
+        "say": {
+          "text": "Dis le mot : montagne."
+        },
+        "context": {
+          "letter": "gn",
+          "word": "montagne",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

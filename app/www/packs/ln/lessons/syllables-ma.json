@@ -1,0 +1,65 @@
+{
+  "id": "syllables-ma",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ma"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka silabi ma na liloba mama. Simbá ma."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          }
+        ],
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ji"
+      ],
+      "params": {
+        "say": {
+          "text": "ji"
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "ji",
+            "text": "ji"
+          }
+        ],
+        "answer": "ji"
+      }
+    }
+  ],
+  "title": "Silabi ma",
+  "symbol": "ma",
+  "icon": "family"
+}

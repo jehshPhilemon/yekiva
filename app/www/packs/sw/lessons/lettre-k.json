@@ -1,0 +1,91 @@
+{
+  "id": "lettre-k",
+  "title": "Herufi K",
+  "symbol": "K · k",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "glyph": "k:lower_script",
+        "say": {
+          "text": "Herufi K inatoa sauti kkk, kama katika neno kuku. Sikiliza : kkk."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "glyph": "k:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi k, kisha sema : kkk."
+        },
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : kuku. Gusa herufi ya sauti kkk."
+        },
+        "choices": [
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "word": "kuku",
+        "say": {
+          "text": "Sema neno : kuku."
+        },
+        "context": {
+          "letter": "K · k",
+          "word": "kuku",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

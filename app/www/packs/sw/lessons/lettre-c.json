@@ -1,0 +1,91 @@
+{
+  "id": "lettre-c",
+  "title": "Herufi C",
+  "symbol": "C · c",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "Herufi C inasomwa ch, kama katika neno chai. Sikiliza : ch."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "glyph": "c:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi c, kisha sema : ch."
+        },
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : chai. Gusa herufi ya sauti ch."
+        },
+        "choices": [
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "c",
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "c"
+      ],
+      "params": {
+        "word": "chai",
+        "say": {
+          "text": "Sema neno : chai."
+        },
+        "context": {
+          "letter": "C · c",
+          "word": "chai",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

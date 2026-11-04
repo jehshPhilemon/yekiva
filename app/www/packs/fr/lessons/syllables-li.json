@@ -8,7 +8,7 @@
       ],
       "params": {
         "say": {
-          "text": "li"
+          "text": "Écoute la syllabe li, comme dans le mot lit. Touche li."
         },
         "choices": [
           {
@@ -24,7 +24,12 @@
             "text": "lo"
           }
         ],
-        "answer": "li"
+        "answer": "li",
+        "context": {
+          "letter": "li",
+          "word": "lit",
+          "icon": "bed"
+        }
       }
     },
     {
@@ -59,5 +64,8 @@
         "note": "unknown type: the app must skip it without crashing"
       }
     }
-  ]
+  ],
+  "title": "La syllabe li",
+  "symbol": "li",
+  "icon": "bed"
 }

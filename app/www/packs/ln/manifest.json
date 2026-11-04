@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "id": "ln",
+  "language": "ln",
+  "version": 4,
+  "name": "Lingála",
+  "ui": {
+    "color": "#7B4BA1"
+  },
+  "prompts": {
+    "language_pick": {
+      "text": "Mpo na Lingála, tyá awa",
+      "audio": null
+    },
+    "audience_adult": {
+      "text": "Nazali mokóló",
+      "audio": null
+    },
+    "audience_child": {
+      "text": "Nazali mwana",
+      "audio": null
+    },
+    "lesson_intro": {
+      "text": "Yoká malamu mpe salá lokola ngai",
+      "audio": null
+    },
+    "lesson_done": {
+      "text": "Bravo, osilisi",
+      "audio": null
+    },
+    "path_hint": {
+      "text": "Poná liteya",
+      "audio": null
+    },
+    "photo_hint": {
+      "text": "Zwá liteya na maloba ya elilingi",
+      "audio": null
+    },
+    "server_hint": {
+      "text": "Mongongo ekomi ntango moombo ayanoli",
+      "audio": null
+    },
+    "trace_hint": {
+      "text": "Lisusu, landá makambo oyo ezali na ntolo",
+      "audio": null
+    },
+    "listen_hint": {
+      "text": "Yoká lisusu, mpe simbá",
+      "audio": null
+    },
+    "say_hint": {
+      "text": "Zongela lisusu",
+      "audio": null
+    }
+  },
+  "glyphs": "glyphs.json",
+  "matching": {
+    "stripAccents": true,
+    "ignoreCase": true,
+    "maxEdits": 1
+  },
+  "tracks": {
+    "adult": [
+      "letter-a",
+      "i-l",
+      "syllables-ma",
+      "voyelle-e",
+      "voyelle-o",
+      "voyelle-u",
+      "consonne-m",
+      "consonne-n",
+      "consonne-t",
+      "consonne-s",
+      "lettre-b",
+      "lettre-c",
+      "lettre-d",
+      "lettre-f",
+      "lettre-g",
+      "lettre-h",
+      "lettre-j",
+      "lettre-k",
+      "lettre-p",
+      "lettre-q",
+      "lettre-r",
+      "lettre-v",
+      "lettre-w",
+      "lettre-x",
+      "lettre-y",
+      "lettre-z",
+      "alphabet-1",
+      "syllabes-ba",
+      "digraphe-mb",
+      "digraphe-nd",
+      "digraphe-ng",
+      "digraphe-nj",
+      "digraphe-nz",
+      "digraphe-mp",
+      "digraphe-nt",
+      "digraphe-ch",
+      "digraphe-sh",
+      "digraphe-ph",
+      "mots-simples",
+      "phrase-1",
+      "lecture-1"
+    ],
+    "child": [
+      "letter-a",
+      "i-l",
+      "voyelle-e",
+      "voyelle-o",
+      "voyelle-u",
+      "consonne-m",
+      "lettre-b",
+      "lettre-d",
+      "lettre-p",
+      "syllabes-ba",
+      "mots-simples"
+    ]
+  },
+  "labels": {
+    "pathTitle": "Nzela na ngai",
+    "completed": "mateya esili",
+    "audience": {
+      "adult": "Mokóló",
+      "child": "Mwana"
+    },
+    "actions": {
+      "start": "Banda",
+      "change": "Minɔkɔ",
+      "photo": "Elilingi",
+      "server": "Mongongo",
+      "replay": "Yoka lisusu",
+      "continue": "Koba",
+      "clear": "Longola",
+      "validate": "Tosa"
+    }
+  },
+  "qualityNote": "Traduction initiale NLLB : à faire relire par un locuteur natif."
+}

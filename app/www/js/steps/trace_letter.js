@@ -1,9 +1,9 @@
-// "Follow the model": dotted letter, traced with the finger.
-// Validates stroke count, direction and order gently: the check mark validates
-// only when the tracing covers each model stroke; otherwise a soft shake + replay.
+// "Follow the model": trace the dotted letter after hearing its sound and a familiar example word.
+// Direction, order and coverage are checked gently; no punitive feedback is used.
 import { h } from "../ui/dom.js";
 import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
+import { contextCue } from "../ui/context-cue.js";
 import { drawGlyph } from "../ui/glyph.js";
 
 /** Normalized model strokes -> pixel strokes for the current canvas size. */
@@ -11,37 +11,55 @@ function modelPixels(strokes, size) {
   return strokes.map((s) => s.map(([x, y]) => [x * size, y * size]));
 }
 
-/**
- * Coverage of one model stroke by the user's strokes.
- * Samples N points along the model stroke; a sample counts when a user point
- * passes within `tol` px. Returns { coverage (0..1), reversed } where reversed
- * is true when the user drew it mostly end -> start.
- */
+function samplePolyline(path, count = 24) {
+  const total = polyLength(path);
+  if (!total) return Array.from({ length: count }, () => path[0]);
+  return Array.from({ length: count }, (_, i) => pointAt(path, (total * i) / (count - 1)));
+}
+
+const distance = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+
+/** Coverage plus direction for one expected stroke and its assigned user strokes. */
 function strokeScore(model, userStrokes, tol) {
-  const N = 24;
-  const pts = [];
-  const total = polyLength(model);
-  for (let i = 0; i < N; i++) pts.push(pointAt(model, (total * i) / (N - 1)));
-  let hit = 0;
-  let firstAt = -1;
-  let lastAt = -1;
+  const expected = samplePolyline(model, 24);
   const flat = userStrokes.flat();
-  pts.forEach((p, i) => {
-    const near = flat.some(([x, y]) => Math.hypot(x - p[0], y - p[1]) <= tol);
-    if (near) {
-      hit++;
-      if (firstAt === -1) firstAt = i;
-      lastAt = i;
-    }
-  });
-  // Direction: compare where the user's first/last near-points fall on the model.
-  let reversed = false;
-  if (flat.length >= 2 && firstAt !== -1 && lastAt !== -1) {
-    const dStart = Math.min(...flat.slice(0, 5).map(([x, y]) => Math.hypot(x - model[0][0], y - model[0][1])));
-    const dEnd = Math.min(...flat.slice(0, 5).map(([x, y]) => Math.hypot(x - model[model.length - 1][0], y - model[model.length - 1][1])));
-    reversed = dEnd < dStart && lastAt <= firstAt + 2;
+  if (!flat.length) return { coverage: 0, reversed: false };
+  const hit = expected.filter((p) => flat.some((q) => distance(q, p) <= tol)).length;
+  const first = flat[0];
+  const last = flat[flat.length - 1];
+  const forward = distance(first, model[0]) + distance(last, model[model.length - 1]);
+  const backward = distance(first, model[model.length - 1]) + distance(last, model[0]);
+  return { coverage: hit / expected.length, reversed: backward + tol * 0.25 < forward };
+}
+
+function pathDistance(userStroke, modelSamples) {
+  const count = Math.min(12, userStroke.length);
+  let total = 0;
+  for (let i = 0; i < count; i++) {
+    const point = userStroke[Math.round((i * (userStroke.length - 1)) / Math.max(1, count - 1))];
+    total += Math.min(...modelSamples.map((candidate) => distance(point, candidate)));
   }
-  return { coverage: hit / N, reversed };
+  return total / count;
+}
+
+/** Match strokes to the model in writing order; reject missing, reversed, or out-of-order strokes. */
+export function validateTrace(modelStrokes, userStrokes, tol) {
+  if (!modelStrokes.length) return { ok: false, ordered: false, details: [] };
+  const samples = modelStrokes.map((stroke) => samplePolyline(stroke, 32));
+  const assigned = modelStrokes.map(() => []);
+  let previous = -1;
+  let ordered = true;
+  for (const stroke of userStrokes) {
+    if (!stroke.length) { ordered = false; continue; }
+    const scores = samples.map((model) => pathDistance(stroke, model));
+    const index = scores.indexOf(Math.min(...scores));
+    if (index < previous) ordered = false;
+    previous = index;
+    assigned[index].push(stroke);
+  }
+  const details = modelStrokes.map((model, i) => strokeScore(model, assigned[i], tol));
+  const ok = ordered && details.every((d) => d.coverage >= 0.55 && !d.reversed);
+  return { ok, ordered, details };
 }
 
 function polyLength(p) {
@@ -64,10 +82,11 @@ function pointAt(p, d) {
 }
 
 export function traceLetter(ctx) {
-  const { glyph, say } = ctx.step.params;
+  const { glyph, say, context } = ctx.step.params;
   const strokes = ctx.language.glyphs[glyph];
   if (!strokes) return h("div", { class: "center" }, icon("alert", 96));
 
+  const labels = ctx.language.labels?.actions ?? {};
   const canvas = h("canvas", { class: "glyph" });
   const status = h("div", { class: "status" });
   const user = [];
@@ -78,9 +97,7 @@ export function traceLetter(ctx) {
   };
 
   canvas.addEventListener("pointerdown", (e) => {
-    try {
-      canvas.setPointerCapture(e.pointerId);
-    } catch { /* ignore */ }
+    try { canvas.setPointerCapture(e.pointerId); } catch { /* ignore */ }
     user.push([point(e)]);
     redraw();
   });
@@ -100,14 +117,12 @@ export function traceLetter(ctx) {
     const size = canvas.clientWidth || canvas.getBoundingClientRect().width || 200;
     const tol = Math.max(14, size * 0.09);
     const models = modelPixels(strokes, size);
-    const details = models.map((m) => strokeScore(m, user, tol));
-    const ok = details.every((d) => d.coverage >= 0.55 && !d.reversed);
-    if (ok) {
+    const result = validateTrace(models, user, tol);
+    if (result.ok) {
       status.replaceChildren(icon("star", 64));
       setTimeout(() => ctx.onDone(true), 700);
       return;
     }
-    // Gentle hint, no punishment: shake + pack encouragement (fallback: step voice).
     box.classList.remove("shake");
     void box.offsetWidth;
     box.classList.add("shake");
@@ -115,17 +130,35 @@ export function traceLetter(ctx) {
     else ctx.speak(say);
   }
 
+  const replay = tile("volume", {
+    onClick: () => ctx.speak(say),
+    size: 44,
+    label: labels.replay ?? "replay",
+    caption: labels.replay,
+    className: "lesson-action",
+  });
+  const clear = tile("trash", {
+    onClick: () => { user.length = 0; status.replaceChildren(""); redraw(); },
+    size: 44,
+    label: labels.clear ?? "clear",
+    caption: labels.clear,
+    className: "lesson-action",
+  });
+  const validate = tile("check", {
+    onClick: check,
+    size: 44,
+    label: labels.validate ?? "validate",
+    caption: labels.validate,
+    className: "lesson-action lesson-action-primary",
+  });
+
   const el = h(
     "div",
-    { class: "stack" },
+    { class: "stack lesson-step" },
+    contextCue(context),
     box,
     status,
-    h(
-      "div",
-      { class: "row small" },
-      tile("trash", { onClick: () => { user.length = 0; status.replaceChildren(""); redraw(); }, size: 56, label: "effacer" }),
-      tile("check", { onClick: check, size: 56, label: "valider" }),
-    ),
+    h("div", { class: "row small lesson-actions" }, replay, clear, validate),
   );
   ctx.speak(say);
   requestAnimationFrame(redraw);

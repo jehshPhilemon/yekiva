@@ -1,0 +1,91 @@
+{
+  "id": "lettre-j",
+  "title": "Herufi J",
+  "symbol": "J · j",
+  "icon": "eye",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "glyph": "j:lower_script",
+        "say": {
+          "text": "Herufi J inatoa sauti jjj, kama katika neno jicho. Sikiliza : jjj."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "glyph": "j:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi j, kisha sema : jjj."
+        },
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : jicho. Gusa herufi ya sauti jjj."
+        },
+        "choices": [
+          {
+            "id": "j",
+            "text": "j"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "j",
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "j"
+      ],
+      "params": {
+        "word": "jicho",
+        "say": {
+          "text": "Sema neno : jicho."
+        },
+        "context": {
+          "letter": "J · j",
+          "word": "jicho",
+          "icon": "eye"
+        }
+      }
+    }
+  ]
+}

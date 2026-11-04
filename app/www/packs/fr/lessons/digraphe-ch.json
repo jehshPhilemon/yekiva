@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-ch",
+  "title": "Le son CH",
+  "symbol": "ch",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ch"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : deux lettres, C et H, chantent un seul son : chchch, comme dans chat. Touche ch."
+        },
+        "choices": [
+          {
+            "id": "ch",
+            "text": "ch"
+          },
+          {
+            "id": "c",
+            "text": "c"
+          },
+          {
+            "id": "h",
+            "text": "h"
+          }
+        ],
+        "answer": "ch",
+        "context": {
+          "letter": "ch",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "chat"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot chat. Touche le mot chat."
+        },
+        "choices": [
+          {
+            "id": "chat",
+            "text": "chat"
+          },
+          {
+            "id": "chaud",
+            "text": "chaud"
+          },
+          {
+            "id": "champ",
+            "text": "champ"
+          }
+        ],
+        "answer": "chat",
+        "context": {
+          "letter": "ch",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "chat"
+      ],
+      "params": {
+        "word": "chat",
+        "say": {
+          "text": "Dis le mot : chat."
+        },
+        "context": {
+          "letter": "ch",
+          "word": "chat",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

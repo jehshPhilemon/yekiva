@@ -1,0 +1,91 @@
+{
+  "id": "lettre-v",
+  "title": "La lettre V",
+  "symbol": "V · v",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "glyph": "v:lower_script",
+        "say": {
+          "text": "La lettre V fait le son vvv, comme dans vélo. Écoute bien : vvv."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "glyph": "v:lower_script",
+        "say": {
+          "text": "Trace la lettre v en suivant les pointillés, puis dis : vvv."
+        },
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : vélo. Touche la lettre du son vvv."
+        },
+        "choices": [
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "v",
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "v"
+      ],
+      "params": {
+        "word": "vélo",
+        "say": {
+          "text": "Dis le mot : vélo."
+        },
+        "context": {
+          "letter": "V · v",
+          "word": "vélo",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

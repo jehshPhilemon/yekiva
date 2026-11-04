@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-dh",
+  "title": "Sauti DH",
+  "symbol": "dh",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "dh"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : D na H pamoja hutoa sauti moja : dh, kama katika dhahabu. Gusa dh."
+        },
+        "choices": [
+          {
+            "id": "dh",
+            "text": "dh"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "th",
+            "text": "th"
+          }
+        ],
+        "answer": "dh",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "dhahabu"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno dhahabu. Gusa neno dhahabu."
+        },
+        "choices": [
+          {
+            "id": "dhahabu",
+            "text": "dhahabu"
+          },
+          {
+            "id": "dada",
+            "text": "dada"
+          },
+          {
+            "id": "fedha",
+            "text": "fedha"
+          }
+        ],
+        "answer": "dhahabu",
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "dhahabu"
+      ],
+      "params": {
+        "word": "dhahabu",
+        "say": {
+          "text": "Sema neno : dhahabu."
+        },
+        "context": {
+          "letter": "dh",
+          "word": "dhahabu",
+          "icon": "star"
+        }
+      }
+    }
+  ]
+}

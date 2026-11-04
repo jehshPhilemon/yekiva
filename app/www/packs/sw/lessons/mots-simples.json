@@ -1,0 +1,87 @@
+{
+  "id": "mots-simples",
+  "title": "Maneno yangu ya kwanza",
+  "symbol": "mama · baba · lala",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno mama. Gusa neno mama."
+        },
+        "choices": [
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "baba",
+            "text": "baba"
+          },
+          {
+            "id": "lala",
+            "text": "lala"
+          }
+        ],
+        "answer": "mama",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "lala"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno lala. Gusa neno lala."
+        },
+        "choices": [
+          {
+            "id": "mama",
+            "text": "mama"
+          },
+          {
+            "id": "baba",
+            "text": "baba"
+          },
+          {
+            "id": "lala",
+            "text": "lala"
+          }
+        ],
+        "answer": "lala",
+        "context": {
+          "letter": "la",
+          "word": "lala",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "mama"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Sema neno : mama."
+        },
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

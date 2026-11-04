@@ -1,0 +1,91 @@
+{
+  "id": "voyelle-u",
+  "title": "La voyelle U",
+  "symbol": "U · u",
+  "icon": "moon",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "La lettre U fait le son u, comme dans lune. Écoute bien : u."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "Trace la lettre u en suivant les pointillés, puis dis : u."
+        },
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : lune. Touche la lettre du son u."
+        },
+        "choices": [
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "word": "lune",
+        "say": {
+          "text": "Dis le mot : lune."
+        },
+        "context": {
+          "letter": "U · u",
+          "word": "lune",
+          "icon": "moon"
+        }
+      }
+    }
+  ]
+}

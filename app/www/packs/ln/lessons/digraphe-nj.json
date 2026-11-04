@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-nj",
+  "title": "Mongongo NJ",
+  "symbol": "nj",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nj"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na J elongo ebimisaka mongongo moko : nj, lokola na njela. Simba nj."
+        },
+        "choices": [
+          {
+            "id": "nj",
+            "text": "nj"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "nj",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "njela"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba njela. Simba liloba njela."
+        },
+        "choices": [
+          {
+            "id": "njela",
+            "text": "njela"
+          },
+          {
+            "id": "njoka",
+            "text": "njoka"
+          },
+          {
+            "id": "nyama",
+            "text": "nyama"
+          }
+        ],
+        "answer": "njela",
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "njela"
+      ],
+      "params": {
+        "word": "njela",
+        "say": {
+          "text": "Loba liloba : njela."
+        },
+        "context": {
+          "letter": "nj",
+          "word": "njela",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

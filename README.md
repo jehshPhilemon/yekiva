@@ -3,6 +3,7 @@
 An offline Android literacy app: learn to read and write through voice, images and gestures, without needing to read. Lessons are **data packs**; AI (Meta models, through a small server) is used to build lessons and to check spoken answers.
 
 **Tech: Capacitor + plain JavaScript, no build step.** The `app/www/` folder *is* the app: the code you edit is the code that runs.
+Android package id: `com.jehshphilemon.yekiva`.
 
 > Status: **v1 — version initiale (premier commit)**. Screens, pack merging, tracing, "listen and tap" and "say the word" are written. The UI has not been tried on a real device yet (see `docs/OPEN_QUESTIONS.md`).
 
@@ -30,9 +31,7 @@ npm test --prefix server        # server tests
 ```
 
 `localhost` is a secure context, so the microphone (`getUserMedia`) works there without HTTPS.
-
-To point the app at a server from the browser console:
-`localStorage.setItem("yekiva.serverUrl", "https://server.example")`
+The browser preview uses a same-origin development proxy (`tools/serve.mjs`); there is no server-URL field or learner-editable URL. For an Android build, bake the server address in with `node tools/build-config.mjs --api https://YOUR-SERVER`.
 
 ## APK
 
@@ -57,4 +56,14 @@ cp .env.example server/.env   # fill in; never commit
 cd server && node --env-file=.env src/index.js
 ```
 
-Without `META_API_KEY` the routes answer `501`. Read `docs/API_META.md` before wiring the key; `node tools/probe-meta.mjs` checks the real API.
+Meta MMS-TTS runs locally on the server at request time. On a CPU VPS, install the runtime once and start the server with its virtual environment first in `PATH`:
+
+```sh
+python3 -m venv "$HOME/yekiva-mms-tts"
+"$HOME/yekiva-mms-tts/bin/python" -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+"$HOME/yekiva-mms-tts/bin/python" -m pip install transformers
+sudo apt install ffmpeg
+cd server && PATH="$HOME/yekiva-mms-tts/bin:$PATH" node --env-file=.env src/index.js
+```
+
+The French and Swahili Meta MMS-TTS weights download on first synthesis and each MP3 is generated on demand. `META_API_KEY` is needed for Muse transcription, photo interpretation and Spark lesson generation—not for MMS-TTS. Read `docs/API_META.md` before wiring the key; `node tools/probe-meta.mjs` checks the hosted Meta API.

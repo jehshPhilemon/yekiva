@@ -1,0 +1,91 @@
+{
+  "id": "lettre-k",
+  "title": "Lɛtrɛ K",
+  "symbol": "K · k",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "glyph": "k:lower_script",
+        "say": {
+          "text": "Lɛtrɛ K ezali na mongongo kkk, lokola na liloba kiti. Yoka : kkk."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "K · k",
+          "word": "kiti",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "glyph": "k:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ k, mpe loba : kkk."
+        },
+        "context": {
+          "letter": "K · k",
+          "word": "kiti",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : kiti. Simba lɛtrɛ ya mongongo kkk."
+        },
+        "choices": [
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "k",
+        "context": {
+          "letter": "K · k",
+          "word": "kiti",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "k"
+      ],
+      "params": {
+        "word": "kiti",
+        "say": {
+          "text": "Loba liloba : kiti."
+        },
+        "context": {
+          "letter": "K · k",
+          "word": "kiti",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "id": "alphabet-1",
+  "title": "Bankombo ya balɛtrɛ",
+  "symbol": "A · B · C",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "B"
+      ],
+      "params": {
+        "say": {
+          "text": "Balɛtrɛ bazali na bankombo. Yoka mpe simba lɛtrɛ B."
+        },
+        "choices": [
+          {
+            "id": "B",
+            "text": "B"
+          },
+          {
+            "id": "A",
+            "text": "A"
+          },
+          {
+            "id": "C",
+            "text": "C"
+          }
+        ],
+        "answer": "B",
+        "context": {
+          "letter": "B",
+          "word": "lɛtrɛ B",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "E"
+      ],
+      "params": {
+        "say": {
+          "text": "Simba lɛtrɛ E."
+        },
+        "choices": [
+          {
+            "id": "E",
+            "text": "E"
+          },
+          {
+            "id": "F",
+            "text": "F"
+          },
+          {
+            "id": "O",
+            "text": "O"
+          }
+        ],
+        "answer": "E",
+        "context": {
+          "letter": "E",
+          "word": "lɛtrɛ E",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "M"
+      ],
+      "params": {
+        "say": {
+          "text": "Simba lɛtrɛ M."
+        },
+        "choices": [
+          {
+            "id": "M",
+            "text": "M"
+          },
+          {
+            "id": "N",
+            "text": "N"
+          },
+          {
+            "id": "S",
+            "text": "S"
+          }
+        ],
+        "answer": "M",
+        "context": {
+          "letter": "M",
+          "word": "lɛtrɛ M",
+          "icon": "book"
+        }
+      }
+    }
+  ]
+}

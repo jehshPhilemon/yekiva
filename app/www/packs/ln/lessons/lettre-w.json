@@ -1,0 +1,91 @@
+{
+  "id": "lettre-w",
+  "title": "Lɛtrɛ W",
+  "symbol": "W · w",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "glyph": "w:lower_script",
+        "say": {
+          "text": "Lɛtrɛ W ezali na mongongo w, lokola na liloba wagon. Yoka : w."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "W · w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "glyph": "w:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ w, mpe loba : w."
+        },
+        "context": {
+          "letter": "W · w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : wagon. Simba lɛtrɛ ya mongongo w."
+        },
+        "choices": [
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W · w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "word": "wagon",
+        "say": {
+          "text": "Loba liloba : wagon."
+        },
+        "context": {
+          "letter": "W · w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

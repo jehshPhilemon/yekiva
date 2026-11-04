@@ -1,0 +1,91 @@
+{
+  "id": "lettre-g",
+  "title": "Herufi G",
+  "symbol": "G · g",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "glyph": "g:lower_script",
+        "say": {
+          "text": "Herufi G inatoa sauti ggg, kama katika neno gari. Sikiliza : ggg."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "glyph": "g:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi g, kisha sema : ggg."
+        },
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : gari. Gusa herufi ya sauti ggg."
+        },
+        "choices": [
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "g",
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "g"
+      ],
+      "params": {
+        "word": "gari",
+        "say": {
+          "text": "Sema neno : gari."
+        },
+        "context": {
+          "letter": "G · g",
+          "word": "gari",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

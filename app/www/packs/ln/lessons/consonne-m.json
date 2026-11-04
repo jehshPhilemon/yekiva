@@ -1,0 +1,91 @@
+{
+  "id": "consonne-m",
+  "title": "Konsoni M",
+  "symbol": "M · m",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "glyph": "m:lower_script",
+        "say": {
+          "text": "Lɛtrɛ M ezali na mongongo mmm, lokola na liloba mama. Yoka : mmm."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "glyph": "m:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ m, mpe loba : mmm."
+        },
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mama. Simba lɛtrɛ ya mongongo mmm."
+        },
+        "choices": [
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "m",
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "m"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Loba liloba : mama."
+        },
+        "context": {
+          "letter": "M · m",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

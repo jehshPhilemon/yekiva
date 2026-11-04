@@ -20,7 +20,12 @@
             "text": "baba"
           }
         ],
-        "answer": "mama"
+        "answer": "mama",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
       }
     },
     {
@@ -42,7 +47,12 @@
             "text": "baba"
           }
         ],
-        "answer": "baba"
+        "answer": "baba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        }
       }
     },
     {
@@ -54,8 +64,16 @@
         "word": "mama",
         "say": {
           "text": "mama"
+        },
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
         }
       }
     }
-  ]
+  ],
+  "title": "Mama na Baba",
+  "symbol": "mama · baba",
+  "icon": "family"
 }

@@ -1,0 +1,91 @@
+{
+  "id": "lettre-x",
+  "title": "La lettre X",
+  "symbol": "X · x",
+  "icon": "music",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "La lettre X fait le son ksss, comme dans xylophone. Écoute bien : ksss."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "Trace la lettre x en suivant les pointillés, puis dis : ksss."
+        },
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : xylophone. Touche la lettre du son ksss."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "word": "xylophone",
+        "say": {
+          "text": "Dis le mot : xylophone."
+        },
+        "context": {
+          "letter": "X · x",
+          "word": "xylophone",
+          "icon": "music"
+        }
+      }
+    }
+  ]
+}

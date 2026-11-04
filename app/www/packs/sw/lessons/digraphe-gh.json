@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-gh",
+  "title": "Sauti GH",
+  "symbol": "gh",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "gh"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : G na H pamoja hutoa sauti moja : gh, kama katika ghali. Gusa gh."
+        },
+        "choices": [
+          {
+            "id": "gh",
+            "text": "gh"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          },
+          {
+            "id": "ng",
+            "text": "ng"
+          }
+        ],
+        "answer": "gh",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ghali"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno ghali. Gusa neno ghali."
+        },
+        "choices": [
+          {
+            "id": "ghali",
+            "text": "ghali"
+          },
+          {
+            "id": "gari",
+            "text": "gari"
+          },
+          {
+            "id": "giza",
+            "text": "giza"
+          }
+        ],
+        "answer": "ghali",
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ghali"
+      ],
+      "params": {
+        "word": "ghali",
+        "say": {
+          "text": "Sema neno : ghali."
+        },
+        "context": {
+          "letter": "gh",
+          "word": "ghali",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

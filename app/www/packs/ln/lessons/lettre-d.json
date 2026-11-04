@@ -1,0 +1,91 @@
+{
+  "id": "lettre-d",
+  "title": "Lɛtrɛ D",
+  "symbol": "D · d",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "glyph": "d:lower_script",
+        "say": {
+          "text": "Lɛtrɛ D ezali na mongongo ddd, lokola na liloba duka. Yoka : ddd."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "D · d",
+          "word": "duka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "glyph": "d:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ d, mpe loba : ddd."
+        },
+        "context": {
+          "letter": "D · d",
+          "word": "duka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : duka. Simba lɛtrɛ ya mongongo ddd."
+        },
+        "choices": [
+          {
+            "id": "d",
+            "text": "d"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "d",
+        "context": {
+          "letter": "D · d",
+          "word": "duka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "d"
+      ],
+      "params": {
+        "word": "duka",
+        "say": {
+          "text": "Loba liloba : duka."
+        },
+        "context": {
+          "letter": "D · d",
+          "word": "duka",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

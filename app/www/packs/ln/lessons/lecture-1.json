@@ -1,0 +1,69 @@
+{
+  "id": "lecture-1",
+  "title": "Nazali kotanga lisolo",
+  "symbol": "Bana balali.",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "say_word",
+      "items": [
+        "Mama alali."
+      ],
+      "params": {
+        "word": "Mama alali.",
+        "say": {
+          "text": "Tanga na ngai : Mama alali."
+        },
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Bana balali."
+      ],
+      "params": {
+        "word": "Bana balali.",
+        "say": {
+          "text": "Koba : Bana balali."
+        },
+        "context": {
+          "letter": "Bana",
+          "word": "Bana balali.",
+          "icon": "moon"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "Mama"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka motuna : nani alali ? Simba eyano."
+        },
+        "choices": [
+          {
+            "id": "Mama",
+            "text": "Mama"
+          },
+          {
+            "id": "Bana",
+            "text": "Bana"
+          }
+        ],
+        "answer": "Mama",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama alali.",
+          "icon": "star"
+        }
+      }
+    }
+  ]
+}

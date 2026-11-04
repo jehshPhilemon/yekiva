@@ -1,0 +1,52 @@
+{
+  "id": "phrase-1",
+  "title": "Ma première phrase",
+  "symbol": "Maman aime Lili.",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "Maman aime Lili."
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute la phrase. Touche la phrase que tu entends."
+        },
+        "choices": [
+          {
+            "id": "Maman aime Lili.",
+            "text": "Maman aime Lili."
+          },
+          {
+            "id": "Lili aime Maman.",
+            "text": "Lili aime Maman."
+          }
+        ],
+        "answer": "Maman aime Lili.",
+        "context": {
+          "letter": "Maman",
+          "word": "Maman aime Lili.",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Maman aime Lili."
+      ],
+      "params": {
+        "word": "Maman aime Lili.",
+        "say": {
+          "text": "Dis la phrase : Maman aime Lili."
+        },
+        "context": {
+          "letter": "Maman",
+          "word": "Maman aime Lili.",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-mb",
+  "title": "Sauti MB",
+  "symbol": "mb",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "mb"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : M na B pamoja hutoa sauti moja : mb, kama mwanzoni mwa mboga. Gusa mb."
+        },
+        "choices": [
+          {
+            "id": "mb",
+            "text": "mb"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          }
+        ],
+        "answer": "mb",
+        "context": {
+          "letter": "mb",
+          "word": "mboga",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "mboga"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno mboga. Gusa neno mboga."
+        },
+        "choices": [
+          {
+            "id": "mboga",
+            "text": "mboga"
+          },
+          {
+            "id": "mbwa",
+            "text": "mbwa"
+          },
+          {
+            "id": "mbuzi",
+            "text": "mbuzi"
+          }
+        ],
+        "answer": "mboga",
+        "context": {
+          "letter": "mb",
+          "word": "mboga",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "mboga"
+      ],
+      "params": {
+        "word": "mboga",
+        "say": {
+          "text": "Sema neno : mboga."
+        },
+        "context": {
+          "letter": "mb",
+          "word": "mboga",
+          "icon": "plant"
+        }
+      }
+    }
+  ]
+}

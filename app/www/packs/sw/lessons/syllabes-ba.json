@@ -1,0 +1,118 @@
+{
+  "id": "syllabes-ba",
+  "title": "Silabi ba, be, bo",
+  "symbol": "ba · be · bo",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza ba, kama mwanzoni mwa baba. Gusa ba."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "be"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza be, kama katika bega. Gusa be."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          }
+        ],
+        "answer": "be",
+        "context": {
+          "letter": "be",
+          "word": "bega",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bo"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza bo, kama katika boma. Gusa bo."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bo",
+            "text": "bo"
+          }
+        ],
+        "answer": "bo",
+        "context": {
+          "letter": "bo",
+          "word": "boma",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Sema neno : baba."
+        },
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "lettre-y",
+  "title": "Herufi Y",
+  "symbol": "Y · y",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "Herufi Y inatoa sauti yyy, kama katika neno yai. Sikiliza : yyy."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "glyph": "y:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi y, kisha sema : yyy."
+        },
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : yai. Gusa herufi ya sauti yyy."
+        },
+        "choices": [
+          {
+            "id": "y",
+            "text": "y"
+          },
+          {
+            "id": "i",
+            "text": "i"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "y",
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "y"
+      ],
+      "params": {
+        "word": "yai",
+        "say": {
+          "text": "Sema neno : yai."
+        },
+        "context": {
+          "letter": "Y · y",
+          "word": "yai",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

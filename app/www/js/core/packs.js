@@ -25,8 +25,10 @@ export function createPacks({ root = "packs", fetchFn = (...a) => fetch(...a) } 
       const m = merged.base.manifest;
       languages.push({
         code,
+        name: m.name ?? code,
         basePackId: m.id,
         color: m.ui?.color ?? "#EF6C00",
+        labels: m.labels ?? {},
         prompts: m.prompts ?? {},
         matching: m.matching ?? {},
         tracks: merged.tracks,

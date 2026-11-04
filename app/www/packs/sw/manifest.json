@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "sw",
   "language": "sw",
-  "version": 1,
+  "version": 4,
   "name": "Kiswahili",
   "ui": {
     "color": "#2E7D32"
@@ -61,11 +61,80 @@
   },
   "tracks": {
     "adult": [
+      "letter-a",
       "i-l",
-      "syllables-ma"
+      "syllables-ma",
+      "voyelle-e",
+      "voyelle-o",
+      "voyelle-u",
+      "consonne-m",
+      "consonne-n",
+      "consonne-t",
+      "consonne-s",
+      "lettre-b",
+      "lettre-c",
+      "lettre-d",
+      "lettre-f",
+      "lettre-g",
+      "lettre-h",
+      "lettre-j",
+      "lettre-k",
+      "lettre-p",
+      "lettre-q",
+      "lettre-r",
+      "lettre-v",
+      "lettre-w",
+      "lettre-x",
+      "lettre-y",
+      "lettre-z",
+      "alphabet-1",
+      "syllabes-ba",
+      "digraphe-ch",
+      "digraphe-dh",
+      "digraphe-gh",
+      "digraphe-ng",
+      "digraphe-ny",
+      "digraphe-sh",
+      "digraphe-th",
+      "digraphe-mb",
+      "digraphe-nd",
+      "digraphe-nj",
+      "digraphe-nt",
+      "digraphe-nz",
+      "mots-simples",
+      "phrase-1",
+      "lecture-1"
     ],
     "child": [
-      "i-l"
+      "letter-a",
+      "i-l",
+      "voyelle-e",
+      "voyelle-o",
+      "voyelle-u",
+      "consonne-m",
+      "lettre-b",
+      "lettre-d",
+      "lettre-p",
+      "syllabes-ba",
+      "mots-simples"
     ]
+  },
+  "labels": {
+    "pathTitle": "Njia yangu",
+    "completed": "masomo yamekamilika",
+    "audience": {
+      "adult": "Mtu mzima",
+      "child": "Mtoto"
+    },
+    "actions": {
+      "start": "Anza",
+      "change": "Lugha",
+      "photo": "Picha",
+      "server": "Sauti",
+      "replay": "Sikiliza tena",
+      "continue": "Endelea",
+      "clear": "Futa",
+      "validate": "Thibitisha"
+    }
   }
 }

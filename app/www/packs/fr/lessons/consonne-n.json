@@ -1,0 +1,91 @@
+{
+  "id": "consonne-n",
+  "title": "La consonne N",
+  "symbol": "N · n",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "glyph": "n:lower_script",
+        "say": {
+          "text": "La lettre N fait le son nnn, comme dans nounours. Écoute bien : nnn."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "glyph": "n:lower_script",
+        "say": {
+          "text": "Trace la lettre n en suivant les pointillés, puis dis : nnn."
+        },
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : nounours. Touche la lettre du son nnn."
+        },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "word": "nounours",
+        "say": {
+          "text": "Dis le mot : nounours."
+        },
+        "context": {
+          "letter": "N · n",
+          "word": "nounours",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

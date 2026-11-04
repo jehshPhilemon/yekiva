@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-oi",
+  "title": "Le son OI",
+  "symbol": "oi",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "oi"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : O et I ensemble chantent un seul son : wa, comme dans oiseau. Touche oi."
+        },
+        "choices": [
+          {
+            "id": "oi",
+            "text": "oi"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "ou",
+            "text": "ou"
+          }
+        ],
+        "answer": "oi",
+        "context": {
+          "letter": "oi",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "oiseau"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute le mot oiseau. Touche le mot oiseau."
+        },
+        "choices": [
+          {
+            "id": "oiseau",
+            "text": "oiseau"
+          },
+          {
+            "id": "oiseau",
+            "text": "oiseau"
+          },
+          {
+            "id": "oiseau",
+            "text": "oiseau"
+          }
+        ],
+        "answer": "oiseau",
+        "context": {
+          "letter": "oi",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "oiseau"
+      ],
+      "params": {
+        "word": "oiseau",
+        "say": {
+          "text": "Dis le mot : oiseau."
+        },
+        "context": {
+          "letter": "oi",
+          "word": "oiseau",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

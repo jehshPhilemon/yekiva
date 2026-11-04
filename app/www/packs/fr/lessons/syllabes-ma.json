@@ -1,0 +1,118 @@
+{
+  "id": "syllabes-ma",
+  "title": "Les syllabes ma, me, mi",
+  "symbol": "ma · me · mi",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ma"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute ma, comme dans maman. Touche ma."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "me",
+            "text": "me"
+          },
+          {
+            "id": "mi",
+            "text": "mi"
+          }
+        ],
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "maman",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "me"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute me, comme dans melon. Touche me."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "me",
+            "text": "me"
+          },
+          {
+            "id": "mi",
+            "text": "mi"
+          }
+        ],
+        "answer": "me",
+        "context": {
+          "letter": "me",
+          "word": "melon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "mi"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute mi, comme dans midi. Touche mi."
+        },
+        "choices": [
+          {
+            "id": "ma",
+            "text": "ma"
+          },
+          {
+            "id": "me",
+            "text": "me"
+          },
+          {
+            "id": "mi",
+            "text": "mi"
+          }
+        ],
+        "answer": "mi",
+        "context": {
+          "letter": "mi",
+          "word": "midi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "maman"
+      ],
+      "params": {
+        "word": "maman",
+        "say": {
+          "text": "Dis le mot : maman."
+        },
+        "context": {
+          "letter": "ma",
+          "word": "maman",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

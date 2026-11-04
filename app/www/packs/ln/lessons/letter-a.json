@@ -1,0 +1,91 @@
+{
+  "id": "letter-a",
+  "title": "A na liloba mama",
+  "symbol": "A · a",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_script",
+        "say": {
+          "text": "Yoka mongongo a na liloba mama. Tala ndenge ya kokoma a."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_script",
+        "say": {
+          "text": "Yoka a na mama, mpe landa bilembo mpo na kokoma a."
+        },
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mama. Simba lɛtrɛ ya mongongo a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "word": "mama",
+        "say": {
+          "text": "Loba liloba : mama."
+        },
+        "context": {
+          "letter": "A · a",
+          "word": "mama",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

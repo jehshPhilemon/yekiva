@@ -1,0 +1,91 @@
+{
+  "id": "consonne-n",
+  "title": "Konsoni N",
+  "symbol": "N · n",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "glyph": "n:lower_script",
+        "say": {
+          "text": "Lɛtrɛ N ezali na mongongo nnn, lokola na liloba nani. Yoka : nnn."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "glyph": "n:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ n, mpe loba : nnn."
+        },
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : nani. Simba lɛtrɛ ya mongongo nnn."
+        },
+        "choices": [
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "n",
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "n"
+      ],
+      "params": {
+        "word": "nani",
+        "say": {
+          "text": "Loba liloba : nani."
+        },
+        "context": {
+          "letter": "N · n",
+          "word": "nani",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

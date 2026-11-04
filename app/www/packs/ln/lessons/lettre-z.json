@@ -1,0 +1,91 @@
+{
+  "id": "lettre-z",
+  "title": "Lɛtrɛ Z",
+  "symbol": "Z · z",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "glyph": "z:lower_script",
+        "say": {
+          "text": "Lɛtrɛ Z ezali na mongongo zzz, lokola na liloba zando. Yoka : zzz."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Z · z",
+          "word": "zando",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "glyph": "z:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ z, mpe loba : zzz."
+        },
+        "context": {
+          "letter": "Z · z",
+          "word": "zando",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : zando. Simba lɛtrɛ ya mongongo zzz."
+        },
+        "choices": [
+          {
+            "id": "z",
+            "text": "z"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "j",
+            "text": "j"
+          }
+        ],
+        "answer": "z",
+        "context": {
+          "letter": "Z · z",
+          "word": "zando",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "z"
+      ],
+      "params": {
+        "word": "zando",
+        "say": {
+          "text": "Loba liloba : zando."
+        },
+        "context": {
+          "letter": "Z · z",
+          "word": "zando",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

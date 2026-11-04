@@ -1,0 +1,91 @@
+{
+  "id": "lettre-w",
+  "title": "La lettre W",
+  "symbol": "W · w",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "glyph": "w:lower_script",
+        "say": {
+          "text": "La lettre W fait le son w, comme dans wagon. Écoute bien : w."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "W · w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "glyph": "w:lower_script",
+        "say": {
+          "text": "Trace la lettre w en suivant les pointillés, puis dis : w."
+        },
+        "context": {
+          "letter": "W · w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : wagon. Touche la lettre du son w."
+        },
+        "choices": [
+          {
+            "id": "w",
+            "text": "w"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          }
+        ],
+        "answer": "w",
+        "context": {
+          "letter": "W · w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "w"
+      ],
+      "params": {
+        "word": "wagon",
+        "say": {
+          "text": "Dis le mot : wagon."
+        },
+        "context": {
+          "letter": "W · w",
+          "word": "wagon",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

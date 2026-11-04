@@ -8,7 +8,7 @@
       ],
       "params": {
         "say": {
-          "text": "ma"
+          "text": "Sikiliza silabi ma katika neno mama. Gusa ma."
         },
         "choices": [
           {
@@ -24,7 +24,12 @@
             "text": "ji"
           }
         ],
-        "answer": "ma"
+        "answer": "ma",
+        "context": {
+          "letter": "ma",
+          "word": "mama",
+          "icon": "family"
+        }
       }
     },
     {
@@ -53,5 +58,8 @@
         "answer": "ji"
       }
     }
-  ]
+  ],
+  "title": "Silabi ma",
+  "symbol": "ma",
+  "icon": "family"
 }

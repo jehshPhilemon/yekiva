@@ -1,0 +1,52 @@
+{
+  "id": "phrase-1",
+  "title": "Frazi na ngai ya liboso",
+  "symbol": "Mama na bana.",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "Mama na bana."
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka frazi. Simba frazi oyo oyoki."
+        },
+        "choices": [
+          {
+            "id": "Mama na bana.",
+            "text": "Mama na bana."
+          },
+          {
+            "id": "Bana na mama.",
+            "text": "Bana na mama."
+          }
+        ],
+        "answer": "Mama na bana.",
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "Mama na bana."
+      ],
+      "params": {
+        "word": "Mama na bana.",
+        "say": {
+          "text": "Loba frazi : Mama na bana."
+        },
+        "context": {
+          "letter": "Mama",
+          "word": "Mama na bana.",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

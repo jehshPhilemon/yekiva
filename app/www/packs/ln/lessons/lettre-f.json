@@ -1,0 +1,91 @@
+{
+  "id": "lettre-f",
+  "title": "Lɛtrɛ F",
+  "symbol": "F · f",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "Lɛtrɛ F ezali na mongongo fff, lokola na liloba fufu. Yoka : fff."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "F · f",
+          "word": "fufu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "glyph": "f:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ f, mpe loba : fff."
+        },
+        "context": {
+          "letter": "F · f",
+          "word": "fufu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : fufu. Simba lɛtrɛ ya mongongo fff."
+        },
+        "choices": [
+          {
+            "id": "f",
+            "text": "f"
+          },
+          {
+            "id": "v",
+            "text": "v"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          }
+        ],
+        "answer": "f",
+        "context": {
+          "letter": "F · f",
+          "word": "fufu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "f"
+      ],
+      "params": {
+        "word": "fufu",
+        "say": {
+          "text": "Loba liloba : fufu."
+        },
+        "context": {
+          "letter": "F · f",
+          "word": "fufu",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

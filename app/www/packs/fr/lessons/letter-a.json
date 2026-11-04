@@ -1,0 +1,91 @@
+{
+  "id": "letter-a",
+  "title": "A comme avion",
+  "symbol": "A · a",
+  "icon": "plane",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_script",
+        "say": {
+          "text": "A comme avion. Écoute le son a, puis regarde comment la lettre a s’écrit."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "glyph": "a:lower_script",
+        "say": {
+          "text": "A comme avion. Trace la lettre a en suivant les pointillés."
+        },
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : avion. Touche la lettre du son a."
+        },
+        "choices": [
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "a",
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "a"
+      ],
+      "params": {
+        "word": "avion",
+        "say": {
+          "text": "Dis le mot : avion."
+        },
+        "context": {
+          "letter": "A · a",
+          "word": "avion",
+          "icon": "plane"
+        }
+      }
+    }
+  ]
+}

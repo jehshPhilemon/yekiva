@@ -7,12 +7,14 @@
 //   node tools/probe-meta.mjs asr word.wav '{"model":"muse-voice-transcribe-1.0","language":"sw"}'
 //                                                                  # 2nd argument = the JSON "request" part, verbatim
 //   node tools/probe-meta.mjs spark photo.jpg                      # photo -> word + syllables
-//   node tools/probe-meta.mjs speak "Kwa Kiswahili, gusa hapa" sw  # natural voice (Yekiva server, Piper)
+//   node tools/probe-meta.mjs speak "Kwa Kiswahili, gusa hapa" sw  # natural Meta voice (MMS-TTS -> MP3)
+//   node tools/probe-meta.mjs image mangue [out.png]              # Muse Image: word -> cartoon ($0.01)
 //
 // The key is read from server/.env (or ./.env) when not already in the environment.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { makeWav } from "../server/src/wav.js";
+import { buildImagePrompt } from "../server/src/providers/meta.js";
 
 // Loads server/.env (or the root .env). Tolerates BOM, Windows line endings, "export", quoted values.
 function loadEnv() {
@@ -84,6 +86,43 @@ async function main() {
       })
     );
   } else {
+    if (cmd === "image") {
+      // Muse Image via the Meta API directly ($0.01/image): image <word> [hint] [out.png]
+      const word = file;
+      if (!word) {
+        console.error("usage: image <word> [hint] [out.png]");
+        process.exit(1);
+      }
+      const hint = process.argv[4]?.endsWith(".png") ? undefined : process.argv[4];
+      const out = process.argv[5] ?? (process.argv[4]?.endsWith(".png") ? process.argv[4] : `${word}.png`);
+      const res = await fetch(`${BASE}/images/generations`, {
+        method: "POST",
+        headers: { authorization: `Bearer ${key}`, "content-type": "application/json" },
+        body: JSON.stringify({
+          model: process.env.META_IMAGE_MODEL ?? "muse-image-1.0",
+          prompt: buildImagePrompt(word, { hint }),
+          n: 1,
+          response_format: "b64_json",
+          output_format: "png",
+          reasoning_strength: "low",
+          tool_enablement: { enable_web_search: false, enable_shell: false },
+        }),
+      });
+      console.log("HTTP", res.status);
+      if (!res.ok) {
+        console.log((await res.text()).slice(0, 500));
+        process.exit(1);
+      }
+      const data = await res.json();
+      const b64 = data?.data?.[0]?.b64_json;
+      if (typeof b64 !== "string") {
+        console.log("no image in response:", JSON.stringify(data).slice(0, 500));
+        process.exit(1);
+      }
+      writeFileSync(out, Buffer.from(b64, "base64"));
+      console.log("written", out);
+      return;
+    }
     if (cmd === "speak") {
       // Natural voice via the YEKIVA server (no key needed): speak <text> [lang] [out.wav]
       const text = file ?? "ma";
@@ -103,7 +142,7 @@ async function main() {
       console.log("written", out);
       return;
     }
-    console.error("usage: asr <file.wav> [request-json] | spark <photo> | make-wav <out.wav> | speak <text> [lang] [out.wav]");
+    console.error("usage: asr <file.wav> [request-json] | spark <photo> | make-wav <out.wav> | speak <text> [lang] [out.wav] | image <word> [hint] [out.png]");
     process.exit(1);
   }
 }
@@ -113,3 +152,4 @@ main().catch((e) => {
   console.error("Check the connection and META_BASE_URL (default https://api.meta.ai/v1).");
   process.exit(1);
 });
+//   node tools/probe-meta.mjs speak "Kwa Kiswahili, gusa hapa" sw  # natural Meta voice (MMS-TTS -> MP3)

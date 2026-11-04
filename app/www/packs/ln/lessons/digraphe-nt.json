@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-nt",
+  "title": "Mongongo NT",
+  "symbol": "nt",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nt"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na T elongo ebimisaka mongongo moko : nt, lokola na ntaba. Simba nt."
+        },
+        "choices": [
+          {
+            "id": "nt",
+            "text": "nt"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "nt",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ntaba"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba ntaba. Simba liloba ntaba."
+        },
+        "choices": [
+          {
+            "id": "ntaba",
+            "text": "ntaba"
+          },
+          {
+            "id": "ntongo",
+            "text": "ntongo"
+          },
+          {
+            "id": "ndeke",
+            "text": "ndeke"
+          }
+        ],
+        "answer": "ntaba",
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ntaba"
+      ],
+      "params": {
+        "word": "ntaba",
+        "say": {
+          "text": "Loba liloba : ntaba."
+        },
+        "context": {
+          "letter": "nt",
+          "word": "ntaba",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

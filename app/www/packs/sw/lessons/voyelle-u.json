@@ -1,0 +1,91 @@
+{
+  "id": "voyelle-u",
+  "title": "Vokali U",
+  "symbol": "U · u",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "Herufi U inatoa sauti u, kama katika neno unga. Sikiliza : u."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi u, kisha sema : u."
+        },
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : unga. Gusa herufi ya sauti u."
+        },
+        "choices": [
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "word": "unga",
+        "say": {
+          "text": "Sema neno : unga."
+        },
+        "context": {
+          "letter": "U · u",
+          "word": "unga",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

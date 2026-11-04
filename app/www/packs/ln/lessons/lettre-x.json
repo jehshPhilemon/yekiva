@@ -1,0 +1,91 @@
+{
+  "id": "lettre-x",
+  "title": "Lɛtrɛ X",
+  "symbol": "X · x",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "X esalelamaka na maloba ya bapaya lokola taxi. Etangamaka ks. Yoka : ks."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "X · x",
+          "word": "taxi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ x, mpe loba : ks."
+        },
+        "context": {
+          "letter": "X · x",
+          "word": "taxi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : taxi. Simba lɛtrɛ X."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "taxi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "word": "taxi",
+        "say": {
+          "text": "Loba liloba : taxi."
+        },
+        "context": {
+          "letter": "X · x",
+          "word": "taxi",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

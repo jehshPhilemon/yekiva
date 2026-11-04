@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-nd",
+  "title": "Mongongo ND",
+  "symbol": "nd",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nd"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na D elongo ebimisaka mongongo moko : nd, lokola na ndeke. Simba nd."
+        },
+        "choices": [
+          {
+            "id": "nd",
+            "text": "nd"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "d",
+            "text": "d"
+          }
+        ],
+        "answer": "nd",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ndeke"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba ndeke. Simba liloba ndeke."
+        },
+        "choices": [
+          {
+            "id": "ndeke",
+            "text": "ndeke"
+          },
+          {
+            "id": "ndundu",
+            "text": "ndundu"
+          },
+          {
+            "id": "nzete",
+            "text": "nzete"
+          }
+        ],
+        "answer": "ndeke",
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ndeke"
+      ],
+      "params": {
+        "word": "ndeke",
+        "say": {
+          "text": "Loba liloba : ndeke."
+        },
+        "context": {
+          "letter": "nd",
+          "word": "ndeke",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

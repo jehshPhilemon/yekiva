@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-ny",
+  "title": "Sauti NY",
+  "symbol": "ny",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ny"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na Y pamoja hutoa sauti moja : ny, kama katika nyumba. Gusa ny."
+        },
+        "choices": [
+          {
+            "id": "ny",
+            "text": "ny"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "y",
+            "text": "y"
+          }
+        ],
+        "answer": "ny",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "nyumba"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno nyumba. Gusa neno nyumba."
+        },
+        "choices": [
+          {
+            "id": "nyumba",
+            "text": "nyumba"
+          },
+          {
+            "id": "nyanya",
+            "text": "nyanya"
+          },
+          {
+            "id": "nyota",
+            "text": "nyota"
+          }
+        ],
+        "answer": "nyumba",
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "nyumba"
+      ],
+      "params": {
+        "word": "nyumba",
+        "say": {
+          "text": "Sema neno : nyumba."
+        },
+        "context": {
+          "letter": "ny",
+          "word": "nyumba",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

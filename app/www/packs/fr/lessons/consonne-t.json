@@ -1,0 +1,91 @@
+{
+  "id": "consonne-t",
+  "title": "La consonne T",
+  "symbol": "T · t",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "glyph": "t:lower_script",
+        "say": {
+          "text": "La lettre T fait le son ttt, comme dans tasse. Écoute bien : ttt."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "glyph": "t:lower_script",
+        "say": {
+          "text": "Trace la lettre t en suivant les pointillés, puis dis : ttt."
+        },
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : tasse. Touche la lettre du son ttt."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "word": "tasse",
+        "say": {
+          "text": "Dis le mot : tasse."
+        },
+        "context": {
+          "letter": "T · t",
+          "word": "tasse",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

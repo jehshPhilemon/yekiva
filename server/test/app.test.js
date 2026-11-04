@@ -4,6 +4,7 @@ import { makeApp } from "../src/app.js";
 import { checkWav, makeWav } from "../src/wav.js";
 import { buildLesson, parseModelJson } from "../src/lesson.js";
 import { buildAsrRequest } from "../src/providers/meta.js";
+import { isYkvKey, mintAppKey } from "../src/apptoken.js";
 
 async function withServer(opts, fn) {
   const server = makeApp(opts);
@@ -63,6 +64,21 @@ test("token required when configured", () =>
     assert.equal((await fetch(`${base}/v1/transcribe`, { method: "POST" })).status, 401);
   }));
 
+test("YKV keys: minted keys validate, tampered keys fail", () => {
+  const k = mintAppKey();
+  assert.equal(isYkvKey(k), true);
+  assert.equal(isYkvKey(k.slice(0, -1) + (k.endsWith("0") ? "1" : "0")), false);
+  assert.equal(isYkvKey("YKV-AAAA-BBBB-CCCC-00"), false);
+});
+test("token gate: exact APP_TOKEN or any valid YKV key passes, garbage fails", () =>
+  withServer({ appToken: "secret" }, async (base) => {
+    const call = (token) =>
+      fetch(`${base}/v1/transcribe`, { method: "POST", headers: { "x-app-token": token } });
+    assert.equal((await call("nope")).status, 401);
+    assert.equal((await call("secret")).status, 415); // token OK -> reaches content-type check
+    assert.equal((await call(mintAppKey())).status, 415); // valid YKV key -> same
+  }));
+
 test("CORS: the app's preflight is accepted", () =>
   withServer({}, async (base) => {
     const r = await fetch(`${base}/v1/transcribe`, { method: "OPTIONS" });
@@ -86,10 +102,14 @@ test("checkWav accepts 16 and 24 kHz", () => {
 test("buildLesson: word in syllables -> valid steps", () => {
   const l = buildLesson({ word: "Mama", syllables: ["ma", "ma"], language: "sw" }, { id: "t" });
   assert.equal(l.id, "t");
+  assert.equal(l.title, "mama");
+  assert.equal(l.symbol, "M");
+  assert.equal(l.icon, "family");
   for (const s of l.steps) {
     assert.equal(s.type, "listen_tap");
     assert.ok(s.params.choices.length >= 2);
     assert.ok(s.params.choices.some((c) => c.id === s.params.answer));
+    assert.deepEqual(s.params.context, { letter: "M", word: "mama", icon: "family" });
   }
 });
 
@@ -119,5 +139,37 @@ test("voice probe: advertises the engine without synthesizing", () =>
   withServer({}, async (base) => {
     const r = await fetch(`${base}/v1/voice`);
     assert.equal(r.status, 200);
-    assert.deepEqual(await r.json(), { ok: true, engine: "piper", voices: ["fr", "sw"] });
+    const engine = await r.json();
+    assert.equal(engine.ok, true);
+    assert.equal(engine.engine, "mms-api");
+    assert.equal(engine.format, "mp3");
+    assert.equal(engine.hosted, true);
+    assert.equal(typeof engine.apiKeyAvailable, "boolean");
+  }));
+
+test("illustrate: missing word -> 400", () =>
+  withServer({}, async (base) => {
+    const r = await fetch(`${base}/v1/illustrate`, { method: "POST", headers: { "content-type": "application/json" }, body: "{}" });
+    assert.equal(r.status, 400);
+  }));
+
+test("illustrate: relays word to provider and returns the image bytes", () =>
+  withServer({ provider: { ...fakeProvider, illustrate: async (w) => ({ bytes: Buffer.from(`PNG:${w}`), mime: "image/png" }) } }, async (base) => {
+    const r = await fetch(`${base}/v1/illustrate`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ word: "mama" }) });
+    assert.equal(r.status, 200);
+    assert.equal(r.headers.get("content-type"), "image/png");
+    assert.equal(await r.text(), "PNG:mama");
+  }));
+
+test("generate-lesson: missing word -> 400", () =>
+  withServer({}, async (base) => {
+    const r = await fetch(`${base}/v1/generate-lesson`, { method: "POST", headers: { "content-type": "application/json" }, body: "{}" });
+    assert.equal(r.status, 400);
+  }));
+
+test("generate-lesson: relays word+lang to provider and returns the lesson", () =>
+  withServer({ provider: { ...fakeProvider, generateLesson: async (w, o) => ({ id: "t", word: w, lang: o.lang, steps: [] }) } }, async (base) => {
+    const r = await fetch(`${base}/v1/generate-lesson?lang=sw`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ word: "mangue" }) });
+    assert.equal(r.status, 200);
+    assert.deepEqual(await r.json(), { id: "t", word: "mangue", lang: "sw", steps: [] });
   }));

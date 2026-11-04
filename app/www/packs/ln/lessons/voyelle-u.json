@@ -1,0 +1,91 @@
+{
+  "id": "voyelle-u",
+  "title": "Vowɛlɛ U",
+  "symbol": "U · u",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "Lɛtrɛ U ezali na mongongo u, lokola na liloba mbu. Yoka : u."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "U · u",
+          "word": "mbu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "glyph": "u:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ u, mpe loba : u."
+        },
+        "context": {
+          "letter": "U · u",
+          "word": "mbu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : mbu. Simba lɛtrɛ ya mongongo u."
+        },
+        "choices": [
+          {
+            "id": "u",
+            "text": "u"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          }
+        ],
+        "answer": "u",
+        "context": {
+          "letter": "U · u",
+          "word": "mbu",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "u"
+      ],
+      "params": {
+        "word": "mbu",
+        "say": {
+          "text": "Loba liloba : mbu."
+        },
+        "context": {
+          "letter": "U · u",
+          "word": "mbu",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "lettre-p",
+  "title": "Herufi P",
+  "symbol": "P · p",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "Herufi P inatoa sauti ppp, kama katika neno paka. Sikiliza : ppp."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi p, kisha sema : ppp."
+        },
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : paka. Gusa herufi ya sauti ppp."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "word": "paka",
+        "say": {
+          "text": "Sema neno : paka."
+        },
+        "context": {
+          "letter": "P · p",
+          "word": "paka",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

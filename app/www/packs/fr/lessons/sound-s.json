@@ -1,0 +1,97 @@
+{
+  "id": "sound-s",
+  "steps": [
+    {
+      "type": "meet_sound",
+      "items": [
+        "s"
+      ],
+      "params": {
+        "item": "s",
+        "word": "soleil",
+        "image": "images/sun.svg",
+        "say": {
+          "text": "S, comme dans soleil"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "soleil"
+      ],
+      "params": {
+        "say": {
+          "text": "soleil"
+        },
+        "choices": [
+          {
+            "id": "soleil",
+            "image": "images/sun.svg"
+          },
+          {
+            "id": "arbre",
+            "image": "images/tree.svg"
+          },
+          {
+            "id": "maison",
+            "image": "images/house.svg"
+          }
+        ],
+        "answer": "soleil"
+      }
+    },
+    {
+      "type": "match_pairs",
+      "items": [
+        "soleil",
+        "arbre",
+        "maison"
+      ],
+      "params": {
+        "pairs": [
+          {
+            "id": "soleil",
+            "left": {
+              "text": "soleil"
+            },
+            "right": {
+              "image": "images/sun.svg"
+            }
+          },
+          {
+            "id": "arbre",
+            "left": {
+              "text": "arbre"
+            },
+            "right": {
+              "image": "images/tree.svg"
+            }
+          },
+          {
+            "id": "maison",
+            "left": {
+              "text": "maison"
+            },
+            "right": {
+              "image": "images/house.svg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "soleil"
+      ],
+      "params": {
+        "word": "soleil",
+        "say": {
+          "text": "soleil"
+        },
+        "image": "images/sun.svg"
+      }
+    }
+  ]
+}

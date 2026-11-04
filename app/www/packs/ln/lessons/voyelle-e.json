@@ -1,0 +1,91 @@
+{
+  "id": "voyelle-e",
+  "title": "Vowɛlɛ E",
+  "symbol": "E · e",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "glyph": "e:lower_script",
+        "say": {
+          "text": "Lɛtrɛ E ezali na mongongo e, lokola na ebandeli ya liloba nzete. Yoka : e."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "E · e",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "glyph": "e:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ e, mpe loba : e."
+        },
+        "context": {
+          "letter": "E · e",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : nzete. Simba lɛtrɛ ya mongongo e."
+        },
+        "choices": [
+          {
+            "id": "e",
+            "text": "e"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "o",
+            "text": "o"
+          }
+        ],
+        "answer": "e",
+        "context": {
+          "letter": "E · e",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "e"
+      ],
+      "params": {
+        "word": "nzete",
+        "say": {
+          "text": "Loba liloba : nzete."
+        },
+        "context": {
+          "letter": "E · e",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    }
+  ]
+}

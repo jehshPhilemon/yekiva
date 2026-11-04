@@ -1,0 +1,91 @@
+{
+  "id": "lettre-q",
+  "title": "Herufi Q",
+  "symbol": "Q · q",
+  "icon": "book",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "Q hutumika katika maneno ya kigeni kama Qurani. Inasomwa k. Sikiliza : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi q, kisha sema : k."
+        },
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : Qurani. Gusa herufi Q."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "word": "Qurani",
+        "say": {
+          "text": "Sema neno : Qurani."
+        },
+        "context": {
+          "letter": "Q · q",
+          "word": "Qurani",
+          "icon": "book"
+        }
+      }
+    }
+  ]
+}

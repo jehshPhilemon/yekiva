@@ -1,0 +1,91 @@
+{
+  "id": "lettre-b",
+  "title": "Herufi B",
+  "symbol": "B · b",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "Herufi B inatoa sauti bbb, kama katika neno baba. Sikiliza : bbb."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi b, kisha sema : bbb."
+        },
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : baba. Gusa herufi ya sauti bbb."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Sema neno : baba."
+        },
+        "context": {
+          "letter": "B · b",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

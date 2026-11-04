@@ -1,0 +1,91 @@
+{
+  "id": "consonne-t",
+  "title": "Konsonanti T",
+  "symbol": "T · t",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "glyph": "t:lower_script",
+        "say": {
+          "text": "Herufi T inatoa sauti ttt, kama katika neno tata. Sikiliza : ttt."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "glyph": "t:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi t, kisha sema : ttt."
+        },
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : tata. Gusa herufi ya sauti ttt."
+        },
+        "choices": [
+          {
+            "id": "t",
+            "text": "t"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "t",
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "t"
+      ],
+      "params": {
+        "word": "tata",
+        "say": {
+          "text": "Sema neno : tata."
+        },
+        "context": {
+          "letter": "T · t",
+          "word": "tata",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-nt",
+  "title": "Sauti NT",
+  "symbol": "nt",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nt"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : N na T pamoja hutoa sauti moja : nt, kama katika ntaa. Gusa nt."
+        },
+        "choices": [
+          {
+            "id": "nt",
+            "text": "nt"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "nt",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "ntaa"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza neno ntaa. Gusa neno ntaa."
+        },
+        "choices": [
+          {
+            "id": "ntaa",
+            "text": "ntaa"
+          },
+          {
+            "id": "ntumba",
+            "text": "ntumba"
+          },
+          {
+            "id": "ndege",
+            "text": "ndege"
+          }
+        ],
+        "answer": "ntaa",
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "ntaa"
+      ],
+      "params": {
+        "word": "ntaa",
+        "say": {
+          "text": "Sema neno : ntaa."
+        },
+        "context": {
+          "letter": "nt",
+          "word": "ntaa",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

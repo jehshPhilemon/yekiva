@@ -1,0 +1,91 @@
+{
+  "id": "lettre-r",
+  "title": "La lettre R",
+  "symbol": "R · r",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "La lettre R fait le son rrr, comme dans riz. Écoute bien : rrr."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "glyph": "r:lower_script",
+        "say": {
+          "text": "Trace la lettre r en suivant les pointillés, puis dis : rrr."
+        },
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "say": {
+          "text": "Écoute : riz. Touche la lettre du son rrr."
+        },
+        "choices": [
+          {
+            "id": "r",
+            "text": "r"
+          },
+          {
+            "id": "l",
+            "text": "l"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          }
+        ],
+        "answer": "r",
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "r"
+      ],
+      "params": {
+        "word": "riz",
+        "say": {
+          "text": "Dis le mot : riz."
+        },
+        "context": {
+          "letter": "R · r",
+          "word": "riz",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

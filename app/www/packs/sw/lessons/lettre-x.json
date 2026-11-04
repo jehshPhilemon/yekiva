@@ -1,0 +1,91 @@
+{
+  "id": "lettre-x",
+  "title": "Herufi X",
+  "symbol": "X · x",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "X hutumika katika maneno ya kigeni kama teksi. Inasomwa ks. Sikiliza : ks."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "glyph": "x:lower_script",
+        "say": {
+          "text": "Fuata nukta kuandika herufi x, kisha sema : ks."
+        },
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "say": {
+          "text": "Sikiliza : teksi. Gusa herufi X."
+        },
+        "choices": [
+          {
+            "id": "x",
+            "text": "x"
+          },
+          {
+            "id": "s",
+            "text": "s"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "x",
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "x"
+      ],
+      "params": {
+        "word": "teksi",
+        "say": {
+          "text": "Sema neno : teksi."
+        },
+        "context": {
+          "letter": "X · x",
+          "word": "teksi",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

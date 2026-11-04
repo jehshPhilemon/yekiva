@@ -12,6 +12,10 @@
 //   - the exact shape of the transcription response (several shapes tried below)
 //   - whether "sw" (Swahili) is accepted: NOT among the 25 evaluated languages
 //   - the exact Spark model name (env META_SPARK_MODEL)
+// Muse Image (docs https://dev.meta.ai/docs/image-generation, read 2026-10-30):
+//   - POST /images/generations { model: "muse-image-1.0", prompt, n: 1,
+//     response_format: "b64_json", output_format: "png" } -> data[0].b64_json
+//   - flat $0.01/image; UNVERIFIED live (no key in this sandbox): probe first.
 import { buildLesson, parseModelJson } from "../lesson.js";
 
 export class NotImplementedYet extends Error {}
@@ -133,4 +137,99 @@ export async function lessonFromPhoto(image, { contentType, lang } = {}) {
   }
   if (!spark.word) throw Object.assign(new Error("no legible word in the photo"), { status: 422 });
   return buildLesson({ ...spark, language: spark.language ?? lang });
+}
+
+// Lesson generation: Spark proposes CONTENT (word + syllables), OUR code builds the
+// lesson (buildLesson) and OUR validator checks it. The model never invents structure.
+const LESSON_PROMPT =
+  "You help illiterate adults and children learn to read. Given a word, split it into " +
+  "syllables as pronounced. Answer ONLY with JSON: " +
+  '{"word": "...", "syllables": ["..."]}. ' +
+  "Rules: lowercase, no punctuation, 1-4 syllables, each syllable 1-3 letters.";
+
+export async function generateLesson(word, { lang } = {}) {
+  const apiKey = key();
+  const w = String(word ?? "").trim().toLowerCase().slice(0, 30);
+  if (!w) throw Object.assign(new Error("missing word"), { status: 400 });
+  let res;
+  try {
+    res = await metaFetch(`${BASE}/chat/completions`, {
+      method: "POST",
+      headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
+      body: JSON.stringify({
+        model: process.env.META_SPARK_MODEL ?? "muse-spark-1.1",
+        messages: [
+          { role: "user", content: `${LESSON_PROMPT} Word: "${w}"${lang ? ` (language: ${lang})` : ""}` },
+        ],
+      }),
+    });
+  } catch (e) {
+    throw Object.assign(new Error(`Meta unreachable: ${e?.message ?? e}`), { status: 502 });
+  }
+  if (!res.ok) {
+    const body = await res.text().then((t) => t.slice(0, 300)).catch(() => "");
+    throw Object.assign(new Error(`Meta answered ${res.status}${body ? `: ${body}` : ""}`), { status: 502 });
+  }
+  const data = await res.json().catch(() => null);
+  const raw = data?.choices?.[0]?.message?.content ?? data?.output_text ?? "";
+  let spark;
+  try {
+    spark = parseModelJson(raw);
+  } catch {
+    throw Object.assign(new Error("lesson model returned no usable JSON"), { status: 502 });
+  }
+  if (!spark.word || !Array.isArray(spark.syllables) || spark.syllables.length === 0) {
+    throw Object.assign(new Error("lesson model returned no word/syllables"), { status: 502 });
+  }
+  return buildLesson({ ...spark, language: lang ?? null });
+}
+
+// One fixed cartoon style for ALL lesson illustrations: simple drawings are recognized
+// faster than photos by pre-readers, and a single style keeps every lesson coherent.
+const IMAGE_STYLE =
+  "flat cartoon illustration for children learning to read, single centered object, " +
+  "bold outlines, warm colors, plain white background, no text, no letters, no watermark";
+
+export function buildImagePrompt(word, { hint } = {}) {
+  const w = String(word ?? "").trim();
+  if (!w) throw new Error("missing word");
+  return `${IMAGE_STYLE}: ${w}${hint ? ` (${hint})` : ""}`;
+}
+
+/**
+ * Illustrates one lesson word with Muse Image. UNVERIFIED live: probe with
+ * `node tools/probe-meta.mjs image <word>` (needs META_API_KEY) before relying on it.
+ * @returns {Promise<{bytes: Buffer, mime: "image/png"}>}
+ */
+export async function illustrate(word, { hint } = {}) {
+  const apiKey = key();
+  const prompt = buildImagePrompt(word, { hint });
+  let res;
+  try {
+    res = await metaFetch(`${BASE}/images/generations`, {
+      method: "POST",
+      headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
+      body: JSON.stringify({
+        model: process.env.META_IMAGE_MODEL ?? "muse-image-1.0",
+        prompt,
+        n: 1,
+        response_format: "b64_json",
+        output_format: "png",
+        reasoning_strength: "low",
+        tool_enablement: { enable_web_search: false, enable_shell: false },
+      }),
+    });
+  } catch (e) {
+    throw Object.assign(new Error(`Meta unreachable: ${e?.message ?? e}`), { status: 502 });
+  }
+  if (!res.ok) {
+    const body = await res.text().then((t) => t.slice(0, 300)).catch(() => "");
+    throw Object.assign(new Error(`Meta answered ${res.status}${body ? `: ${body}` : ""}`), { status: 502 });
+  }
+  const data = await res.json().catch(() => null);
+  const b64 = data?.data?.[0]?.b64_json;
+  if (typeof b64 !== "string" || b64.length < 100) {
+    throw Object.assign(new Error("image model returned no usable image"), { status: 502 });
+  }
+  return { bytes: Buffer.from(b64, "base64"), mime: "image/png" };
 }

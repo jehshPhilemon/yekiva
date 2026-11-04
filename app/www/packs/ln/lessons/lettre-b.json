@@ -1,0 +1,91 @@
+{
+  "id": "lettre-b",
+  "title": "Lɛtrɛ B",
+  "symbol": "B · b",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "Lɛtrɛ B ezali na mongongo bbb, lokola na liloba bana. Yoka : bbb."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "B · b",
+          "word": "bana",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "glyph": "b:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ b, mpe loba : bbb."
+        },
+        "context": {
+          "letter": "B · b",
+          "word": "bana",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : bana. Simba lɛtrɛ ya mongongo bbb."
+        },
+        "choices": [
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "b",
+        "context": {
+          "letter": "B · b",
+          "word": "bana",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "b"
+      ],
+      "params": {
+        "word": "bana",
+        "say": {
+          "text": "Loba liloba : bana."
+        },
+        "context": {
+          "letter": "B · b",
+          "word": "bana",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

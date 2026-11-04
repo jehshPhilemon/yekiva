@@ -57,7 +57,12 @@ test("packs: the loader reads the real files and merges Swahili", async () => {
   const packs = createPacks({ fetchFn });
   const langs = await packs.loadLanguages();
   const sw = langs.find((l) => l.code === "sw");
-  assert.deepEqual(sw.tracks.adult, ["i-l", "syllables-ma", "mama-baba"]);
+  assert.equal(sw.name, "Kiswahili");
+  assert.equal(sw.labels.audience.adult, "Mtu mzima");
+  assert.deepEqual(sw.tracks.adult.slice(0, 4), ["letter-a", "i-l", "syllables-ma", "mama-baba"]);
+  assert.ok(sw.tracks.adult.includes("voyelle-e"), "track includes vowels level");
+  assert.ok(sw.tracks.adult.includes("syllabes-ba"), "track includes syllables level");
+  assert.ok(sw.tracks.adult.includes("lecture-1"), "track ends with reading level");
   const lesson = await packs.loadLesson(sw, "mama-baba");
   assert.equal(lesson.owner, "sw-famille");
   assert.ok(sw.glyphs["i:lower_script"]);
@@ -65,7 +70,7 @@ test("packs: the loader reads the real files and merges Swahili", async () => {
 });
 
 test("all screen and step modules import (correct paths and exports)", async () => {
-  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js"]) {
+  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js", "ui/context-cue.js", "steps/listen_tap.js", "steps/watch_write.js", "steps/trace_letter.js"]) {
     await import(`../www/js/${f}`);
   }
   const { registry } = await import("../www/js/core/registry.js");

@@ -1,0 +1,91 @@
+{
+  "id": "voyelle-o",
+  "title": "Vowɛlɛ O",
+  "symbol": "O · o",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "glyph": "o:lower_script",
+        "say": {
+          "text": "Lɛtrɛ O ezali na mongongo o, lokola na liloba moto. Yoka : o."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "glyph": "o:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ o, mpe loba : o."
+        },
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : moto. Simba lɛtrɛ ya mongongo o."
+        },
+        "choices": [
+          {
+            "id": "o",
+            "text": "o"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "u",
+            "text": "u"
+          }
+        ],
+        "answer": "o",
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "o"
+      ],
+      "params": {
+        "word": "moto",
+        "say": {
+          "text": "Loba liloba : moto."
+        },
+        "context": {
+          "letter": "O · o",
+          "word": "moto",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

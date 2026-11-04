@@ -1,0 +1,91 @@
+{
+  "id": "lettre-p",
+  "title": "Lɛtrɛ P",
+  "symbol": "P · p",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "Lɛtrɛ P ezali na mongongo ppp, lokola na liloba papa. Yoka : ppp."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "glyph": "p:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ p, mpe loba : ppp."
+        },
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : papa. Simba lɛtrɛ ya mongongo ppp."
+        },
+        "choices": [
+          {
+            "id": "p",
+            "text": "p"
+          },
+          {
+            "id": "b",
+            "text": "b"
+          },
+          {
+            "id": "t",
+            "text": "t"
+          }
+        ],
+        "answer": "p",
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "p"
+      ],
+      "params": {
+        "word": "papa",
+        "say": {
+          "text": "Loba liloba : papa."
+        },
+        "context": {
+          "letter": "P · p",
+          "word": "papa",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

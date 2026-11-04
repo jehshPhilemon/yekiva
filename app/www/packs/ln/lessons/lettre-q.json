@@ -1,0 +1,91 @@
+{
+  "id": "lettre-q",
+  "title": "Lɛtrɛ Q",
+  "symbol": "Q · q",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "watch_write",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "Q esalelamaka na maloba ya bapaya lokola quartier. Etangamaka k. Yoka : k."
+        },
+        "durationMs": 2600,
+        "context": {
+          "letter": "Q · q",
+          "word": "quartier",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "trace_letter",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "glyph": "q:lower_script",
+        "say": {
+          "text": "Landa biteni mpo okoma lɛtrɛ q, mpe loba : k."
+        },
+        "context": {
+          "letter": "Q · q",
+          "word": "quartier",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : quartier. Simba lɛtrɛ Q."
+        },
+        "choices": [
+          {
+            "id": "q",
+            "text": "q"
+          },
+          {
+            "id": "k",
+            "text": "k"
+          },
+          {
+            "id": "g",
+            "text": "g"
+          }
+        ],
+        "answer": "q",
+        "context": {
+          "letter": "Q · q",
+          "word": "quartier",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "q"
+      ],
+      "params": {
+        "word": "quartier",
+        "say": {
+          "text": "Loba liloba : quartier."
+        },
+        "context": {
+          "letter": "Q · q",
+          "word": "quartier",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}

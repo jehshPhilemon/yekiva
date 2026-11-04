@@ -1,0 +1,118 @@
+{
+  "id": "syllabes-ba",
+  "title": "Silabi ba, be, bi",
+  "symbol": "ba · be · bi",
+  "icon": "family",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "ba"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka ba, lokola na ebandeli ya baba. Simba ba."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "ba",
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "be"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka be, lokola na bebe. Simba be."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "be",
+        "context": {
+          "letter": "be",
+          "word": "bebe",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "bi"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka bi, lokola na biso. Simba bi."
+        },
+        "choices": [
+          {
+            "id": "ba",
+            "text": "ba"
+          },
+          {
+            "id": "be",
+            "text": "be"
+          },
+          {
+            "id": "bi",
+            "text": "bi"
+          }
+        ],
+        "answer": "bi",
+        "context": {
+          "letter": "bi",
+          "word": "biso",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "baba"
+      ],
+      "params": {
+        "word": "baba",
+        "say": {
+          "text": "Loba liloba : baba."
+        },
+        "context": {
+          "letter": "ba",
+          "word": "baba",
+          "icon": "family"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-nz",
+  "title": "Mongongo NZ",
+  "symbol": "nz",
+  "icon": "plant",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "nz"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : N na Z elongo ebimisaka mongongo moko : nz, lokola na nzete. Simba nz."
+        },
+        "choices": [
+          {
+            "id": "nz",
+            "text": "nz"
+          },
+          {
+            "id": "n",
+            "text": "n"
+          },
+          {
+            "id": "z",
+            "text": "z"
+          }
+        ],
+        "answer": "nz",
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "nzete"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba nzete. Simba liloba nzete."
+        },
+        "choices": [
+          {
+            "id": "nzete",
+            "text": "nzete"
+          },
+          {
+            "id": "nzala",
+            "text": "nzala"
+          },
+          {
+            "id": "nzela",
+            "text": "nzela"
+          }
+        ],
+        "answer": "nzete",
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "nzete"
+      ],
+      "params": {
+        "word": "nzete",
+        "say": {
+          "text": "Loba liloba : nzete."
+        },
+        "context": {
+          "letter": "nz",
+          "word": "nzete",
+          "icon": "plant"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "digraphe-mp",
+  "title": "Mongongo MP",
+  "symbol": "mp",
+  "icon": "picture",
+  "steps": [
+    {
+      "type": "listen_tap",
+      "items": [
+        "mp"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka : M na P elongo ebimisaka mongongo moko : mp, lokola na mpunda. Simba mp."
+        },
+        "choices": [
+          {
+            "id": "mp",
+            "text": "mp"
+          },
+          {
+            "id": "m",
+            "text": "m"
+          },
+          {
+            "id": "p",
+            "text": "p"
+          }
+        ],
+        "answer": "mp",
+        "context": {
+          "letter": "mp",
+          "word": "mpunda",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "listen_tap",
+      "items": [
+        "mpunda"
+      ],
+      "params": {
+        "say": {
+          "text": "Yoka liloba mpunda. Simba liloba mpunda."
+        },
+        "choices": [
+          {
+            "id": "mpunda",
+            "text": "mpunda"
+          },
+          {
+            "id": "mpifo",
+            "text": "mpifo"
+          },
+          {
+            "id": "mama",
+            "text": "mama"
+          }
+        ],
+        "answer": "mpunda",
+        "context": {
+          "letter": "mp",
+          "word": "mpunda",
+          "icon": "picture"
+        }
+      }
+    },
+    {
+      "type": "say_word",
+      "items": [
+        "mpunda"
+      ],
+      "params": {
+        "word": "mpunda",
+        "say": {
+          "text": "Loba liloba : mpunda."
+        },
+        "context": {
+          "letter": "mp",
+          "word": "mpunda",
+          "icon": "picture"
+        }
+      }
+    }
+  ]
+}
