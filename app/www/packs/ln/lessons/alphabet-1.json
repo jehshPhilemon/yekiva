@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Baletre bazali na bankombo. Yoka mpe simba letre B."
+          "text": "Baletre bazali na bankombo. Yoka mpe simba letre : B"
         },
         "choices": [
           {
@@ -42,7 +42,7 @@
       ],
       "params": {
         "say": {
-          "text": "Simba letre E."
+          "text": "Simba letre : E"
         },
         "choices": [
           {
@@ -73,7 +73,7 @@
       ],
       "params": {
         "say": {
-          "text": "Simba letre M."
+          "text": "Simba letre : M"
         },
         "choices": [
           {
@@ -104,7 +104,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 1 na 3 : simba B."
+          "text": "Motuna 1, simba letre : B"
         },
         "choices": [
           {
@@ -136,7 +136,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 2 na 3 : simba E."
+          "text": "Motuna 2, simba letre : E"
         },
         "choices": [
           {
@@ -168,7 +168,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 3 na 3 : simba M."
+          "text": "Motuna 3, simba letre : M"
         },
         "choices": [
           {

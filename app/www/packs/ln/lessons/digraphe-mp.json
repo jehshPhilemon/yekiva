@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : M na P elongo ebimisaka mongongo moko : mp, lokola na mpunda. Simba mp."
+          "text": "Yoka : M na P elongo ebimisaka mongongo moko : mp, lokola na mpunda. Simba : mp"
         },
         "choices": [
           {
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 1 na 3 : simba mp."
+          "text": "Motuna 1, simba letre : mp"
         },
         "choices": [
           {
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 3 na 3 : simba a."
+          "text": "Motuna 3, simba letre : a"
         },
         "choices": [
           {

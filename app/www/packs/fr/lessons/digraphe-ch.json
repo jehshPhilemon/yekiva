@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : deux lettres, C et H, chantent un seul son : chchch, comme dans chat. Touche ch."
+          "text": "Écoute : deux lettres, C et H, chantent un seul son : chchch, comme dans chat. Touche : ch"
         },
         "choices": [
           {
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ch."
+          "text": "Question 1, touche la lettre : ch"
         },
         "choices": [
           {
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Question 3, touche la lettre : a"
         },
         "choices": [
           {

@@ -85,6 +85,30 @@ test("sw/ln lessons speak their own language (no French voice text)", () => {
   }
 });
 
+test("TTS pause: every voice line ending in an isolated letter uses ':' before it", () => {
+  // The TTS swallows isolated letters ("touche b" is garbled): a colon forces the
+  // pause ("touche la lettre : b"). Quiz lines use a comma after the number so there
+  // is only ONE colon in the sentence.
+  for (const code of ["fr", "sw", "ln"]) {
+    const manifest = readJson(`${code}/manifest.json`);
+    for (const track of Object.values(manifest.tracks ?? {})) {
+      for (const lid of track) {
+        let lesson;
+        try { lesson = readJson(`${code}/lessons/${lid}.json`); } catch { continue; }
+        for (const step of lesson.steps ?? []) {
+          const say = step.params?.say?.text ?? "";
+          if (!say) continue;
+          const m = say.match(/([^:])\s+([A-Za-z])\s*[.]?\s*$/);
+          assert.ok(!m, `${code}/${lid}: TTS-unfriendly ending without ':' -> "${say.slice(-45)}"`);
+          // Two sentences ("Écoute : mot. Touche : x") are fine; a doubled pause
+          // inside ONE sentence ("touche : : x") is not.
+          assert.ok(!/:\s*:/.test(say), `${code}/${lid}: doubled ':' pause -> "${say.slice(0, 70)}"`);
+        }
+      }
+    }
+  }
+});
+
 test("quizzes only use taught letters (never an untaught letter as answer or distractor)", () => {
   for (const code of ["fr", "sw", "ln"]) {
     const manifest = readJson(`${code}/manifest.json`);

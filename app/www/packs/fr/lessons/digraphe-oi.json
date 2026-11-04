@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : O et I ensemble chantent un seul son : wa, comme dans oiseau. Touche oi."
+          "text": "Écoute : O et I ensemble chantent un seul son : wa, comme dans oiseau. Touche : oi"
         },
         "choices": [
           {
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche oi."
+          "text": "Question 1, touche la lettre : oi"
         },
         "choices": [
           {
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Question 3, touche la lettre : a"
         },
         "choices": [
           {

@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza : N na T pamoja hutoa sauti moja : nt, kama katika ntaa. Gusa nt."
+          "text": "Sikiliza : N na T pamoja hutoa sauti moja : nt, kama katika ntaa. Gusa : nt"
         },
         "choices": [
           {
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 1 kati ya 3 : gusa nt."
+          "text": "Swali 1, gusa herufi : nt"
         },
         "choices": [
           {
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 3 kati ya 3 : gusa a."
+          "text": "Swali 3, gusa herufi : a"
         },
         "choices": [
           {

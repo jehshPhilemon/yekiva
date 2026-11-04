@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza : unga. Gusa herufi ya sauti u."
+          "text": "Sikiliza : unga. Gusa herufi ya sauti : u"
         },
         "choices": [
           {
@@ -60,7 +60,7 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza : unga. Gusa herufi ya sauti u."
+          "text": "Sikiliza : unga. Gusa herufi ya sauti : u"
         },
         "choices": [
           {
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 1 kati ya 3 : gusa u."
+          "text": "Swali 1, gusa herufi : u"
         },
         "choices": [
           {
@@ -141,7 +141,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 2 kati ya 3 : gusa a."
+          "text": "Swali 2, gusa herufi : a"
         },
         "choices": [
           {
@@ -173,7 +173,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 3 kati ya 3 : gusa e."
+          "text": "Swali 3, gusa herufi : e"
         },
         "choices": [
           {

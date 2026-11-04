@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : A et N ensemble chantent un seul son : an, comme dans maman. Touche an."
+          "text": "Écoute : A et N ensemble chantent un seul son : an, comme dans maman. Touche : an"
         },
         "choices": [
           {
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche an."
+          "text": "Question 1, touche la lettre : an"
         },
         "choices": [
           {
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Question 3, touche la lettre : a"
         },
         "choices": [
           {

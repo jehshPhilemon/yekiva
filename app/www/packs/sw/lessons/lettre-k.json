@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza : kuku. Gusa herufi ya sauti k."
+          "text": "Sikiliza : kuku. Gusa herufi ya sauti : k"
         },
         "choices": [
           {
@@ -60,7 +60,7 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza : kuku. Gusa herufi ya sauti kkk."
+          "text": "Sikiliza : kuku. Gusa herufi ya sauti : kkk"
         },
         "choices": [
           {
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 1 kati ya 3 : gusa k."
+          "text": "Swali 1, gusa herufi : k"
         },
         "choices": [
           {
@@ -141,7 +141,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 2 kati ya 3 : gusa a."
+          "text": "Swali 2, gusa herufi : a"
         },
         "choices": [
           {
@@ -173,7 +173,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 3 kati ya 3 : gusa e."
+          "text": "Swali 3, gusa herufi : e"
         },
         "choices": [
           {

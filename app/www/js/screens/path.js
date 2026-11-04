@@ -106,18 +106,13 @@ export async function pathScreen({ services, state, go }) {
     label: actions.replay ?? "repeat", caption: actions.replay,
     className: "path-action",
   });
-  // Diagnostic son 100 % tactile : 2 tests (bip, voix API).
-  const diag = tile("music", {
-    onClick: () => go("diag"), size: 40,
-    label: "Son et voix : tester", caption: "son ?",
-    className: "path-action",
-  });
   const conversation = tile("mic", {
     onClick: () => go("conversation"), size: 40,
     label: actions.conversation ?? "parler à Yekiva", caption: actions.conversation ?? "parler",
     className: "path-action path-conversation",
   });
-  const bar = h("div", { class: "path-actions" }, photo, server, replay, conversation, diag);
+  // Demo: no debug button ("son ?" diag screen hidden) — photo, voice status, replay, conversation only.
+  const bar = h("div", { class: "path-actions" }, photo, server, replay, conversation);
 
   const screen = h(
     "div",

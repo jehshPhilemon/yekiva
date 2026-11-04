@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : papa. Touche la lettre du son p."
+          "text": "Écoute : papa. Touche la lettre du son : p"
         },
         "choices": [
           {
@@ -60,7 +60,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : papa. Touche la lettre du son ppp."
+          "text": "Écoute : papa. Touche la lettre du son : ppp"
         },
         "choices": [
           {
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche p."
+          "text": "Question 1, touche la lettre : p"
         },
         "choices": [
           {
@@ -141,7 +141,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche a."
+          "text": "Question 2, touche la lettre : a"
         },
         "choices": [
           {
@@ -173,7 +173,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche e."
+          "text": "Question 3, touche la lettre : e"
         },
         "choices": [
           {

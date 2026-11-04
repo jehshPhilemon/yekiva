@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza ba, kama mwanzoni mwa baba. Gusa ba."
+          "text": "Sikiliza ba, kama mwanzoni mwa baba. Gusa : ba"
         },
         "choices": [
           {
@@ -42,7 +42,7 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza be, kama katika bega. Gusa be."
+          "text": "Sikiliza be, kama katika bega. Gusa : be"
         },
         "choices": [
           {
@@ -73,7 +73,7 @@
       ],
       "params": {
         "say": {
-          "text": "Sikiliza bo, kama katika boma. Gusa bo."
+          "text": "Sikiliza bo, kama katika boma. Gusa : bo"
         },
         "choices": [
           {
@@ -122,7 +122,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 1 kati ya 3 : gusa ba."
+          "text": "Swali 1, gusa herufi : ba"
         },
         "choices": [
           {
@@ -154,7 +154,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 2 kati ya 3 : gusa be."
+          "text": "Swali 2, gusa herufi : be"
         },
         "choices": [
           {
@@ -186,7 +186,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 3 kati ya 3 : gusa bo."
+          "text": "Swali 3, gusa herufi : bo"
         },
         "choices": [
           {

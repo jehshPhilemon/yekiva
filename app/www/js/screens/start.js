@@ -9,10 +9,9 @@ export function startScreen({ services, go }) {
   const mark = h(
     "div",
     { class: "welcome-mark", "aria-hidden": "true" },
-    icon("book", 82),
-    h("span", { class: "welcome-sound" }, icon("volume", 34)),
+    h("img", { src: "icons/logo-yekiva.jpg", alt: "Yekiva", class: "welcome-logo" }),
   );
-  const brand = h("div", { class: "welcome-brand" }, mark, h("h1", {}, "Yekiva"));
+  const brand = h("div", { class: "welcome-brand" }, mark);
 
   // Activation tactile du bandeau debug : 5 tapes < 3 s sur la marque.
   let taps = [];

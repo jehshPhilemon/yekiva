@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Herufi zina majina. Sikiliza na gusa herufi B."
+          "text": "Herufi zina majina. Sikiliza na gusa herufi : B"
         },
         "choices": [
           {
@@ -42,7 +42,7 @@
       ],
       "params": {
         "say": {
-          "text": "Gusa herufi E."
+          "text": "Gusa herufi : E"
         },
         "choices": [
           {
@@ -73,7 +73,7 @@
       ],
       "params": {
         "say": {
-          "text": "Gusa herufi M."
+          "text": "Gusa herufi : M"
         },
         "choices": [
           {
@@ -104,7 +104,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 1 kati ya 3 : gusa B."
+          "text": "Swali 1, gusa herufi : B"
         },
         "choices": [
           {
@@ -136,7 +136,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 2 kati ya 3 : gusa E."
+          "text": "Swali 2, gusa herufi : E"
         },
         "choices": [
           {
@@ -168,7 +168,7 @@
       ],
       "params": {
         "say": {
-          "text": "Swali 3 kati ya 3 : gusa M."
+          "text": "Swali 3, gusa herufi : M"
         },
         "choices": [
           {

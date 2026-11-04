@@ -92,7 +92,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 2 na 3 : simba a."
+          "text": "Motuna 2, simba letre : a"
         },
         "choices": [
           {
@@ -124,7 +124,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 3 na 3 : simba e."
+          "text": "Motuna 3, simba letre : e"
         },
         "choices": [
           {

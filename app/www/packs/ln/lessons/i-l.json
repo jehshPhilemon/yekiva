@@ -9,7 +9,7 @@
       "params": {
         "glyph": "l:lower_script",
         "say": {
-          "text": "Yoka mongongo l na liloba liso. Tala ndenge ya kokoma l."
+          "text": "Yoka mongongo l na liloba liso. Tala ndenge ya kokoma : l"
         },
         "durationMs": 2500,
         "context": {
@@ -26,7 +26,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : liso. Simba letre ya mongongo l."
+          "text": "Yoka : liso. Simba letre ya mongongo : l"
         },
         "choices": [
           {
@@ -58,7 +58,7 @@
       "params": {
         "glyph": "i:lower_script",
         "say": {
-          "text": "Yoka mongongo i na liloba liso. Tala ndenge ya kokoma i."
+          "text": "Yoka mongongo i na liloba liso. Tala ndenge ya kokoma : i"
         },
         "durationMs": 3000,
         "context": {
@@ -75,7 +75,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : liso. Simba letre ya mongongo i."
+          "text": "Yoka : liso. Simba letre ya mongongo : i"
         },
         "choices": [
           {
@@ -106,7 +106,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : lala. Simba letre ya mongongo l."
+          "text": "Yoka : lala. Simba letre ya mongongo : l"
         },
         "choices": [
           {
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : imba. Simba letre ya mongongo i."
+          "text": "Yoka : imba. Simba letre ya mongongo : i"
         },
         "choices": [
           {
@@ -204,7 +204,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 1 na 3 : simba l."
+          "text": "Motuna 1, simba letre : l"
         },
         "choices": [
           {
@@ -236,7 +236,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 2 na 3 : simba i."
+          "text": "Motuna 2, simba letre : i"
         },
         "choices": [
           {
@@ -268,7 +268,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 3 na 3 : simba a."
+          "text": "Motuna 3, simba letre : a"
         },
         "choices": [
           {

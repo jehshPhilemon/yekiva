@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute ma, comme dans maman. Touche ma."
+          "text": "Écoute ma, comme dans maman. Touche : ma"
         },
         "choices": [
           {
@@ -42,7 +42,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute me, comme dans melon. Touche me."
+          "text": "Écoute me, comme dans melon. Touche : me"
         },
         "choices": [
           {
@@ -73,7 +73,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute mi, comme dans midi. Touche mi."
+          "text": "Écoute mi, comme dans midi. Touche : mi"
         },
         "choices": [
           {
@@ -122,7 +122,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche ma."
+          "text": "Question 1, touche la lettre : ma"
         },
         "choices": [
           {
@@ -154,7 +154,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche me."
+          "text": "Question 2, touche la lettre : me"
         },
         "choices": [
           {
@@ -186,7 +186,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche mi."
+          "text": "Question 3, touche la lettre : mi"
         },
         "choices": [
           {

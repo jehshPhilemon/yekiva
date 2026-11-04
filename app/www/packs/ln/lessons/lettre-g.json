@@ -29,7 +29,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : guitare. Simba letre ya mongongo g."
+          "text": "Yoka : guitare. Simba letre ya mongongo : g"
         },
         "choices": [
           {
@@ -60,7 +60,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : guitare. Simba letre ya mongongo ggg."
+          "text": "Yoka : guitare. Simba letre ya mongongo : ggg"
         },
         "choices": [
           {
@@ -109,7 +109,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 1 na 3 : simba g."
+          "text": "Motuna 1, simba letre : g"
         },
         "choices": [
           {
@@ -141,7 +141,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 2 na 3 : simba a."
+          "text": "Motuna 2, simba letre : a"
         },
         "choices": [
           {
@@ -173,7 +173,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 3 na 3 : simba e."
+          "text": "Motuna 3, simba letre : e"
         },
         "choices": [
           {

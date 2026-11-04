@@ -26,7 +26,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : livre. Touche la lettre du son l."
+          "text": "Écoute : livre. Touche la lettre du son : l"
         },
         "choices": [
           {
@@ -75,7 +75,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : image. Touche la lettre du son i."
+          "text": "Écoute : image. Touche la lettre du son : i"
         },
         "choices": [
           {
@@ -106,7 +106,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : livre. Touche la lettre du son l."
+          "text": "Écoute : livre. Touche la lettre du son : l"
         },
         "choices": [
           {
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Écoute : image. Touche la lettre du son i."
+          "text": "Écoute : image. Touche la lettre du son : i"
         },
         "choices": [
           {
@@ -204,7 +204,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 1 sur 3 : touche l."
+          "text": "Question 1, touche la lettre : l"
         },
         "choices": [
           {
@@ -236,7 +236,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 2 sur 3 : touche i."
+          "text": "Question 2, touche la lettre : i"
         },
         "choices": [
           {
@@ -268,7 +268,7 @@
       ],
       "params": {
         "say": {
-          "text": "Question 3 sur 3 : touche a."
+          "text": "Question 3, touche la lettre : a"
         },
         "choices": [
           {

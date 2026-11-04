@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka ba, lokola na ebandeli ya baba. Simba ba."
+          "text": "Yoka ba, lokola na ebandeli ya baba. Simba : ba"
         },
         "choices": [
           {
@@ -42,7 +42,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka be, lokola na bebe. Simba be."
+          "text": "Yoka be, lokola na bebe. Simba : be"
         },
         "choices": [
           {
@@ -73,7 +73,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka bi, lokola na biso. Simba bi."
+          "text": "Yoka bi, lokola na biso. Simba : bi"
         },
         "choices": [
           {
@@ -122,7 +122,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 1 na 3 : simba ba."
+          "text": "Motuna 1, simba letre : ba"
         },
         "choices": [
           {
@@ -154,7 +154,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 2 na 3 : simba be."
+          "text": "Motuna 2, simba letre : be"
         },
         "choices": [
           {
@@ -186,7 +186,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 3 na 3 : simba bi."
+          "text": "Motuna 3, simba letre : bi"
         },
         "choices": [
           {

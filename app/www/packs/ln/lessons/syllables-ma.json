@@ -8,7 +8,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka silabi ma na liloba mama. Simba ma."
+          "text": "Yoka silabi ma na liloba mama. Simba : ma"
         },
         "choices": [
           {
@@ -65,7 +65,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 1 na 3 : simba ma."
+          "text": "Motuna 1, simba letre : ma"
         },
         "choices": [
           {
@@ -97,7 +97,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 2 na 3 : simba ji."
+          "text": "Motuna 2, simba letre : ji"
         },
         "choices": [
           {
@@ -129,7 +129,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 3 na 3 : simba a."
+          "text": "Motuna 3, simba letre : a"
         },
         "choices": [
           {

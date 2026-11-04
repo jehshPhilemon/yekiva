@@ -11,7 +11,7 @@
       ],
       "params": {
         "say": {
-          "text": "Yoka : N na J elongo ebimisaka mongongo moko : nj, lokola na njela. Simba nj."
+          "text": "Yoka : N na J elongo ebimisaka mongongo moko : nj, lokola na njela. Simba : nj"
         },
         "choices": [
           {
@@ -91,7 +91,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 1 na 3 : simba nj."
+          "text": "Motuna 1, simba letre : nj"
         },
         "choices": [
           {
@@ -155,7 +155,7 @@
       ],
       "params": {
         "say": {
-          "text": "Motuna 3 na 3 : simba a."
+          "text": "Motuna 3, simba letre : a"
         },
         "choices": [
           {
