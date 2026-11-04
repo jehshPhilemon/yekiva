@@ -30,7 +30,7 @@ test("without MMS key, Yekiva calls api.jehshphilemon.com and omits X-API-Key", 
     const result = await speak("Bonjour", { lang: "fr" });
     assert.equal(seen.url, "https://api.jehshphilemon.com/tts/v1/speak");
     assert.equal("x-api-key" in seen.headers, false);
-    assert.deepEqual(seen.body, { language: "fra", text: "Bonjour", format: "opus" });
+    assert.deepEqual(seen.body, { language: "fra", text: "Bonjour", format: "mp3" });
     assert.equal(result.mime, "audio/mpeg");
     assert.equal(result.bytes.length, audio.length);
   }));

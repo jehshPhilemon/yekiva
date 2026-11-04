@@ -3,7 +3,8 @@
 L'APK parle au serveur Yekiva avec un header `x-app-token` (abus limités,
 pas une vraie authentification — la clé est lisible dans l'app). Au lieu d'un
 secret unique partagé, le serveur accepte des clés **YKV-PPPP-PPPP-PPPP-CC**
-(12 caractères aléatoires + 2 de contrôle).
+(12 caractères aléatoires + 2 de contrôle). L'alphabet exact est
+`0123456789ABCDEFGHJKMNPQRSTVWXYZ` (32 caractères ; `I`, `L`, `O` et `U` sont exclus).
 
 ## Côté serveur (VPS)
 
@@ -14,6 +15,15 @@ secret unique partagé, le serveur accepte des clés **YKV-PPPP-PPPP-PPPP-CC**
    (alphabet reconstruit, constantes éclatées) : le dépôt hackathon public
    n'expose pas la formule en clair. La validation est 100 % serveur —
    l'app ne contient aucune logique de clé.
+
+## Formule canonique (hors dépôt public)
+
+La source de vérité vit dans `tools/yekiva-key.mjs` : alphabet
+`0123456789ABCDEFGHJKMNPQRSTVWXYZ`, payload de 12 caractères
+(`byte & 31`), checksum pondéré `somme((i+1) * index) % 1024` découpé en
+2 caractères 5+5 bits. `server/src/apptoken.js` en est le miroir obfusqué
+(même maths : `& 1023` au lieu de `% 1024`). Vecteurs : `DPRGVPGPPAXS -> M1`,
+`AAAABBBBCCCC -> VT`, `9X3A5T3XYTM8 -> BM`.
 
 ## Émettre des clés (offline, machine privée)
 

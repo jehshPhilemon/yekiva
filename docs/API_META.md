@@ -71,15 +71,17 @@ Transport: upstream Opus/WAV -> converted once to MP3 (~7 KB for 2 s, 10x lighte
 - Nothing is pre-generated at build time: packs carry text only. The app caches each
   utterance on-device (IndexedDB) after the first play, for offline replay.
 - `YEKIVA_MMS_KEY` is **not required in the project `server/.env`**. Yekiva sends
-  the request without `X-API-Key` when no server-side key is configured, so an API
-  configured for keyless/allowlisted access works without it. The server can also
+  the request without `X-API-Key` when no server-side key is configured (the hosted
+  API answers 401 in that case — verified 2026-11-04: `{"detail":"Invalid API key"}`).
+  **The MMS API key IS a YKV key** (`YKV-....-....-....-..`, same formula as the app
+  gate in `tools/yekiva-key.mjs`): mint with `node tools/make-key.mjs`, send as
+  `X-API-Key`, the API answers `audio/ogg` (Opus) converted once to our MP3 transport.
+  The server can also
   read a key already present in its own process environment or `/etc/tts-api.env`
   (override path with `YEKIVA_MMS_KEY_FILE`); recognized names include
   `YEKIVA_MMS_KEY`, `MMS_API_KEY`, `TTS_API_KEY`, `API_KEY` and `X_API_KEY`.
   This reads a *local file on the Yekiva server*; a remote VPS file cannot be read
-  by Termux. The supplied API specification says unauthenticated calls return 401;
-  in that case, configure API access for the Yekiva server or inject the existing
-  secret into the Yekiva server environment. Never put it in the APK.
+  by Termux. Never put it in the APK.
 - Server setup (fallback only): install `torch` from the CPU wheel index plus `transformers`
   virtual environment, and install `ffmpeg`; put that environment's `bin/` first in `PATH`
   when starting Node (the voice service calls `python3`);

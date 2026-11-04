@@ -69,6 +69,9 @@ test("YKV keys: minted keys validate, tampered keys fail", () => {
   assert.equal(isYkvKey(k), true);
   assert.equal(isYkvKey(k.slice(0, -1) + (k.endsWith("0") ? "1" : "0")), false);
   assert.equal(isYkvKey("YKV-AAAA-BBBB-CCCC-00"), false);
+  assert.equal(isYkvKey("YKV-DPRG-VPGP-PAXS-M1"), true); // checksum from the supplied 32-char alphabet
+  assert.equal(isYkvKey("YKV-DPRG-VPGP-PAXS-MH"), false); // old mismatched checksum
+  assert.equal(isYkvKey("YKV-DPRU-VPGP-PAXS-M1"), false); // U is outside the issuer alphabet
 });
 test("token gate: exact APP_TOKEN or any valid YKV key passes, garbage fails", () =>
   withServer({ appToken: "secret" }, async (base) => {
@@ -77,6 +80,7 @@ test("token gate: exact APP_TOKEN or any valid YKV key passes, garbage fails", (
     assert.equal((await call("nope")).status, 401);
     assert.equal((await call("secret")).status, 415); // token OK -> reaches content-type check
     assert.equal((await call(mintAppKey())).status, 415); // valid YKV key -> same
+    assert.equal((await call("YKV-DPRG-VPGP-PAXS-M1")).status, 415); // supplied formula -> same
   }));
 
 test("CORS: the app's preflight is accepted", () =>

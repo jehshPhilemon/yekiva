@@ -14,11 +14,11 @@
 
 import { randomBytes } from "node:crypto";
 
-// Rebuilt alphabet: 0-9, A-Z minus I, L, O (32 symbols). No literal reference string.
+// Rebuilt alphabet: 0-9, A-Z minus I, L, O, U (32 symbols), matching the issuer.
 const _cps = [];
 for (let _c = 48; _c <= 57; _c++) _cps.push(_c);
 for (let _c = 65; _c <= 90; _c++) {
-  if (_c === 73 || _c === 76 || _c === 79) continue;
+  if (_c === 73 || _c === 76 || _c === 79 || _c === 85) continue;
   _cps.push(_c);
 }
 const _A = String.fromCharCode(..._cps);
