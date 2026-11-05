@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:zèbre"
       ],
       "params": {
-        "word": "zèbre",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "jus",
+          "icon": "music"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "jus",
+            "icon": "music"
+          },
+          {
+            "word": "zèbre",
+            "icon": "eye"
+          },
+          {
+            "word": "chat",
+            "icon": "eye"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "Z · z",
           "word": "zèbre",

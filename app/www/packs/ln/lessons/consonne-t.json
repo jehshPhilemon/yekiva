@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:tata"
       ],
       "params": {
-        "word": "tata",
-        "say": {
-          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        "target": {
+          "word": "guitare",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "guitare",
+            "icon": "book"
+          },
+          {
+            "word": "hoteli",
+            "icon": "picture"
+          },
+          {
+            "word": "kiti",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Lisano : yoka liloba ya sika, simba elilingi na yango, mpe lobela yango."
+        },
         "context": {
           "letter": "T  t",
           "word": "tata",

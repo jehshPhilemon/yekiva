@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:tasse"
       ],
       "params": {
-        "word": "tasse",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "chat",
+          "icon": "eye"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "chat",
+            "icon": "eye"
+          },
+          {
+            "word": "tasse",
+            "icon": "music"
+          },
+          {
+            "word": "livre",
+            "icon": "book"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "T · t",
           "word": "tasse",

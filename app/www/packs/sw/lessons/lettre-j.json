@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:jicho"
       ],
       "params": {
-        "word": "jicho",
-        "say": {
-          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        "target": {
+          "word": "njia",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "njia",
+            "icon": "book"
+          },
+          {
+            "word": "moto",
+            "icon": "picture"
+          },
+          {
+            "word": "baba",
+            "icon": "family"
+          }
+        ],
+        "say": {
+          "text": "Mchezo : sikiliza neno jipya, gusa picha yake, kisha liseme."
+        },
         "context": {
           "letter": "J · j",
           "word": "jicho",

@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:fleur"
       ],
       "params": {
-        "word": "fleur",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "jus",
+          "icon": "music"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "jus",
+            "icon": "music"
+          },
+          {
+            "word": "fleur",
+            "icon": "plant"
+          },
+          {
+            "word": "chat",
+            "icon": "eye"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "F · f",
           "word": "fleur",

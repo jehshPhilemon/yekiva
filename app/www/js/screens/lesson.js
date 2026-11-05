@@ -38,6 +38,29 @@ export async function lessonScreen({ services, state, go, lessonId }) {
     .sort((a, b) => a.rank - b.rank || a.i - b.i)
     .map((x) => x.s);
 
+  // Voice pre-generation: while the intro plays, fetch the upcoming audios
+  // (if not cached) so each step plays instantly. Fire-and-forget, best-effort.
+  try {
+    const upcoming = [];
+    const push = (t) => { if (typeof t === "string" && t.trim()) upcoming.push(t); };
+    push(lang?.prompts?.lesson_done?.text);
+    push(lang?.prompts?.quiz_pass?.text);
+    push(lang?.prompts?.quiz_retry?.text);
+    for (const st of steps) {
+      const prm = st.params ?? {};
+      push(prm.say?.text);
+      push(prm.word);
+      push(prm.target?.word);
+      for (const c of prm.choices ?? []) push(c.text ?? c.id);
+      for (const c of prm.answers ?? []) push(c);
+      if (typeof prm.answer === "string") push(prm.answer);
+    }
+    push(lang?.labels?.actions?.replay);
+    push(lang?.labels?.actions?.continue);
+    push(lang?.labels?.actions?.validate);
+    services.speaker.prefetch?.(upcoming, lang.code);
+  } catch { /* prefetch is best-effort */ }
+
   const bar = h("i");
   const body = h("div", { class: "stack" });
   const screen = h("div", { class: "screen" }, h("div", { class: "progress" }, bar), body);
@@ -126,13 +149,17 @@ export async function lessonScreen({ services, state, go, lessonId }) {
       if (!cancelled) render();
       return;
     }
+    // Pack-voiced intro: the generic lesson_intro prompt (localized) + the lesson
+    // title. NEVER a hardcoded French sentence (a hardcoded sentence read by the
+    // Swahili TTS is the "incomprehensible min" heard before the lesson).
     const first = steps[0];
     const ctx0 = first?.params?.context;
     const title = lesson.title ?? lesson.id;
-    const intro = ctx0?.word
-      ? { text: `${title}. ${ctx0.letter ?? ""}, comme dans ${ctx0.word}. Écoute bien, regarde, puis touche.` }
-      : { text: `${title}. Écoute bien, puis fais comme moi.` };
-    await services.speaker.say(intro, lang.code, lesson.owner);
+    const base = lang?.prompts?.lesson_intro;
+    const intro = ctx0?.word && ctx0?.letter
+      ? { text: `${title}. ${ctx0.letter}, ${ctx0.word}. ${base?.text ?? ""}`.trim() }
+      : { text: `${title}. ${base?.text ?? ""}`.trim() };
+    if (intro.text) await services.speaker.say(intro, lang.code, lesson.owner);
     if (!cancelled) render();
   })();
   return screen;

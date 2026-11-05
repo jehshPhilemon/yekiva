@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:maman"
       ],
       "params": {
-        "word": "maman",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "montagne",
+          "icon": "picture"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "montagne",
+            "icon": "picture"
+          },
+          {
+            "word": "moto",
+            "icon": "play"
+          },
+          {
+            "word": "maman",
+            "icon": "family"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "M · m",
           "word": "maman",

@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:velo"
       ],
       "params": {
-        "word": "velo",
-        "say": {
-          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        "target": {
+          "word": "moto",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "moto",
+            "icon": "book"
+          },
+          {
+            "word": "baba",
+            "icon": "family"
+          },
+          {
+            "word": "mama",
+            "icon": "family"
+          }
+        ],
+        "say": {
+          "text": "Lisano : yoka liloba ya sika, simba elilingi na yango, mpe lobela yango."
+        },
         "context": {
           "letter": "V  v",
           "word": "velo",

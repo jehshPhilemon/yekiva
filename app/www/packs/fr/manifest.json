@@ -171,7 +171,7 @@
     "audio": null
   },
   "photo_failed": {
-    "text": "Je n’ai pas pu lire cette photo. Essaie avec un mot bien visible.",
+    "text": "Je n’ai pas pu utiliser cette photo. Essaie avec une autre image.",
     "audio": null
   },
   "conversation_thinking": {
@@ -184,6 +184,14 @@
   },
   "conversation_empty": {
     "text": "Je n’ai rien entendu. Parle bien fort près du téléphone, puis appuie encore.",
+    "audio": null
+  },
+  "photo_seen_yes": {
+    "text": "Je vois : {word}. {desc} On apprend ce mot ensemble.",
+    "audio": null
+  },
+  "photo_seen_no": {
+    "text": "Je vois le mot : {word}. On apprend ce mot ensemble.",
     "audio": null
   }
 }

@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:quatre"
       ],
       "params": {
-        "word": "quatre",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "koala",
+          "icon": "eye"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "koala",
+            "icon": "eye"
+          },
+          {
+            "word": "jus",
+            "icon": "music"
+          },
+          {
+            "word": "chat",
+            "icon": "eye"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "Q · q",
           "word": "quatre",

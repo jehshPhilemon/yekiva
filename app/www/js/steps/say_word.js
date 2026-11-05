@@ -8,6 +8,21 @@ import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
 import { contextCue } from "../ui/context-cue.js";
 
+// Spoken button: blink the tile while its voice plays (illiterate-first: every
+// button is heard AND seen). speakIt resolves when the TTS finishes.
+function spokenButton(tileEl, speakIt) {
+  const orig = tileEl;
+  orig.addEventListener("click", () => {
+    orig.classList.add("blink");
+    Promise.resolve()
+      .then(speakIt)
+      .catch(() => {})
+      .finally(() => setTimeout(() => orig.classList.remove("blink"), 400));
+  });
+  return orig;
+}
+
+
 export function sayWord(ctx) {
   const params = ctx.step.params ?? {};
   const { word, say, image, context } = params;
@@ -24,11 +39,12 @@ export function sayWord(ctx) {
   const wordBox = h("div", { class: "word word-masked" },
     image ? h("img", { src: ctx.assetUrl(image), alt: "" }) : "",
     h("span", { class: "word-mask", "aria-label": "mot caché" }, "?"));
-  const replay = tile("volume", {
+  const replayBtn = tile("volume", {
     onClick: hearWord, size: 48,
     label: labels.replay ?? "replay", caption: labels.replay,
     className: "lesson-action",
   });
+  const replay = spokenButton(replayBtn, hearWord);
   const el = h("div", { class: `stack lesson-step${quiz ? " is-quiz" : ""}` },
     h("div", { class: "row small lesson-actions" }, replay),
     contextCue(context), wordBox, status);
@@ -45,27 +61,40 @@ export function sayWord(ctx) {
   // L’apprenant écoute puis confirme avec le bouton : le micro est réservé
   // à l’écran Conversation, accessible depuis le parcours.
   show("check");
-  const btn = tile("check", {
-    onClick: () => {
+  const btnRaw = tile("check", {
+    onClick: async () => {
       if (!listened) {
-        hearWord();
+        await hearWord();
         markListened();
         return;
       }
+      const c = ctx.language.labels?.actions?.continue;
+      if (c) await ctx.speak({ text: c });
       ctx.onDone(true);
     },
     size: 48,
     label: labels.validate ?? "validate", caption: labels.continue,
     className: "lesson-action",
   });
+  const btn = spokenButton(btnRaw, async () => {
+    if (!listened) return hearWord();
+    const c = ctx.language.labels?.actions?.continue;
+    return c ? ctx.speak({ text: c }) : Promise.resolve();
+  });
   el.append(h("div", { class: "row small lesson-actions" }, btn));
-  // Keep the pedagogical order: instruction first, then the target word.
-  // Never launch two Audio elements concurrently.
+  // Keep the pedagogical order: instruction, target word, then the buttons
+  // themselves (a pre-reader cannot find silent buttons). Never two audios at once.
   (async () => {
     await hearInstr();
     if (!el.isConnected) return;
     await hearWord();
     markListened();
+    if (!el.isConnected) return;
+    const r = labels.replay;
+    if (r) await ctx.speak({ text: r });
+    if (!el.isConnected) return;
+    const c = labels.validate ?? labels.continue;
+    if (c) await ctx.speak({ text: c });
   })();
   return el;
 }

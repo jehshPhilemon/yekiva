@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:yaourt"
       ],
       "params": {
-        "word": "yaourt",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "lune",
+          "icon": "moon"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "lune",
+            "icon": "moon"
+          },
+          {
+            "word": "yaourt",
+            "icon": "music"
+          },
+          {
+            "word": "chat",
+            "icon": "eye"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "Y · y",
           "word": "yaourt",

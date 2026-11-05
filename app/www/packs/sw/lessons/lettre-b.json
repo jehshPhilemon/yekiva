@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:baba"
       ],
       "params": {
-        "word": "baba",
-        "say": {
-          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        "target": {
+          "word": "Mama na baba.",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "Mama na baba.",
+            "icon": "book"
+          },
+          {
+            "word": "dhahabu",
+            "icon": "picture"
+          },
+          {
+            "word": "embe",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Mchezo : sikiliza neno jipya, gusa picha yake, kisha liseme."
+        },
         "context": {
           "letter": "B · b",
           "word": "baba",

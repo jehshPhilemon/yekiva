@@ -32,7 +32,7 @@ export function photoScreen({ services, state, go }) {
     screen.destroy = cancel;
     // Processing feedback: the analysis takes a few seconds (photo -> Spark -> lesson).
     status.replaceChildren(icon("volume", 64));
-    const waitMsg = state.language?.photo_analyzing?.text ?? "Je regarde ta photo…";
+    const waitMsg = state.language?.photo_analyzing?.text ?? "";
     status.append(waitMsg);
     status.classList.add("is-working");
     await services.speaker.say({ text: waitMsg }, state.language?.code, state.language?.basePackId);
@@ -47,7 +47,7 @@ export function photoScreen({ services, state, go }) {
     if (cancelled) return;
     if (!lesson?.steps?.length) {
       // API indisponible ou photo illisible : l'expliquer en voix, puis parcours.
-      const sorry = state.language?.photo_failed?.text ?? "Je n’ai pas pu lire cette photo. Essaie avec un mot bien visible.";
+      const sorry = state.language?.photo_failed?.text ?? "";
       status.replaceChildren(icon("cloudoff", 64));
       status.append(sorry);
       await services.speaker.say({ text: sorry }, state.language?.code, state.language?.basePackId);
@@ -55,12 +55,15 @@ export function photoScreen({ services, state, go }) {
       return;
     }
     // 1. L'app explique l'image : le mot lu + ce qui est visible.
+    // Tout est localise dans le pack (photo_seen_yes/photo_seen_no): aucun
+    // mot francais en dur, meme quand la description manque.
     const word = lesson.word ?? lesson.title ?? "";
     const desc = typeof lesson.description === "string" ? lesson.description.trim() : "";
-    const seen = state.language?.photo_seen ?? null;
+    const seenYes = state.language?.photo_seen_yes?.text ?? null;
+    const seenNo = state.language?.photo_seen_no?.text ?? null;
     const intro = desc
-      ? `${seen?.text ?? `Je vois : ${word}.`} ${desc} On apprend ce mot ensemble.`
-      : (seen?.text ?? `Je vois le mot : ${word}. On apprend ce mot ensemble.`);
+      ? (seenYes ? seenYes.replace("{word}", word).replace("{desc}", desc) : `${desc}`)
+      : (seenNo ? seenNo.replace("{word}", word) : word);
     await services.speaker.say({ text: intro }, state.language?.code, state.language?.basePackId);
     if (cancelled) return;
     // 2. Joue la leçon générée inline (répétition + quiz).

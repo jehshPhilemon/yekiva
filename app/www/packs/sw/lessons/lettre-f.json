@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:farasi"
       ],
       "params": {
-        "word": "farasi",
-        "say": {
-          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        "target": {
+          "word": "rafiki",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "rafiki",
+            "icon": "book"
+          },
+          {
+            "word": "moto",
+            "icon": "picture"
+          },
+          {
+            "word": "baba",
+            "icon": "family"
+          }
+        ],
+        "say": {
+          "text": "Mchezo : sikiliza neno jipya, gusa picha yake, kisha liseme."
+        },
         "context": {
           "letter": "F · f",
           "word": "farasi",

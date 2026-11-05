@@ -181,16 +181,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:thelathini"
       ],
       "params": {
-        "word": "thelathini",
-        "say": {
-          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        "target": {
+          "word": "Mama analala.",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "Mama analala.",
+            "icon": "book"
+          },
+          {
+            "word": "Mama na baba.",
+            "icon": "picture"
+          },
+          {
+            "word": "Mtoto analala.",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Mchezo : sikiliza neno jipya, gusa picha yake, kisha liseme."
+        },
         "context": {
           "letter": "th",
           "word": "thelathini",

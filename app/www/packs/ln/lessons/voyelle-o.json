@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:moto"
       ],
       "params": {
-        "word": "moto",
-        "say": {
-          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        "target": {
+          "word": "hoteli",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "hoteli",
+            "icon": "book"
+          },
+          {
+            "word": "mboka",
+            "icon": "picture"
+          },
+          {
+            "word": "photo",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Lisano : yoka liloba ya sika, simba elilingi na yango, mpe lobela yango."
+        },
         "context": {
           "letter": "O  o",
           "word": "moto",

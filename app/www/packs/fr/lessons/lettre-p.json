@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:papa"
       ],
       "params": {
-        "word": "papa",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "ananas",
+          "icon": "plant"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "ananas",
+            "icon": "plant"
+          },
+          {
+            "word": "papa",
+            "icon": "family"
+          },
+          {
+            "word": "chat",
+            "icon": "eye"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "P · p",
           "word": "papa",

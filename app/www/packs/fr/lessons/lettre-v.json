@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:vélo"
       ],
       "params": {
-        "word": "vélo",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "avion",
+          "icon": "plane"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "avion",
+            "icon": "plane"
+          },
+          {
+            "word": "livre",
+            "icon": "book"
+          },
+          {
+            "word": "lune",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "V · v",
           "word": "vélo",

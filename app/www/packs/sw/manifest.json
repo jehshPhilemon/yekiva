@@ -176,7 +176,7 @@
     "audio": null
   },
   "photo_failed": {
-    "text": "Sikuweza kusoma picha hii. Jaribu na neno linaloonekana vizuri.",
+    "text": "Sikupata kutumia picha hii. Jaribu na picha nyingine.",
     "audio": null
   },
   "conversation_thinking": {
@@ -189,6 +189,14 @@
   },
   "conversation_empty": {
     "text": "Sikusikia chochote. Ongea kwa sauti kubwa karibu na simu, kisha gusa tena.",
+    "audio": null
+  },
+  "photo_seen_yes": {
+    "text": "Naona: {word}. {desc} Tujifunze neno hili pamoja.",
+    "audio": null
+  },
+  "photo_seen_no": {
+    "text": "Naona neno: {word}. Tujifunze neno hili pamoja.",
     "audio": null
   }
 }

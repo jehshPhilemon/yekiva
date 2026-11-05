@@ -4,10 +4,12 @@ import { listenTap } from "../steps/listen_tap.js";
 import { sayWord } from "../steps/say_word.js";
 import { traceLetter } from "../steps/trace_letter.js";
 import { watchWrite } from "../steps/watch_write.js";
+import { wordGame } from "../steps/word_game.js";
 
 export const registry = {
   listen_tap: listenTap,
   say_word: sayWord,
   trace_letter: traceLetter,
   watch_write: watchWrite,
+  word_game: wordGame,
 };

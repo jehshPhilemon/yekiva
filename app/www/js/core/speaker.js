@@ -201,16 +201,51 @@ export function createSpeaker({ speakFn } = {}) {
       mem.set(key, cached);
       return playBlob(cached, token);
     }
+    const blob = await fetchVoice(text, lang);
+    if (!blob || token !== generation) return null;
+    return playBlob(blob, token);
+  }
+  /** Fetch (or reuse) the TTS audio WITHOUT playing: fills mem + IndexedDB. */
+  async function fetchVoice(text, lang) {
+    const key = cacheKey(lang, text);
+    if (mem.has(key)) return mem.get(key);
+    const cached = await cacheGet(lang, text);
+    if (cached) {
+      mem.set(key, cached);
+      return cached;
+    }
     let blob = null;
     try {
       blob = await speakFn(text, lang);
     } catch {
       return null;
     }
-    if (!blob || token !== generation) return null;
+    if (!blob) return null;
     mem.set(key, blob);
     cachePut(lang, text, blob);
-    return playBlob(blob, token);
+    return blob;
+  }
+  /**
+   * Pre-generate voices for upcoming texts (fire-and-forget, best-effort).
+   * Called when a lesson starts so audios are ready before their step plays.
+   * Skips texts already cached; never throws; never plays anything.
+   */
+  function prefetch(texts, lang, { concurrency = 2 } = {}) {
+    if (!speakFn || !Array.isArray(texts)) return Promise.resolve(0);
+    const pending = [...new Set(texts.map((t) => String(t ?? "").trim()).filter(Boolean))];
+    if (!pending.length) return Promise.resolve(0);
+    let done = 0;
+    const workers = Array.from({ length: Math.max(1, concurrency) }, async () => {
+      while (pending.length) {
+        const text = pending.shift();
+        try {
+          const key = cacheKey(lang, text);
+          if (!mem.has(key) && !(await cacheGet(lang, text))) await fetchVoice(text, lang);
+          done++;
+        } catch { /* best-effort */ }
+      }
+    });
+    return Promise.all(workers).then(() => done).catch(() => done);
   }
 
   /** Natural voice: server TTS (Meta) with session + IndexedDB cache. Null when unavailable. */
@@ -231,6 +266,7 @@ export function createSpeaker({ speakFn } = {}) {
   return {
     stop,
     ready,
+    prefetch, fetchVoice,
     cache: {
       async clear() {
         mem.clear();

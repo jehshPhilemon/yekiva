@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:oiseau"
       ],
       "params": {
-        "word": "oiseau",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "loup",
+          "icon": "eye"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "loup",
+            "icon": "eye"
+          },
+          {
+            "word": "oiseau",
+            "icon": "eye"
+          },
+          {
+            "word": "moto",
+            "icon": "play"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "O · o",
           "word": "oiseau",

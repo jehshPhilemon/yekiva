@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:riz"
       ],
       "params": {
-        "word": "riz",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "livre",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "livre",
+            "icon": "book"
+          },
+          {
+            "word": "fleur",
+            "icon": "plant"
+          },
+          {
+            "word": "lune",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "R · r",
           "word": "riz",

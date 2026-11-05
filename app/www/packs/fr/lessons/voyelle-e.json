@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:école"
       ],
       "params": {
-        "word": "école",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "fleur",
+          "icon": "plant"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "fleur",
+            "icon": "plant"
+          },
+          {
+            "word": "jus",
+            "icon": "music"
+          },
+          {
+            "word": "lune",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "E · e",
           "word": "école",

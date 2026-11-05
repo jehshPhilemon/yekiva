@@ -5,6 +5,21 @@ import { h } from "../ui/dom.js";
 import { tile } from "../ui/tile.js";
 import { contextCue } from "../ui/context-cue.js";
 
+// Spoken button: blink the tile while its voice plays (illiterate-first: every
+// button is heard AND seen). speakIt resolves when the TTS finishes.
+function spokenButton(tileEl, speakIt) {
+  const orig = tileEl;
+  orig.addEventListener("click", () => {
+    orig.classList.add("blink");
+    Promise.resolve()
+      .then(speakIt)
+      .catch(() => {})
+      .finally(() => setTimeout(() => orig.classList.remove("blink"), 400));
+  });
+  return orig;
+}
+
+
 /** Wraps the target part of the word in a highlight span (case-insensitive, first match). */
 export function highlightTarget(word, target) {
   const w = String(word ?? "");
@@ -59,12 +74,13 @@ export function listenTap(ctx, { isQuiz = false } = {}) {
     return b;
   });
 
-  const replay = tile("volume", {
+  const replayBtn = tile("volume", {
     onClick: prompt,
     size: 48,
     label: labels.replay ?? "replay", caption: labels.replay,
     className: "lesson-action",
   });
+  const replay = spokenButton(replayBtn, prompt);
   // Highlight: the answer inside the example word (e.g. "bu" in "buku").
   const word = context?.word ?? "";
   const cue = context && word && answer
@@ -79,6 +95,12 @@ export function listenTap(ctx, { isQuiz = false } = {}) {
     h("div", { class: "choices" }, buttons),
   );
   el.destroy = () => ctx.services?.speaker.stop();
-  prompt();
+  (async () => {
+    await prompt();
+    if (!el.isConnected) return;
+    // The pre-reader cannot find a silent replay button: name it right away.
+    const r = labels.replay;
+    if (r) await ctx.speak({ text: r });
+  })();
   return el;
 }

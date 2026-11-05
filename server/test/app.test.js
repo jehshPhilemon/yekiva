@@ -123,6 +123,69 @@ test("buildLesson: word in syllables -> valid steps", () => {
   }
 });
 
+test("photo lesson always uses the requested language (no French word in Swahili)", async () => {
+  // The model is told the target language BY NAME and must answer in it;
+  // even if it returns French, the server forces the requested language.
+  const { lessonFromPhoto } = await import("../src/providers/meta.js");
+  const fakeImage = Buffer.from("fake");
+  // Mock fetch: model returns a FRENCH word while the learner studies Swahili.
+  process.env.META_API_KEY = process.env.META_API_KEY ?? "test-key";
+  const origFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({
+    choices: [{ message: { content: '{"word": "journal", "syllables": ["jour", "nal"], "language": "fr", "description": "un journal"}' } }],
+  }), { status: 200, headers: { "content-type": "application/json" } });
+  try {
+    const l = await lessonFromPhoto(fakeImage, { contentType: "image/jpeg", lang: "sw" });
+    assert.equal(l.language, "sw", "photo lesson in Swahili must be tagged sw, never fr");
+    for (const step of l.steps) {
+      if (step.type === "say_word") assert.match(step.params.say.text, /sikiliza/i, "swahili instruction, not French");
+    }
+  } finally {
+    globalThis.fetch = origFetch;
+  }
+});
+test("photo without text still produces a lesson in the requested language", async () => {
+  // Object with NO writing (red circle): the model MUST name the object,
+  // never answer {}. Regression: the old prompt let the model refuse.
+  const { lessonFromPhoto } = await import("../src/providers/meta.js");
+  process.env.META_API_KEY = process.env.META_API_KEY ?? "test-key";
+  const origFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({
+    choices: [{ message: { content: '{"word": "duara", "syllables": ["du", "a", "ra"], "language": "sw", "description": "duara jekundu"}' } }],
+  }), { status: 200, headers: { "content-type": "application/json" } });
+  try {
+    const l = await lessonFromPhoto(Buffer.from("fake"), { contentType: "image/jpeg", lang: "sw" });
+    assert.equal(l.language, "sw");
+    assert.equal(l.title, "duara");
+    assert.ok(l.steps.length >= 3, "object photo gives a full lesson, not an error");
+  } finally {
+    globalThis.fetch = origFetch;
+  }
+});
+test("photo in wrong language is translated on retry, never served in French", async () => {
+  // Regression: stool photo in sw returned "tabouret". First answer admits
+  // French, the server asks once for a translation and serves that instead.
+  const { lessonFromPhoto } = await import("../src/providers/meta.js");
+  const calls = [];
+  const origFetch = globalThis.fetch;
+  globalThis.fetch = async (_u, opts) => {
+    const msgs = JSON.parse(opts.body).messages;
+    calls.push(msgs);
+    const wrong = msgs.length === 1; // first call names it in French, retry translates
+    const body = wrong
+      ? { choices: [{ message: { content: '{"word": "tabouret", "syllables": ["ta", "bou", "ret"], "language": "fr", "description": "un tabouret"}' } }] }
+      : { choices: [{ message: { content: '{"word": "kiti", "syllables": ["ki", "ti"], "language": "sw", "description": "kiti kidogo"}' } }] };
+    return new Response(JSON.stringify(body), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const l = await lessonFromPhoto(Buffer.from("fake"), { contentType: "image/jpeg", lang: "sw" });
+    assert.equal(calls.length, 2, "one retry to fix the language");
+    assert.equal(l.language, "sw");
+    assert.equal(l.title, "kiti");
+  } finally {
+    globalThis.fetch = origFetch;
+  }
+});
 test("buildLesson: Lingala rejects accents and special letters", () => {
   assert.throws(() => buildLesson({ word: "lingála", syllables: ["lin", "gá", "la"], language: "ln" }), /plain ASCII Latin/);
   const lesson = buildLesson({ word: "lingala", syllables: ["lin", "ga", "la"], language: "ln" });

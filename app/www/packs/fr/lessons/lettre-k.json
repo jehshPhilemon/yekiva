@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:koala"
       ],
       "params": {
-        "word": "koala",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "jus",
+          "icon": "music"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "jus",
+            "icon": "music"
+          },
+          {
+            "word": "koala",
+            "icon": "eye"
+          },
+          {
+            "word": "chat",
+            "icon": "eye"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "K · k",
           "word": "koala",

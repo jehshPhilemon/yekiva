@@ -7,6 +7,7 @@ import { icon } from "../ui/icons.js";
 import { tile } from "../ui/tile.js";
 import { profile, progress } from "../core/storage.js";
 import { screenPrompt } from "../core/narrate.js";
+import { startCycle } from "../ui/cycle.js";
 
 export async function pathScreen({ services, state, go }) {
   const { language: lang, audience } = state;
@@ -122,8 +123,22 @@ export async function pathScreen({ services, state, go }) {
     h("div", { class: "path-list" }, nodes),
     bar,
   );
-  screen.destroy = () => services.speaker.stop();
+  // Voice tour of the path: after the hint, read the 2 most recent unlocked
+  // lessons (titles) with a blink on each card — the learner hears where to go.
+  let stopCycle = null;
+  screen.destroy = () => { stopCycle?.(); services.speaker.stop(); };
   screen.prompt = () => screenPrompt(services, lang, "path_hint");
-  queueMicrotask(() => screen.prompt());
+  queueMicrotask(async () => {
+    await screen.prompt();
+    if (!screen.isConnected) return;
+    const openIdx = lessons.map((l, i) => (i === 0 || done[lessons[i - 1]?.id]) ? i : -1).filter((i) => i >= 0);
+    const recent = openIdx.slice(-2);
+    if (!recent.length) return;
+    const items = recent.map((i) => ({
+      el: nodes[i],
+      say: () => services.speaker.say({ text: lessons[i].title ?? lessons[i].id }, lang.code, lessons[i].owner ?? lang.basePackId),
+    }));
+    stopCycle = startCycle(items, { pauseMs: 1200 });
+  });
   return screen;
 }

@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:nzete"
       ],
       "params": {
-        "word": "nzete",
-        "say": {
-          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        "target": {
+          "word": "cherie",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "cherie",
+            "icon": "book"
+          },
+          {
+            "word": "classe",
+            "icon": "picture"
+          },
+          {
+            "word": "guitare",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Lisano : yoka liloba ya sika, simba elilingi na yango, mpe lobela yango."
+        },
         "context": {
           "letter": "E  e",
           "word": "nzete",

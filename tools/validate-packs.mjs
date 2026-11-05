@@ -7,7 +7,7 @@ import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergeLanguage, groupByLanguage } from "../app/www/js/core/merge.js";
 
-export const KNOWN_STEPS = new Set(["watch_write", "trace_letter", "listen_tap", "say_word"]);
+export const KNOWN_STEPS = new Set(["watch_write", "trace_letter", "listen_tap", "say_word", "word_game"]);
 
 function main() {
   const args = process.argv.slice(2);
@@ -107,6 +107,11 @@ function main() {
           err(S(`glyph '${p.glyph}' missing from language '${lang}'`));
         }
         if (step.type === "say_word" && !p.word) err(S("params.word missing"));
+      if (step.type === "word_game") {
+        if (!p.target?.word) err(S("params.target.word missing (the NEW transfer word)"));
+        if (!Array.isArray(p.choices) || p.choices.length < 2) err(S("at least 2 picture choices"));
+        if (!p.choices.some((c) => c.word === p.target?.word)) err(S("target must be among choices"));
+      }
         if (step.type === "listen_tap") {
           const ids = (p.choices ?? []).map((c) => c.id);
           if (ids.length < 2) err(S("at least 2 choices"));

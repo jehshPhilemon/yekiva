@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:chat"
       ],
       "params": {
-        "word": "chat",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "classe",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "classe",
+            "icon": "book"
+          },
+          {
+            "word": "chat",
+            "icon": "eye"
+          },
+          {
+            "word": "ananas",
+            "icon": "plant"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "C · c",
           "word": "chat",

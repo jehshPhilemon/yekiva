@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:dada"
       ],
       "params": {
-        "word": "dada",
-        "say": {
-          "text": "Swali la mwisho : sikiliza neno, kisha liseme."
+        "target": {
+          "word": "dhahabu",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "dhahabu",
+            "icon": "book"
+          },
+          {
+            "word": "ndizi",
+            "icon": "picture"
+          },
+          {
+            "word": "moto",
+            "icon": "moon"
+          }
+        ],
+        "say": {
+          "text": "Mchezo : sikiliza neno jipya, gusa picha yake, kisha liseme."
+        },
         "context": {
           "letter": "D · d",
           "word": "dada",

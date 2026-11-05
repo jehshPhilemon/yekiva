@@ -165,7 +165,17 @@ export function traceLetter(ctx) {
     status,
     h("div", { class: "row small lesson-actions" }, replay, clear, validate),
   );
-  ctx.speak(say);
+  (async () => {
+    await ctx.speak(say);
+    if (!el.isConnected) return;
+    // Name every button so the pre-reader knows where to tap.
+    for (const key of ["replay", "clear", "validate"]) {
+      const t = labels[key];
+      if (!t) continue;
+      await ctx.speak({ text: t });
+      if (!el.isConnected) return;
+    }
+  })();
   requestAnimationFrame(redraw);
   return el;
 }

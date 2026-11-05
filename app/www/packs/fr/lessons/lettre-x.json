@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:xylophone"
       ],
       "params": {
-        "word": "xylophone",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "taxi",
+          "icon": "play"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "taxi",
+            "icon": "play"
+          },
+          {
+            "word": "jus",
+            "icon": "music"
+          },
+          {
+            "word": "chat",
+            "icon": "eye"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "X · x",
           "word": "xylophone",

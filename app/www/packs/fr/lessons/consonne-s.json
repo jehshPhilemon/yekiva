@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:soleil"
       ],
       "params": {
-        "word": "soleil",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "sac",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "sac",
+            "icon": "book"
+          },
+          {
+            "word": "soleil",
+            "icon": "picture"
+          },
+          {
+            "word": "jus",
+            "icon": "music"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "S · s",
           "word": "soleil",

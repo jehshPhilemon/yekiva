@@ -70,11 +70,11 @@ test("packs: the loader reads the real files and merges Swahili", async () => {
 });
 
 test("all screen and step modules import (correct paths and exports)", async () => {
-  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "core/voice-api.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js", "screens/diag.js", "ui/context-cue.js", "steps/listen_tap.js", "steps/watch_write.js", "steps/trace_letter.js"]) {
+  for (const f of ["core/registry.js", "core/debug.js", "core/server-url.js", "core/voice-api.js", "screens/start.js", "screens/language.js", "screens/audience.js", "screens/path.js", "screens/lesson.js", "screens/photo.js", "screens/server.js", "screens/diag.js", "ui/context-cue.js", "steps/listen_tap.js", "steps/watch_write.js", "steps/trace_letter.js", "steps/word_game.js"]) {
     await import(`../www/js/${f}`);
   }
   const { registry } = await import("../www/js/core/registry.js");
-  assert.deepEqual(Object.keys(registry).sort(), ["listen_tap", "say_word", "trace_letter", "watch_write"]);
+  assert.deepEqual(Object.keys(registry).sort(), ["listen_tap", "say_word", "trace_letter", "watch_write", "word_game"]);
 });
 
 test("drawGlyph: at 50% progress, only half of the path is drawn", async () => {
@@ -173,7 +173,13 @@ test("listen_tap never leaks the answer (no blink cheat)", async () => {
   const src = new URL("../www/js/steps/listen_tap.js", import.meta.url);
   const code = await import("node:fs").then((fs) => fs.readFileSync(src, "utf8"));
   assert.ok(!code.includes("targetButton"), "the answer button must not be tracked for blinking");
-  assert.ok(!code.includes("blink"), "no blinking of the correct choice");
+  // The replay tile may blink while its voice plays (spoken button); the CHOICE
+  // buttons must never blink (that would leak the answer).
+  assert.ok(!/buttons.*blink|choice.*blink|blink.*choice|good.*blink|blink.*good/i.test(code), "no blinking of the correct choice");
+  // Spoken buttons are allowed (replay reads the question aloud), choices stay silent.
+  for (const line of code.split("\n")) {
+    if (line.includes("class") && line.includes("choice")) assert.ok(!line.includes("blink"), "choice buttons never blink");
+  }
 });
 test("watch_write keeps the Parisienne letter visible after the animation", async () => {
   const src = new URL("../www/js/steps/watch_write.js", import.meta.url);
@@ -218,4 +224,60 @@ test("gating: sequential unlock rule (first open, next needs previous done)", as
   assert.equal(isOpen(1, { a: true }, ids), true);
   assert.equal(isOpen(2, { a: true }, ids), false);
   assert.equal(isOpen(2, { a: true, b: true }, ids), true);
+});
+
+test("every action button is spoken and animated (replay/next/check)", async () => {
+  const { readFileSync } = await import("node:fs");
+  for (const f of ["watch_write.js", "say_word.js", "listen_tap.js"]) {
+    const code = readFileSync(new URL(`../www/js/steps/${f}`, import.meta.url), "utf8");
+    assert.ok(code.includes("spokenButton"), `${f}: action buttons must be spoken + blinking (spokenButton)`);
+  }
+});
+test("buttons announce themselves automatically (pre-reader finds them without tapping)", async () => {
+  // A pre-reader cannot find a silent button: after the exercise voice, each step
+  // names its buttons ("reecouter", "continuer", "effacer", "valider").
+  const { readFileSync } = await import("node:fs");
+  for (const f of ["watch_write.js", "listen_tap.js", "say_word.js", "trace_letter.js", "word_game.js"]) {
+    const code = readFileSync(new URL(`../www/js/steps/${f}`, import.meta.url), "utf8");
+    assert.ok(code.includes("labels.replay"), `${f}: must auto-announce the replay button`);
+  }
+  for (const f of ["watch_write.js", "say_word.js", "trace_letter.js"]) {
+    const code = readFileSync(new URL(`../www/js/steps/${f}`, import.meta.url), "utf8");
+    assert.ok(code.includes("labels.continue") || code.includes("labels.validate"), `${f}: must auto-announce the continue/validate button`);
+  }
+});
+test("lesson pre-generates upcoming voices (prefetch) for zero-wait steps", async () => {
+  const { readFileSync } = await import("node:fs");
+  const spk = readFileSync(new URL("../www/js/core/speaker.js", import.meta.url), "utf8");
+  assert.ok(spk.includes("prefetch"), "speaker exposes prefetch()");
+  assert.ok(spk.includes("fetchVoice"), "speaker exposes fetchVoice() (no-play fetch)");
+  const lesson = readFileSync(new URL("../www/js/screens/lesson.js", import.meta.url), "utf8");
+  assert.ok(lesson.includes("prefetch"), "lesson triggers voice pre-generation at start");
+});
+test("photo accepts any appropriate image (not only text)", async () => {
+  const { readFileSync } = await import("node:fs");
+  const meta = readFileSync(new URL("../../server/src/providers/meta.js", import.meta.url), "utf8");
+  assert.ok(meta.includes("appropriate for children"), "vision prompt filters inappropriate content");
+  assert.ok(meta.includes("NEVER answer {} for an appropriate photo"), "any appropriate photo produces a lesson, not only text photos");
+  const photo = readFileSync(new URL("../www/js/screens/photo.js", import.meta.url), "utf8");
+  for (const fr of ["Je vois", "On apprend", "Je regarde", "Essaie avec"]) {
+    assert.ok(!photo.includes(fr), `photo intro has no hardcoded French (${fr})`);
+  }
+  for (const lang of ["fr", "sw", "ln"]) {
+    const m = JSON.parse(readFileSync(new URL(`../www/packs/${lang}/manifest.json`, import.meta.url), "utf8"));
+    assert.ok(m.photo_seen_yes?.text?.includes("{word}"), `${lang} pack localizes the photo intro`);
+    assert.ok(m.photo_seen_no?.text?.includes("{word}"), `${lang} pack localizes the photo fallback`);
+  }
+});
+test("lesson intro never hardcodes French (sw/ln TTS must not read French)", async () => {
+  const { readFileSync } = await import("node:fs");
+  const code = readFileSync(new URL("../www/js/screens/lesson.js", import.meta.url), "utf8");
+  assert.ok(!code.includes("comme dans"), "lesson intro must not hardcode French 'comme dans'");
+  assert.ok(!code.includes("fais comme moi"), "lesson intro must not hardcode French fallback");
+  assert.ok(code.includes("prompts?.lesson_intro") || code.includes("prompts?.lesson_intro"), "lesson intro uses the localized pack prompt");
+});
+test("path screen reads the recent unlocked lessons with a blink", async () => {
+  const { readFileSync } = await import("node:fs");
+  const code = readFileSync(new URL("../www/js/screens/path.js", import.meta.url), "utf8");
+  assert.ok(code.includes("startCycle"), "path reads recent lessons in a speaking cycle");
 });

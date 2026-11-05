@@ -9,6 +9,21 @@ import { tile } from "../ui/tile.js";
 import { contextCue } from "../ui/context-cue.js";
 import { drawGlyph } from "../ui/glyph.js";
 
+// Spoken button: blink the tile while its voice plays (illiterate-first: every
+// button is heard AND seen). speakIt resolves when the TTS finishes.
+function spokenButton(tileEl, speakIt) {
+  const orig = tileEl;
+  orig.addEventListener("click", () => {
+    orig.classList.add("blink");
+    Promise.resolve()
+      .then(speakIt)
+      .catch(() => {})
+      .finally(() => setTimeout(() => orig.classList.remove("blink"), 400));
+  });
+  return orig;
+}
+
+
 // "B:upper_print" -> { char: "B", style: "print" }; "b:lower_script" -> { char: "b", style: "script" }
 function fontForm(glyph) {
   const m = /^(.):(upper|lower)_(print|script)$/.exec(String(glyph ?? ""));
@@ -27,8 +42,18 @@ export function watchWrite(ctx) {
     const clip = h("span", { class: "clip" }, form.char);
     const model = h("div", { class: (form.style === "script" ? "script-letter" : `print-letter ${form.casing}`), role: "img", "aria-label": form.char }, clip);
     let timer = 0;
+    let root = null; // set below: the step element, for isConnected guards
     function play() {
-      ctx.speak(say);
+      (async () => {
+        await ctx.speak(say);
+        if (!root?.isConnected) return;
+        // The pre-reader cannot find silent buttons: announce them right away.
+        const r = labels.replay;
+        const c = labels.continue;
+        if (r) await ctx.speak({ text: r });
+        if (!root?.isConnected) return;
+        if (c) await ctx.speak({ text: c });
+      })();
       model.classList.remove("is-done");
       model.classList.remove("is-playing");
       void model.offsetWidth;
@@ -37,27 +62,36 @@ export function watchWrite(ctx) {
       // The letter stays fully visible after the animation (remove = invisible clip).
       timer = setTimeout(() => { model.classList.remove("is-playing"); model.classList.add("is-done"); }, durationMs + 400);
     }
-    const replay = tile("replay", {
+    const replayBtn = tile("replay", {
       onClick: play,
       size: 48,
       label: labels.replay ?? "replay",
       caption: labels.replay,
       className: "lesson-action",
     });
-    const next = tile("check", {
-      onClick: () => ctx.onDone(true),
+    const nextBtn = tile("check", {
+      onClick: async () => {
+        const c = ctx.language.labels?.actions?.continue;
+        if (c) await ctx.speak({ text: c });
+        ctx.onDone(true);
+      },
       size: 48,
       label: labels.continue ?? "continue",
       caption: labels.continue,
       className: "lesson-action",
+    });
+    const next = spokenButton(nextBtn, () => {
+      const c = ctx.language.labels?.actions?.continue;
+      return c ? ctx.speak({ text: c }) : Promise.resolve();
     });
     const el = h(
       "div",
       { class: "stack lesson-step" },
       contextCue(context),
       h("div", { class: "canvas-box" }, model),
-      h("div", { class: "row small lesson-actions" }, replay, next),
+      h("div", { class: "row small lesson-actions" }, spokenButton(replayBtn, play), next),
     );
+    root = el;
     el.destroy = () => clearTimeout(timer);
     // The handwriting font must be ready before the reveal animation starts.
     (async () => {
@@ -84,26 +118,34 @@ export function watchWrite(ctx) {
     raf = requestAnimationFrame(frame);
   }
 
-  const replay = tile("replay", {
+  const replayBtn = tile("replay", {
     onClick: play,
     size: 48,
     label: labels.replay ?? "replay",
     caption: labels.replay,
     className: "lesson-action",
   });
-  const next = tile("check", {
-    onClick: () => ctx.onDone(true),
+  const nextBtn = tile("check", {
+    onClick: async () => {
+      const c = ctx.language.labels?.actions?.continue;
+      if (c) await ctx.speak({ text: c });
+      ctx.onDone(true);
+    },
     size: 48,
     label: labels.continue ?? "continue",
     caption: labels.continue,
     className: "lesson-action",
+  });
+  const next = spokenButton(nextBtn, () => {
+    const c = ctx.language.labels?.actions?.continue;
+    return c ? ctx.speak({ text: c }) : Promise.resolve();
   });
   const el = h(
     "div",
     { class: "stack lesson-step" },
     contextCue(context),
     h("div", { class: "canvas-box" }, canvas),
-    h("div", { class: "row small lesson-actions" }, replay, next),
+    h("div", { class: "row small lesson-actions" }, spokenButton(replayBtn, play), next),
   );
   el.destroy = () => cancelAnimationFrame(raf);
   play();

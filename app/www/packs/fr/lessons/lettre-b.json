@@ -199,16 +199,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:bébé"
       ],
       "params": {
-        "word": "bébé",
-        "say": {
-          "text": "Dernière question : écoute le mot, puis dis-le."
+        "target": {
+          "word": "bonbon",
+          "icon": "plant"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "bonbon",
+            "icon": "plant"
+          },
+          {
+            "word": "ballon",
+            "icon": "picture"
+          },
+          {
+            "word": "bébé",
+            "icon": "family"
+          }
+        ],
+        "say": {
+          "text": "Jeu : écoute le mot nouveau, touche sa photo, puis dis-le."
+        },
         "context": {
           "letter": "B · b",
           "word": "bébé",

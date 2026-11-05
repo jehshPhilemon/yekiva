@@ -109,6 +109,44 @@ test("TTS pause: every voice line ending in an isolated letter uses ':' before i
   }
 });
 
+test("finale is an interactive game with NEW words (transfer, never the drill word)", () => {
+  // No more static "listen and repeat the same word": the finale is a word_game
+  // (hear a NEW word -> tap its picture -> say it). The target is never drilled.
+  for (const code of ["fr", "sw", "ln"]) {
+    const manifest = readJson(`${code}/manifest.json`);
+    for (const track of Object.values(manifest.tracks ?? {})) {
+      for (const lid of track) {
+        let lesson;
+        try { lesson = readJson(`${code}/lessons/${lid}.json`); } catch { continue; }
+        const drills = new Set(lesson.steps.filter((s) => s.type === "say_word").map((s) => s.params?.word).filter(Boolean));
+        const games = lesson.steps.filter((s) => s.type === "word_game");
+        if (!games.length) continue;
+        for (const g of games) {
+          const t = g.params?.target?.word;
+          assert.ok(t, `${code}/${lid}: word_game needs a target word`);
+          assert.ok(!drills.has(t), `${code}/${lid}: game target '${t}' must be NEW (not the drill word)`);
+          assert.ok((g.params?.choices ?? []).length >= 3, `${code}/${lid}: game needs 3 picture choices`);
+          assert.ok((g.params?.say?.text ?? "").length > 10, `${code}/${lid}: game needs a spoken instruction`);
+          assert.ok(g.params?.isQuiz === true, `${code}/${lid}: game counts as quiz (weight x2)`);
+        }
+      }
+    }
+  }
+});
+
+test("word_game is registered, spoken and validated", async () => {
+  const { readFileSync } = await import("node:fs");
+  const reg = readFileSync(new URL("../www/js/core/registry.js", import.meta.url), "utf8");
+  assert.ok(reg.includes("word_game"), "word_game must be registered");
+  const game = readFileSync(new URL("../www/js/steps/word_game.js", import.meta.url), "utf8");
+  assert.ok(game.includes("spokenButton"), "game replay must be spoken + animated");
+  assert.ok(game.includes("blink"), "game gives visual feedback (blink)");
+  // Auto-advance: after the right picture, the "continue" voice plays and the
+  // lesson moves on WITHOUT requiring a tap (no silent check button wait).
+  assert.ok(game.includes("ctx.onDone(!wrongOnce)"), "game auto-advances after the continue voice");
+  assert.ok(!/sayBtn|btnRaw/.test(game), "game must not wait for a check-button tap");
+});
+
 test("quizzes only use taught letters (never an untaught letter as answer or distractor)", () => {
   for (const code of ["fr", "sw", "ln"]) {
     const manifest = readJson(`${code}/manifest.json`);
@@ -220,12 +258,15 @@ test("lessons end with a real quiz on new questions (weight x2), words never lea
       try { lesson = readJson(`${code}/lessons/${lid}.json`); } catch { continue; }
       const quiz = lesson.steps.filter((s) => (s.items ?? []).some((i) => String(i).startsWith("quiz:")));
       assert.ok(quiz.length >= 3, `${code}/${lid} needs 3+ quiz steps, got ${quiz.length}`);
-      // Quiz questions must be listen_tap with 3 choices, or masked say_word.
+      // Quiz questions: listen_tap (3 choices), masked say_word, or word_game (finale).
       for (const q of quiz) {
         if (q.type === "listen_tap") {
           assert.ok(q.params.choices.length >= 3, `${code}/${lid} quiz needs 3 choices`);
+        } else if (q.type === "word_game") {
+          assert.ok((q.params.choices ?? []).length >= 3, `${code}/${lid} game needs 3 picture choices`);
+          assert.ok(q.params.target?.word, `${code}/${lid} game needs a target word`);
         } else {
-          assert.equal(q.type, "say_word", `${code}/${lid} quiz must be tap or say, got ${q.type}`);
+          assert.equal(q.type, "say_word", `${code}/${lid} quiz must be tap, game or say, got ${q.type}`);
           assert.equal(q.params.hideWord, true, `${code}/${lid} quiz say must hide the word`);
         }
       }

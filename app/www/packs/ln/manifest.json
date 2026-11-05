@@ -175,7 +175,7 @@
     "audio": null
   },
   "photo_failed": {
-    "text": "Nasili kotanga elilingi oyo te. Meka na liloba emonanaka malamu.",
+    "text": "Nasili kosalela elilingi oyo te. Meka na elilingi mosusu.",
     "audio": null
   },
   "conversation_thinking": {
@@ -188,6 +188,14 @@
   },
   "conversation_empty": {
     "text": "Nayoki eloko te. Loba makasi pene na telefone, sima sima lisusu.",
+    "audio": null
+  },
+  "photo_seen_yes": {
+    "text": "Namoni: {word}. {desc} Totanga liloba oyo esika moko.",
+    "audio": null
+  },
+  "photo_seen_no": {
+    "text": "Namoni liloba: {word}. Totanga liloba oyo esika moko.",
     "audio": null
   }
 }

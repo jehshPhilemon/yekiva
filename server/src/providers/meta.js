@@ -94,51 +94,108 @@ export async function transcribe(audio, { lang } = {}) {
 }
 
 const VISION_PROMPT =
-  "In this photo, find the most legible written word. Answer ONLY with JSON: " +
+  "You help illiterate learners read the world. Look at this photo. " +
+  "FIRST: is the content appropriate for children (no violence, nudity, gore, hate)? " +
+  "If NOT appropriate, answer ONLY {}. " +
+  "If appropriate, you MUST ALWAYS produce a lesson, even with NO text in the photo. " +
+  "Case 1 — a written word is visible: use that word (translated into the expected language if needed). " +
+  "Case 2 — NO text visible: name the single most important visible thing " +
+  "(e.g. a red ball -> word 'ballon'/'ball'/'mpira' in the expected language). " +
+  "NEVER answer {} for an appropriate photo: there is always something to name. " +
+  "Answer ONLY with JSON: " +
   '{"word": "...", "syllables": ["..."], "language": "ISO 639-1 code", "description": "short simple sentence"}. ' +
-  "Split the word into syllables as they are pronounced. The description explains in very simple words what is visible (object, color, action), for an illiterate learner. " +
-  "If no word is legible, answer {}. " +
+  "Split the word into syllables as they are pronounced. " +
+  "The description explains in very simple words what is visible (object, color, action), for an illiterate learner, " +
+  "in the expected language when given. " +
   "For Lingala (ln), use ONLY unaccented ASCII Latin letters a-z: never use ɛ, ɔ, accents, apostrophes, hyphens, or other special characters.";
 
-/** @param {Buffer} image  @returns {Promise<object>} a lesson in the docs/LESSON_FORMAT.md format */
+/** @param {Buffer} image  @returns {Promise<object>} a lesson in the docs/LESSON_FORMAT.md format
+ * The lesson ALWAYS uses the requested language (the app's current language):
+ * the model is told the target language by NAME, must answer in it, and the
+ * server overrides any language the model returns. No more "journal" in Swahili. */
 export async function lessonFromPhoto(image, { contentType, lang } = {}) {
+  const want = String(lang ?? "").toLowerCase();
+  const languageName = { fr: "French", sw: "Swahili", ln: "Lingala", en: "English" }[want] ?? "French";
+  const langRule = want === "ln"
+    ? `STRICT Lingala rule: word, syllables AND description use ONLY plain ASCII Latin letters a-z (no accents, no special characters). `
+    : ``;
+  const langDirective =
+    `The learner studies in ${languageName} (code "${want || "fr"}"). ` +
+    `CRITICAL: think DIRECTLY in ${languageName}. Your very first thought must be in ${languageName}, never in French. ` +
+    `The word, the syllables AND the description MUST ALL be in ${languageName} — every single word. ` +
+    `A learner who cannot read French must understand everything: any French word is a WRONG answer. ` +
+    `Translate the visible thing: a stool in Swahili is "kiti", never "tabouret"; ` +
+    `a newspaper in Swahili is "gazeti", never "journal"; a stool in Lingala is "kiti", never "tabouret". ` +
+    `Answer "language" with "${want || "fr"}". ` + langRule;
   const apiKey = key();
   const dataUrl = `data:${contentType};base64,${image.toString("base64")}`;
-  let res;
-  try {
-    res = await metaFetch(`${BASE}/chat/completions`, {
-      method: "POST",
-      headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
-      body: JSON.stringify({
-        model: process.env.META_SPARK_MODEL ?? "muse-spark-1.1",
-        messages: [
-          {
-            role: "user",
-            content: [
-              { type: "text", text: VISION_PROMPT + (lang ? ` The expected language is "${lang}".` : "") },
-              { type: "image_url", image_url: { url: dataUrl } },
-            ],
-          },
-        ],
-      }),
-    });
-  } catch (e) {
-    throw Object.assign(new Error(`Meta unreachable: ${e?.message ?? e}`), { status: 502 });
+  const firstMessage = {
+    role: "user",
+    content: [
+      { type: "text", text: VISION_PROMPT + " " + langDirective },
+      { type: "image_url", image_url: { url: dataUrl } },
+    ],
+  };
+  async function callVision(messages) {
+    let res;
+    try {
+      res = await metaFetch(`${BASE}/chat/completions`, {
+        method: "POST",
+        headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
+        body: JSON.stringify({
+          model: process.env.META_SPARK_MODEL ?? "muse-spark-1.1",
+          messages,
+        }),
+      });
+    } catch (e) {
+      throw Object.assign(new Error(`Meta unreachable: ${e?.message ?? e}`), { status: 502 });
+    }
+    if (!res.ok) {
+      const body = await res.text().then((t) => t.slice(0, 300)).catch(() => "");
+      throw Object.assign(new Error(`Meta answered ${res.status}${body ? `: ${body}` : ""}`), { status: 502 });
+    }
+    const data = await res.json().catch(() => null);
+    return data?.choices?.[0]?.message?.content ?? data?.output_text ?? "";
   }
-  if (!res.ok) {
-    const body = await res.text().then((t) => t.slice(0, 300)).catch(() => "");
-    throw Object.assign(new Error(`Meta answered ${res.status}${body ? `: ${body}` : ""}`), { status: 502 });
+  function parseVision(raw) {
+    let spark;
+    try {
+      spark = parseModelJson(raw);
+    } catch {
+      throw Object.assign(new Error("vision model returned no usable JSON"), { status: 502 });
+    }
+    return spark;
   }
-  const data = await res.json().catch(() => null);
-  const raw = data?.choices?.[0]?.message?.content ?? data?.output_text ?? "";
-  let spark;
-  try {
-    spark = parseModelJson(raw);
-  } catch {
-    throw Object.assign(new Error("vision model returned no usable JSON"), { status: 502 });
+  let raw = await callVision([firstMessage]);
+  let spark = parseVision(raw);
+  // Wrong-language guard: the model sometimes names the object in French even
+  // when asked in Swahili/Lingala ("tabouret" instead of "kiti"). If it admits
+  // another language, ask ONCE to translate the same lesson before serving it.
+  const got = String(spark.language ?? "").toLowerCase();
+  if (want && got && got !== want) {
+    const retryMessages = [
+      firstMessage,
+      { role: "assistant", content: raw },
+      {
+        role: "user",
+        content:
+          `WRONG LANGUAGE: you answered in "${got}" but the learner studies in ${languageName} (code "${want}"). ` +
+          `Translate the SAME object now: word, syllables AND description ALL in ${languageName}, ` +
+          `answer "language" with "${want}". Answer ONLY with the JSON, no French word anywhere. ` + langRule,
+      },
+    ];
+    try {
+      const raw2 = await callVision(retryMessages);
+      const spark2 = parseVision(raw2);
+      if (spark2.word) spark = spark2;
+    } catch {
+      // keep the first answer rather than failing the lesson
+    }
   }
-  if (!spark.word) throw Object.assign(new Error("no legible word in the photo"), { status: 422 });
-  return buildLesson({ ...spark, language: spark.language ?? lang });
+  if (!spark.word) throw Object.assign(new Error("nothing usable in this photo (inappropriate or empty)"), { status: 422 });
+  // The requested language wins over whatever the model returns: the photo lesson
+  // always matches the language the learner is currently using.
+  return buildLesson({ ...spark, language: want || spark.language || lang || "fr" });
 }
 
 // Lesson generation: Spark proposes CONTENT (word + syllables), OUR code builds the

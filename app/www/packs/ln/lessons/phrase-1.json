@@ -150,16 +150,32 @@
       }
     },
     {
-      "type": "say_word",
+      "type": "word_game",
       "items": [
         "quiz:Mama na bana."
       ],
       "params": {
-        "word": "Mama na bana.",
-        "say": {
-          "text": "Motuna ya suka : yoka liloba, mpe lobela yango."
+        "target": {
+          "word": "Bana balali.",
+          "icon": "book"
         },
-        "hideWord": true,
+        "choices": [
+          {
+            "word": "Bana balali.",
+            "icon": "book"
+          },
+          {
+            "word": "Mama alali.",
+            "icon": "picture"
+          },
+          {
+            "word": "baba",
+            "icon": "family"
+          }
+        ],
+        "say": {
+          "text": "Lisano : yoka liloba ya sika, simba elilingi na yango, mpe lobela yango."
+        },
         "context": {
           "letter": "Mama",
           "word": "Mama na bana.",
